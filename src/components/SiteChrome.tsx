@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { featuredRepairs } from "@/config/featuredRepairs";
+import { StaticLink } from "@/components/StaticLink";
 
 export function Header() {
   const costGuideSlug = featuredRepairs[0];
@@ -7,36 +7,33 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-surface">
       <div className="mx-auto flex h-14 max-w-[1120px] items-center justify-between px-5 md:h-16 md:px-8">
-        <Link href="/" className="flex items-center gap-2.5" prefetch={false}>
+        <StaticLink href="/" className="flex items-center gap-2.5">
           <span className="h-2 w-2 rounded-[4px] bg-pilot-600" aria-hidden="true" />
           <span className="font-serif text-xl font-bold text-ink-900">Warmlo</span>
-        </Link>
+        </StaticLink>
         <div className="flex items-center gap-6">
           <nav className="hidden items-center gap-6 md:flex">
-            <Link
+            <StaticLink
               href="/fix"
-              prefetch={false}
               className="text-[15px] font-medium text-ink-700 hover:text-ink-900 hover:underline hover:underline-offset-4"
             >
               Fix codes
-            </Link>
+            </StaticLink>
             {costGuideSlug && (
-              <Link
+              <StaticLink
                 href={`/cost/${costGuideSlug}`}
-                prefetch={false}
                 className="text-[15px] font-medium text-ink-700 hover:text-ink-900 hover:underline hover:underline-offset-4"
               >
                 Cost guides
-              </Link>
+              </StaticLink>
             )}
           </nav>
-          <Link
+          <StaticLink
             href="/quote-check"
-            prefetch={false}
             className="flex h-10 items-center rounded-md bg-pilot-700 px-4 text-sm font-semibold text-white transition-colors hover:bg-pilot-800"
           >
             Check a quote
-          </Link>
+          </StaticLink>
         </div>
       </div>
     </header>
@@ -59,23 +56,23 @@ export function Footer() {
         </p>
         <div className="mt-8 grid grid-cols-2 gap-4 md:flex md:gap-12">
           <div className="flex flex-col gap-3">
-            <Link href="/privacy" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
+            <StaticLink href="/privacy" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
               Privacy
-            </Link>
-            <Link href="/terms" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
+            </StaticLink>
+            <StaticLink href="/terms" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
               Terms
-            </Link>
-            <Link href="/disclosure" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
+            </StaticLink>
+            <StaticLink href="/disclosure" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
               Disclosure
-            </Link>
+            </StaticLink>
           </div>
           <div className="flex flex-col gap-3">
-            <Link href="/fix" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
+            <StaticLink href="/fix" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
               Fix codes
-            </Link>
-            <Link href="/quote-check" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
+            </StaticLink>
+            <StaticLink href="/quote-check" className="text-sm font-medium text-[#E7E2D9] hover:text-white hover:underline">
               Check a quote
-            </Link>
+            </StaticLink>
           </div>
         </div>
         <hr className="my-8 border-[#44403C]" />

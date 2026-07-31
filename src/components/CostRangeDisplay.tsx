@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { FreshnessStamp } from "./FreshnessStamp";
+import { StaticLink } from "./StaticLink";
 
 interface CostRangeDisplayProps {
   costLow: number;
@@ -51,9 +51,9 @@ export function CostRangeDisplay({
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <p className="text-sm text-ink-700">
             See our{" "}
-            <Link href={`/cost/${repairSlug}`} prefetch={false} className="text-pilot-600 underline">
+            <StaticLink href={`/cost/${repairSlug}`} className="text-pilot-600 underline">
               {repairName}
-            </Link>{" "}
+            </StaticLink>{" "}
             cost guide for a detailed breakdown.
           </p>
           <FreshnessStamp dataUpdated={dataUpdated} className="ml-auto" />

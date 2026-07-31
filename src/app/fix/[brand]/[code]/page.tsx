@@ -80,15 +80,6 @@ export default async function CodePage({
 
   return (
     <article className="mx-auto max-w-[720px] px-5 pb-16 md:px-8">
-      <CodePageAnalyticsScript brand={brand.slug} code={code.code} />
-      {jsonLd.map((schema, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
-
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -184,6 +175,15 @@ export default async function CodePage({
       <p className="mt-12 max-w-[68ch] border-t border-line pt-5 text-[13px] leading-5 text-ink-600">
         {CODE_PAGE_DISCLAIMER}
       </p>
+
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <CodePageAnalyticsScript brand={brand.slug} code={code.code} />
     </article>
   );
 }

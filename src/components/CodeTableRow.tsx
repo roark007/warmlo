@@ -1,8 +1,8 @@
-import Link from "next/link";
 import type { Code } from "@/lib/schemas";
 import { ChevronRightIcon } from "./icons";
 import { LedChip } from "./LedChip";
 import { SeverityBadge } from "./SeverityBadge";
+import { StaticLink } from "./StaticLink";
 
 interface CodeTableRowProps {
   brandSlug: string;
@@ -19,7 +19,7 @@ function shortMeaning(code: Code): string {
 
 export function CodeTableRow({ brandSlug, code }: CodeTableRowProps) {
   return (
-    <Link
+    <StaticLink
       href={`/fix/${brandSlug}/${code.slug}`}
       className="flex min-h-16 items-center gap-3 border-b border-line px-4 py-3 transition-colors last:border-b-0 hover:bg-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-pilot-600 md:min-h-14 md:grid md:grid-cols-[120px_1fr_150px_24px] md:items-center"
     >
@@ -34,6 +34,6 @@ export function CodeTableRow({ brandSlug, code }: CodeTableRowProps) {
         <SeverityBadge severity={code.severity} size="small" />
       </div>
       <ChevronRightIcon size={16} className="shrink-0 text-ink-500 md:col-start-4" />
-    </Link>
+    </StaticLink>
   );
 }
