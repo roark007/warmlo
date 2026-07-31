@@ -20,6 +20,7 @@ export function CodeCard({ brandSlug, code }: CodeCardProps) {
   return (
     <Link
       href={`/fix/${brandSlug}/${code.slug}`}
+      prefetch={false}
       className="flex flex-col gap-2.5 rounded-md border border-line bg-surface p-4 transition-colors hover:border-ink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pilot-600"
     >
       <div className="flex items-center justify-between gap-2">

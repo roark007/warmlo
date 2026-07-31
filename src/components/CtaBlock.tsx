@@ -14,6 +14,7 @@ export function CtaBlock({ repairSlug }: CtaBlockProps) {
       <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
         <Link
           href={quoteCheckHref}
+          prefetch={false}
           className="flex min-h-[52px] flex-1 items-center justify-center rounded-md border-[1.5px] border-line-strong bg-surface px-6 text-base font-semibold text-ink-900 transition-colors hover:border-ink-500 hover:bg-paper"
         >
           Got a repair quote already? See if the price is fair →
@@ -28,6 +29,7 @@ export function CtaBlock({ repairSlug }: CtaBlockProps) {
         ) : (
           <Link
             href={quoteCheckHref}
+            prefetch={false}
             className="flex min-h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 px-6 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
           >
             Get quotes from local pros

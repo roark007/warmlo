@@ -18,7 +18,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
           <li key={index} className="flex items-center gap-1">
             {index > 0 && <span className="text-ink-500">/</span>}
             {item.href ? (
-              <Link href={item.href} className="text-pilot-600 hover:underline">
+              <Link href={item.href} prefetch={false} className="text-pilot-600 hover:underline">
                 {item.label}
               </Link>
             ) : (

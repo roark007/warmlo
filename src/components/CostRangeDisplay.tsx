@@ -51,7 +51,7 @@ export function CostRangeDisplay({
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <p className="text-sm text-ink-700">
             See our{" "}
-            <Link href={`/cost/${repairSlug}`} className="text-pilot-600 underline">
+            <Link href={`/cost/${repairSlug}`} prefetch={false} className="text-pilot-600 underline">
               {repairName}
             </Link>{" "}
             cost guide for a detailed breakdown.

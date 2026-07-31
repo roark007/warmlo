@@ -102,6 +102,6 @@ If Supabase is not configured, set `LEAD_WEBHOOK_URL` to a Slack, Discord, or Za
 - **Phase 1:** Skeleton — routes, legal, sitemap, CI
 - **Phase 2:** FixCode at scale (17 brands, 258 codes)
 - **Phase 3:** QuoteCheck flow, `/api/lead` (Supabase), Brevo alerts
-- **Phase 4 (current):** Cost guides, home page featured codes, Lighthouse pass
+- **Phase 4 (current):** Cost guides, featured codes, perf optimizations (code pages use system fonts; hub pages load Bitter/Inter)
 
 See `BUILD_BRIEF.md` for full specification.
