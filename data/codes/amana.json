@@ -2,7 +2,7 @@
   {
     "code": "E4",
     "slug": "e4",
-    "title": "Goodman Furnace Code E4: Open High-Limit Switch",
+    "title": "Amana Furnace Code E4: Open High-Limit Switch",
     "meaning": "The furnace overheated and the high-limit safety switch shut it down to prevent damage or fire.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -25,7 +25,7 @@
   {
     "code": "E0",
     "slug": "e0",
-    "title": "Goodman Furnace Code E0: Ignition Failure",
+    "title": "Amana Furnace Code E0: Ignition Failure",
     "meaning": "The furnace tried to light the burners but ignition did not occur after several attempts.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -48,7 +48,7 @@
   {
     "code": "E1",
     "slug": "e1",
-    "title": "Goodman Furnace Code E1: Gas Valve Relay Error",
+    "title": "Amana Furnace Code E1: Gas Valve Relay Error",
     "meaning": "The control board detected a problem with the gas valve circuit and locked out the furnace.",
     "severity": "emergency",
     "commonCauses": [
@@ -66,7 +66,7 @@
   {
     "code": "E2",
     "slug": "e2",
-    "title": "Goodman Furnace Code E2: Pressure Switch Failure",
+    "title": "Amana Furnace Code E2: Pressure Switch Failure",
     "meaning": "The pressure switch did not close when the inducer motor ran, blocking ignition.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -89,7 +89,7 @@
   {
     "code": "E3",
     "slug": "e3",
-    "title": "Goodman Furnace Code E3: Inducer Motor Fault",
+    "title": "Amana Furnace Code E3: Inducer Motor Fault",
     "meaning": "The inducer motor did not start or reach the speed needed to vent combustion gases.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -112,7 +112,7 @@
   {
     "code": "E5",
     "slug": "e5",
-    "title": "Goodman Furnace Code E5: Flame Sensor Issue",
+    "title": "Amana Furnace Code E5: Flame Sensor Issue",
     "meaning": "The flame sensor did not detect a stable flame after ignition.",
     "severity": "diy-possible",
     "commonCauses": [
@@ -135,7 +135,7 @@
   {
     "code": "E6",
     "slug": "e6",
-    "title": "Goodman Furnace Code E6: Rollout Switch Open",
+    "title": "Amana Furnace Code E6: Rollout Switch Open",
     "meaning": "The rollout switch tripped because flames or excessive heat reached the front of the burner area.",
     "severity": "emergency",
     "commonCauses": [
@@ -153,7 +153,7 @@
   {
     "code": "E7",
     "slug": "e7",
-    "title": "Goodman Furnace Code E7: Low Flame Signal",
+    "title": "Amana Furnace Code E7: Low Flame Signal",
     "meaning": "The control board detected a weak or unstable flame after ignition.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -175,7 +175,7 @@
   {
     "code": "E8",
     "slug": "e8",
-    "title": "Goodman Furnace Code E8: Igniter Circuit Fault",
+    "title": "Amana Furnace Code E8: Igniter Circuit Fault",
     "meaning": "The control board could not energize the hot-surface ignitor properly.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -198,7 +198,7 @@
   {
     "code": "E9",
     "slug": "e9",
-    "title": "Goodman Furnace Code E9: Grounding or Polarity Fault",
+    "title": "Amana Furnace Code E9: Grounding or Polarity Fault",
     "meaning": "The control detected improper electrical grounding or reversed line/neutral wiring.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -220,7 +220,7 @@
   {
     "code": "1 Flash",
     "slug": "1-flash",
-    "title": "Goodman Furnace Code 1 Flash: Ignition Failure Lockout",
+    "title": "Amana Furnace Code 1 Flash: Ignition Failure Lockout",
     "meaning": "One LED flash indicates the furnace failed to establish flame during the ignition trial.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -242,7 +242,7 @@
   {
     "code": "2 Flash",
     "slug": "2-flash",
-    "title": "Goodman Furnace Code 2 Flash: Pressure Switch Stuck Closed",
+    "title": "Amana Furnace Code 2 Flash: Pressure Switch Stuck Closed",
     "meaning": "Two flashes mean the pressure switch remained closed when it should have opened.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -264,7 +264,7 @@
   {
     "code": "3 Flash",
     "slug": "3-flash",
-    "title": "Goodman Furnace Code 3 Flash: Pressure Switch Stuck Open",
+    "title": "Amana Furnace Code 3 Flash: Pressure Switch Stuck Open",
     "meaning": "Three flashes indicate the pressure switch never closed during the inducer cycle.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -286,7 +286,7 @@
   {
     "code": "4 Flash",
     "slug": "4-flash",
-    "title": "Goodman Furnace Code 4 Flash: Open Limit Switch",
+    "title": "Amana Furnace Code 4 Flash: Open Limit Switch",
     "meaning": "Four flashes signal the high-limit switch opened due to overheating.",
     "severity": "call-pro-soon",
     "commonCauses": [
@@ -308,7 +308,7 @@
   {
     "code": "5 Flash",
     "slug": "5-flash",
-    "title": "Goodman Furnace Code 5 Flash: Flame Sensed Without Heat Call",
+    "title": "Amana Furnace Code 5 Flash: Flame Sensed Without Heat Call",
     "meaning": "Five flashes mean the board detected flame when the thermostat was not calling for heat.",
     "severity": "emergency",
     "commonCauses": [
@@ -322,71 +322,5 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
-  },
-  {
-    "code": "6 Flash",
-    "slug": "6-flash",
-    "title": "Goodman Furnace Code 6 Flash: Modulating Gas Valve Fault",
-    "meaning": "Six flashes indicate a fault in the modulating gas valve circuit on variable-capacity models.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Failed modulating gas valve",
-      "Wiring fault",
-      "Control board communication error"
-    ],
-    "diySteps": [
-      "Turn off power.",
-      "Do not attempt to adjust gas settings yourself.",
-      "Note the flash pattern for your technician."
-    ],
-    "whenToCallPro": "Modulating valve repairs require specialized tools and licensed service.",
-    "repairCostLow": 350,
-    "repairCostHigh": 900,
-    "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": null
-  },
-  {
-    "code": "7 Flash",
-    "slug": "7-flash",
-    "title": "Goodman Furnace Code 7 Flash: Low Flame Signal",
-    "meaning": "Seven flashes indicate the flame signal dropped too low during operation.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Dirty flame sensor",
-      "Low gas pressure",
-      "Draft affecting flame"
-    ],
-    "diySteps": [
-      "Clean the flame sensor carefully.",
-      "Ensure return grilles are not blocked.",
-      "Run one test cycle after cleaning."
-    ],
-    "whenToCallPro": "If the flame still drops out, gas pressure and venting should be checked professionally.",
-    "repairCostLow": 100,
-    "repairCostHigh": 400,
-    "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null
-  },
-  {
-    "code": "8 Flash",
-    "slug": "8-flash",
-    "title": "Goodman Furnace Code 8 Flash: Igniter Circuit Problem",
-    "meaning": "Eight flashes mean the ignitor circuit failed an internal board check.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Cracked ignitor",
-      "Open ignitor wire",
-      "Board relay failure"
-    ],
-    "diySteps": [
-      "Turn off power before inspecting the ignitor.",
-      "Look for cracks or white spots on the ignitor.",
-      "Reseat the ignitor connector."
-    ],
-    "whenToCallPro": "Replace a visibly failed ignitor or call for board diagnosis if the ignitor looks fine.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
   }
 ]

@@ -1,0 +1,386 @@
+[
+  {
+    "code": "200",
+    "slug": "200",
+    "title": "Lennox Furnace Code 200: No Signal from Thermostat",
+    "meaning": "The control board is not receiving a heat call from the thermostat.",
+    "severity": "diy-possible",
+    "commonCauses": [
+      "Thermostat set to off or cool",
+      "Loose thermostat wire",
+      "Dead thermostat batteries"
+    ],
+    "diySteps": [
+      "Confirm the thermostat is set to heat.",
+      "Replace batteries if applicable.",
+      "Check that the furnace door is secure."
+    ],
+    "whenToCallPro": "If the thermostat is calling for heat but the code remains, wiring may need service.",
+    "repairCostLow": 100,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "thermostat-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "201",
+    "slug": "201",
+    "title": "Lennox Furnace Code 201: Invalid Thermostat Signal",
+    "meaning": "The board received an out-of-range signal from a communicating thermostat.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Incompatible thermostat",
+      "Loose comm wire",
+      "Board comm port fault"
+    ],
+    "diySteps": [
+      "Verify thermostat model compatibility.",
+      "Reseat thermostat wiring.",
+      "Power-cycle the furnace once."
+    ],
+    "whenToCallPro": "Communicating thermostat faults often need a matched replacement stat or board.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "thermostat-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "220",
+    "slug": "220",
+    "title": "Lennox Furnace Code 220: Pressure Switch Open on Startup",
+    "meaning": "The pressure switch did not close when the inducer started.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed inducer",
+      "Cracked pressure hose"
+    ],
+    "diySteps": [
+      "Inspect vent and intake.",
+      "Check pressure switch tubing.",
+      "Clear condensate from trap."
+    ],
+    "whenToCallPro": "Replace a failed pressure switch or inducer if obstructions are ruled out.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "221",
+    "slug": "221",
+    "title": "Lennox Furnace Code 221: Pressure Switch Stuck Closed",
+    "meaning": "The pressure switch remained closed when the inducer was off.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Stuck switch diaphragm",
+      "Water in pressure line",
+      "Blocked vent"
+    ],
+    "diySteps": [
+      "Drain water from pressure tubing.",
+      "Inspect vent for restrictions.",
+      "Reset power once."
+    ],
+    "whenToCallPro": "A stuck pressure switch should be replaced.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "270",
+    "slug": "270",
+    "title": "Lennox Furnace Code 270: Ignition Failure",
+    "meaning": "The furnace could not light the burners during the ignition trial.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Worn ignitor",
+      "Gas valve not opening",
+      "Dirty flame sensor"
+    ],
+    "diySteps": [
+      "Verify gas supply.",
+      "Watch for ignitor glow on one cycle.",
+      "Reset power once."
+    ],
+    "whenToCallPro": "Repeated ignition failures need ignitor or gas valve service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "271",
+    "slug": "271",
+    "title": "Lennox Furnace Code 271: Flame Lost During Operation",
+    "meaning": "The board detected flame loss while the thermostat was still calling for heat.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty flame sensor",
+      "Cracked heat exchanger draft",
+      "Flame rollout"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect the flame sensor.",
+      "Look for soot around the burner area."
+    ],
+    "whenToCallPro": "Flame loss during run requires professional combustion inspection.",
+    "repairCostLow": 100,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "272",
+    "slug": "272",
+    "title": "Lennox Furnace Code 272: Flame Sensed Without Call",
+    "meaning": "Flame was detected when the thermostat was not calling for heat.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Leaking gas valve",
+      "Stuck valve relay",
+      "Board fault"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Unexpected flame is a safety hazard requiring immediate service.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "273",
+    "slug": "273",
+    "title": "Lennox Furnace Code 273: Rollout Switch Open",
+    "meaning": "The rollout switch opened due to flames or heat at the burner front.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Blocked flue",
+      "Cracked heat exchanger",
+      "Improper burner alignment"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout trips indicate a combustion safety issue.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas or see soot, leave the area and call a technician."
+  },
+  {
+    "code": "274",
+    "slug": "274",
+    "title": "Lennox Furnace Code 274: Limit Switch Open",
+    "meaning": "The high-limit switch opened because the furnace overheated.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty filter",
+      "Weak blower",
+      "Closed vents"
+    ],
+    "diySteps": [
+      "Replace the air filter.",
+      "Open all supply vents.",
+      "Allow the unit to cool before resetting."
+    ],
+    "whenToCallPro": "Repeated limit trips need blower or limit switch service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "275",
+    "slug": "275",
+    "title": "Lennox Furnace Code 275: Blower Motor Failure",
+    "meaning": "The blower motor did not start or did not reach required speed.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed blower motor",
+      "Bad capacitor",
+      "Loose wiring"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check the blower wheel for obstruction.",
+      "Verify the access panel is closed."
+    ],
+    "whenToCallPro": "Blower motor or capacitor replacement is usually required.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "276",
+    "slug": "276",
+    "title": "Lennox Furnace Code 276: Inducer Motor Failure",
+    "meaning": "The inducer motor failed to start during the venting cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized inducer",
+      "Blocked vent",
+      "Failed inducer capacitor"
+    ],
+    "diySteps": [
+      "Clear the vent terminal.",
+      "Listen for hum without spin.",
+      "Do not force the motor."
+    ],
+    "whenToCallPro": "Inducer replacement is needed if the motor will not run.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "277",
+    "slug": "277",
+    "title": "Lennox Furnace Code 277: Gas Valve Fault",
+    "meaning": "The control detected an error in the gas valve circuit.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed gas valve",
+      "Open valve coil",
+      "Board relay fault"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Gas valve faults require licensed repair.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "278",
+    "slug": "278",
+    "title": "Lennox Furnace Code 278: Control Board Error",
+    "meaning": "The integrated control reported an internal fault.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Power surge damage",
+      "Moisture on board",
+      "Failed relay"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect for water near the board.",
+      "Ensure condensate is draining properly."
+    ],
+    "whenToCallPro": "Board errors typically require control board replacement.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "279",
+    "slug": "279",
+    "title": "Lennox Furnace Code 279: Low Flame Signal",
+    "meaning": "The flame current dropped below the minimum threshold.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty flame sensor",
+      "Low gas pressure",
+      "Draft interference"
+    ],
+    "diySteps": [
+      "Clean the flame sensor.",
+      "Check return airflow.",
+      "Run one test cycle."
+    ],
+    "whenToCallPro": "If flame current stays low, gas pressure and venting should be checked.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "280",
+    "slug": "280",
+    "title": "Lennox Furnace Code 280: Auxiliary Switch Open",
+    "meaning": "An auxiliary limit or safety switch in series opened.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Tripped rollout switch",
+      "Open fuse link",
+      "Loose harness connection"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect auxiliary switches near the burner.",
+      "Do not bypass safety switches."
+    ],
+    "whenToCallPro": "Auxiliary switch faults need a technician to identify which safety opened.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "441",
+    "slug": "441",
+    "title": "Lennox Furnace Code 441: Blower Communication Fault",
+    "meaning": "The board lost communication with an ECM blower motor module.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed ECM module",
+      "Loose comm harness",
+      "Board output fault"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Reseat blower harness connectors.",
+      "Verify the blower door is secure."
+    ],
+    "whenToCallPro": "ECM communication faults often require blower motor replacement.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "442",
+    "slug": "442",
+    "title": "Lennox Furnace Code 442: Inducer Speed Fault",
+    "meaning": "The inducer did not reach the commanded speed.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Worn inducer motor",
+      "Failed speed sensor"
+    ],
+    "diySteps": [
+      "Inspect vent for blockages.",
+      "Listen for abnormal inducer noise.",
+      "Clear ice or debris at the vent cap."
+    ],
+    "whenToCallPro": "Inducer speed faults may require motor replacement.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "443",
+    "slug": "443",
+    "title": "Lennox Furnace Code 443: Condensate Blockage",
+    "meaning": "The condensate drainage system triggered a safety lockout.",
+    "severity": "diy-possible",
+    "commonCauses": [
+      "Clogged condensate trap",
+      "Frozen drain line",
+      "Full condensate pump"
+    ],
+    "diySteps": [
+      "Clear the condensate trap.",
+      "Check the drain hose for kinks.",
+      "Empty or reset the condensate pump if present."
+    ],
+    "whenToCallPro": "If drainage is clear but the code persists, the pressure switch or pump may have failed.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "condensate-pump-replacement",
+    "dangerNote": null
+  }
+]

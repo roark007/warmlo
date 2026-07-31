@@ -1,0 +1,214 @@
+[
+  {
+    "code": "A01",
+    "slug": "a01",
+    "title": "Daikin Furnace Code A01: Ignition Failure",
+    "meaning": "The furnace failed to establish flame during the ignition sequence.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Worn ignitor",
+      "Gas valve fault",
+      "Dirty flame sensor"
+    ],
+    "diySteps": [
+      "Verify gas supply.",
+      "Reset once.",
+      "Watch ignition cycle."
+    ],
+    "whenToCallPro": "Ignitor or sensor service usually needed.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "A02",
+    "slug": "a02",
+    "title": "Daikin Furnace Code A02: Flame Loss",
+    "meaning": "Flame was lost during heating operation.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Draft issue",
+      "Low gas pressure"
+    ],
+    "diySteps": [
+      "Clean flame sensor.",
+      "Check returns.",
+      "Reset once."
+    ],
+    "whenToCallPro": "Professional inspection if flame loss repeats.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "A03",
+    "slug": "a03",
+    "title": "Daikin Furnace Code A03: Pressure Switch Open",
+    "meaning": "The pressure switch did not close during venting.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed inducer",
+      "Loose hose"
+    ],
+    "diySteps": [
+      "Inspect vent.",
+      "Check tubing.",
+      "Clear condensate."
+    ],
+    "whenToCallPro": "Switch or inducer replacement may be needed.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "A04",
+    "slug": "a04",
+    "title": "Daikin Furnace Code A04: Limit Switch Open",
+    "meaning": "The high-limit switch opened from overheating.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty filter",
+      "Weak blower",
+      "Closed vents"
+    ],
+    "diySteps": [
+      "Replace filter.",
+      "Open vents.",
+      "Cool before reset."
+    ],
+    "whenToCallPro": "Limit or blower service if repeated.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "A05",
+    "slug": "a05",
+    "title": "Daikin Furnace Code A05: Rollout Switch Open",
+    "meaning": "The rollout switch tripped during burner operation.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Heat exchanger issue",
+      "Blocked flue",
+      "Flame rollout"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout requires combustion inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas, leave the area and call a technician."
+  },
+  {
+    "code": "A06",
+    "slug": "a06",
+    "title": "Daikin Furnace Code A06: Gas Valve Fault",
+    "meaning": "The control detected a gas valve circuit error.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed valve",
+      "Relay fault",
+      "Loose wiring"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Licensed gas valve service required.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "A07",
+    "slug": "a07",
+    "title": "Daikin Furnace Code A07: Blower Motor Fault",
+    "meaning": "The blower motor did not start or tripped.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed motor",
+      "Bad capacitor",
+      "Obstruction"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check wheel.",
+      "Verify door."
+    ],
+    "whenToCallPro": "Blower replacement usually required.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "A08",
+    "slug": "a08",
+    "title": "Daikin Furnace Code A08: Inducer Motor Fault",
+    "meaning": "The inducer motor failed during venting.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized inducer",
+      "Blocked vent",
+      "Failed capacitor"
+    ],
+    "diySteps": [
+      "Clear vent.",
+      "Listen for hum.",
+      "Do not force."
+    ],
+    "whenToCallPro": "Inducer replacement if needed.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "A09",
+    "slug": "a09",
+    "title": "Daikin Furnace Code A09: Control Board Fault",
+    "meaning": "The control board reported an internal error.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Surge damage",
+      "Moisture",
+      "Failed relay"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect for moisture.",
+      "Check condensate."
+    ],
+    "whenToCallPro": "Board replacement typically required.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "A10",
+    "slug": "a10",
+    "title": "Daikin Furnace Code A10: Condensate Fault",
+    "meaning": "A condensate drainage fault triggered lockout on high-efficiency models.",
+    "severity": "diy-possible",
+    "commonCauses": [
+      "Clogged trap",
+      "Full pump",
+      "Frozen drain"
+    ],
+    "diySteps": [
+      "Clear trap.",
+      "Check drain line.",
+      "Reset pump."
+    ],
+    "whenToCallPro": "Replace pump or switch if drainage is clear.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "condensate-pump-replacement",
+    "dangerNote": null
+  }
+]

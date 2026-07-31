@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bitter, Inter } from "next/font/google";
 import { Footer, Header } from "@/components/SiteChrome";
+import { PlausibleScript } from "@/components/PlausibleScript";
 import "./globals.css";
 
 const bitter = Bitter({
@@ -38,6 +39,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
       <body className="flex min-h-full flex-col">
+        <PlausibleScript />
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

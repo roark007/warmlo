@@ -6,6 +6,7 @@ import { SearchIcon, XIcon } from "./icons";
 import { LedChip } from "./LedChip";
 import { SeverityBadge } from "./SeverityBadge";
 import type { Code } from "@/lib/schemas";
+import { trackEvent } from "@/lib/analytics";
 
 export interface CodeSearchEntry {
   brandSlug: string;
@@ -103,7 +104,12 @@ export function CodeSearchBox({ entries }: CodeSearchBoxProps) {
         }}
         onFocus={() => setIsOpen(true)}
         onBlur={() => setTimeout(() => setIsOpen(false), 150)}
-        onKeyDown={handleKeyDown}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" && debouncedQuery.length >= 2) {
+            trackEvent("search_used");
+          }
+          handleKeyDown(e);
+        }}
         className="h-14 w-full rounded-md border-[1.5px] border-line-strong bg-surface py-0 pl-12 pr-12 text-base text-ink-900 placeholder:text-ink-500 hover:border-ink-500 focus:border-pilot-600 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pilot-600"
       />
       {query && (
@@ -147,6 +153,7 @@ export function CodeSearchBox({ entries }: CodeSearchBoxProps) {
                       href={`/fix/${entry.brandSlug}/${entry.code.slug}`}
                       role="option"
                       aria-selected={isActive}
+                      onClick={() => trackEvent("search_used")}
                       className={`flex items-center gap-3 px-4 py-2.5 hover:bg-paper ${isActive ? "border-l-2 border-pilot-600 bg-paper" : ""}`}
                     >
                       <LedChip size="small">{entry.code.code}</LedChip>

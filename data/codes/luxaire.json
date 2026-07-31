@@ -1,0 +1,345 @@
+[
+  {
+    "code": "1 Blink",
+    "slug": "1-blink",
+    "title": "Luxaire Furnace Code 1 Blink: Ignition Failure",
+    "meaning": "One blink indicates the furnace failed to light during the ignition trial.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed ignitor",
+      "Gas valve issue",
+      "Dirty flame sensor"
+    ],
+    "diySteps": [
+      "Verify gas is on.",
+      "Reset once.",
+      "Watch for ignitor glow."
+    ],
+    "whenToCallPro": "Ignition failures need ignitor or gas valve service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "2 Blinks",
+    "slug": "2-blinks",
+    "title": "Luxaire Furnace Code 2 Blinks: Pressure Switch Open",
+    "meaning": "Two blinks mean the pressure switch did not close.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed inducer",
+      "Loose pressure hose"
+    ],
+    "diySteps": [
+      "Inspect vent.",
+      "Check pressure tubing.",
+      "Clear condensate."
+    ],
+    "whenToCallPro": "Replace switch or inducer if needed.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "3 Blinks",
+    "slug": "3-blinks",
+    "title": "Luxaire Furnace Code 3 Blinks: Limit Switch Open",
+    "meaning": "Three blinks signal the high-limit switch opened.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty filter",
+      "Weak blower",
+      "Closed vents"
+    ],
+    "diySteps": [
+      "Replace filter.",
+      "Open vents.",
+      "Cool before reset."
+    ],
+    "whenToCallPro": "Repeated trips need limit or blower service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "4 Blinks",
+    "slug": "4-blinks",
+    "title": "Luxaire Furnace Code 4 Blinks: Rollout Switch Open",
+    "meaning": "Four blinks indicate the rollout switch tripped.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Cracked heat exchanger",
+      "Blocked flue",
+      "Flame rollout"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout requires combustion safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas, leave the area and call a technician."
+  },
+  {
+    "code": "5 Blinks",
+    "slug": "5-blinks",
+    "title": "Luxaire Furnace Code 5 Blinks: Flame Sense Failure",
+    "meaning": "Five blinks mean flame was not proven after ignition.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty flame sensor",
+      "Weak ignitor",
+      "Gas pressure low"
+    ],
+    "diySteps": [
+      "Clean flame sensor.",
+      "Verify burners light.",
+      "Reset once."
+    ],
+    "whenToCallPro": "Replace sensor or ignitor if fault persists.",
+    "repairCostLow": 100,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "6 Blinks",
+    "slug": "6-blinks",
+    "title": "Luxaire Furnace Code 6 Blinks: Gas Valve Fault",
+    "meaning": "Six blinks indicate a gas valve circuit problem.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed gas valve",
+      "Board relay fault",
+      "Loose wiring"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Gas valve faults need licensed repair.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "7 Blinks",
+    "slug": "7-blinks",
+    "title": "Luxaire Furnace Code 7 Blinks: Blower Motor Fault",
+    "meaning": "Seven blinks signal a blower motor error.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed blower",
+      "Bad capacitor",
+      "Restricted wheel"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check blower wheel.",
+      "Verify door switch."
+    ],
+    "whenToCallPro": "Blower motor replacement is usually required.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "8 Blinks",
+    "slug": "8-blinks",
+    "title": "Luxaire Furnace Code 8 Blinks: Inducer Motor Fault",
+    "meaning": "Eight blinks indicate the inducer did not start.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized inducer",
+      "Blocked vent",
+      "Failed capacitor"
+    ],
+    "diySteps": [
+      "Clear vent.",
+      "Listen for inducer hum.",
+      "Do not force motor."
+    ],
+    "whenToCallPro": "Inducer replacement if motor will not run.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "9 Blinks",
+    "slug": "9-blinks",
+    "title": "Luxaire Furnace Code 9 Blinks: Control Board Fault",
+    "meaning": "Nine blinks mean the control board detected an internal fault.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Surge damage",
+      "Moisture",
+      "Failed relay"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect for moisture.",
+      "Check condensate routing."
+    ],
+    "whenToCallPro": "Board replacement is typically needed.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "10 Blinks",
+    "slug": "10-blinks",
+    "title": "Luxaire Furnace Code 10 Blinks: Low Flame Signal",
+    "meaning": "Ten blinks indicate weak flame current during operation.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Draft issue",
+      "Low gas pressure"
+    ],
+    "diySteps": [
+      "Clean sensor.",
+      "Ensure returns open.",
+      "Test one cycle."
+    ],
+    "whenToCallPro": "Gas pressure and venting should be checked.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "11 Blinks",
+    "slug": "11-blinks",
+    "title": "Luxaire Furnace Code 11 Blinks: Reverse Polarity",
+    "meaning": "Eleven blinks suggest reversed line/neutral wiring.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Reversed disconnect wiring",
+      "Missing ground",
+      "Improper install"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Do not operate until wiring is verified."
+    ],
+    "whenToCallPro": "Have wiring corrected by a qualified technician.",
+    "repairCostLow": 150,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "12 Blinks",
+    "slug": "12-blinks",
+    "title": "Luxaire Furnace Code 12 Blinks: Condensate Blockage",
+    "meaning": "Twelve blinks indicate a condensate drainage fault on high-efficiency models.",
+    "severity": "diy-possible",
+    "commonCauses": [
+      "Clogged trap",
+      "Frozen drain",
+      "Full pump"
+    ],
+    "diySteps": [
+      "Clear condensate trap.",
+      "Check drain line.",
+      "Reset pump if present."
+    ],
+    "whenToCallPro": "Replace pump or switch if drainage is clear.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "condensate-pump-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "13 Blinks",
+    "slug": "13-blinks",
+    "title": "Luxaire Furnace Code 13 Blinks: External Lockout",
+    "meaning": "Thirteen blinks mean an external safety opened the circuit.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Tripped limit",
+      "Open rollout",
+      "Loose harness"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check access panels.",
+      "Allow cooldown before reset."
+    ],
+    "whenToCallPro": "Identify which external safety opened.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "14 Blinks",
+    "slug": "14-blinks",
+    "title": "Luxaire Furnace Code 14 Blinks: Thermostat Fault",
+    "meaning": "Fourteen blinks indicate a thermostat signal problem.",
+    "severity": "diy-possible",
+    "commonCauses": [
+      "Stat off or in cool",
+      "Loose wire",
+      "Dead batteries"
+    ],
+    "diySteps": [
+      "Set stat to heat.",
+      "Replace batteries.",
+      "Check furnace door."
+    ],
+    "whenToCallPro": "Wiring service if stat is calling but code remains.",
+    "repairCostLow": 100,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "thermostat-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "15 Blinks",
+    "slug": "15-blinks",
+    "title": "Luxaire Furnace Code 15 Blinks: Ignitor Circuit Fault",
+    "meaning": "Fifteen blinks mean the ignitor circuit failed a check.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Cracked ignitor",
+      "Open wire",
+      "Board fault"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect ignitor.",
+      "Reseat connector."
+    ],
+    "whenToCallPro": "Replace ignitor or call for board service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "16 Blinks",
+    "slug": "16-blinks",
+    "title": "Luxaire Furnace Code 16 Blinks: Flame Lost During Run",
+    "meaning": "Sixteen blinks indicate flame was lost while heating.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Draft",
+      "Cracked exchanger"
+    ],
+    "diySteps": [
+      "Clean sensor.",
+      "Check for soot.",
+      "Reset once."
+    ],
+    "whenToCallPro": "Flame loss during run needs professional inspection.",
+    "repairCostLow": 100,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  }
+]

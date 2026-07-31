@@ -1,0 +1,368 @@
+[
+  {
+    "code": "13",
+    "slug": "13",
+    "title": "Payne Furnace Code 13: Limit Switch Lockout",
+    "meaning": "The furnace locked out after the high-limit switch opened too many times.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Restricted airflow from dirty filter",
+      "Blower not running at speed",
+      "Blocked return duct"
+    ],
+    "diySteps": [
+      "Replace the air filter.",
+      "Open supply vents.",
+      "Reset power once airflow is restored."
+    ],
+    "whenToCallPro": "Repeated limit lockouts require blower and limit switch inspection.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "14",
+    "slug": "14",
+    "title": "Payne Furnace Code 14: Ignition Lockout",
+    "meaning": "The control board stopped ignition attempts after repeated failures.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed hot-surface ignitor",
+      "Dirty flame sensor",
+      "Gas valve not opening"
+    ],
+    "diySteps": [
+      "Verify gas supply is on.",
+      "Reset power and observe one ignition sequence.",
+      "Stop if you smell gas."
+    ],
+    "whenToCallPro": "Ignition lockouts after one reset usually need ignitor or flame sensor service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "15",
+    "slug": "15",
+    "title": "Payne Furnace Code 15: Blower Motor Lockout",
+    "meaning": "The blower motor exceeded safe current draw or failed to start properly.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized blower wheel",
+      "Failed run capacitor",
+      "Worn blower motor"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Spin the blower wheel by hand to check for binding.",
+      "Do not force a stuck motor."
+    ],
+    "whenToCallPro": "Blower motor lockouts typically require motor or capacitor replacement.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "23",
+    "slug": "23",
+    "title": "Payne Furnace Code 23: Pressure Switch Failed to Close",
+    "meaning": "The pressure switch did not close during the inducer on cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed inducer",
+      "Cracked pressure hose"
+    ],
+    "diySteps": [
+      "Inspect vent and intake pipes.",
+      "Check the pressure switch tubing.",
+      "Clear condensate from the trap."
+    ],
+    "whenToCallPro": "If the inducer runs normally but the switch never closes, replace the switch or inducer.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "24",
+    "slug": "24",
+    "title": "Payne Furnace Code 24: Secondary Voltage Fuse Open",
+    "meaning": "A low-voltage fuse on the control board opened, shutting down the furnace.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Shorted thermostat wire",
+      "Failed control board component",
+      "Damaged field wiring"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect low-voltage wiring for pinches or bare spots.",
+      "Do not bypass the fuse."
+    ],
+    "whenToCallPro": "If a new fuse blows immediately, the board or wiring needs professional diagnosis.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "31",
+    "slug": "31",
+    "title": "Payne Furnace Code 31: Pressure Switch Failed to Open",
+    "meaning": "The pressure switch stayed closed when the inducer turned off.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Stuck pressure switch",
+      "Water in pressure hose",
+      "Blocked vent"
+    ],
+    "diySteps": [
+      "Check the pressure hose for water.",
+      "Inspect the vent for blockages.",
+      "Reset power after clearing obstructions."
+    ],
+    "whenToCallPro": "A switch that will not open should be replaced before further operation.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "32",
+    "slug": "32",
+    "title": "Payne Furnace Code 32: Low Pressure Switch Open",
+    "meaning": "The low-pressure switch remained open during the heating cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Inducer not reaching speed",
+      "Vent restriction",
+      "Failed low-pressure switch"
+    ],
+    "diySteps": [
+      "Verify the exhaust vent is clear.",
+      "Listen for weak inducer operation.",
+      "Check for ice or debris at the vent terminal."
+    ],
+    "whenToCallPro": "Low-pressure faults often trace to inducer or venting problems.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "33",
+    "slug": "33",
+    "title": "Payne Furnace Code 33: Limit Circuit Open",
+    "meaning": "The limit switch circuit opened while the furnace was running.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Overheating from poor airflow",
+      "Failing blower",
+      "Stuck limit switch"
+    ],
+    "diySteps": [
+      "Replace a dirty filter.",
+      "Ensure registers are open.",
+      "Allow the furnace to cool before resetting."
+    ],
+    "whenToCallPro": "If the limit opens repeatedly, the blower or limit switch may need replacement.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "34",
+    "slug": "34",
+    "title": "Payne Furnace Code 34: Ignition Proving Failure",
+    "meaning": "The board did not detect flame within the allowed proving period.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty flame sensor",
+      "Weak ignitor",
+      "Gas valve delay"
+    ],
+    "diySteps": [
+      "Clean the flame sensor rod.",
+      "Watch whether the ignitor glows fully.",
+      "Reset and try one cycle."
+    ],
+    "whenToCallPro": "Persistent proving failures require ignitor, sensor, or gas valve service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "41",
+    "slug": "41",
+    "title": "Payne Furnace Code 41: Blower Motor Fault",
+    "meaning": "The control detected an error in the blower motor or its speed tap circuit.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed blower motor",
+      "Open motor harness",
+      "Control board relay fault"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check that the blower door panel is secure.",
+      "Inspect the motor plug connection."
+    ],
+    "whenToCallPro": "Blower faults usually require motor or board replacement.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "42",
+    "slug": "42",
+    "title": "Payne Furnace Code 42: Inducer Motor Fault",
+    "meaning": "The inducer motor did not respond correctly during the pre-purge cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized inducer",
+      "Failed inducer capacitor",
+      "Blocked flue"
+    ],
+    "diySteps": [
+      "Inspect the vent outlet.",
+      "Listen for inducer hum without rotation.",
+      "Clear any visible blockages."
+    ],
+    "whenToCallPro": "Inducer motor replacement is needed if the motor will not start.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "43",
+    "slug": "43",
+    "title": "Payne Furnace Code 43: Pressure Switch Stuck Open",
+    "meaning": "The pressure switch remained open when it should have closed.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Disconnected pressure hose",
+      "Failed switch",
+      "Inducer not running"
+    ],
+    "diySteps": [
+      "Reattach any loose pressure hoses.",
+      "Verify the inducer runs on a heat call.",
+      "Clear condensate blockages."
+    ],
+    "whenToCallPro": "Replace a verified failed pressure switch or faulty inducer.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "44",
+    "slug": "44",
+    "title": "Payne Furnace Code 44: Blower Overcurrent",
+    "meaning": "The blower drew more current than the control board allows.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Restricted blower wheel",
+      "Failing ECM motor",
+      "Shorted motor windings"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check for debris in the blower wheel.",
+      "Spin the wheel to feel for binding."
+    ],
+    "whenToCallPro": "Overcurrent trips often mean blower motor replacement.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "45",
+    "slug": "45",
+    "title": "Payne Furnace Code 45: Control Board Fault",
+    "meaning": "The integrated control self-test detected an internal board error.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Moisture on board",
+      "Failed relay on board",
+      "Power surge damage"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect the board area for water or burn marks.",
+      "Ensure the condensate drain is not leaking on the board."
+    ],
+    "whenToCallPro": "Board faults typically require control board replacement.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "51",
+    "slug": "51",
+    "title": "Payne Furnace Code 51: Gas Valve Stuck Open",
+    "meaning": "The control detected gas flow when the valve should have been closed.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Leaking gas valve",
+      "Stuck valve solenoid",
+      "Relay welded closed"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "A stuck-open gas valve is a serious safety issue requiring immediate service.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "52",
+    "slug": "52",
+    "title": "Payne Furnace Code 52: Gas Valve Relay Fault",
+    "meaning": "The gas valve relay on the control board did not operate correctly.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed board relay",
+      "Gas valve coil open",
+      "Loose valve wiring"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Gas valve electrical faults must be repaired by a licensed technician.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "53",
+    "slug": "53",
+    "title": "Payne Furnace Code 53: Flame Not Sensed",
+    "meaning": "The flame sensor did not prove flame after the gas valve opened.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty flame sensor",
+      "Weak flame due to low gas",
+      "Cracked ignitor still glowing"
+    ],
+    "diySteps": [
+      "Clean the flame sensor.",
+      "Verify burners ignite fully.",
+      "Reset and observe one complete cycle."
+    ],
+    "whenToCallPro": "If flame is visible but not sensed, replace the flame sensor.",
+    "repairCostLow": 100,
+    "repairCostHigh": 300,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  }
+]

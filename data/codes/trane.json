@@ -1,0 +1,362 @@
+[
+  {
+    "code": "2 Flashes",
+    "slug": "2-flashes",
+    "title": "Trane Furnace Code 2 Flashes: External Lockout",
+    "meaning": "An external safety device locked the furnace out.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Tripped limit switch",
+      "Open rollout switch",
+      "Loose safety harness"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check that all access panels are secure.",
+      "Allow the unit to cool before resetting."
+    ],
+    "whenToCallPro": "External lockouts require identifying which safety device opened.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "3 Flashes",
+    "slug": "3-flashes",
+    "title": "Trane Furnace Code 3 Flashes: Pressure Switch Error",
+    "meaning": "The pressure switch circuit failed during the venting sequence.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed inducer",
+      "Stuck pressure switch"
+    ],
+    "diySteps": [
+      "Inspect vent pipes.",
+      "Check pressure switch tubing.",
+      "Clear condensate blockages."
+    ],
+    "whenToCallPro": "Pressure switch or inducer service is usually needed.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "4 Flashes",
+    "slug": "4-flashes",
+    "title": "Trane Furnace Code 4 Flashes: Open Limit Switch",
+    "meaning": "The primary limit switch opened during the heating cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty air filter",
+      "Blower failure",
+      "Blocked return"
+    ],
+    "diySteps": [
+      "Replace the filter.",
+      "Open supply vents.",
+      "Reset after cooling down."
+    ],
+    "whenToCallPro": "Repeated limit trips need blower or limit switch replacement.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "5 Flashes",
+    "slug": "5-flashes",
+    "title": "Trane Furnace Code 5 Flashes: Flame Detected When Off",
+    "meaning": "The control sensed flame without a call for heat.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Leaking gas valve",
+      "Stuck gas valve relay",
+      "Control fault"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Unexpected flame requires immediate professional inspection.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "6 Flashes",
+    "slug": "6-flashes",
+    "title": "Trane Furnace Code 6 Flashes: Line Voltage Out of Range",
+    "meaning": "Supply voltage to the furnace was too high or too low.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Utility voltage issue",
+      "Loose line connection",
+      "Shared circuit overload"
+    ],
+    "diySteps": [
+      "Do not cycle power repeatedly.",
+      "Note whether lights dim when the furnace runs.",
+      "Contact an electrician if voltage issues are suspected."
+    ],
+    "whenToCallPro": "Persistent voltage faults need electrical diagnosis.",
+    "repairCostLow": 150,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "7 Flashes",
+    "slug": "7-flashes",
+    "title": "Trane Furnace Code 7 Flashes: Gas Valve Circuit Error",
+    "meaning": "The gas valve circuit failed an electrical check.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed gas valve coil",
+      "Open valve wire",
+      "Board relay fault"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Gas valve electrical faults require licensed service.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "8 Flashes",
+    "slug": "8-flashes",
+    "title": "Trane Furnace Code 8 Flashes: Ignition Failure",
+    "meaning": "The furnace failed to establish flame within the trial period.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Worn ignitor",
+      "Dirty flame sensor",
+      "Gas supply issue"
+    ],
+    "diySteps": [
+      "Verify gas is on.",
+      "Reset and watch one ignition attempt.",
+      "Stop if you smell gas."
+    ],
+    "whenToCallPro": "Ignition failures usually need ignitor or flame sensor service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "9 Flashes",
+    "slug": "9-flashes",
+    "title": "Trane Furnace Code 9 Flashes: High-Stage Pressure Fault",
+    "meaning": "The high-stage pressure switch did not respond correctly on two-stage units.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed high-stage switch",
+      "Inducer speed fault"
+    ],
+    "diySteps": [
+      "Inspect venting.",
+      "Check both pressure switch hoses.",
+      "Clear condensate traps."
+    ],
+    "whenToCallPro": "Two-stage pressure faults need switch or inducer diagnosis.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "10 Flashes",
+    "slug": "10-flashes",
+    "title": "Trane Furnace Code 10 Flashes: Grounding Fault",
+    "meaning": "The control detected a grounding or polarity problem.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Missing ground",
+      "Reversed polarity",
+      "Loose neutral"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Do not operate until wiring is verified."
+    ],
+    "whenToCallPro": "Grounding issues should be corrected by a qualified technician.",
+    "repairCostLow": 150,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "11 Flashes",
+    "slug": "11-flashes",
+    "title": "Trane Furnace Code 11 Flashes: Blower Motor Fault",
+    "meaning": "The blower motor did not respond to the control signal.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed blower",
+      "Open harness",
+      "Bad capacitor"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Spin the blower wheel to check for binding.",
+      "Verify the blower door switch."
+    ],
+    "whenToCallPro": "Blower motor or capacitor replacement is typically required.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "12 Flashes",
+    "slug": "12-flashes",
+    "title": "Trane Furnace Code 12 Flashes: Inducer Motor Fault",
+    "meaning": "The inducer motor failed during the pre-purge cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized inducer",
+      "Blocked flue",
+      "Failed capacitor"
+    ],
+    "diySteps": [
+      "Clear the vent outlet.",
+      "Listen for inducer hum.",
+      "Do not force the motor."
+    ],
+    "whenToCallPro": "Inducer motor replacement is needed if it will not start.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "13 Flashes",
+    "slug": "13-flashes",
+    "title": "Trane Furnace Code 13 Flashes: Flame Rollout Trip",
+    "meaning": "The rollout switch opened due to abnormal flame pattern.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Cracked heat exchanger",
+      "Blocked heat exchanger cells",
+      "Improper gas pressure"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout conditions require combustion safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas or see soot, leave the area and call a technician."
+  },
+  {
+    "code": "14 Flashes",
+    "slug": "14-flashes",
+    "title": "Trane Furnace Code 14 Flashes: Ignitor Circuit Fault",
+    "meaning": "The ignitor circuit failed a continuity or timing check.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Cracked ignitor",
+      "Loose connector",
+      "Board output fault"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect the ignitor for cracks.",
+      "Reseat the ignitor plug."
+    ],
+    "whenToCallPro": "Replace a failed ignitor or call for board diagnosis.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "15 Flashes",
+    "slug": "15-flashes",
+    "title": "Trane Furnace Code 15 Flashes: Flame Sensor Fault",
+    "meaning": "The flame sensor signal was out of range after ignition.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Corroded sensor",
+      "Weak flame",
+      "Loose sensor wire"
+    ],
+    "diySteps": [
+      "Clean the flame sensor.",
+      "Verify stable blue flame.",
+      "Reset and test once."
+    ],
+    "whenToCallPro": "Replace the flame sensor if cleaning does not restore signal.",
+    "repairCostLow": 100,
+    "repairCostHigh": 300,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "16 Flashes",
+    "slug": "16-flashes",
+    "title": "Trane Furnace Code 16 Flashes: Control Board Fault",
+    "meaning": "The integrated control failed an internal self-test.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Moisture damage",
+      "Surge damage",
+      "Failed relay"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect the board area for moisture.",
+      "Check condensate routing."
+    ],
+    "whenToCallPro": "Control board replacement is usually required.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "17 Flashes",
+    "slug": "17-flashes",
+    "title": "Trane Furnace Code 17 Flashes: Low Flame Lockout",
+    "meaning": "The flame signal dropped too low during sustained operation.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Draft issues",
+      "Low gas pressure"
+    ],
+    "diySteps": [
+      "Clean the flame sensor.",
+      "Ensure returns are open.",
+      "Run one heat cycle."
+    ],
+    "whenToCallPro": "Low flame lockouts need gas pressure and venting checks.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "18 Flashes",
+    "slug": "18-flashes",
+    "title": "Trane Furnace Code 18 Flashes: Reverse Polarity",
+    "meaning": "Line and neutral may be reversed at the furnace disconnect.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Reversed wiring",
+      "Non-polarized disconnect",
+      "Improper installation"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Do not operate until polarity is corrected."
+    ],
+    "whenToCallPro": "Have an electrician or HVAC tech verify line voltage wiring.",
+    "repairCostLow": 150,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  }
+]

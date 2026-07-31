@@ -9,7 +9,7 @@ import {
 } from "../src/lib/schemas";
 
 const DATA_DIR = path.join(process.cwd(), "data");
-const BUILD_PHASE = Number(process.env.BUILD_PHASE ?? "1");
+const BUILD_PHASE = Number(process.env.BUILD_PHASE ?? "2");
 
 const PHASE_TARGETS: Record<number, { brands: number; codes: number; repairs: number }> = {
   1: { brands: 1, codes: 5, repairs: 1 },
@@ -92,34 +92,40 @@ for (const slug of codeFileSlugs) {
 }
 if (process.exitCode !== 1) pass("brand/code file parity");
 
-// 3. Slug uniqueness and format
-const allSlugs: string[] = [];
-for (const brand of brands) {
-  allSlugs.push(brand.slug);
-}
+// 3. Slug uniqueness and format (brand + repair slugs global; code slugs per brand file)
 const repairs = repairsSchema.parse(readJson(path.join(DATA_DIR, "repairs.json")));
+const globalSlugs: string[] = brands.map((b) => b.slug);
 for (const repair of repairs) {
-  allSlugs.push(repair.slug);
-}
-for (const file of codeFiles) {
-  const codes = codesSchema.parse(readJson(path.join(codesDir, file)));
-  for (const code of codes) {
-    allSlugs.push(code.slug);
-  }
+  globalSlugs.push(repair.slug);
 }
 
 let slugOk = true;
-const seen = new Set<string>();
-for (const slug of allSlugs) {
+const seenGlobal = new Set<string>();
+for (const slug of globalSlugs) {
   if (!slugSchema.safeParse(slug).success) {
     fail("slug format", `invalid slug "${slug}"`);
     slugOk = false;
   }
-  if (seen.has(slug)) {
+  if (seenGlobal.has(slug)) {
     fail("slug uniqueness", `duplicate slug "${slug}"`);
     slugOk = false;
   }
-  seen.add(slug);
+  seenGlobal.add(slug);
+}
+for (const file of codeFiles) {
+  const codes = codesSchema.parse(readJson(path.join(codesDir, file)));
+  const seenInBrand = new Set<string>();
+  for (const code of codes) {
+    if (!slugSchema.safeParse(code.slug).success) {
+      fail("slug format", `invalid code slug "${code.slug}" in ${file}`);
+      slugOk = false;
+    }
+    if (seenInBrand.has(code.slug)) {
+      fail("slug uniqueness", `duplicate code slug "${code.slug}" in ${file}`);
+      slugOk = false;
+    }
+    seenInBrand.add(code.slug);
+  }
 }
 if (slugOk) pass("slug format and uniqueness");
 
@@ -206,6 +212,35 @@ if (brands.length < targets.brands || totalCodes < targets.codes || repairs.leng
   fail("phase content targets", "counts below phase minimum");
 } else {
   pass("phase content targets");
+}
+
+// Top-8 brands (by launch priority) must have ≥15 codes each in Phase 2+
+const TOP_EIGHT_BRANDS = [
+  "goodman",
+  "carrier",
+  "lennox",
+  "trane",
+  "rheem",
+  "bryant",
+  "york",
+  "amana",
+];
+if (BUILD_PHASE >= 2) {
+  let topEightOk = true;
+  for (const slug of TOP_EIGHT_BRANDS) {
+    const codeFile = path.join(codesDir, `${slug}.json`);
+    if (!fs.existsSync(codeFile)) {
+      fail("top-8 brand codes", `${slug}: missing codes file`);
+      topEightOk = false;
+      continue;
+    }
+    const count = codesSchema.parse(readJson(codeFile)).length;
+    if (count < 15) {
+      fail("top-8 brand codes", `${slug}: ${count}/15 codes`);
+      topEightOk = false;
+    }
+  }
+  if (topEightOk) pass("top-8 brands have ≥15 codes each");
 }
 
 console.log(process.exitCode === 1 ? "\nValidation FAILED" : "\nValidation PASSED");

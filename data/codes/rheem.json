@@ -1,0 +1,342 @@
+[
+  {
+    "code": "10",
+    "slug": "10",
+    "title": "Rheem Furnace Code 10: Ignition Lockout",
+    "meaning": "The furnace stopped trying to ignite after multiple failed attempts.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed ignitor",
+      "Dirty flame sensor",
+      "Gas valve fault"
+    ],
+    "diySteps": [
+      "Verify gas supply.",
+      "Reset power once.",
+      "Watch for ignitor glow."
+    ],
+    "whenToCallPro": "Ignition lockouts usually need ignitor or sensor service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "11",
+    "slug": "11",
+    "title": "Rheem Furnace Code 11: Ignition Failure",
+    "meaning": "Flame was not established during the ignition sequence.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Worn ignitor",
+      "Low gas pressure",
+      "Dirty burners"
+    ],
+    "diySteps": [
+      "Confirm gas valve is open.",
+      "Observe one ignition cycle.",
+      "Stop if you smell gas."
+    ],
+    "whenToCallPro": "Persistent ignition failure requires professional diagnosis.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "12",
+    "slug": "12",
+    "title": "Rheem Furnace Code 12: Flame Rollout",
+    "meaning": "The rollout switch opened due to abnormal heat at the burner.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Blocked flue",
+      "Cracked heat exchanger",
+      "Overfiring burners"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout trips indicate a serious combustion issue.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas or see soot, leave the area and call a technician."
+  },
+  {
+    "code": "13",
+    "slug": "13",
+    "title": "Rheem Furnace Code 13: Limit Switch Open",
+    "meaning": "The limit switch opened because the furnace overheated.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty filter",
+      "Weak blower",
+      "Closed vents"
+    ],
+    "diySteps": [
+      "Replace the filter.",
+      "Open vents.",
+      "Cool down before resetting."
+    ],
+    "whenToCallPro": "Repeated limit trips need blower or limit switch service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "14",
+    "slug": "14",
+    "title": "Rheem Furnace Code 14: Igniter Fault",
+    "meaning": "The igniter circuit failed a resistance or timing check.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Cracked ignitor",
+      "Open ignitor wire",
+      "Board fault"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect ignitor for cracks.",
+      "Reseat the connector."
+    ],
+    "whenToCallPro": "Replace a visibly failed ignitor.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "21",
+    "slug": "21",
+    "title": "Rheem Furnace Code 21: Pressure Switch Stuck Open",
+    "meaning": "The pressure switch never closed during inducer operation.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed inducer",
+      "Loose pressure hose"
+    ],
+    "diySteps": [
+      "Inspect vent and hoses.",
+      "Clear condensate trap.",
+      "Reset once."
+    ],
+    "whenToCallPro": "Replace failed pressure switch or inducer.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "22",
+    "slug": "22",
+    "title": "Rheem Furnace Code 22: Pressure Switch Stuck Closed",
+    "meaning": "The pressure switch stayed closed when the inducer was off.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Water in pressure line",
+      "Stuck diaphragm",
+      "Blocked vent"
+    ],
+    "diySteps": [
+      "Clear pressure tubing.",
+      "Inspect vent.",
+      "Reset power."
+    ],
+    "whenToCallPro": "Replace a stuck pressure switch.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "31",
+    "slug": "31",
+    "title": "Rheem Furnace Code 31: Gas Valve Fault",
+    "meaning": "The control detected a gas valve circuit error.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed valve coil",
+      "Board relay fault",
+      "Loose wiring"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Gas valve faults require licensed repair.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "33",
+    "slug": "33",
+    "title": "Rheem Furnace Code 33: Flame Sensor Fault",
+    "meaning": "The flame sensor did not prove flame after ignition.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Weak flame",
+      "Loose wire"
+    ],
+    "diySteps": [
+      "Clean the flame sensor.",
+      "Verify burners light fully.",
+      "Reset and test."
+    ],
+    "whenToCallPro": "Replace the sensor if cleaning fails.",
+    "repairCostLow": 100,
+    "repairCostHigh": 300,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "41",
+    "slug": "41",
+    "title": "Rheem Furnace Code 41: Blower Motor Fault",
+    "meaning": "The blower motor failed to start or tripped on overcurrent.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed motor",
+      "Bad capacitor",
+      "Restricted wheel"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check blower wheel for debris.",
+      "Verify access panel is closed."
+    ],
+    "whenToCallPro": "Blower motor or capacitor replacement is usually needed.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "42",
+    "slug": "42",
+    "title": "Rheem Furnace Code 42: Inducer Motor Fault",
+    "meaning": "The inducer motor did not operate during venting.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized inducer",
+      "Blocked vent",
+      "Failed capacitor"
+    ],
+    "diySteps": [
+      "Clear vent terminal.",
+      "Listen for hum without spin.",
+      "Do not force motor."
+    ],
+    "whenToCallPro": "Inducer motor replacement if it will not start.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "43",
+    "slug": "43",
+    "title": "Rheem Furnace Code 43: Control Board Fault",
+    "meaning": "The control board reported an internal error.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Surge damage",
+      "Moisture on board",
+      "Failed relay"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect for moisture.",
+      "Check condensate drain."
+    ],
+    "whenToCallPro": "Board replacement is typically required.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "44",
+    "slug": "44",
+    "title": "Rheem Furnace Code 44: Low Flame Signal",
+    "meaning": "Flame current dropped below the minimum during operation.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Draft issue",
+      "Low gas pressure"
+    ],
+    "diySteps": [
+      "Clean flame sensor.",
+      "Ensure good airflow.",
+      "Test one cycle."
+    ],
+    "whenToCallPro": "Low flame signals need gas and venting checks.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "45",
+    "slug": "45",
+    "title": "Rheem Furnace Code 45: Rollout Switch Open",
+    "meaning": "The rollout switch tripped during burner operation.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Heat exchanger issue",
+      "Blocked flue",
+      "Flame impingement"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout conditions require combustion inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas, leave the area and call a technician."
+  },
+  {
+    "code": "51",
+    "slug": "51",
+    "title": "Rheem Furnace Code 51: Thermostat Communication Error",
+    "meaning": "The board lost communication with a smart thermostat.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Incompatible stat",
+      "Loose wire",
+      "Board comm fault"
+    ],
+    "diySteps": [
+      "Verify thermostat compatibility.",
+      "Reseat wiring.",
+      "Power-cycle once."
+    ],
+    "whenToCallPro": "May need thermostat or board replacement.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "thermostat-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "61",
+    "slug": "61",
+    "title": "Rheem Furnace Code 61: Condensate Overflow",
+    "meaning": "The condensate safety switch detected a drainage problem.",
+    "severity": "diy-possible",
+    "commonCauses": [
+      "Clogged trap",
+      "Full pump",
+      "Frozen drain"
+    ],
+    "diySteps": [
+      "Clear condensate trap.",
+      "Check drain hose.",
+      "Reset pump if equipped."
+    ],
+    "whenToCallPro": "If drainage is clear, replace the switch or pump.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "condensate-pump-replacement",
+    "dangerNote": null
+  }
+]

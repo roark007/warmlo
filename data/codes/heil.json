@@ -1,0 +1,214 @@
+[
+  {
+    "code": "1 Flash",
+    "slug": "1-flash",
+    "title": "Heil Furnace Code 1 Flash: Ignition Failure",
+    "meaning": "One flash indicates failed ignition during the trial period.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Worn ignitor",
+      "Gas valve issue",
+      "Dirty sensor"
+    ],
+    "diySteps": [
+      "Verify gas on.",
+      "Reset once.",
+      "Watch ignition cycle."
+    ],
+    "whenToCallPro": "Ignition service usually needed.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "2 Flash",
+    "slug": "2-flash",
+    "title": "Heil Furnace Code 2 Flash: Pressure Switch Open",
+    "meaning": "Two flashes mean the pressure switch did not close.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed inducer",
+      "Loose hose"
+    ],
+    "diySteps": [
+      "Inspect vent.",
+      "Check tubing.",
+      "Clear condensate."
+    ],
+    "whenToCallPro": "Switch or inducer replacement may be needed.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "3 Flash",
+    "slug": "3-flash",
+    "title": "Heil Furnace Code 3 Flash: Limit Switch Open",
+    "meaning": "Three flashes signal high-limit switch opened.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty filter",
+      "Weak blower",
+      "Closed vents"
+    ],
+    "diySteps": [
+      "Replace filter.",
+      "Open vents.",
+      "Cool before reset."
+    ],
+    "whenToCallPro": "Limit or blower service if repeated.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "4 Flash",
+    "slug": "4-flash",
+    "title": "Heil Furnace Code 4 Flash: Rollout Trip",
+    "meaning": "Four flashes indicate rollout switch opened.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Heat exchanger issue",
+      "Blocked flue",
+      "Flame rollout"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout requires combustion inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas, leave the area and call a technician."
+  },
+  {
+    "code": "5 Flash",
+    "slug": "5-flash",
+    "title": "Heil Furnace Code 5 Flash: Flame Sense Error",
+    "meaning": "Five flashes mean flame was not proven.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Weak flame",
+      "Loose wire"
+    ],
+    "diySteps": [
+      "Clean sensor.",
+      "Verify ignition.",
+      "Reset once."
+    ],
+    "whenToCallPro": "Sensor replacement if cleaning fails.",
+    "repairCostLow": 100,
+    "repairCostHigh": 300,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  },
+  {
+    "code": "6 Flash",
+    "slug": "6-flash",
+    "title": "Heil Furnace Code 6 Flash: Gas Valve Fault",
+    "meaning": "Six flashes indicate gas valve circuit error.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed valve",
+      "Relay fault",
+      "Loose wiring"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Licensed gas valve service required.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "7 Flash",
+    "slug": "7-flash",
+    "title": "Heil Furnace Code 7 Flash: Blower Fault",
+    "meaning": "Seven flashes signal blower motor error.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed motor",
+      "Bad capacitor",
+      "Debris in wheel"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check blower wheel.",
+      "Verify door closed."
+    ],
+    "whenToCallPro": "Blower motor replacement usually required.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "8 Flash",
+    "slug": "8-flash",
+    "title": "Heil Furnace Code 8 Flash: Inducer Fault",
+    "meaning": "Eight flashes indicate inducer motor problem.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized inducer",
+      "Blocked vent",
+      "Failed capacitor"
+    ],
+    "diySteps": [
+      "Clear vent.",
+      "Listen for hum.",
+      "Do not force motor."
+    ],
+    "whenToCallPro": "Inducer replacement if needed.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "9 Flash",
+    "slug": "9-flash",
+    "title": "Heil Furnace Code 9 Flash: Board Fault",
+    "meaning": "Nine flashes mean control board internal error.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Surge damage",
+      "Moisture",
+      "Failed relay"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect for moisture.",
+      "Check condensate."
+    ],
+    "whenToCallPro": "Board replacement typically required.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "10 Flash",
+    "slug": "10-flash",
+    "title": "Heil Furnace Code 10 Flash: Low Flame",
+    "meaning": "Ten flashes indicate weak flame signal.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Draft",
+      "Low gas"
+    ],
+    "diySteps": [
+      "Clean sensor.",
+      "Open returns.",
+      "Test cycle."
+    ],
+    "whenToCallPro": "Gas and venting checks if persistent.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  }
+]

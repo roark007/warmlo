@@ -1,0 +1,214 @@
+[
+  {
+    "code": "3 Blinks",
+    "slug": "3-blinks",
+    "title": "Coleman Furnace Code 3 Blinks: Pressure Switch Fault",
+    "meaning": "Three blinks indicate the pressure switch did not close during venting.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent",
+      "Failed inducer",
+      "Loose hose"
+    ],
+    "diySteps": [
+      "Inspect vent.",
+      "Check pressure tubing.",
+      "Clear condensate."
+    ],
+    "whenToCallPro": "Switch or inducer service if needed.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "4 Blinks",
+    "slug": "4-blinks",
+    "title": "Coleman Furnace Code 4 Blinks: Open Limit",
+    "meaning": "Four blinks signal the limit switch opened from overheating.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty filter",
+      "Weak blower",
+      "Closed vents"
+    ],
+    "diySteps": [
+      "Replace filter.",
+      "Open vents.",
+      "Cool before reset."
+    ],
+    "whenToCallPro": "Limit or blower service if repeated.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "5 Blinks",
+    "slug": "5-blinks",
+    "title": "Coleman Furnace Code 5 Blinks: Flame Failure",
+    "meaning": "Five blinks mean flame was not detected after ignition.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Failed ignitor",
+      "Gas issue"
+    ],
+    "diySteps": [
+      "Clean sensor.",
+      "Verify gas on.",
+      "Reset once."
+    ],
+    "whenToCallPro": "Ignitor or sensor service needed.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "6 Blinks",
+    "slug": "6-blinks",
+    "title": "Coleman Furnace Code 6 Blinks: Rollout Trip",
+    "meaning": "Six blinks indicate rollout switch opened.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Heat exchanger crack",
+      "Blocked flue",
+      "Flame rollout"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout requires combustion inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas, leave the area and call a technician."
+  },
+  {
+    "code": "7 Blinks",
+    "slug": "7-blinks",
+    "title": "Coleman Furnace Code 7 Blinks: Gas Valve Error",
+    "meaning": "Seven blinks indicate gas valve circuit fault.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed valve",
+      "Relay fault",
+      "Loose wire"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Licensed gas valve repair required.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "8 Blinks",
+    "slug": "8-blinks",
+    "title": "Coleman Furnace Code 8 Blinks: Ignitor Fault",
+    "meaning": "Eight blinks mean ignitor circuit failure.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Cracked ignitor",
+      "Open wire",
+      "Board fault"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect ignitor.",
+      "Reseat plug."
+    ],
+    "whenToCallPro": "Replace ignitor if cracked.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "9 Blinks",
+    "slug": "9-blinks",
+    "title": "Coleman Furnace Code 9 Blinks: Blower Fault",
+    "meaning": "Nine blinks signal blower motor error.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Failed motor",
+      "Bad capacitor",
+      "Obstruction"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check wheel.",
+      "Verify door."
+    ],
+    "whenToCallPro": "Blower replacement usually needed.",
+    "repairCostLow": 450,
+    "repairCostHigh": 1200,
+    "relatedRepairSlug": "blower-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "10 Blinks",
+    "slug": "10-blinks",
+    "title": "Coleman Furnace Code 10 Blinks: Inducer Fault",
+    "meaning": "Ten blinks indicate inducer motor problem.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized inducer",
+      "Blocked vent",
+      "Failed capacitor"
+    ],
+    "diySteps": [
+      "Clear vent.",
+      "Listen for hum.",
+      "Do not force."
+    ],
+    "whenToCallPro": "Inducer replacement if needed.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "11 Blinks",
+    "slug": "11-blinks",
+    "title": "Coleman Furnace Code 11 Blinks: Control Fault",
+    "meaning": "Eleven blinks mean board internal error.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Surge",
+      "Moisture",
+      "Relay failure"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Check for moisture.",
+      "Inspect condensate."
+    ],
+    "whenToCallPro": "Board replacement typically required.",
+    "repairCostLow": 300,
+    "repairCostHigh": 800,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "12 Blinks",
+    "slug": "12-blinks",
+    "title": "Coleman Furnace Code 12 Blinks: Low Flame",
+    "meaning": "Twelve blinks indicate weak flame signal.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty sensor",
+      "Draft",
+      "Low gas"
+    ],
+    "diySteps": [
+      "Clean sensor.",
+      "Open returns.",
+      "Test once."
+    ],
+    "whenToCallPro": "Gas and venting checks if persistent.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  }
+]

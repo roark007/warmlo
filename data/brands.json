@@ -5,5 +5,117 @@
     "logoNote": "text-only, do not use trademarked logos",
     "codeFormat": "Flashing LED, e.g. 4 flashes or E-codes on newer models",
     "notes": "One of the most common budget brands in North America."
+  },
+  {
+    "slug": "carrier",
+    "name": "Carrier",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Two-digit LED flash codes on the control board, e.g. 33 or 13",
+    "notes": "Carrier is a premium HVAC brand widely installed in residential and light commercial buildings."
+  },
+  {
+    "slug": "lennox",
+    "name": "Lennox",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Alternating slow/fast LED flashes decoded as two-digit codes",
+    "notes": "Lennox furnaces are common in colder climates and often use proprietary control boards."
+  },
+  {
+    "slug": "trane",
+    "name": "Trane",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Steady or flashing LED status codes on the integrated control",
+    "notes": "Trane units share engineering with American Standard and are known for durable heat exchangers."
+  },
+  {
+    "slug": "rheem",
+    "name": "Rheem",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "LED flash count or two-digit diagnostic codes on the control",
+    "notes": "Rheem and Ruud furnaces share many components and diagnostic patterns."
+  },
+  {
+    "slug": "bryant",
+    "name": "Bryant",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Two-digit LED codes similar to Carrier, e.g. 23 or 33",
+    "notes": "Bryant is a Carrier sister brand; many error codes match Carrier equivalents."
+  },
+  {
+    "slug": "york",
+    "name": "York",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Blinking amber or red LED patterns on the control module",
+    "notes": "York and Luxaire furnaces use similar Johnson Controls–based diagnostics."
+  },
+  {
+    "slug": "amana",
+    "name": "Amana",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "E-codes on newer models or LED flash counts on older units",
+    "notes": "Amana is a Goodman sister brand; E-code meanings often match Goodman."
+  },
+  {
+    "slug": "ruud",
+    "name": "Ruud",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "LED flash diagnostics on the control board",
+    "notes": "Ruud furnaces share Rheem engineering and many identical fault codes."
+  },
+  {
+    "slug": "american-standard",
+    "name": "American Standard",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Status LED flash codes on the furnace control",
+    "notes": "American Standard and Trane units often use the same control platform."
+  },
+  {
+    "slug": "heil",
+    "name": "Heil",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Single-digit or two-digit LED flash codes",
+    "notes": "Heil is part of the ICP family alongside Tempstar and Comfortmaker."
+  },
+  {
+    "slug": "payne",
+    "name": "Payne",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Two-digit LED codes aligned with Carrier diagnostics",
+    "notes": "Payne is a budget Carrier line; codes often mirror Carrier numbers."
+  },
+  {
+    "slug": "tempstar",
+    "name": "Tempstar",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "LED flash count displayed on the control board",
+    "notes": "Tempstar is an ICP brand with diagnostics similar to Heil and Comfortmaker."
+  },
+  {
+    "slug": "coleman",
+    "name": "Coleman",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Blink code sequences on the integrated furnace control",
+    "notes": "Coleman mobile-home and standard furnaces use distinct blink patterns."
+  },
+  {
+    "slug": "luxaire",
+    "name": "Luxaire",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Amber status LED blink codes on the control module",
+    "notes": "Luxaire is a York sister brand with similar fault diagnostics."
+  },
+  {
+    "slug": "armstrong-air",
+    "name": "Armstrong Air",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Slow/fast LED flash pairs forming two-digit codes",
+    "notes": "Armstrong Air shares Lennox-era control logic on many models."
+  },
+  {
+    "slug": "daikin",
+    "name": "Daikin",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Numeric fault codes on the display or LED blink patterns",
+    "notes": "Daikin gas furnaces are growing in North America and use board-stored fault codes."
   }
 ]
