@@ -1,0 +1,51 @@
+import Link from "next/link";
+import { ArrowRightIcon } from "./icons";
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface BreadcrumbProps {
+  items: BreadcrumbItem[];
+}
+
+export function Breadcrumb({ items }: BreadcrumbProps) {
+  return (
+    <nav aria-label="Breadcrumb">
+      <ol className="flex flex-wrap items-center gap-1 text-[13px] font-medium">
+        {items.map((item, index) => (
+          <li key={index} className="flex items-center gap-1">
+            {index > 0 && <span className="text-ink-500">/</span>}
+            {item.href ? (
+              <Link href={item.href} className="text-pilot-600 hover:underline">
+                {item.label}
+              </Link>
+            ) : (
+              <span className="text-ink-600">{item.label}</span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
+interface BrandCardProps {
+  slug: string;
+  name: string;
+  codeCount: number;
+}
+
+export function BrandCard({ slug, name, codeCount }: BrandCardProps) {
+  return (
+    <Link
+      href={`/fix/${slug}`}
+      className="relative rounded-md border border-line bg-surface p-4 transition-colors hover:border-ink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pilot-600"
+    >
+      <ArrowRightIcon size={16} className="absolute right-4 top-4 text-ink-500" />
+      <p className="font-serif text-lg font-semibold leading-6 text-ink-900">{name}</p>
+      <p className="mt-1 text-[13px] text-ink-600">{codeCount} codes</p>
+    </Link>
+  );
+}

@@ -1,0 +1,171 @@
+{
+  "dataUpdated": "2026-07",
+  "benchmarks": [
+    {
+      "jobType": "furnace-replacement-gas-80",
+      "label": "New gas furnace, standard efficiency (80% AFUE)",
+      "fairLow": 3000,
+      "fairHigh": 5500,
+      "typicalMid": 4250,
+      "factors": [
+        { "id": "difficult-access", "label": "Attic/crawlspace install or tight access", "adjustPct": 15 },
+        { "id": "ductwork-mods", "label": "Ductwork modifications included", "adjustPct": 20 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 },
+        { "id": "premium-brand", "label": "Premium brand (Lennox Signature, Carrier Infinity...)", "adjustPct": 15 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation, permit, and haul-away."
+    },
+    {
+      "jobType": "furnace-replacement-gas-96",
+      "label": "New gas furnace, high-efficiency (96% AFUE)",
+      "fairLow": 4500,
+      "fairHigh": 8000,
+      "typicalMid": 6000,
+      "factors": [
+        { "id": "difficult-access", "label": "Attic/crawlspace install or tight access", "adjustPct": 15 },
+        { "id": "ductwork-mods", "label": "Ductwork modifications included", "adjustPct": 20 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 },
+        { "id": "premium-brand", "label": "Premium brand (Lennox Signature, Carrier Infinity...)", "adjustPct": 15 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation, permit, and haul-away."
+    },
+    {
+      "jobType": "furnace-replacement-electric",
+      "label": "New electric furnace",
+      "fairLow": 2000,
+      "fairHigh": 4500,
+      "typicalMid": 3250,
+      "factors": [
+        { "id": "difficult-access", "label": "Attic/crawlspace install or tight access", "adjustPct": 15 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation and permit."
+    },
+    {
+      "jobType": "heat-pump-replacement",
+      "label": "Heat pump replacement",
+      "fairLow": 4000,
+      "fairHigh": 9000,
+      "typicalMid": 6500,
+      "factors": [
+        { "id": "difficult-access", "label": "Attic/crawlspace install or tight access", "adjustPct": 15 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 },
+        { "id": "premium-brand", "label": "Premium brand (Lennox Signature, Carrier Infinity...)", "adjustPct": 15 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation and permit."
+    },
+    {
+      "jobType": "ac-condenser-2-3-ton",
+      "label": "AC condenser replacement, 2–3 ton",
+      "fairLow": 2500,
+      "fairHigh": 5000,
+      "typicalMid": 3750,
+      "factors": [
+        { "id": "difficult-access", "label": "Difficult access or rooftop install", "adjustPct": 15 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 },
+        { "id": "premium-brand", "label": "Premium brand (Lennox Signature, Carrier Infinity...)", "adjustPct": 15 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation and refrigerant charge."
+    },
+    {
+      "jobType": "ac-condenser-4-5-ton",
+      "label": "AC condenser replacement, 4–5 ton",
+      "fairLow": 3500,
+      "fairHigh": 6500,
+      "typicalMid": 5000,
+      "factors": [
+        { "id": "difficult-access", "label": "Difficult access or rooftop install", "adjustPct": 15 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 },
+        { "id": "premium-brand", "label": "Premium brand (Lennox Signature, Carrier Infinity...)", "adjustPct": 15 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation and refrigerant charge."
+    },
+    {
+      "jobType": "full-system-furnace-ac",
+      "label": "Full HVAC system (furnace + AC)",
+      "fairLow": 7500,
+      "fairHigh": 15000,
+      "typicalMid": 11000,
+      "factors": [
+        { "id": "difficult-access", "label": "Attic/crawlspace install or tight access", "adjustPct": 15 },
+        { "id": "ductwork-mods", "label": "Ductwork modifications included", "adjustPct": 20 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 },
+        { "id": "premium-brand", "label": "Premium brand (Lennox Signature, Carrier Infinity...)", "adjustPct": 15 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation, permit, and haul-away."
+    },
+    {
+      "jobType": "full-system-heat-pump",
+      "label": "Full system (heat pump)",
+      "fairLow": 8000,
+      "fairHigh": 16000,
+      "typicalMid": 12000,
+      "factors": [
+        { "id": "difficult-access", "label": "Attic/crawlspace install or tight access", "adjustPct": 15 },
+        { "id": "ductwork-mods", "label": "Ductwork modifications included", "adjustPct": 20 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation and permit."
+    },
+    {
+      "jobType": "boiler-replacement",
+      "label": "Boiler replacement",
+      "fairLow": 4000,
+      "fairHigh": 10000,
+      "typicalMid": 7000,
+      "factors": [
+        { "id": "difficult-access", "label": "Basement or tight access install", "adjustPct": 15 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation and permit."
+    },
+    {
+      "jobType": "mini-split-single",
+      "label": "Mini-split, single zone",
+      "fairLow": 3000,
+      "fairHigh": 6000,
+      "typicalMid": 4500,
+      "factors": [
+        { "id": "long-line-set", "label": "Long refrigerant line run", "adjustPct": 15 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation and electrical hookup."
+    },
+    {
+      "jobType": "mini-split-multi",
+      "label": "Mini-split, multi zone",
+      "fairLow": 6000,
+      "fairHigh": 15000,
+      "typicalMid": 10000,
+      "factors": [
+        { "id": "long-line-set", "label": "Long refrigerant line run", "adjustPct": 15 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation and electrical hookup."
+    },
+    {
+      "jobType": "water-heater-tank",
+      "label": "Water heater replacement (tank)",
+      "fairLow": 1000,
+      "fairHigh": 2500,
+      "typicalMid": 1750,
+      "factors": [
+        { "id": "difficult-access", "label": "Tight access or code upgrades required", "adjustPct": 15 },
+        { "id": "high-cost-metro", "label": "High-cost metro area (NYC, SF, Boston, Seattle...)", "adjustPct": 25 }
+      ],
+      "redFlagAbovePct": 40,
+      "notes": "Includes standard installation, permit, and haul-away."
+    }
+  ]
+}

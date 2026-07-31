@@ -1,0 +1,135 @@
+[
+  {
+    "code": "E4",
+    "slug": "e4",
+    "title": "Goodman Furnace Code E4: Open High-Limit Switch",
+    "meaning": "The furnace overheated and the high-limit safety switch shut it down to prevent damage or fire.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Clogged air filter restricting airflow",
+      "Blocked or closed supply vents",
+      "Failing blower motor"
+    ],
+    "diySteps": [
+      "Turn off the furnace at the switch.",
+      "Check the air filter; replace if dirty (most common cause).",
+      "Open all supply vents in the house.",
+      "Restore power and see if the code clears."
+    ],
+    "whenToCallPro": "If the code returns after a filter change, the blower motor or limit switch likely needs service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "E0",
+    "slug": "e0",
+    "title": "Goodman Furnace Code E0: Ignition Failure",
+    "meaning": "The furnace tried to light the burners but ignition did not occur after several attempts.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Worn hot-surface ignitor",
+      "Closed gas valve or supply issue",
+      "Faulty flame sensor sending false readings"
+    ],
+    "diySteps": [
+      "Confirm the gas supply valve near the furnace is fully open.",
+      "Check that the thermostat is calling for heat.",
+      "Reset power to the furnace and observe one ignition cycle.",
+      "If the ignitor glows but burners never light, stop and call a technician."
+    ],
+    "whenToCallPro": "If the ignitor glows orange but no flame appears, or if you smell gas at any point, call a licensed HVAC technician.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "E1",
+    "slug": "e1",
+    "title": "Goodman Furnace Code E1: Gas Valve Relay Error",
+    "meaning": "The control board detected a problem with the gas valve circuit and locked out the furnace for safety.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed gas valve solenoid",
+      "Loose or corroded wiring at the gas valve",
+      "Control board relay failure"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Gas valve and combustion issues require a licensed technician. Do not attempt to bypass safety circuits.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+  },
+  {
+    "code": "E2",
+    "slug": "e2",
+    "title": "Goodman Furnace Code E2: Pressure Switch Failure",
+    "meaning": "The pressure switch did not close when the inducer motor ran, so the furnace will not allow ignition.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked condensate drain or trap",
+      "Cracked or disconnected vent pipe",
+      "Failed pressure switch"
+    ],
+    "diySteps": [
+      "Turn off power to the furnace.",
+      "Inspect the vent pipe for obvious blockages or disconnections.",
+      "Check the condensate drain line for clogs.",
+      "Restore power and test; if the code persists, the switch or inducer may need replacement."
+    ],
+    "whenToCallPro": "If the venting looks intact and the drain is clear but the code remains, a technician should test the pressure switch and inducer motor.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "E3",
+    "slug": "e3",
+    "title": "Goodman Furnace Code E3: Inducer Motor Fault",
+    "meaning": "The inducer motor did not start or did not reach the speed needed to safely vent combustion gases.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Seized or worn inducer motor",
+      "Blocked exhaust vent",
+      "Failed motor capacitor"
+    ],
+    "diySteps": [
+      "Turn off power at the furnace switch.",
+      "Listen for humming without the fan spinning — that can indicate a seized motor.",
+      "Check the exhaust vent outlet for blockages such as debris or ice.",
+      "If the motor does not spin freely by hand, do not force it — schedule service."
+    ],
+    "whenToCallPro": "Inducer motors handle combustion exhaust. If the motor will not start after clearing the vent, have a technician diagnose and replace it.",
+    "repairCostLow": 400,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "inducer-motor-replacement",
+    "dangerNote": null
+  },
+  {
+    "code": "E5",
+    "slug": "e5",
+    "title": "Goodman Furnace Code E5: Flame Sensor Issue",
+    "meaning": "The flame sensor did not detect a stable flame after ignition, causing the furnace to shut down.",
+    "severity": "diy-possible",
+    "commonCauses": [
+      "Corroded or dirty flame sensor rod",
+      "Weak or intermittent gas supply",
+      "Loose sensor wire connection"
+    ],
+    "diySteps": [
+      "Turn off power to the furnace.",
+      "Locate the thin metal rod near the burners (the flame sensor).",
+      "Gently clean the rod with fine steel wool or emery cloth.",
+      "Reinstall, restore power, and run a heat cycle."
+    ],
+    "whenToCallPro": "If cleaning the sensor does not fix the problem after two attempts, the sensor or gas valve may need professional diagnosis.",
+    "repairCostLow": 100,
+    "repairCostHigh": 300,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null
+  }
+]
