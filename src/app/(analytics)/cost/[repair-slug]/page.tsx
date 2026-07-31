@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { CostRangeDisplay } from "@/components/CostRangeDisplay";
 import { CtaBlock } from "@/components/CtaBlock";
 import { FreshnessStamp } from "@/components/FreshnessStamp";
 import { CodeTableRow } from "@/components/CodeTableRow";
@@ -60,101 +59,162 @@ export default async function CostPage({
   const laborHigh = Math.max(0, repair.costHigh - repair.partCostLow);
 
   return (
-    <article className="mx-auto max-w-[720px] px-5 pb-16 md:px-8">
-      <Breadcrumb
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Costs" },
-          { label: repair.name },
-        ]}
-      />
-
-      <h1 className="mt-4 font-serif text-[30px] font-bold leading-9 text-ink-900 md:text-[40px] md:leading-[44px]">
-        {repair.name} Cost ({year})
-      </h1>
-
-      <div className="mt-6">
-        <CostRangeDisplay
-          costLow={repair.costLow}
-          costHigh={repair.costHigh}
-          repairSlug={repair.slug}
-          repairName={repair.name}
-          dataUpdated={dataUpdated}
-          variant="large"
-        />
-      </div>
-
-      <div className="reveal mt-5 rounded-md border border-line bg-surface p-5">
-        <h3 className="font-serif text-xl font-bold text-ink-900">
-          Where the money goes
-        </h3>
-        <div className="mt-3 flex h-3 overflow-hidden rounded-full">
-          <div className="bg-ink-400" style={{ width: `${partShare}%` }} />
-          <div className="bg-ink-700" style={{ width: `${100 - partShare}%` }} />
+    <div className="min-h-screen text-text-on-dark">
+      <section className="relative overflow-hidden px-[var(--pad-page-x)] pb-[clamp(38px,5vw,60px)] pt-[clamp(28px,4vw,48px)]">
+        <div className="hero-glow-field" aria-hidden="true">
+          <div className="hero-glow-primary" />
         </div>
-        <div className="mt-2.5 flex flex-col gap-4 sm:flex-row sm:gap-4">
-          <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-[2px] bg-ink-400" />
-            <span className="text-sm font-medium text-ink-900">Part</span>
-            <span className="text-sm text-ink-600 [font-feature-settings:'tnum']">
-              {formatCurrency(repair.partCostLow)}–{formatCurrency(repair.partCostHigh)}
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-[2px] bg-ink-700" />
-            <span className="text-sm font-medium text-ink-900">Labor</span>
-            <span className="text-sm text-ink-600 [font-feature-settings:'tnum']">
-              {formatCurrency(laborLow)}–{formatCurrency(laborHigh)}
-            </span>
+        <div className="relative z-[1] mx-auto max-w-[920px]">
+          <Breadcrumb
+            variant="dark"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Costs" },
+              { label: repair.name },
+            ]}
+          />
+
+          <div className="mt-[22px] grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] items-center gap-[clamp(24px,4vw,48px)]">
+            <div>
+              <div className="mb-3.5 text-eyebrow font-semibold uppercase tracking-eyebrow text-[#ff9a4d]">
+                Typical repair cost
+              </div>
+              <h1 className="font-display text-[clamp(30px,4.6vw,46px)] font-bold leading-[1.02] tracking-[-0.03em] text-text-on-dark">
+                {repair.name} Cost{" "}
+                <span className="text-text-on-dark-4">({year})</span>
+              </h1>
+              <p className="mt-4 max-w-[46ch] text-lead leading-[1.6] text-text-on-dark-3">
+                {repair.description}
+              </p>
+            </div>
+
+            <div
+              className="mx-auto w-[min(360px,90vw)] justify-self-center rounded-[22px] border border-[rgba(255,170,84,0.18)] p-[26px]"
+              style={{
+                background: "var(--grad-panel-dark)",
+                boxShadow: "var(--shadow-panel)",
+              }}
+            >
+              <div className="mb-2.5 text-[11px] uppercase tracking-[0.22em] text-[#7a6c5c]">
+                National range
+              </div>
+              <div className="font-display text-[clamp(44px,7vw,60px)] font-bold leading-none tracking-[-0.02em] text-text-on-dark [font-feature-settings:'tnum']">
+                {formatCurrency(repair.costLow)}
+                <span className="text-[#ff9a4d]">–</span>
+                {formatCurrency(repair.costHigh)}
+              </div>
+              <div className="mt-5">
+                <div className="bar-grow flex h-2.5 overflow-hidden rounded-pill bg-[rgba(239,231,219,0.1)]">
+                  <div className="bg-[#c99a5e]" style={{ width: `${partShare}%` }} />
+                  <div
+                    className="bg-[linear-gradient(90deg,#ff8a3c,#ec5d1a)]"
+                    style={{ width: `${100 - partShare}%` }}
+                  />
+                </div>
+                <div className="mt-3 flex justify-between text-[12.5px] text-text-on-dark-3 [font-feature-settings:'tnum']">
+                  <span>
+                    Part {formatCurrency(repair.partCostLow)}–{formatCurrency(repair.partCostHigh)}
+                  </span>
+                  <span>
+                    Labor {formatCurrency(laborLow)}–{formatCurrency(laborHigh)}
+                  </span>
+                </div>
+              </div>
+              <div className="mt-4 flex items-center gap-2 border-t border-[var(--line-on-dark)] pt-3.5 text-[12.5px] text-text-on-dark-4">
+                <FreshnessStamp dataUpdated={dataUpdated} />
+                <span>· labor {repair.laborHours} hrs</span>
+              </div>
+            </div>
           </div>
         </div>
-        <p className="mt-2 text-[13px] text-ink-600">
-          Typical labor time: {repair.laborHours} hrs
-        </p>
-      </div>
-
-      <p className="mt-8 max-w-[68ch] text-base text-ink-700">{repair.description}</p>
-
-      <section className="reveal mt-8">
-        <h3 className="font-serif text-xl font-bold text-ink-900">
-          You might need this if…
-        </h3>
-        <ul className="mt-4 space-y-4">
-          {repair.signals.map((signal) => (
-            <li key={signal} className="flex gap-4 text-[15px] leading-[22px] text-ink-700">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-[2px] bg-ink-900" />
-              {signal}
-            </li>
-          ))}
-        </ul>
       </section>
 
-      <span className="mt-6 inline-flex rounded-full border-[1.5px] border-line-strong bg-surface px-3 py-1 text-xs font-semibold text-ink-700">
-        DIY difficulty: {repair.diyDifficulty}
-      </span>
+      <main id="main-content" className="paper-sheet">
+        <article className="mx-auto max-w-[820px] px-[var(--pad-page-x)] py-[clamp(40px,5vw,64px)]">
+          <section className="reveal mb-[clamp(32px,4vw,48px)] rounded-[20px] border border-[var(--line-on-paper)] bg-paper-2 p-[clamp(22px,3vw,30px)] shadow-[var(--shadow-card)]">
+            <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
+              Where the money goes
+            </h2>
+            <div className="mt-[18px] flex h-3.5 overflow-hidden rounded-pill bg-[#efe7db]">
+              <div className="bg-[#c99a5e]" style={{ width: `${partShare}%` }} />
+              <div className="bg-ember-deeper" style={{ width: `${100 - partShare}%` }} />
+            </div>
+            <div className="mt-3.5 flex flex-wrap gap-6 text-sm text-text-body">
+              <span className="inline-flex items-center gap-2">
+                <span className="h-3 w-3 rounded-[3px] bg-[#c99a5e]" />
+                Part{" "}
+                <strong className="text-text-strong [font-feature-settings:'tnum']">
+                  {formatCurrency(repair.partCostLow)}–{formatCurrency(repair.partCostHigh)}
+                </strong>
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-3 w-3 rounded-[3px] bg-ember-deeper" />
+                Labor{" "}
+                <strong className="text-text-strong [font-feature-settings:'tnum']">
+                  {formatCurrency(laborLow)}–{formatCurrency(laborHigh)}
+                </strong>
+              </span>
+              <span className="text-text-muted">Typical labor time: {repair.laborHours} hrs</span>
+            </div>
+          </section>
 
-      <div className="reveal mt-10">
-        <CtaBlock repairSlug={repair.slug} />
-      </div>
+          <section className="reveal mb-[clamp(32px,4vw,48px)]">
+            <div className="mb-4 flex flex-wrap items-center gap-3">
+              <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
+                You might need this if…
+              </h2>
+              <span className="inline-flex items-center gap-2 rounded-pill bg-[var(--pro-wash)] px-3 py-1.5 text-[12.5px] font-semibold text-pro-ink">
+                <span className="h-[7px] w-[7px] rounded-full bg-pro-solid" />
+                DIY difficulty: {repair.diyDifficulty}
+              </span>
+            </div>
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-3">
+              {repair.signals.map((signal) => (
+                <div
+                  key={signal}
+                  className="flex items-center gap-3 rounded-[16px] border border-[var(--line-on-paper)] bg-paper-2 p-[18px_20px] text-[15.5px] text-[#2f2a24]"
+                >
+                  <span className="grid h-[34px] w-[34px] shrink-0 place-items-center rounded-[10px] bg-[rgba(255,122,45,0.12)] text-base text-ember-deeper">
+                    •
+                  </span>
+                  {signal}
+                </div>
+              ))}
+            </div>
+          </section>
 
-      {relatedCodes.length > 0 && (
-        <section className="reveal mt-10">
-          <h2 className="font-serif text-2xl font-bold text-ink-900">Related error codes</h2>
-          <div className="mt-4 overflow-hidden rounded-md border border-line bg-surface">
-            {relatedCodes.map(({ brand, code }) => (
-              <CodeTableRow key={`${brand.slug}-${code.slug}`} brandSlug={brand.slug} code={code} />
-            ))}
+          <section className="reveal mb-[clamp(32px,4vw,48px)]">
+            <div className="section-eyebrow mb-3">The part</div>
+            <p className="max-w-[68ch] text-base leading-[1.65] text-text-body">{repair.description}</p>
+          </section>
+
+          <div className="reveal mb-[clamp(32px,4vw,48px)]">
+            <CtaBlock repairSlug={repair.slug} />
           </div>
-        </section>
-      )}
 
-      <div className="mt-8">
-        <FreshnessStamp dataUpdated={dataUpdated} />
-      </div>
+          {relatedCodes.length > 0 && (
+            <section className="reveal mb-[clamp(32px,4vw,48px)]">
+              <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
+                Related error codes
+              </h2>
+              <div className="mt-4 grid grid-cols-[repeat(auto-fill,minmax(min(100%,240px),1fr))] gap-[11px]">
+                {relatedCodes.map(({ brand, code }) => (
+                  <CodeTableRow
+                    key={`${brand.slug}-${code.slug}`}
+                    brandSlug={brand.slug}
+                    code={code}
+                    compact
+                  />
+                ))}
+              </div>
+            </section>
+          )}
 
-      <p className="mt-12 max-w-[68ch] border-t border-line pt-5 text-[13px] leading-5 text-ink-600">
-        {CODE_PAGE_DISCLAIMER}
-      </p>
-    </article>
+          <p className="mt-[clamp(24px,3vw,36px)] rounded-[14px] border border-[rgba(23,18,14,0.08)] bg-[rgba(23,18,14,0.04)] p-[18px_20px] text-[13.5px] leading-[1.6] text-text-faint">
+            {CODE_PAGE_DISCLAIMER}
+          </p>
+        </article>
+      </main>
+    </div>
   );
 }

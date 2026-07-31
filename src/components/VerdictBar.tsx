@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { VerdictBucket } from "@/lib/schemas";
-import { VERDICT_DOT_COLORS, formatUsd } from "@/lib/verdictCopy";
-import { LedChip } from "./LedChip";
+import { VERDICT_INK_COLORS, formatUsd } from "@/lib/verdictCopy";
 
 interface VerdictBarProps {
   adjustedLow: number;
@@ -13,8 +12,13 @@ interface VerdictBarProps {
   verdict: VerdictBucket;
 }
 
-function scaleBounds(adjustedLow: number, adjustedHigh: number, redFlagAbovePct: number, price: number) {
-  const scaleMin = Math.floor((0.6 * adjustedLow) / 500) * 500;
+function scaleBounds(
+  adjustedLow: number,
+  adjustedHigh: number,
+  redFlagAbovePct: number,
+  price: number
+) {
+  const scaleMin = 0;
   const redFlagAt = adjustedHigh * (1 + redFlagAbovePct / 100);
   const scaleMax = Math.ceil(Math.max(redFlagAt * 1.15, price * 1.1) / 500) * 500;
   return { scaleMin, redFlagAt, scaleMax };
@@ -25,21 +29,10 @@ function toPct(value: number, scaleMin: number, scaleMax: number): number {
   return ((value - scaleMin) / (scaleMax - scaleMin)) * 100;
 }
 
-function zoneStyle(start: number, end: number, scaleMin: number, scaleMax: number) {
-  const left = toPct(start, scaleMin, scaleMax);
-  const right = toPct(end, scaleMin, scaleMax);
-  return { left: `${left}%`, width: `${Math.max(0, right - left)}%` };
-}
-
 function formatTickLabel(n: number): string {
   if (n >= 1000) return `$${Math.round(n / 1000)}k`;
   return `$${n}`;
 }
-
-/** Needle sweep: 550ms expo-out from the scale's left edge to the quote. */
-const NEEDLE_TRANSITION = "left 550ms cubic-bezier(0.22, 1, 0.36, 1)";
-const FLAG_TRANSITION =
-  "left 550ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms ease-out 120ms, translate 300ms ease-out 120ms";
 
 export function VerdictBar({
   adjustedLow,
@@ -48,154 +41,95 @@ export function VerdictBar({
   price,
   verdict,
 }: VerdictBarProps) {
-  // Reduced-motion users start revealed: the bar renders final and static.
-  const [revealed, setRevealed] = useState(() =>
-    typeof window !== "undefined"
-      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      : false
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [revealed, setRevealed] = useState(false);
+  const [reducedMotion] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
   );
-  const { scaleMin, redFlagAt, scaleMax } = scaleBounds(
+
+  const { scaleMin, scaleMax } = scaleBounds(
     adjustedLow,
     adjustedHigh,
     redFlagAbovePct,
     price
   );
 
-  const needlePct = Math.min(98, Math.max(2, toPct(price, scaleMin, scaleMax)));
+  const needlePct = Math.min(97, Math.max(3, toPct(price, scaleMin, scaleMax)));
   const fairLeft = toPct(adjustedLow, scaleMin, scaleMax);
   const fairWidth = toPct(adjustedHigh, scaleMin, scaleMax) - fairLeft;
-  const fairCenter = fairLeft + fairWidth / 2;
-  const needleNearFairCenter =
-    Math.abs(needlePct - fairCenter) < 12 ||
-    (needlePct >= fairLeft && needlePct <= fairLeft + fairWidth);
+  const ink = VERDICT_INK_COLORS[verdict];
 
   useEffect(() => {
-    if (revealed) return;
-    const t = window.setTimeout(() => setRevealed(true), 80);
-    return () => window.clearTimeout(t);
-  }, [revealed]);
+    if (reducedMotion || revealed) return;
+    const el = containerRef.current;
+    if (!el) return;
 
-  // Pre-reveal, the needle rests at the left edge of the scale; the sweep
-  // to the quote happens once when `revealed` flips.
-  const pos = revealed ? needlePct : 2;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setRevealed(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [reducedMotion, revealed]);
 
-  const ticks: number[] = [];
-  for (let t = scaleMin; t <= scaleMax; t += 500) ticks.push(t);
+  const showNeedle = revealed || reducedMotion;
+  const animateNeedle = showNeedle && !reducedMotion;
 
-  const summary = `Your quote of ${formatUsd(price)} is ${
-    verdict === "fair" ? "within" : verdict === "high" ? "above" : "outside"
-  } the fair range of ${formatUsd(adjustedLow)} to ${formatUsd(adjustedHigh)} for this job.`;
-
-  const dotColor = VERDICT_DOT_COLORS[verdict];
+  const summary = `Your quote of ${formatUsd(price)} is compared against a fair range of ${formatUsd(adjustedLow)} to ${formatUsd(adjustedHigh)}.`;
 
   return (
-    <figure role="img" aria-label={summary} className="mx-auto w-full max-w-[600px]">
-      <div className="relative h-[34px]">
-        {!needleNearFairCenter && (
-          <span
-            className="pointer-events-none absolute top-0 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#166534]"
-            style={{
-              left: `${fairCenter}%`,
-              transform: "translateX(-50%)",
-            }}
-          >
-            Fair range
-          </span>
-        )}
+    <figure ref={containerRef} role="img" aria-label={summary} className="w-full">
+      <div className="relative pt-11">
         <div
-          className={`absolute top-0 -translate-x-1/2 ${
-            revealed ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
-          }`}
-          style={{ left: `${pos}%`, transition: FLAG_TRANSITION }}
+          className={`absolute bottom-full ${showNeedle ? (animateNeedle ? "needle-drop" : "") : "opacity-0"}`}
+          style={{ left: `${needlePct}%`, transform: "translateX(-50%)" }}
         >
-          <LedChip>{formatUsd(price)}</LedChip>
+          <div
+            className="whitespace-nowrap rounded-[8px] px-[11px] py-[5px] text-[13px] font-bold text-white"
+            style={{ background: ink, boxShadow: `0 8px 18px -8px ${ink}` }}
+          >
+            {formatUsd(price)}
+          </div>
+          <div
+            className="mx-auto mt-0.5 h-[18px] w-0.5"
+            style={{ background: ink, boxShadow: `0 0 8px ${ink}` }}
+          />
         </div>
-      </div>
 
-      <div
-        className="mx-auto h-2 w-3 -translate-x-1/2 bg-ink-900"
-        style={{ left: `${pos}%`, width: "1.5px", height: "8px", transition: NEEDLE_TRANSITION }}
-      />
-
-      <div className="relative mx-auto mt-0 h-[30px] w-full">
         <div
-          className="absolute left-1/2 top-1/2 h-[30px] w-[3px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-ink-900 md:w-[3.5px]"
-          style={{ left: `${pos}%`, transition: NEEDLE_TRANSITION }}
-        />
-        <div
-          className={`absolute top-1/2 h-2 w-2.5 -translate-x-1/2 translate-y-[10px] rounded-full ring-2 ring-surface md:h-2.5 md:w-2.5 ${
-            revealed ? "vb-dot-in" : ""
-          }`}
+          className={`relative h-4 overflow-hidden rounded-pill bg-[#e8e0d3] ${showNeedle ? (animateNeedle ? "bar-grow" : "") : "scale-x-0"}`}
           style={{
-            left: `${pos}%`,
-            backgroundColor: dotColor,
-            color: dotColor,
-            scale: revealed ? undefined : "0",
-            transition: NEEDLE_TRANSITION,
+            backgroundImage:
+              "linear-gradient(90deg,#0ea5a0 0%,#0ea5a0 18%,#1f9d63 18%,#1f9d63 34%,#e0871a 34%,#e0871a 66%,#e0492e 82%,#e0492e 100%)",
           }}
         />
-      </div>
 
-      <div className="relative mt-0 h-2 w-full overflow-hidden rounded-full bg-track md:h-2.5">
         <div
-          className="absolute inset-y-0 bg-[#FEE2E2]"
-          style={zoneStyle(scaleMin, adjustedLow * 0.8, scaleMin, scaleMax)}
-        />
-        <div
-          className="absolute inset-y-0 bg-[#DCFCE7]"
-          style={zoneStyle(adjustedLow * 0.8, adjustedLow, scaleMin, scaleMax)}
-        />
-        <div
-          className={`absolute -top-0.5 bottom-[-2px] origin-left rounded-full bg-[#16A34A] transition-[scale] duration-[450ms] ease-expo delay-[120ms] md:-top-0.5 md:bottom-[-3px] ${
-            revealed ? "scale-x-100" : "scale-x-0"
-          }`}
+          className="pointer-events-none absolute top-11 h-4 rounded-[6px] border-2"
           style={{
             left: `${fairLeft}%`,
             width: `${fairWidth}%`,
-            height: "12px",
+            borderColor:
+              verdict === "fair" ? "rgba(19,115,70,0.9)" : "rgba(23,18,14,0.5)",
+            boxShadow: verdict === "fair" ? "0 0 14px rgba(31,157,99,0.4)" : undefined,
           }}
         />
-        <div
-          className="absolute inset-y-0 bg-[#FDE68A]"
-          style={zoneStyle(adjustedHigh, redFlagAt, scaleMin, scaleMax)}
-        />
-        <div
-          className="absolute inset-y-0 bg-[#FEE2E2]"
-          style={zoneStyle(redFlagAt, scaleMax, scaleMin, scaleMax)}
-        />
-      </div>
 
-      <div className="relative mt-1 h-5 w-full">
-        {ticks.map((t) => {
-          const pctVal = toPct(t, scaleMin, scaleMax);
-          const showLabel = t % 2000 === 0;
-          return (
-            <div
-              key={t}
-              className="absolute top-0 -translate-x-1/2"
-              style={{ left: `${pctVal}%` }}
-            >
-              <div className="mx-auto h-[5px] w-px bg-line-strong" />
-              {showLabel && (
-                <span className="mt-0.5 block text-xs text-ink-600 [font-feature-settings:'tnum']">
-                  {formatTickLabel(t)}
-                </span>
-              )}
-            </div>
-          );
-        })}
+        <div className="mt-2 flex justify-between text-[11.5px] text-text-muted [font-feature-settings:'tnum']">
+          <span>{formatTickLabel(scaleMin)}</span>
+          <span className="font-semibold text-safe-ink">
+            Fair range {formatUsd(adjustedLow)}–{formatUsd(adjustedHigh)}
+          </span>
+          <span>{formatTickLabel(scaleMax)}</span>
+        </div>
       </div>
-
-      <div className="mt-1 flex justify-between text-xs text-ink-600 [font-feature-settings:'tnum']">
-        <span>{formatTickLabel(scaleMin)}</span>
-        <span>{formatTickLabel(scaleMax)}</span>
-      </div>
-
-      {needleNearFairCenter && (
-        <p className="mt-1 text-center text-[11px] font-semibold uppercase tracking-[0.08em] text-[#166534]">
-          Fair range
-        </p>
-      )}
     </figure>
   );
 }

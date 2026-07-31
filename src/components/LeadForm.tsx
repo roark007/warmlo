@@ -12,9 +12,16 @@ interface LeadFormProps {
   jobLabel: string;
   quotedPrice?: number;
   zipPrefill?: string;
+  variant?: "light" | "dark";
 }
 
-export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: LeadFormProps) {
+export function LeadForm({
+  jobType,
+  jobLabel,
+  quotedPrice,
+  zipPrefill = "",
+  variant = "light",
+}: LeadFormProps) {
   const [name, setName] = useState("");
   const [zip, setZip] = useState(zipPrefill);
   const [phone, setPhone] = useState("");
@@ -79,12 +86,14 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
     }
   }
 
+  const isDark = variant === "dark";
+
   if (success) {
     return (
-      <div className="mt-5 rounded-md border border-[#BBF7D0] border-l-4 border-l-[#16A34A] bg-[#F0FDF4] p-4">
+      <div className="mt-5 rounded-md border border-[rgba(31,157,99,0.28)] bg-[var(--safe-wash)] p-4">
         <div className="flex gap-3">
-          <CheckIcon size={20} className="shrink-0 text-[#16A34A]" />
-          <p className="text-base font-semibold text-[#14532D]">
+          <CheckIcon size={20} className="shrink-0 text-safe-solid" />
+          <p className="text-base font-semibold text-safe-ink">
             Thanks — we&apos;ll connect you with local pros shortly.
           </p>
         </div>
@@ -93,9 +102,16 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-5 rounded-md border border-line bg-surface p-5 md:p-7">
+    <form
+      onSubmit={handleSubmit}
+      className={`mt-5 rounded-[16px] border p-5 md:p-6 ${
+        isDark
+          ? "border-[var(--line-on-dark)] bg-[rgba(239,231,219,0.04)]"
+          : "border-[var(--line-on-paper)] bg-paper-2"
+      }`}
+    >
       <div className="flex flex-col gap-3.5">
-        <Field label="Name" error={fieldErrors.name}>
+        <Field label="Name" error={fieldErrors.name} dark={isDark}>
           <input
             id="lead-name"
             type="text"
@@ -103,10 +119,10 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className={inputClass(!!fieldErrors.name)}
+            className={inputClass(!!fieldErrors.name, isDark)}
           />
         </Field>
-        <Field label="ZIP code" error={fieldErrors.zip}>
+        <Field label="ZIP code" error={fieldErrors.zip} dark={isDark}>
           <input
             id="lead-zip"
             type="text"
@@ -116,10 +132,10 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
             required
             value={zip}
             onChange={(e) => setZip(e.target.value.replace(/\D/g, "").slice(0, 5))}
-            className={inputClass(!!fieldErrors.zip)}
+            className={inputClass(!!fieldErrors.zip, isDark)}
           />
         </Field>
-        <Field label="Phone" error={fieldErrors.phone}>
+        <Field label="Phone" error={fieldErrors.phone} dark={isDark}>
           <input
             id="lead-phone"
             type="tel"
@@ -128,10 +144,10 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className={inputClass(!!fieldErrors.phone)}
+            className={inputClass(!!fieldErrors.phone, isDark)}
           />
         </Field>
-        <Field label="Email" error={fieldErrors.email}>
+        <Field label="Email" error={fieldErrors.email} dark={isDark}>
           <input
             id="lead-email"
             type="email"
@@ -140,19 +156,27 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={inputClass(!!fieldErrors.email)}
+            className={inputClass(!!fieldErrors.email, isDark)}
           />
         </Field>
-        <Field label="Job type">
+        <Field label="Job type" dark={isDark}>
           <input
             readOnly
             value={jobLabel}
-            className="h-[52px] w-full rounded-md border border-line bg-[#F5F1EA] px-3.5 text-base text-ink-700"
+            className={`h-[52px] w-full rounded-[12px] border px-3.5 text-base ${
+              isDark
+                ? "border-[var(--line-on-dark)] bg-[rgba(239,231,219,0.06)] text-text-on-dark-3"
+                : "border-[var(--line-on-paper)] bg-paper-sink text-text-body"
+            }`}
           />
         </Field>
-        <Field label="Quoted price (optional)" error={fieldErrors.quotedPrice}>
+        <Field label="Quoted price (optional)" error={fieldErrors.quotedPrice} dark={isDark}>
           <div className="relative">
-            <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-base font-semibold text-ink-500">
+            <span
+              className={`pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-base font-semibold ${
+                isDark ? "text-text-on-dark-4" : "text-text-muted"
+              }`}
+            >
               $
             </span>
             <input
@@ -161,7 +185,7 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
               inputMode="decimal"
               value={price}
               onChange={(e) => setPrice(e.target.value.replace(/[^\d.]/g, ""))}
-              className={`${inputClass(!!fieldErrors.quotedPrice)} pl-8 text-xl font-semibold [font-feature-settings:'tnum']`}
+              className={`${inputClass(!!fieldErrors.quotedPrice, isDark)} pl-8 text-xl font-semibold [font-feature-settings:'tnum']`}
             />
           </div>
         </Field>
@@ -169,7 +193,7 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
 
       <div
         className={`mt-4 flex gap-2.5 rounded-md p-2.5 ${
-          tcpaError ? "border-[1.5px] border-[#DC2626]" : ""
+          tcpaError ? "border-[1.5px] border-emerg-solid" : ""
         }`}
       >
         <input
@@ -180,21 +204,24 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
             setTcpaConsent(e.target.checked);
             if (e.target.checked) setTcpaError(false);
           }}
-          className="mt-0.5 h-5 w-5 shrink-0 rounded-sm border-[1.5px] border-line-strong accent-pilot-700"
+          className="mt-0.5 h-5 w-5 shrink-0 rounded-sm border-[1.5px] border-[var(--line-on-paper-strong)] accent-ember"
         />
-        <label htmlFor="lead-tcpa" className="text-[13px] leading-[19px] text-ink-700">
+        <label
+          htmlFor="lead-tcpa"
+          className={`text-[13px] leading-[19px] ${isDark ? "text-text-on-dark-3" : "text-text-body"}`}
+        >
           {TCPA_TEXT}
         </label>
       </div>
       {tcpaError && (
-        <p className="mt-1.5 flex items-center gap-1.5 text-sm font-medium text-[#B91C1C]">
+        <p className="mt-1.5 flex items-center gap-1.5 text-sm font-medium text-emerg-ink">
           <AlertTriangleIcon size={14} />
           Consent is required to submit.
         </p>
       )}
 
       {serverError && (
-        <div className="mt-4 rounded-md border border-[#FECACA] border-l-4 border-l-[#DC2626] bg-[#FEF2F2] p-4 text-sm font-medium text-[#B91C1C]">
+        <div className="mt-4 rounded-md border border-[rgba(224,73,46,0.32)] bg-[var(--emerg-wash)] p-4 text-sm font-medium text-emerg-ink">
           {serverError}
         </div>
       )}
@@ -203,7 +230,7 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
         type="submit"
         disabled={loading}
         aria-busy={loading}
-        className="btn-primary mt-4 flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800 disabled:cursor-not-allowed disabled:bg-line-strong disabled:text-ink-400"
+        className="btn-ember-lg mt-4 w-full disabled:cursor-not-allowed disabled:opacity-60"
       >
         {loading ? (
           <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" aria-hidden="true">
@@ -214,7 +241,7 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
           "Request my quotes"
         )}
       </button>
-      <p className="mt-2.5 text-center text-xs text-ink-600">
+      <p className={`mt-2.5 text-center text-micro ${isDark ? "text-text-on-dark-4" : "text-text-muted"}`}>
         We&apos;ll only use this to connect you with local pros.
       </p>
     </form>
@@ -225,17 +252,23 @@ function Field({
   label,
   error,
   children,
+  dark = false,
 }: {
   label: string;
   error?: string;
   children: React.ReactNode;
+  dark?: boolean;
 }) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-semibold text-ink-900">{label}</label>
+      <label
+        className={`mb-1.5 block text-sm font-semibold ${dark ? "text-text-on-dark" : "text-text-strong"}`}
+      >
+        {label}
+      </label>
       {children}
       {error && (
-        <p className="mt-1.5 flex items-center gap-1.5 text-sm font-medium text-[#B91C1C]">
+        <p className="mt-1.5 flex items-center gap-1.5 text-sm font-medium text-emerg-ink">
           <AlertTriangleIcon size={14} />
           {error}
         </p>
@@ -244,8 +277,9 @@ function Field({
   );
 }
 
-function inputClass(hasError: boolean) {
-  return `h-[52px] w-full rounded-md border-[1.5px] bg-surface px-3.5 text-base text-ink-900 placeholder:text-ink-500 hover:border-ink-500 focus:border-pilot-600 focus:outline-none ${
-    hasError ? "border-[#DC2626]" : "border-line-strong"
-  }`;
+function inputClass(hasError: boolean, dark: boolean) {
+  const base = dark
+    ? "h-[52px] w-full rounded-[12px] border px-3.5 text-base text-text-on-dark placeholder:text-text-on-dark-4 focus:border-[rgba(255,122,45,0.7)] focus:outline-none focus:shadow-[var(--focus-ring-dark)] bg-[rgba(239,231,219,0.05)] border-[rgba(239,231,219,0.16)]"
+    : "input-light h-[52px]";
+  return `${base} ${hasError ? "border-emerg-solid" : ""}`;
 }
