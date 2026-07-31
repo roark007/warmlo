@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.warmlo.com" }],
+      "destination": "https://warmlo.com/$1",
+      "permanent": true
+    }
+  ]
+}
