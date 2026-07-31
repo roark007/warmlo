@@ -20,7 +20,7 @@ export function CodeCard({ brandSlug, code }: CodeCardProps) {
   return (
     <StaticLink
       href={`/fix/${brandSlug}/${code.slug}`}
-      className="card-lift flex flex-col gap-2.5 rounded-md border border-line bg-surface p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pilot-600"
+      className="card-lift flex h-full flex-col gap-2.5 rounded-md border border-line bg-surface p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pilot-600"
     >
       <div className="flex items-center justify-between gap-2">
         <LedChip size="small">{code.code}</LedChip>
