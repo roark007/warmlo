@@ -17,7 +17,7 @@ import {
   getRepairBySlug,
 } from "@/lib/data";
 import { buildCodePageJsonLd, CODE_PAGE_DISCLAIMER } from "@/lib/seo";
-import { CodePageAnalytics } from "@/components/CodePageAnalytics";
+import { CodePageAnalyticsScript } from "@/components/CodePageAnalyticsScript";
 
 export function generateStaticParams() {
   return getBrands().flatMap((brand) =>
@@ -80,7 +80,7 @@ export default async function CodePage({
 
   return (
     <article className="mx-auto max-w-[720px] px-5 pb-16 md:px-8">
-      <CodePageAnalytics brand={brand.slug} code={code.code} />
+      <CodePageAnalyticsScript brand={brand.slug} code={code.code} />
       {jsonLd.map((schema, i) => (
         <script
           key={i}

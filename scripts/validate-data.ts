@@ -9,7 +9,7 @@ import {
 } from "../src/lib/schemas";
 
 const DATA_DIR = path.join(process.cwd(), "data");
-const BUILD_PHASE = Number(process.env.BUILD_PHASE ?? "3");
+const BUILD_PHASE = Number(process.env.BUILD_PHASE ?? "4");
 
 const PHASE_TARGETS: Record<number, { brands: number; codes: number; repairs: number }> = {
   1: { brands: 1, codes: 5, repairs: 1 },

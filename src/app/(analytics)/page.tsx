@@ -3,8 +3,9 @@ import { ArrowRightIcon } from "@/components/icons";
 import { CodeSearchBox, type CodeSearchEntry } from "@/components/CodeSearchBox";
 import { CodeCard } from "@/components/CodeCard";
 import { FreshnessStamp } from "@/components/FreshnessStamp";
+import { featuredCodes } from "@/config/featuredCodes";
 import { featuredRepairs } from "@/config/featuredRepairs";
-import { getAllCodes, getBenchmarks, getRepairBySlug } from "@/lib/data";
+import { getAllCodes, getBenchmarks, getBrand, getCode, getRepairBySlug } from "@/lib/data";
 import { ChevronRightIcon } from "@/components/icons";
 
 export default function HomePage() {
@@ -16,7 +17,13 @@ export default function HomePage() {
     code,
   }));
 
-  const popularCodes = allCodes.slice(0, 6);
+  const popularCodes = featuredCodes
+    .map(({ brandSlug, codeSlug }) => {
+      const brand = getBrand(brandSlug);
+      const code = getCode(brandSlug, codeSlug);
+      return brand && code ? { brand, code } : null;
+    })
+    .filter((entry): entry is NonNullable<typeof entry> => entry !== null);
   const costGuides = featuredRepairs
     .map((slug) => getRepairBySlug(slug))
     .filter((r): r is NonNullable<typeof r> => r !== undefined)

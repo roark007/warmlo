@@ -191,6 +191,45 @@ if (contentOk && sampleRoutes.length > 0) {
   pass(`required content on ${sampleRoutes.length} sample code pages`);
 }
 
+// Required content on sample cost pages
+const sampleCostRoutes = repairs.slice(0, 3).map((r) => `/cost/${r.slug}`);
+let costContentOk = true;
+for (const route of sampleCostRoutes) {
+  let html = readPageHtml(route, htmlFiles);
+  if (!html) {
+    for (const file of htmlFilePaths) {
+      if (file.includes(route.split("/").pop() ?? "")) {
+        html = htmlFiles.get(file) ?? null;
+        break;
+      }
+    }
+  }
+  if (!html) {
+    fail(`could not read HTML for ${route}`);
+    costContentOk = false;
+    continue;
+  }
+  if (!/<h1[^>]*>/.test(html)) {
+    fail(`${route}: missing H1`);
+    costContentOk = false;
+  }
+  if (!html.includes("Related error codes") && !html.includes("related error codes")) {
+    fail(`${route}: missing related error codes section`);
+    costContentOk = false;
+  }
+  if (!html.includes(CODE_PAGE_DISCLAIMER)) {
+    fail(`${route}: missing disclaimer`);
+    costContentOk = false;
+  }
+  if (!html.includes("/quote-check")) {
+    fail(`${route}: missing link to /quote-check`);
+    costContentOk = false;
+  }
+}
+if (costContentOk && sampleCostRoutes.length > 0) {
+  pass(`required content on ${sampleCostRoutes.length} sample cost pages`);
+}
+
 // Internal link check
 const validRoutes = new Set([...generatedRoutes]);
 validRoutes.add("/fix");

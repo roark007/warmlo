@@ -10,7 +10,7 @@ export function PlausibleScript() {
       defer
       data-domain={domain}
       src="https://plausible.io/js/script.js"
-      strategy="afterInteractive"
+      strategy="lazyOnload"
     />
   );
 }

@@ -7,7 +7,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-surface">
       <div className="mx-auto flex h-14 max-w-[1120px] items-center justify-between px-5 md:h-16 md:px-8">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center gap-2.5" prefetch={false}>
           <span className="h-2 w-2 rounded-[4px] bg-pilot-600" aria-hidden="true" />
           <span className="font-serif text-xl font-bold text-ink-900">Warmlo</span>
         </Link>
@@ -15,6 +15,7 @@ export function Header() {
           <nav className="hidden items-center gap-6 md:flex">
             <Link
               href="/fix"
+              prefetch={false}
               className="text-[15px] font-medium text-ink-700 hover:text-ink-900 hover:underline hover:underline-offset-4"
             >
               Fix codes
@@ -22,6 +23,7 @@ export function Header() {
             {costGuideSlug && (
               <Link
                 href={`/cost/${costGuideSlug}`}
+                prefetch={false}
                 className="text-[15px] font-medium text-ink-700 hover:text-ink-900 hover:underline hover:underline-offset-4"
               >
                 Cost guides
@@ -30,6 +32,7 @@ export function Header() {
           </nav>
           <Link
             href="/quote-check"
+            prefetch={false}
             className="flex h-10 items-center rounded-md bg-pilot-700 px-4 text-sm font-semibold text-white transition-colors hover:bg-pilot-800"
           >
             Check a quote

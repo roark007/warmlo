@@ -2,7 +2,7 @@
 
 > **Know what's wrong. Know what it should cost. Know who to call.**
 
-Free consumer website for homeowners with heating/cooling problems. Phase 1 ships the skeleton: FixCode lookup (Goodman brand), route structure, legal pages, data validation, and CI.
+Free consumer website for homeowners with heating/cooling problems. FixCode error lookup, repair cost guides, and QuoteCheck quote verification.
 
 ## Development
 
@@ -21,6 +21,19 @@ npm run verify
 
 Runs lint, typecheck, unit tests, data validation, production build, and post-build site checks.
 
+### Lighthouse (Phase 4 gate)
+
+After a production build, check mobile performance on the primary code page:
+
+```bash
+npm run build
+npm run start
+# In another terminal:
+npx lighthouse http://localhost:3000/fix/goodman/e4 --only-categories=performance --form-factor=mobile --chrome-flags=--headless
+```
+
+Target: **Performance ≥ 95** on `/fix/goodman/e4`.
+
 ## Environment
 
 Copy `.env.example` to `.env.local`. For the lead form (QuoteCheck), use **Supabase free tier** — separate from Resend, no credit card for the free plan.
@@ -28,7 +41,7 @@ Copy `.env.example` to `.env.local`. For the lead form (QuoteCheck), use **Supab
 ### Lead storage (Supabase — recommended)
 
 1. Create a free project at [supabase.com](https://supabase.com).
-2. Run the SQL from the copy box in README (or `scripts/supabase-leads.sql`) in **SQL Editor**.
+2. Run the SQL from `scripts/supabase-leads.sql` in **SQL Editor**.
 3. Get credentials (Supabase updated their dashboard in 2026):
    - Open your project → **Connect** (top of the page) → copy **Project URL**
    - Or: **Project Settings** (gear) → **API Keys**
@@ -39,14 +52,22 @@ Copy `.env.example` to `.env.local`. For the lead form (QuoteCheck), use **Supab
    - `SUPABASE_SERVICE_KEY` — the **Secret** or **service_role** key (server-only, never in the browser)
 5. **Redeploy** on Vercel after adding env vars.
 
-### Instant alerts (optional)
+### Email alerts (Brevo — recommended)
 
-When someone submits the lead form, Supabase stores the row. For **phone/email alerts**, add `LEAD_ALERT_WEBHOOK_URL` in Vercel:
+When someone submits the lead form, Supabase stores the row. For **instant email alerts**:
 
-- **Discord (easiest):** Server Settings → Integrations → Webhooks → New Webhook → copy URL
-- **Zapier (email to inbox):** Zap with Webhook trigger → Email action → paste Zapier webhook URL
+1. Create a free account at [brevo.com](https://brevo.com).
+2. Verify a sender email under **Senders & IP**.
+3. Add to Vercel / `.env.local`:
+   - `BREVO_API_KEY` — from Brevo → SMTP & API → API keys
+   - `LEAD_ALERT_EMAIL` — your inbox (e.g. `you@example.com`)
+   - `BREVO_SENDER_EMAIL` — optional; must match a verified sender (defaults to `noreply@warmlo.com`)
 
 Alerts are best-effort; the lead is still saved if the alert fails.
+
+### Webhook alerts (optional)
+
+Set `LEAD_ALERT_WEBHOOK_URL` for Discord, Slack, or Zapier notifications in addition to (or instead of) email.
 
 ### Optional webhook fallback
 
@@ -72,15 +93,15 @@ If Supabase is not configured, set `LEAD_WEBHOOK_URL` to a Slack, Discord, or Za
 - `src/app/` — Next.js App Router pages
 - `src/components/` — UI components (FRONTEND_BRIEF.md tokens)
 - `src/lib/` — schemas, data loaders, verdict engine
-- `src/config/` — affiliates, featured repairs, job mapping
+- `src/config/` — affiliates, featured repairs/codes, job mapping
 - `scripts/` — validate-data, check-site
 - `tests/` — vitest unit tests
 
 ## Phase status
 
-- **Phase 1 (current):** Skeleton — 1 brand (Goodman), 6 codes, all routes, legal, sitemap, CI
-- **Phase 2:** FixCode at scale (17 brands, 200+ codes)
-- **Phase 3:** QuoteCheck flow, `/api/lead` (Supabase), affiliates
-- **Phase 4:** Cost guides polish, Lighthouse pass
+- **Phase 1:** Skeleton — routes, legal, sitemap, CI
+- **Phase 2:** FixCode at scale (17 brands, 258 codes)
+- **Phase 3:** QuoteCheck flow, `/api/lead` (Supabase), Brevo alerts
+- **Phase 4 (current):** Cost guides, home page featured codes, Lighthouse pass
 
 See `BUILD_BRIEF.md` for full specification.

@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import { Bitter, Inter } from "next/font/google";
 import { Footer, Header } from "@/components/SiteChrome";
-import { PlausibleScript } from "@/components/PlausibleScript";
 import "./globals.css";
 
 const bitter = Bitter({
   subsets: ["latin"],
-  weight: ["600", "700"],
   variable: "--font-bitter",
-  display: "swap",
+  display: "optional",
+  adjustFontFallback: true,
 });
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   variable: "--font-inter",
   display: "swap",
+  adjustFontFallback: true,
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -35,11 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bitter.variable} ${inter.variable} h-full`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      </head>
       <body className="flex min-h-full flex-col">
-        <PlausibleScript />
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

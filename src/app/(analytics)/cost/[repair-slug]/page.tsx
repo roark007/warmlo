@@ -29,6 +29,10 @@ export async function generateMetadata({
     title: `${repair.name} Cost (${year})`,
     description: repair.description,
     alternates: { canonical: `/cost/${slug}` },
+    openGraph: {
+      title: `${repair.name} Cost (${year})`,
+      description: repair.description,
+    },
   };
 }
 
@@ -81,7 +85,7 @@ export default async function CostPage({
       </div>
 
       <div className="mt-5 rounded-md border border-line bg-surface p-5">
-        <h3 className="font-serif text-xl font-semibold text-ink-900">
+        <h3 className="font-serif text-xl font-bold text-ink-900">
           Where the money goes
         </h3>
         <div className="mt-3 flex h-3 overflow-hidden rounded-full">
@@ -112,7 +116,7 @@ export default async function CostPage({
       <p className="mt-8 max-w-[68ch] text-base text-ink-700">{repair.description}</p>
 
       <section className="mt-8">
-        <h3 className="font-serif text-xl font-semibold text-ink-900">
+        <h3 className="font-serif text-xl font-bold text-ink-900">
           You might need this if…
         </h3>
         <ul className="mt-4 space-y-4">
