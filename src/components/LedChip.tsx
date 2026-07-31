@@ -11,7 +11,7 @@ export function LedChip({ children, size = "default" }: LedChipProps) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-[4px] bg-ink-900 font-semibold text-paper [font-feature-settings:"tnum"] ${sizeClasses}`}
+      className={`led-glow inline-flex items-center rounded-[4px] bg-ink-900 font-semibold [font-feature-settings:"tnum"] ${sizeClasses}`}
     >
       {children}
     </span>

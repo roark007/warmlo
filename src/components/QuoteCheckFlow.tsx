@@ -96,7 +96,7 @@ export function QuoteCheckFlow({ benchmarks, dataUpdated }: QuoteCheckFlowProps)
 
       <div className="relative mt-4">
         {step === 1 && (
-          <div className="rounded-md border border-line bg-surface p-5 md:p-7">
+          <div className="step-enter rounded-md border border-line bg-surface p-5 md:p-7">
             <label htmlFor="job-type" className="mb-1.5 block text-sm font-semibold text-ink-900">
               What&apos;s the job?
             </label>
@@ -124,7 +124,7 @@ export function QuoteCheckFlow({ benchmarks, dataUpdated }: QuoteCheckFlowProps)
             <button
               type="button"
               onClick={goToStep2}
-              className="mt-5 flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
+              className="mt-5 btn-primary flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
             >
               Continue
             </button>
@@ -132,7 +132,7 @@ export function QuoteCheckFlow({ benchmarks, dataUpdated }: QuoteCheckFlowProps)
         )}
 
         {step === 2 && benchmark && (
-          <div className="rounded-md border border-line bg-surface p-5 md:p-7">
+          <div className="step-enter rounded-md border border-line bg-surface p-5 md:p-7">
             <p className="text-sm font-semibold text-ink-900">The quote</p>
 
             <div className="mt-4">
@@ -219,7 +219,7 @@ export function QuoteCheckFlow({ benchmarks, dataUpdated }: QuoteCheckFlowProps)
               <button
                 type="button"
                 onClick={goToVerdict}
-                className="flex h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
+                className="btn-primary flex h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
               >
                 Check my quote
               </button>
@@ -228,7 +228,7 @@ export function QuoteCheckFlow({ benchmarks, dataUpdated }: QuoteCheckFlowProps)
         )}
 
         {step === 3 && benchmark && verdictResult && (
-          <div className="rounded-md border border-line bg-surface p-5 md:p-7">
+          <div className="step-enter rounded-md border border-line bg-surface p-5 md:p-7">
             <div className="flex items-start gap-2.5">
               <span
                 className="mt-1.5 inline-block h-2.5 w-2.5 shrink-0 rounded-full"
@@ -275,7 +275,7 @@ export function QuoteCheckFlow({ benchmarks, dataUpdated }: QuoteCheckFlowProps)
                 <a
                   href={buildAffiliateUrl(activeAffiliate)}
                   onClick={() => trackEvent("affiliate_click", { network: activeAffiliate.id })}
-                  className="mt-4 flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
+                  className="mt-4 btn-primary flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
                 >
                   Get quotes from local pros
                 </a>
@@ -284,7 +284,7 @@ export function QuoteCheckFlow({ benchmarks, dataUpdated }: QuoteCheckFlowProps)
                   <button
                     type="button"
                     onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
-                    className="mt-4 flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
+                    className="mt-4 btn-primary flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
                   >
                     Get quotes from local pros
                   </button>

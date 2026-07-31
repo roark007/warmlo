@@ -7,7 +7,7 @@ interface DangerAlertProps {
 export function DangerAlert({ message }: DangerAlertProps) {
   return (
     <div
-      className="flex gap-3 rounded-md border border-[#FECACA] border-l-4 border-l-[#DC2626] bg-[#FEF2F2] p-4"
+      className="alert-presence flex gap-3 rounded-md border border-[#FECACA] border-l-4 border-l-[#DC2626] bg-[#FEF2F2] p-4"
       role="alert"
     >
       <AlertTriangleIcon size={20} className="mt-px shrink-0 text-[#DC2626]" />

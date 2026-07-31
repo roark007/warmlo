@@ -46,7 +46,7 @@ export function SeverityBadge({ severity, size = "default" }: SeverityBadgeProps
 
   return (
     <span
-      className={`inline-flex items-center rounded-full font-semibold text-white ${config.chipBg} ${sizeClasses}`}
+      className={`badge-depth inline-flex items-center rounded-full font-semibold text-white ${config.chipBg} ${sizeClasses}`}
     >
       {config.label}
     </span>

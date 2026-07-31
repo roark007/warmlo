@@ -19,6 +19,8 @@
   --font-serif: var(--font-bitter, Georgia), "Times New Roman", serif;
   --font-sans: var(--font-inter, system-ui), -apple-system, "Segoe UI", sans-serif;
 
+  --ease-expo: cubic-bezier(0.22, 1, 0.36, 1);
+
   --shadow-dropdown: 0 1px 2px rgba(28, 25, 23, 0.05), 0 8px 24px rgba(28, 25, 23, 0.08);
   --shadow-sticky: 0 -1px 2px rgba(28, 25, 23, 0.04), 0 -6px 16px rgba(28, 25, 23, 0.06);
 }
@@ -62,6 +64,179 @@
 @utility shadow-sticky {
   box-shadow: var(--shadow-sticky);
 }
+
+/* ---------------------------------------------------------------------------
+   Signature moments (flair budget — six moments, jewelry-level execution).
+   Everything animates once per pageview, ease-out, ≤600ms, and is fully
+   dead under prefers-reduced-motion (base rule above).
+--------------------------------------------------------------------------- */
+
+/* Moment 1a — the pilot light: warm halo + a single "catch" flicker on load */
+@keyframes pilot-catch {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+  22% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  38% {
+    opacity: 0.55;
+    transform: scale(0.94);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  72% {
+    opacity: 0.78;
+    transform: scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@utility pilot-mark {
+  background-color: var(--color-pilot-600);
+  box-shadow:
+    0 0 0 3px rgba(29, 78, 216, 0.1),
+    0 0 12px 2px rgba(217, 119, 6, 0.28);
+  animation: pilot-catch 700ms var(--ease-expo) 150ms backwards;
+}
+
+@utility pilot-mark-on-dark {
+  background-color: var(--color-pilot-600);
+  box-shadow:
+    0 0 0 3px rgba(250, 247, 242, 0.07),
+    0 0 16px 4px rgba(217, 119, 6, 0.42);
+  animation: pilot-catch 700ms var(--ease-expo) 150ms backwards;
+}
+
+/* Moment 2 — LED chips that feel lit: warm phosphor halo on the digits,
+   top edge-light inside the chip, faint ambient warmth around it */
+@utility led-glow {
+  color: #fdf6e9;
+  text-shadow:
+    0 0 5px rgba(255, 213, 164, 0.55),
+    0 0 1px rgba(255, 244, 224, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(250, 247, 242, 0.09),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+    0 0 14px rgba(255, 190, 120, 0.1);
+}
+
+/* Moment 4 — hero with heat: a barely-there warm wash rising off the paper.
+   Warm tones only, 3–6% opacity, masked to fade out before the fold. */
+@utility hero-wash {
+  background-image:
+    radial-gradient(58% 46% at 12% 0%, rgba(217, 119, 6, 0.055), transparent 70%),
+    radial-gradient(46% 38% at 84% 6%, rgba(194, 65, 12, 0.04), transparent 70%),
+    radial-gradient(75% 55% at 50% -12%, rgba(217, 119, 6, 0.035), transparent 75%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+}
+
+/* Moment 5a — considered scroll reveals. The `.reveal-ready` class is added
+   to <html> by RevealInit (client) only when motion is allowed, so no-JS and
+   reduced-motion users always see fully-rendered content. */
+.reveal-ready .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 300ms ease-out,
+    transform 300ms ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Moment 5b — one refined hover for every clickable card: border warms,
+   2px lift, soft shadow. Consistent everywhere, hover-capable pointers only */
+@utility card-lift {
+  transition:
+    border-color 150ms ease-out,
+    background-color 150ms ease-out,
+    transform 150ms ease-out,
+    box-shadow 150ms ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--color-ink-500);
+      transform: translateY(-2px);
+      box-shadow:
+        0 6px 16px rgba(28, 25, 23, 0.07),
+        0 1px 3px rgba(28, 25, 23, 0.05);
+    }
+  }
+}
+
+/* Moment 6a — severity with presence: enamel depth on solid chips */
+@utility badge-depth {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 1px 1px rgba(28, 25, 23, 0.08);
+}
+
+/* Moment 6b — the danger alert carries a soft red ambient emphasis */
+@utility alert-presence {
+  box-shadow:
+    0 1px 2px rgba(153, 27, 27, 0.05),
+    0 6px 20px -4px rgba(220, 38, 38, 0.12);
+}
+
+/* Primary button craft: a single inset top-light. Calm, not a moment */
+@utility btn-primary {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Moment 3 — verdict bar theater. Once only, each ≤600ms, dead under RM */
+@keyframes vb-dot-in {
+  0% {
+    scale: 0;
+    box-shadow:
+      0 0 0 2px #ffffff,
+      0 0 0 2px color-mix(in srgb, currentColor 35%, transparent);
+  }
+  60% {
+    scale: 1.35;
+    box-shadow:
+      0 0 0 2px #ffffff,
+      0 0 0 9px color-mix(in srgb, currentColor 14%, transparent);
+  }
+  100% {
+    scale: 1;
+    box-shadow:
+      0 0 0 2px #ffffff,
+      0 0 0 5px color-mix(in srgb, currentColor 0%, transparent);
+  }
+}
+
+@utility vb-dot-in {
+  animation: vb-dot-in 500ms ease-out 550ms backwards;
+}
+
+/* Step-to-step transition in QuoteCheck: user-triggered, one short fade-up */
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility step-enter {
+  animation: step-in 200ms ease-out;
+}
+
+/* --------------------------------------------------------------------------- */
 
 .sr-only {
   position: absolute;

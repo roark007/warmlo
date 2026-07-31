@@ -36,6 +36,11 @@ function formatTickLabel(n: number): string {
   return `$${n}`;
 }
 
+/** Needle sweep: 550ms expo-out from the scale's left edge to the quote. */
+const NEEDLE_TRANSITION = "left 550ms cubic-bezier(0.22, 1, 0.36, 1)";
+const FLAG_TRANSITION =
+  "left 550ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms ease-out 120ms, translate 300ms ease-out 120ms";
+
 export function VerdictBar({
   adjustedLow,
   adjustedHigh,
@@ -43,6 +48,7 @@ export function VerdictBar({
   price,
   verdict,
 }: VerdictBarProps) {
+  // Reduced-motion users start revealed: the bar renders final and static.
   const [revealed, setRevealed] = useState(() =>
     typeof window !== "undefined"
       ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -59,14 +65,19 @@ export function VerdictBar({
   const fairLeft = toPct(adjustedLow, scaleMin, scaleMax);
   const fairWidth = toPct(adjustedHigh, scaleMin, scaleMax) - fairLeft;
   const fairCenter = fairLeft + fairWidth / 2;
-  const needleNearFairCenter = Math.abs(needlePct - fairCenter) < 12 || (needlePct >= fairLeft && needlePct <= fairLeft + fairWidth);
+  const needleNearFairCenter =
+    Math.abs(needlePct - fairCenter) < 12 ||
+    (needlePct >= fairLeft && needlePct <= fairLeft + fairWidth);
 
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
+    if (revealed) return;
     const t = window.setTimeout(() => setRevealed(true), 80);
     return () => window.clearTimeout(t);
-  }, []);
+  }, [revealed]);
+
+  // Pre-reveal, the needle rests at the left edge of the scale; the sweep
+  // to the quote happens once when `revealed` flips.
+  const pos = revealed ? needlePct : 2;
 
   const ticks: number[] = [];
   for (let t = scaleMin; t <= scaleMax; t += 500) ticks.push(t);
@@ -78,13 +89,7 @@ export function VerdictBar({
   const dotColor = VERDICT_DOT_COLORS[verdict];
 
   return (
-    <figure
-      role="img"
-      aria-label={summary}
-      className={`mx-auto w-full max-w-[600px] transition-all duration-200 ease-out ${
-        revealed ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
-      }`}
-    >
+    <figure role="img" aria-label={summary} className="mx-auto w-full max-w-[600px]">
       <div className="relative h-[34px]">
         {!needleNearFairCenter && (
           <span
@@ -98,8 +103,10 @@ export function VerdictBar({
           </span>
         )}
         <div
-          className="absolute top-0 -translate-x-1/2 transition-all duration-200 ease-out"
-          style={{ left: `${needlePct}%` }}
+          className={`absolute top-0 -translate-x-1/2 ${
+            revealed ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
+          }`}
+          style={{ left: `${pos}%`, transition: FLAG_TRANSITION }}
         >
           <LedChip>{formatUsd(price)}</LedChip>
         </div>
@@ -107,17 +114,25 @@ export function VerdictBar({
 
       <div
         className="mx-auto h-2 w-3 -translate-x-1/2 bg-ink-900"
-        style={{ marginLeft: `${needlePct}%`, width: "1.5px", height: "8px" }}
+        style={{ left: `${pos}%`, width: "1.5px", height: "8px", transition: NEEDLE_TRANSITION }}
       />
 
       <div className="relative mx-auto mt-0 h-[30px] w-full">
         <div
           className="absolute left-1/2 top-1/2 h-[30px] w-[3px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-ink-900 md:w-[3.5px]"
-          style={{ left: `${needlePct}%` }}
+          style={{ left: `${pos}%`, transition: NEEDLE_TRANSITION }}
         />
         <div
-          className="absolute top-1/2 h-2 w-2.5 -translate-x-1/2 translate-y-[10px] rounded-full ring-2 ring-surface md:h-2.5 md:w-2.5"
-          style={{ left: `${needlePct}%`, backgroundColor: dotColor }}
+          className={`absolute top-1/2 h-2 w-2.5 -translate-x-1/2 translate-y-[10px] rounded-full ring-2 ring-surface md:h-2.5 md:w-2.5 ${
+            revealed ? "vb-dot-in" : ""
+          }`}
+          style={{
+            left: `${pos}%`,
+            backgroundColor: dotColor,
+            color: dotColor,
+            scale: revealed ? undefined : "0",
+            transition: NEEDLE_TRANSITION,
+          }}
         />
       </div>
 
@@ -131,7 +146,9 @@ export function VerdictBar({
           style={zoneStyle(adjustedLow * 0.8, adjustedLow, scaleMin, scaleMax)}
         />
         <div
-          className="absolute -top-0.5 bottom-[-2px] rounded-full bg-[#16A34A] md:-top-0.5 md:bottom-[-3px]"
+          className={`absolute -top-0.5 bottom-[-2px] origin-left rounded-full bg-[#16A34A] transition-[scale] duration-[450ms] ease-expo delay-[120ms] md:-top-0.5 md:bottom-[-3px] ${
+            revealed ? "scale-x-100" : "scale-x-0"
+          }`}
           style={{
             left: `${fairLeft}%`,
             width: `${fairWidth}%`,

@@ -203,7 +203,7 @@ export function LeadForm({ jobType, jobLabel, quotedPrice, zipPrefill = "" }: Le
         type="submit"
         disabled={loading}
         aria-busy={loading}
-        className="mt-4 flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800 disabled:cursor-not-allowed disabled:bg-line-strong disabled:text-ink-400"
+        className="btn-primary mt-4 flex h-[52px] w-full items-center justify-center rounded-md bg-pilot-700 text-base font-semibold text-white transition-colors hover:bg-pilot-800 disabled:cursor-not-allowed disabled:bg-line-strong disabled:text-ink-400"
       >
         {loading ? (
           <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" aria-hidden="true">

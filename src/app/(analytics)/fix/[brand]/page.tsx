@@ -43,7 +43,7 @@ export default async function BrandPage({
       <p className="mt-3 max-w-[68ch] text-base text-ink-700">
         {brand.notes} {brand.codeFormat}
       </p>
-      <div className="mt-6">
+      <div className="reveal mt-6">
         <CodeFilterTable brandSlug={brandSlug} codes={codes} />
       </div>
     </article>

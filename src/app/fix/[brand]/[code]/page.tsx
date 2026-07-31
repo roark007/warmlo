@@ -89,7 +89,7 @@ export default async function CodePage({
         ]}
       />
 
-      <h1 className="mt-2 font-serif text-[30px] font-bold leading-9 text-ink-900 md:text-[40px] md:leading-[44px]">
+      <h1 className="mt-2 text-balance font-serif text-[30px] font-bold leading-9 text-ink-900 md:text-[40px] md:leading-[44px]">
         {brand.name} Furnace Code {code.code}: {shortMeaning}
       </h1>
 
@@ -117,7 +117,7 @@ export default async function CodePage({
         </h2>
         <div className="mt-4">
           {code.severity === "emergency" && code.dangerNote ? (
-            <div className="rounded-md border border-[#FECACA] border-l-4 border-l-[#DC2626] bg-[#FEF2F2] p-4">
+            <div className="alert-presence rounded-md border border-[#FECACA] border-l-4 border-l-[#DC2626] bg-[#FEF2F2] p-4">
               <p className="text-[15px] font-semibold leading-[22px] text-[#7F1D1D]">
                 {code.dangerNote}
               </p>

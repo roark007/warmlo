@@ -1,26 +1,13 @@
-import { Bitter, Inter } from "next/font/google";
 import { AnalyticsScript } from "@/components/AnalyticsScript";
+import { RevealInit } from "@/components/RevealInit";
 
-const bitter = Bitter({
-  subsets: ["latin"],
-  variable: "--font-bitter",
-  display: "swap",
-  adjustFontFallback: true,
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-  adjustFontFallback: true,
-});
-
-/** Hub pages: web fonts + analytics (Plausible or GA4). Code pages skip this layout for faster LCP. */
+/** Hub pages: analytics (Plausible or GA4) + scroll-reveal engine. Fonts load in the root layout. */
 export default function AnalyticsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${bitter.variable} ${inter.variable}`}>
+    <>
       <AnalyticsScript />
+      <RevealInit />
       {children}
-    </div>
+    </>
   );
 }

@@ -84,7 +84,7 @@ export default async function CostPage({
         />
       </div>
 
-      <div className="mt-5 rounded-md border border-line bg-surface p-5">
+      <div className="reveal mt-5 rounded-md border border-line bg-surface p-5">
         <h3 className="font-serif text-xl font-bold text-ink-900">
           Where the money goes
         </h3>
@@ -115,7 +115,7 @@ export default async function CostPage({
 
       <p className="mt-8 max-w-[68ch] text-base text-ink-700">{repair.description}</p>
 
-      <section className="mt-8">
+      <section className="reveal mt-8">
         <h3 className="font-serif text-xl font-bold text-ink-900">
           You might need this if…
         </h3>
@@ -133,12 +133,12 @@ export default async function CostPage({
         DIY difficulty: {repair.diyDifficulty}
       </span>
 
-      <div className="mt-10">
+      <div className="reveal mt-10">
         <CtaBlock repairSlug={repair.slug} />
       </div>
 
       {relatedCodes.length > 0 && (
-        <section className="mt-10">
+        <section className="reveal mt-10">
           <h2 className="font-serif text-2xl font-bold text-ink-900">Related error codes</h2>
           <div className="mt-4 overflow-hidden rounded-md border border-line bg-surface">
             {relatedCodes.map(({ brand, code }) => (

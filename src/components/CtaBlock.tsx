@@ -21,14 +21,14 @@ export function CtaBlock({ repairSlug }: CtaBlockProps) {
         {activeAffiliate ? (
           <a
             href={buildAffiliateUrl(activeAffiliate)}
-            className="flex min-h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 px-6 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
+            className="btn-primary flex min-h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 px-6 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
           >
             Get quotes from local pros
           </a>
         ) : (
           <StaticLink
             href={quoteCheckHref}
-            className="flex min-h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 px-6 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
+            className="btn-primary flex min-h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 px-6 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
           >
             Get quotes from local pros
           </StaticLink>

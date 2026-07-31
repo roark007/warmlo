@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { BrandCard } from "@/components/Breadcrumb";
 import { CodeSearchBox, type CodeSearchEntry } from "@/components/CodeSearchBox";
 import { getAllCodes, getBrands, getCodesForBrand } from "@/lib/data";
@@ -38,13 +39,18 @@ export default function FixIndexPage() {
           Browse by brand
         </p>
         <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
-          {brandsWithCounts.map(({ brand, codeCount }) => (
-            <BrandCard
+          {brandsWithCounts.map(({ brand, codeCount }, index) => (
+            <div
               key={brand.slug}
-              slug={brand.slug}
-              name={brand.name}
-              codeCount={codeCount}
-            />
+              className="reveal"
+              style={{ "--reveal-delay": `${(index % 4) * 60}ms` } as CSSProperties}
+            >
+              <BrandCard
+                slug={brand.slug}
+                name={brand.name}
+                codeCount={codeCount}
+              />
+            </div>
           ))}
         </div>
       </section>
