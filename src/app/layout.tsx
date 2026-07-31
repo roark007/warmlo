@@ -19,14 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col overflow-x-hidden">
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
         <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
+        {children}
         <Footer />
       </body>
     </html>
