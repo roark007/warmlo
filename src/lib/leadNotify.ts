@@ -55,6 +55,7 @@ export async function sendLeadAlert(payload: LeadPayload): Promise<void> {
 
 async function sendBrevoEmail(payload: LeadPayload): Promise<void> {
   const to = process.env.LEAD_ALERT_EMAIL!;
+  const senderEmail = process.env.BREVO_SENDER_EMAIL ?? to;
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
@@ -62,7 +63,7 @@ async function sendBrevoEmail(payload: LeadPayload): Promise<void> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      sender: { name: "Warmlo", email: process.env.BREVO_SENDER_EMAIL ?? "noreply@warmlo.com" },
+      sender: { name: "Warmlo", email: senderEmail },
       to: [{ email: to }],
       subject: `New Warmlo lead: ${payload.name}`,
       textContent: formatLeadMessage(payload),
