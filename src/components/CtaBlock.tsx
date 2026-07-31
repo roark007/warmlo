@@ -10,31 +10,62 @@ export function CtaBlock({ repairSlug }: CtaBlockProps) {
   const quoteCheckHref = `/quote-check?job=${repairSlug}`;
 
   return (
-    <div className="rounded-md border border-line bg-surface p-5">
-      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+    <div>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-3.5">
         <StaticLink
           href={quoteCheckHref}
-          className="flex min-h-[52px] flex-1 items-center justify-center rounded-md border-[1.5px] border-line-strong bg-surface px-6 text-base font-semibold text-ink-900 transition-colors hover:border-ink-500 hover:bg-paper"
+          className="card-paper flex flex-col justify-between gap-[18px] p-6"
         >
-          Got a repair quote already? See if the price is fair →
+          <div>
+            <div className="font-display text-[19px] font-bold text-text-strong">
+              Already got a repair quote?
+            </div>
+            <div className="mt-1.5 text-sm leading-[1.5] text-text-muted">
+              See if the price is fair before you say yes.
+            </div>
+          </div>
+          <span className="inline-flex items-center gap-2 font-semibold text-ember-deeper">
+            Check your quote <span>→</span>
+          </span>
         </StaticLink>
+
         {activeAffiliate ? (
           <a
             href={buildAffiliateUrl(activeAffiliate)}
-            className="btn-primary flex min-h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 px-6 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
+            className="relative flex flex-col justify-between gap-[18px] overflow-hidden rounded-[18px] border border-[rgba(255,170,84,0.2)] p-6 text-text-on-dark transition-transform duration-[var(--dur)] [background:var(--grad-cta-dark)] hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-22px_rgba(255,122,45,0.5)]"
           >
-            Get quotes from local pros
+            <div
+              className="pointer-events-none absolute right-[-20%] top-[-40%] h-[280px] w-[280px] bg-[radial-gradient(circle,rgba(255,122,45,0.3),transparent_66%)]"
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <div className="font-display text-[19px] font-bold">Get quotes from local pros</div>
+              <div className="mt-1.5 text-sm leading-[1.5] text-text-on-dark-3">
+                Up to 3 competing bids from licensed techs.
+              </div>
+            </div>
+            <span className="relative btn-ember justify-center py-3">Get quotes →</span>
           </a>
         ) : (
           <StaticLink
             href={quoteCheckHref}
-            className="btn-primary flex min-h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 px-6 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
+            className="relative flex flex-col justify-between gap-[18px] overflow-hidden rounded-[18px] border border-[rgba(255,170,84,0.2)] p-6 text-text-on-dark [background:var(--grad-cta-dark)] hover:-translate-y-0.5"
           >
-            Get quotes from local pros
+            <div
+              className="pointer-events-none absolute right-[-20%] top-[-40%] h-[280px] w-[280px] bg-[radial-gradient(circle,rgba(255,122,45,0.3),transparent_66%)]"
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <div className="font-display text-[19px] font-bold">Get quotes from local pros</div>
+              <div className="mt-1.5 text-sm leading-[1.5] text-text-on-dark-3">
+                Up to 3 competing bids from licensed techs.
+              </div>
+            </div>
+            <span className="relative btn-ember justify-center py-3">Get quotes →</span>
           </StaticLink>
         )}
       </div>
-      <p className="mt-3 text-center text-xs text-ink-600">
+      <p className="mt-3.5 text-center text-small text-text-muted">
         Free · No signup · No obligation
       </p>
     </div>

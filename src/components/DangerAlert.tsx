@@ -1,5 +1,3 @@
-import { AlertTriangleIcon } from "./icons";
-
 interface DangerAlertProps {
   message: string;
 }
@@ -7,11 +5,13 @@ interface DangerAlertProps {
 export function DangerAlert({ message }: DangerAlertProps) {
   return (
     <div
-      className="alert-presence flex gap-3 rounded-md border border-[#FECACA] border-l-4 border-l-[#DC2626] bg-[#FEF2F2] p-4"
+      className="flex gap-3.5 rounded-md border border-[rgba(224,73,46,0.32)] bg-[linear-gradient(180deg,#fbeeeb,#f7e2dd)] p-[18px_20px]"
       role="alert"
     >
-      <AlertTriangleIcon size={20} className="mt-px shrink-0 text-[#DC2626]" />
-      <p className="text-[15px] font-semibold leading-[22px] text-[#7F1D1D]">{message}</p>
+      <span className="grid h-[30px] w-[30px] shrink-0 place-items-center rounded-[9px] bg-emerg-solid text-sm font-bold text-white">
+        !
+      </span>
+      <p className="text-[15px] font-bold leading-[22px] text-emerg-ink">{message}</p>
     </div>
   );
 }

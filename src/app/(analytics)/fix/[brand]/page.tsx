@@ -30,22 +30,35 @@ export default async function BrandPage({
   const codes = getCodesForBrand(brandSlug);
 
   return (
-    <article className="mx-auto max-w-[960px] px-5 md:px-8">
-      <Breadcrumb
-        items={[
-          { label: "Fix", href: "/fix" },
-          { label: brand.name },
-        ]}
-      />
-      <h1 className="mt-4 font-serif text-[30px] font-bold leading-9 text-ink-900 md:text-[40px] md:leading-[44px]">
-        {brand.name} Furnace Error Codes
-      </h1>
-      <p className="mt-3 max-w-[68ch] text-base text-ink-700">
-        {brand.notes} {brand.codeFormat}
-      </p>
-      <div className="reveal mt-6">
-        <CodeFilterTable brandSlug={brandSlug} codes={codes} />
-      </div>
-    </article>
+    <div className="min-h-screen text-text-on-dark">
+      <section className="relative overflow-hidden px-[var(--pad-page-x)] pb-[clamp(30px,4vw,44px)] pt-[clamp(36px,5vw,64px)]">
+        <div className="hero-glow-field" aria-hidden="true">
+          <div className="hero-glow-primary" />
+        </div>
+        <div className="relative z-[1] mx-auto max-w-[960px]">
+          <Breadcrumb
+            variant="dark"
+            items={[
+              { label: "Fix", href: "/fix" },
+              { label: brand.name },
+            ]}
+          />
+          <h1 className="mt-4 font-display text-h1 font-bold leading-[1.02] tracking-[-0.03em] text-text-on-dark">
+            {brand.name} Furnace Error Codes
+          </h1>
+          <p className="mt-3 max-w-[68ch] text-lead leading-[1.6] text-text-on-dark-3">
+            {brand.notes} {brand.codeFormat}
+          </p>
+        </div>
+      </section>
+
+      <main id="main-content" className="paper-sheet">
+        <article className="mx-auto max-w-[960px] px-[var(--pad-page-x)] py-[clamp(36px,5vw,64px)]">
+          <div className="reveal">
+            <CodeFilterTable brandSlug={brandSlug} codes={codes} />
+          </div>
+        </article>
+      </main>
+    </div>
   );
 }
