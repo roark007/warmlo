@@ -8,8 +8,8 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-line bg-surface">
       <div className="mx-auto flex h-14 max-w-[1120px] items-center justify-between px-5 md:h-16 md:px-8">
         <StaticLink href="/" className="flex items-center gap-2.5">
-          <span className="pilot-mark h-2 w-2 rounded-[3px]" aria-hidden="true" />
-          <span className="font-serif text-[22px] font-bold leading-none tracking-[-0.01em] text-ink-900 md:text-2xl">
+          <span className="pilot-mark h-2.5 w-2.5 rounded-[3px]" aria-hidden="true" />
+          <span className="font-serif text-2xl font-bold leading-none tracking-[-0.01em] text-ink-900 md:text-[28px]">
             Warmlo
           </span>
         </StaticLink>

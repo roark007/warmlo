@@ -44,8 +44,10 @@ export default function HomePage() {
       <div className="mx-auto max-w-[1120px] px-5 md:px-8">
         <section className="pt-12 md:pt-20">
           <FreshnessStamp dataUpdated={dataUpdated} />
-          <h1 className="mt-4 max-w-[22ch] text-balance font-serif text-[30px] font-bold leading-9 text-ink-900 md:text-[40px] md:leading-[44px]">
-            Know what&apos;s wrong. Know what it should cost. Know who to call.
+          <h1 className="mt-4 max-w-[22ch] font-serif text-[30px] font-bold leading-[1.15] text-ink-900 md:max-w-none md:text-[44px] md:leading-[1.08] md:tracking-[-0.01em]">
+            <span className="md:block">Know what&apos;s wrong. </span>
+            <span className="md:block">Know what it should cost. </span>
+            <span className="md:block">Know who to call.</span>
           </h1>
           <div className="mt-7">
             <CodeSearchBox entries={searchEntries} />

@@ -3,17 +3,21 @@ import { Bitter, Inter } from "next/font/google";
 import { Footer, Header } from "@/components/SiteChrome";
 import "./globals.css";
 
+// display "optional": on a slow cold visit the metric-matched fallback is
+// used for that view instead of paying a multi-second LCP penalty on the
+// swap (Lighthouse gate). On normal connections the fonts make the window
+// and render; on warm/cache visits they always render.
 const bitter = Bitter({
   subsets: ["latin"],
   variable: "--font-bitter",
-  display: "swap",
+  display: "optional",
   adjustFontFallback: true,
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
+  display: "optional",
   adjustFontFallback: true,
 });
 
