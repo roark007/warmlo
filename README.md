@@ -75,7 +75,8 @@ If Supabase is not configured, set `LEAD_WEBHOOK_URL` to a Slack, Discord, or Za
 
 ### Other env vars
 
-- `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — analytics
+- `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — analytics (Plausible, preferred when set)
+- `NEXT_PUBLIC_GA_ID` — GA4 measurement ID (`G-…`), free fallback when Plausible is not configured
 - `NEXT_PUBLIC_SITE_URL` — canonical URLs and sitemap
 
 ## Pre-launch checklist

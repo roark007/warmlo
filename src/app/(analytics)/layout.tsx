@@ -1,5 +1,5 @@
 import { Bitter, Inter } from "next/font/google";
-import { PlausibleScript } from "@/components/PlausibleScript";
+import { AnalyticsScript } from "@/components/AnalyticsScript";
 
 const bitter = Bitter({
   subsets: ["latin"],
@@ -15,11 +15,11 @@ const inter = Inter({
   adjustFontFallback: true,
 });
 
-/** Hub pages: web fonts + Plausible. Code pages skip this layout for faster LCP. */
+/** Hub pages: web fonts + analytics (Plausible or GA4). Code pages skip this layout for faster LCP. */
 export default function AnalyticsLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={`${bitter.variable} ${inter.variable}`}>
-      <PlausibleScript />
+      <AnalyticsScript />
       {children}
     </div>
   );
