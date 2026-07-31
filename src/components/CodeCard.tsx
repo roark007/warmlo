@@ -5,6 +5,7 @@ import { StaticLink } from "./StaticLink";
 
 interface CodeCardProps {
   brandSlug: string;
+  brandName?: string;
   code: Code;
 }
 
@@ -16,19 +17,28 @@ function shortMeaning(code: Code): string {
   return code.meaning;
 }
 
-export function CodeCard({ brandSlug, code }: CodeCardProps) {
+export function CodeCard({ brandSlug, brandName, code }: CodeCardProps) {
+  const subtitle = brandName
+    ? `${brandName} · ${code.meaning.split(".")[0]?.toLowerCase() ?? code.meaning}`
+    : undefined;
+
   return (
     <StaticLink
       href={`/fix/${brandSlug}/${code.slug}`}
-      className="card-lift flex h-full flex-col gap-2.5 rounded-md border border-line bg-surface p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pilot-600"
+      className="card-paper block p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
     >
-      <div className="flex items-center justify-between gap-2">
-        <LedChip size="small">{code.code}</LedChip>
+      <div className="mb-3.5 flex items-center justify-between gap-3">
+        <LedChip severity={code.severity} size="small" flicker={code.severity === "emergency"}>
+          {code.code}
+        </LedChip>
         <SeverityBadge severity={code.severity} size="small" />
       </div>
-      <p className="line-clamp-2 text-sm font-medium leading-5 text-ink-900">
+      <div className="font-display text-[17px] font-semibold tracking-[-0.01em] text-text-strong">
         {shortMeaning(code)}
-      </p>
+      </div>
+      {subtitle && (
+        <div className="mt-1 text-small text-text-muted">{subtitle}</div>
+      )}
     </StaticLink>
   );
 }

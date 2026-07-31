@@ -7,7 +7,6 @@ import { FreshnessStamp } from "@/components/FreshnessStamp";
 import { featuredCodes } from "@/config/featuredCodes";
 import { featuredRepairs } from "@/config/featuredRepairs";
 import { getAllCodes, getBenchmarks, getBrand, getCode, getRepairBySlug } from "@/lib/data";
-import { ChevronRightIcon } from "@/components/icons";
 
 function revealDelay(step: number): CSSProperties {
   return { "--reveal-delay": `${step}ms` } as CSSProperties;
@@ -35,75 +34,143 @@ export default function HomePage() {
     .slice(0, 4);
 
   return (
-    <div className="relative">
-      {/* Moment 4: a barely-there warm wash rising off the paper, behind the hero */}
-      <div
-        className="hero-wash pointer-events-none absolute inset-x-0 top-0 h-[620px]"
-        aria-hidden="true"
-      />
-      <div className="mx-auto max-w-[1120px] px-5 md:px-8">
-        <section className="pt-12 md:pt-20">
-          <FreshnessStamp dataUpdated={dataUpdated} />
-          <h1 className="mt-4 max-w-[22ch] font-serif text-[30px] font-bold leading-[1.15] text-ink-900 md:max-w-none md:text-[44px] md:leading-[1.08] md:tracking-[-0.01em]">
-            <span className="md:block">Know what&apos;s wrong. </span>
-            <span className="md:block">Know what it should cost. </span>
-            <span className="md:block">Know who to call.</span>
+    <div className="min-h-screen text-text-on-dark">
+      {/* Dark hero */}
+      <section className="relative overflow-hidden px-[var(--pad-page-x)] pb-[clamp(40px,7vw,90px)] pt-[clamp(56px,9vw,120px)]">
+        <div className="hero-glow-field" aria-hidden="true">
+          <div className="hero-glow-primary" />
+          <div className="hero-glow-secondary" />
+        </div>
+
+        <div className="relative z-[1] mx-auto max-w-[1160px]">
+          <FreshnessStamp
+            dataUpdated={dataUpdated}
+            className="reveal mb-[clamp(22px,3.4vw,34px)] inline-flex rounded-pill border border-[var(--line-on-dark)] bg-[rgba(239,231,219,0.04)] px-3.5 py-1.5 text-[12.5px] tracking-[0.02em] text-text-on-dark-2"
+          />
+
+          <h1 className="font-display text-hero font-bold leading-[0.98] tracking-[-0.035em]">
+            <span className="reveal hero-line text-text-on-dark" style={revealDelay(50)}>
+              Know what&apos;s <span className="text-ember-hot">wrong</span>.
+            </span>
+            <span className="reveal hero-line text-text-on-dark" style={revealDelay(130)}>
+              Know what it should <span className="grad-ember-text">cost</span>.
+            </span>
+            <span className="reveal hero-line text-text-on-dark-4" style={revealDelay(210)}>
+              Know who to <span className="text-text-on-dark">call</span>.
+            </span>
           </h1>
-          <div className="mt-7">
-            <CodeSearchBox entries={searchEntries} />
-          </div>
-          <div className="mt-3 max-w-[560px]">
-            <Link
-              href="/quote-check"
-              className="flex h-[52px] w-full items-center justify-center gap-2 rounded-md border-[1.5px] border-line-strong bg-surface text-base font-semibold text-ink-900 hover:border-ink-500 hover:bg-paper"
-            >
+
+          <p
+            className="reveal mt-[clamp(22px,3vw,30px)] max-w-[44ch] text-lead leading-[1.55] text-text-on-dark-3"
+            style={revealDelay(280)}
+          >
+            Decode any furnace error code and check whether a contractor&apos;s quote is actually
+            fair — before you sign anything.
+          </p>
+
+          <div
+            className="reveal mt-[clamp(28px,4vw,44px)] flex max-w-[720px] flex-wrap items-stretch gap-3.5"
+            style={revealDelay(340)}
+          >
+            <CodeSearchBox entries={searchEntries} variant="dark" />
+            <Link href="/quote-check" className="btn-ember-lg shrink-0 whitespace-nowrap px-7 py-[19px]">
               Check a quote
-              <ArrowRightIcon size={16} />
+              <ArrowRightIcon size={18} />
             </Link>
           </div>
-          <p className="mt-5 text-[13px] font-medium text-ink-700">
-            Free <span className="text-ink-500">·</span> No signup{" "}
-            <span className="text-ink-500">·</span> Independent
-          </p>
-        </section>
 
-        <section className="mt-16">
-          <h2 className="font-serif text-2xl font-bold text-ink-900 md:text-[30px] md:leading-9">
-            Popular error codes
-          </h2>
-          <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-            {popularCodes.map(({ brand, code }, index) => (
-              <div key={`${brand.slug}-${code.slug}`} className="reveal" style={revealDelay((index % 3) * 70)}>
-                <CodeCard brandSlug={brand.slug} code={code} />
-              </div>
-            ))}
+          <div
+            className="reveal mt-4 flex gap-5 text-[13.5px] tracking-[0.02em] text-text-on-dark-4"
+            style={revealDelay(400)}
+          >
+            <span>Free</span>
+            <span className="opacity-40">·</span>
+            <span>No signup</span>
+            <span className="opacity-40">·</span>
+            <span>Independent</span>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="mt-16 pb-16">
-          <h2 className="font-serif text-2xl font-bold text-ink-900 md:text-[30px] md:leading-9">
-            Repair cost guides
-          </h2>
-          <div className="mt-4 overflow-hidden rounded-md border border-line bg-surface lg:grid lg:grid-cols-2 lg:gap-4 lg:border-0 lg:bg-transparent">
-            {costGuides.map((repair, index) => (
+      {/* Paper sheet body */}
+      <main id="main-content" className="paper-sheet flex-1">
+        <div className="mx-auto max-w-[1160px] px-[var(--pad-page-x)] py-[clamp(36px,4vw,56px)]">
+          <section>
+            <div className="mb-[clamp(14px,1.6vw,20px)] flex flex-wrap items-baseline justify-between gap-5">
+              <h2 className="font-display text-[clamp(23px,2.5vw,30px)] font-bold tracking-[-0.025em] text-text-strong">
+                Popular error codes
+              </h2>
               <Link
-                key={repair.slug}
-                href={`/cost/${repair.slug}`}
-                style={revealDelay((index % 2) * 70)}
-                className={`reveal flex items-center justify-between px-4 py-4 hover:bg-paper max-lg:transition-colors lg:card-lift lg:rounded-md lg:border lg:border-line lg:bg-surface ${index < costGuides.length - 1 ? "border-b border-line lg:border-b" : ""}`}
+                href="/fix"
+                className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-ember-deeper hover:text-ember"
               >
-                <span className="text-[15px] font-medium text-ink-900">{repair.name}</span>
-                <span className="flex items-center gap-2">
-                  <span className="text-[15px] font-semibold text-ink-900 [font-feature-settings:'tnum']">
-                    ${repair.costLow}–${repair.costHigh}
-                  </span>
-                  <ChevronRightIcon size={16} className="text-ink-500" />
-                </span>
+                Browse all brands <span className="text-[17px]">→</span>
               </Link>
-            ))}
-          </div>
-        </section>
-      </div>
+            </div>
+
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))] gap-[var(--gap-grid)]">
+              {popularCodes.map(({ brand, code }, index) => (
+                <div key={`${brand.slug}-${code.slug}`} className="reveal" style={revealDelay((index % 3) * 70)}>
+                  <CodeCard brandSlug={brand.slug} brandName={brand.name} code={code} />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-[clamp(40px,4.5vw,60px)]">
+            <h2 className="mb-[clamp(14px,1.6vw,20px)] font-display text-[clamp(23px,2.5vw,30px)] font-bold tracking-[-0.025em] text-text-strong">
+              Repair cost guides
+            </h2>
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,290px),1fr))] gap-[var(--gap-grid)]">
+              {costGuides.map((repair, index) => (
+                <Link
+                  key={repair.slug}
+                  href={`/cost/${repair.slug}`}
+                  style={revealDelay((index % 2) * 70)}
+                  className="reveal card-cost"
+                >
+                  <div>
+                    <div className="font-display text-base font-semibold text-text-strong">
+                      {repair.name}
+                    </div>
+                    <div className="mt-0.5 text-[12.5px] text-text-muted">
+                      {repair.laborHours} hrs typical labor
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3.5">
+                    <span className="font-ui text-base font-bold text-ember-deeper [font-feature-settings:'tnum']">
+                      ${repair.costLow}–${repair.costHigh}
+                    </span>
+                    <span className="text-xl text-text-on-dark-2">→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="cta-dark-panel mt-[clamp(40px,4.5vw,60px)]">
+            <div
+              className="pointer-events-none absolute right-[-8%] top-[-30%] h-[460px] w-[460px] bg-[radial-gradient(circle,rgba(255,122,45,0.28),rgba(20,16,12,0)_66%)]"
+              aria-hidden="true"
+            />
+            <div className="relative z-[1] max-w-[560px]">
+              <div className="mb-4 text-small font-semibold uppercase tracking-eyebrow text-[#ff9a4d]">
+                QuoteCheck
+              </div>
+              <h2 className="font-display text-[clamp(26px,4vw,42px)] font-bold leading-[1.05] tracking-[-0.025em] text-text-on-dark">
+                Got a quote? See exactly where it lands.
+              </h2>
+              <p className="mt-[18px] text-lead leading-[1.55] text-text-on-dark-3">
+                Compare your contractor&apos;s price against national fair-range data and get an
+                instant verdict — suspiciously low, fair, high, or a red flag.
+              </p>
+              <Link href="/quote-check" className="btn-ember-lg mt-7">
+                Check your quote <span>→</span>
+              </Link>
+            </div>
+          </section>
+        </div>
+      </main>
     </div>
   );
 }

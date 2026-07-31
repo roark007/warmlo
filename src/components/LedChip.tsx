@@ -1,17 +1,40 @@
+import type { Severity } from "@/lib/schemas";
+
 interface LedChipProps {
   children: React.ReactNode;
-  size?: "default" | "small";
+  severity?: Severity;
+  size?: "default" | "small" | "hero";
+  flicker?: boolean;
+  className?: string;
 }
 
-export function LedChip({ children, size = "default" }: LedChipProps) {
-  const sizeClasses =
-    size === "small"
-      ? "text-xs px-2 py-1 h-6 tracking-[0.04em]"
-      : "text-sm px-2.5 py-1.5 h-7 tracking-[0.04em]";
+const sizeClasses = {
+  hero: "px-5 py-[30px] text-[78px] leading-none tracking-[0.06em]",
+  default: "px-3 py-1.5 text-sm",
+  small: "px-3 py-1.5 text-sm",
+};
 
+function severityClass(severity?: Severity): string {
+  switch (severity) {
+    case "diy-possible":
+      return "led-chip-safe";
+    case "emergency":
+      return "led-chip-emerg";
+    default:
+      return "led-chip-pro";
+  }
+}
+
+export function LedChip({
+  children,
+  severity,
+  size = "default",
+  flicker = false,
+  className = "",
+}: LedChipProps) {
   return (
     <span
-      className={`led-glow inline-flex items-center rounded-[4px] bg-ink-900 font-semibold [font-feature-settings:"tnum"] ${sizeClasses}`}
+      className={`led-chip ${severity ? severityClass(severity) : "led-chip-pro"} ${sizeClasses[size]} ${flicker ? "led-flicker" : ""} ${className}`}
     >
       {children}
     </span>

@@ -16,6 +16,7 @@ export interface CodeSearchEntry {
 
 interface CodeSearchBoxProps {
   entries: CodeSearchEntry[];
+  variant?: "dark" | "light";
 }
 
 function shortMeaning(code: Code): string {
@@ -26,7 +27,7 @@ function shortMeaning(code: Code): string {
   return code.meaning;
 }
 
-export function CodeSearchBox({ entries }: CodeSearchBoxProps) {
+export function CodeSearchBox({ entries, variant = "dark" }: CodeSearchBoxProps) {
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -85,9 +86,17 @@ export function CodeSearchBox({ entries }: CodeSearchBoxProps) {
 
   let resultIndex = -1;
 
+  const inputClass =
+    variant === "dark"
+      ? "input-dark"
+      : "input-light pl-11";
+
   return (
-    <div className="relative max-w-[560px]">
-      <SearchIcon size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" />
+    <div className="relative max-w-[720px] flex-1 min-w-[280px]">
+      <SearchIcon
+        size={20}
+        className={`absolute left-5 top-1/2 -translate-y-1/2 ${variant === "dark" ? "text-text-on-dark opacity-55" : "text-text-muted opacity-50"}`}
+      />
       <input
         ref={inputRef}
         type="text"
@@ -110,7 +119,7 @@ export function CodeSearchBox({ entries }: CodeSearchBoxProps) {
           }
           handleKeyDown(e);
         }}
-        className="h-14 w-full rounded-md border-[1.5px] border-line-strong bg-surface py-0 pl-12 pr-12 text-base text-ink-900 placeholder:text-ink-500 hover:border-ink-500 focus:border-pilot-600 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pilot-600"
+        className={inputClass}
       />
       {query && (
         <button
@@ -120,7 +129,7 @@ export function CodeSearchBox({ entries }: CodeSearchBoxProps) {
             setDebouncedQuery("");
             inputRef.current?.focus();
           }}
-          className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center text-ink-500"
+          className={`absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center ${variant === "dark" ? "text-text-on-dark-4" : "text-text-muted"}`}
           aria-label="Clear search"
         >
           <XIcon size={16} />
@@ -131,16 +140,16 @@ export function CodeSearchBox({ entries }: CodeSearchBoxProps) {
           id="code-search-results"
           ref={listRef}
           role="listbox"
-          className="absolute top-[calc(100%+6px)] z-30 max-h-80 w-full overflow-y-auto rounded-md border border-line bg-surface shadow-dropdown"
+          className="absolute top-[calc(100%+6px)] z-30 max-h-80 w-full overflow-y-auto rounded-md border border-[var(--line-on-paper)] bg-paper-2 shadow-[var(--shadow-card-hover)]"
         >
           {flatResults.length === 0 ? (
-            <p className="p-4 text-sm text-ink-600">
+            <p className="p-4 text-sm text-text-muted">
               No matches — try the brand name (e.g. Goodman).
             </p>
           ) : (
             Array.from(groupedResults.entries()).map(([brandSlug, brandEntries]) => (
               <div key={brandSlug}>
-                <p className="px-4 pb-1.5 pt-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-600">
+                <p className="px-4 pb-1.5 pt-3 text-micro font-semibold uppercase tracking-eyebrow text-text-muted">
                   {brandEntries[0].brandName}
                 </p>
                 {brandEntries.map((entry) => {
@@ -154,10 +163,12 @@ export function CodeSearchBox({ entries }: CodeSearchBoxProps) {
                       role="option"
                       aria-selected={isActive}
                       onClick={() => trackEvent("search_used")}
-                      className={`flex items-center gap-3 px-4 py-2.5 hover:bg-paper ${isActive ? "border-l-2 border-pilot-600 bg-paper" : ""}`}
+                      className={`flex items-center gap-3 px-4 py-2.5 hover:bg-paper-sink ${isActive ? "border-l-2 border-ember bg-paper-sink" : ""}`}
                     >
-                      <LedChip size="small">{entry.code.code}</LedChip>
-                      <span className="min-w-0 flex-1 truncate text-[15px] font-medium text-ink-900">
+                      <LedChip size="small" severity={entry.code.severity}>
+                        {entry.code.code}
+                      </LedChip>
+                      <span className="min-w-0 flex-1 truncate text-[15px] font-medium text-text-strong">
                         {shortMeaning(entry.code)}
                       </span>
                       <SeverityBadge severity={entry.code.severity} size="small" />
