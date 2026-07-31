@@ -32,7 +32,7 @@ npm run start
 npx lighthouse http://localhost:3000/fix/goodman/e4 --only-categories=performance --form-factor=mobile --chrome-flags=--headless
 ```
 
-Target: **Performance ≥ 95** on `/fix/goodman/e4`.
+Target: **Performance ≥ 95** on `/fix/goodman/e4` (measured **99** mobile after StaticLink + inlineCss optimizations; commit `d7e2f29`).
 
 ## Environment
 
