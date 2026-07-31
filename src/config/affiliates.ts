@@ -47,3 +47,9 @@ export const affiliateNetworks: AffiliateNetwork[] = [
 export function getActiveAffiliate(): AffiliateNetwork | undefined {
   return affiliateNetworks.find((n) => n.active);
 }
+
+export function buildAffiliateUrl(network: AffiliateNetwork, trackingId = "warmlo"): string {
+  const url = new URL(network.baseUrl);
+  url.searchParams.set(network.trackingParam, trackingId);
+  return url.toString();
+}

@@ -75,8 +75,4 @@ export function getCodesForRepair(repairSlug: string): Array<{ brand: Brand; cod
   return getAllCodes().filter(({ code }) => code.relatedRepairSlug === repairSlug);
 }
 
-export function formatDataUpdated(dataUpdated: string): string {
-  const [year, month] = dataUpdated.split("-");
-  const date = new Date(Number(year), Number(month) - 1, 1);
-  return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
-}
+export { formatDataUpdated } from "./format";

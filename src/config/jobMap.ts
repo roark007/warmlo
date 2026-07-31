@@ -14,8 +14,8 @@ export const repairToJobType: Record<string, string> = {
   "heat-exchanger-replacement": "furnace-replacement-gas-96",
   "condensate-pump-replacement": "furnace-replacement-gas-96",
   "filter-replacement": "furnace-replacement-gas-80",
-  "furnace-replacement-80": "furnace-replacement-gas-80",
-  "furnace-replacement-96": "furnace-replacement-gas-96",
+  "full-furnace-replacement-80": "furnace-replacement-gas-80",
+  "full-furnace-replacement-96": "furnace-replacement-gas-96",
   "ac-condenser-replacement": "ac-condenser-2-3-ton",
   "full-hvac-system-replacement": "full-system-furnace-ac",
 };

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getActiveAffiliate } from "@/config/affiliates";
+import { buildAffiliateUrl, getActiveAffiliate } from "@/config/affiliates";
 
 interface CtaBlockProps {
   repairSlug: string;
@@ -20,7 +20,7 @@ export function CtaBlock({ repairSlug }: CtaBlockProps) {
         </Link>
         {activeAffiliate ? (
           <a
-            href={activeAffiliate.baseUrl}
+            href={buildAffiliateUrl(activeAffiliate)}
             className="flex min-h-[52px] flex-1 items-center justify-center rounded-md bg-pilot-700 px-6 text-base font-semibold text-white transition-colors hover:bg-pilot-800"
           >
             Get quotes from local pros

@@ -1,4 +1,4 @@
-import { formatDataUpdated } from "@/lib/data";
+import { formatDataUpdated } from "@/lib/format";
 
 interface FreshnessStampProps {
   dataUpdated: string;

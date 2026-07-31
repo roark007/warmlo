@@ -23,10 +23,22 @@ Runs lint, typecheck, unit tests, data validation, production build, and post-bu
 
 ## Environment
 
-Copy `.env.example` to `.env.local` and fill in values when enabling lead storage (Phase 3):
+Copy `.env.example` to `.env.local`. For the lead form (QuoteCheck), use **Supabase free tier** — separate from Resend, no credit card for the free plan.
 
-- `SUPABASE_URL` / `SUPABASE_SERVICE_KEY` — lead storage
-- `RESEND_API_KEY` — email fallback
+### Lead storage (Supabase — recommended)
+
+1. Create a free project at [supabase.com](https://supabase.com).
+2. Run `scripts/supabase-leads.sql` in the SQL editor.
+3. Set in Vercel / `.env.local`:
+   - `SUPABASE_URL` — Project Settings → API → Project URL
+   - `SUPABASE_SERVICE_KEY` — **service_role** key (never expose to the client)
+
+### Optional webhook fallback
+
+If Supabase is not configured, set `LEAD_WEBHOOK_URL` to a Slack, Discord, or Zapier catch URL. The API POSTs lead JSON via `fetch` (no extra dependencies).
+
+### Other env vars
+
 - `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — analytics
 - `NEXT_PUBLIC_SITE_URL` — canonical URLs and sitemap
 
@@ -53,7 +65,7 @@ Copy `.env.example` to `.env.local` and fill in values when enabling lead storag
 
 - **Phase 1 (current):** Skeleton — 1 brand (Goodman), 6 codes, all routes, legal, sitemap, CI
 - **Phase 2:** FixCode at scale (17 brands, 200+ codes)
-- **Phase 3:** QuoteCheck flow, `/api/lead`, affiliates
+- **Phase 3:** QuoteCheck flow, `/api/lead` (Supabase), affiliates
 - **Phase 4:** Cost guides polish, Lighthouse pass
 
 See `BUILD_BRIEF.md` for full specification.
