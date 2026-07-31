@@ -195,7 +195,7 @@ export default async function CostPage({
           {relatedCodes.length > 0 && (
             <section className="reveal mb-[clamp(32px,4vw,48px)]">
               <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
-                Related error codes
+                Error codes that lead to this repair
               </h2>
               <div className="mt-4 grid grid-cols-[repeat(auto-fill,minmax(min(100%,240px),1fr))] gap-[11px]">
                 {relatedCodes.map(({ brand, code }) => (

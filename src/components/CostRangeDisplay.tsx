@@ -79,7 +79,7 @@ export function CostRangeDisplay({
         {variant === "default" && !showBreakdown && (
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <p className="text-sm text-text-body">
-              See our{" "}
+              {`A ${repairName.toLowerCase()} typically costs between ${formatCurrency(costLow)} and ${formatCurrency(costHigh)} nationally. See our `}
               <StaticLink href={`/cost/${repairSlug}`} className="font-semibold text-ember-deeper hover:text-ember">
                 {repairName}
               </StaticLink>{" "}

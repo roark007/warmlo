@@ -19,7 +19,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 13 means furnace locked out after the high-limit switch opened too many times. Most often from restricted airflow from dirty filter. You can check basics first; professional repairs typically run $150–$600."
   },
   {
     "code": "14",
@@ -41,7 +42,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 14 means control board stopped ignition attempts after repeated failures. Most often from failed hot-surface ignitor. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "15",
@@ -63,7 +65,8 @@
     "repairCostLow": 450,
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 15 means blower motor exceeded safe current draw or failed to start properly. Most often from seized blower wheel. You can check basics first; professional repairs typically run $450–$1200."
   },
   {
     "code": "23",
@@ -85,7 +88,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 23 means pressure switch did not close during the inducer on cycle. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
   },
   {
     "code": "24",
@@ -107,7 +111,8 @@
     "repairCostLow": 300,
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 24 means A low-voltage fuse on the control board opened, shutting down the furnace. Most often from shorted thermostat wire. You can check basics first; professional repairs typically run $300–$800."
   },
   {
     "code": "31",
@@ -129,7 +134,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 550,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 31 means pressure switch stayed closed when the inducer turned off. Most often from stuck pressure switch. You can check basics first; professional repairs typically run $175–$550."
   },
   {
     "code": "32",
@@ -151,7 +157,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 32 means low-pressure switch remained open during the heating cycle. Most often from inducer not reaching speed. You can check basics first; professional repairs typically run $175–$900."
   },
   {
     "code": "33",
@@ -173,7 +180,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 33 means limit switch circuit opened while the furnace was running. Most often from overheating from poor airflow. You can check basics first; professional repairs typically run $150–$600."
   },
   {
     "code": "34",
@@ -195,7 +203,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 34 means board did not detect flame within the allowed proving period. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "41",
@@ -217,7 +226,8 @@
     "repairCostLow": 450,
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 41 means control detected an error in the blower motor or its speed tap circuit. Most often from failed blower motor. You can check basics first; professional repairs typically run $450–$1200."
   },
   {
     "code": "42",
@@ -239,7 +249,8 @@
     "repairCostLow": 400,
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 42 means inducer motor did not respond correctly during the pre-purge cycle. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
   },
   {
     "code": "43",
@@ -261,7 +272,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 43 means pressure switch remained open when it should have closed. Most often from disconnected pressure hose. You can check basics first; professional repairs typically run $175–$900."
   },
   {
     "code": "44",
@@ -283,7 +295,8 @@
     "repairCostLow": 450,
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 44 means blower drew more current than the control board allows. Most often from restricted blower wheel. You can check basics first; professional repairs typically run $450–$1200."
   },
   {
     "code": "45",
@@ -305,7 +318,8 @@
     "repairCostLow": 300,
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 45 means integrated control self-test detected an internal board error. Most often from moisture on board. You can check basics first; professional repairs typically run $300–$800."
   },
   {
     "code": "51",
@@ -323,7 +337,8 @@
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Bryant furnace code 51 means control detected gas flow when the valve should have been closed. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
   },
   {
     "code": "52",
@@ -341,7 +356,8 @@
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Bryant furnace code 52 means gas valve relay on the control board did not operate correctly. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
   },
   {
     "code": "53",
@@ -363,6 +379,7 @@
     "repairCostLow": 100,
     "repairCostHigh": 300,
     "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 53 means flame sensor did not prove flame after the gas valve opened. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$300."
   }
 ]

@@ -17,7 +17,13 @@ import {
   getRelatedCodes,
   getRepairBySlug,
 } from "@/lib/data";
-import { buildCodePageJsonLd, CODE_PAGE_DISCLAIMER } from "@/lib/seo";
+import {
+  buildCodePageDescription,
+  buildCodePageJsonLd,
+  buildCodePageTitle,
+  buildRepairCostProse,
+  CODE_PAGE_DISCLAIMER,
+} from "@/lib/seo";
 import { CodePageAnalyticsScript } from "@/components/CodePageAnalyticsScript";
 
 export function generateStaticParams() {
@@ -43,18 +49,15 @@ export async function generateMetadata({
     ? code.title.split(":").slice(1).join(":").trim()
     : code.meaning;
 
-  const description =
-    code.meaning.length <= 155 ? code.meaning : `${code.meaning.slice(0, 152)}...`;
-
   return {
-    title: `${brand.name} Furnace Code ${code.code} — Meaning, Fix & Repair Cost`,
-    description,
+    title: buildCodePageTitle(brand, code),
+    description: buildCodePageDescription(brand, code),
     alternates: {
       canonical: `/fix/${brandSlug}/${codeSlug}`,
     },
     openGraph: {
-      title: `${brand.name} Furnace Code ${code.code}: ${shortMeaning}`,
-      description,
+      title: `${brand.name} Code ${code.code}: ${shortMeaning}`,
+      description: buildCodePageDescription(brand, code),
     },
   };
 }
@@ -81,7 +84,10 @@ export default async function CodePage({
   const { dataUpdated } = getBenchmarks();
   const relatedCodes = getRelatedCodes(brandSlug, codeSlug, 6);
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
-  const jsonLd = buildCodePageJsonLd(brand, code, baseUrl);
+  const jsonLd = buildCodePageJsonLd(brand, code, baseUrl, dataUpdated);
+  const costProse = repair
+    ? buildRepairCostProse(repair.name, code.repairCostLow, code.repairCostHigh)
+    : null;
 
   const shortMeaning = code.title.includes(":")
     ? code.title.split(":").slice(1).join(":").trim()
@@ -122,11 +128,11 @@ export default async function CodePage({
               </h1>
 
               <p className="mt-[18px] max-w-[44ch] text-lead leading-[1.6] text-text-on-dark-3">
-                {code.meaning}
+                {code.snippetAnswer ?? code.meaning}
               </p>
 
               <div className="mt-6">
-                <FreshnessStamp dataUpdated={dataUpdated} />
+                <FreshnessStamp dataUpdated={dataUpdated} label="reviewed" />
               </div>
             </div>
 
@@ -155,7 +161,9 @@ export default async function CodePage({
             <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
               What it means
             </h2>
-            <p className="mt-3.5 max-w-[68ch] text-base leading-[1.65] text-text-body">{code.meaning}</p>
+            <p className="mt-3.5 max-w-[68ch] text-base leading-[1.65] text-text-body">
+              {code.snippetAnswer ?? code.meaning}
+            </p>
           </section>
 
           <section className="mb-[clamp(32px,4vw,48px)]">
@@ -176,6 +184,9 @@ export default async function CodePage({
               What a repair costs
             </h2>
             <div className="mt-4">
+              {costProse && (
+                <p className="mb-4 max-w-[68ch] text-base leading-[1.65] text-text-body">{costProse}</p>
+              )}
               <CostRangeDisplay
                 costLow={code.repairCostLow}
                 costHigh={code.repairCostHigh}

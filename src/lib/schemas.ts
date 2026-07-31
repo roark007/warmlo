@@ -14,11 +14,20 @@ export const brandSchema = z.object({
 
 export const brandsSchema = z.array(brandSchema);
 
+export const snippetAnswerSchema = z
+  .string()
+  .min(1)
+  .refine((s) => {
+    const words = s.trim().split(/\s+/).filter(Boolean).length;
+    return words >= 25 && words <= 45;
+  }, "snippetAnswer must be 25–45 words");
+
 export const codeSchema = z.object({
   code: z.string().min(1),
   slug: slugSchema,
   title: z.string().min(1),
   meaning: z.string().min(1),
+  snippetAnswer: snippetAnswerSchema,
   severity: severitySchema,
   commonCauses: z.array(z.string()).min(2),
   diySteps: z.array(z.string()),

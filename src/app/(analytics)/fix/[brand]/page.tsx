@@ -1,7 +1,10 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CodeFilterTable } from "@/components/CodeFilterTable";
-import { getBrand, getBrands, getCodesForBrand } from "@/lib/data";
+import { brandTopCodes } from "@/config/brandTopCodes";
+import { buildBrandHubTitle } from "@/lib/seo";
+import { getBrand, getBrands, getCode, getCodesForBrand } from "@/lib/data";
 
 export function generateStaticParams() {
   return getBrands().map((brand) => ({ brand: brand.slug }));
@@ -12,10 +15,43 @@ export function generateMetadata({ params }: { params: Promise<{ brand: string }
     const brand = getBrand(brandSlug);
     if (!brand) return { title: "Brand Not Found" };
     return {
-      title: `${brand.name} Furnace Error Codes`,
-      description: `Complete list of ${brand.name} furnace error codes with meanings and repair guidance.`,
+      title: buildBrandHubTitle(brand),
+      description: `Complete list of ${brand.name} furnace error codes with meanings, fixes, and repair costs.`,
+      alternates: { canonical: `/fix/${brandSlug}` },
     };
   });
+}
+
+function BrandIntroLinks({ brandSlug, brandName }: { brandSlug: string; brandName: string }) {
+  const topSlugs = brandTopCodes[brandSlug];
+  if (!topSlugs) return null;
+
+  const entries = topSlugs
+    .map((slug) => {
+      const code = getCode(brandSlug, slug);
+      return code ? { slug, code } : null;
+    })
+    .filter((entry): entry is NonNullable<typeof entry> => entry !== null);
+
+  if (entries.length === 0) return null;
+
+  return (
+    <p className="mt-3 max-w-[68ch] text-lead leading-[1.6] text-text-on-dark-3">
+      Most searched {brandName} codes:{" "}
+      {entries.map(({ slug, code }, index) => (
+        <span key={slug}>
+          {index > 0 && (index === entries.length - 1 ? ", and " : ", ")}
+          <Link
+            href={`/fix/${brandSlug}/${slug}`}
+            className="font-semibold text-[#ff9a4d] underline decoration-[rgba(255,154,77,0.35)] underline-offset-2 hover:text-[#ffb87a]"
+          >
+            {code.code}
+          </Link>
+        </span>
+      ))}
+      .
+    </p>
+  );
 }
 
 export default async function BrandPage({
@@ -49,6 +85,7 @@ export default async function BrandPage({
           <p className="mt-3 max-w-[68ch] text-lead leading-[1.6] text-text-on-dark-3">
             {brand.notes} {brand.codeFormat}
           </p>
+          <BrandIntroLinks brandSlug={brandSlug} brandName={brand.name} />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import path from "path";
 import { brandsSchema, codesSchema, repairsSchema } from "../src/lib/schemas";
 import { AFFILIATE_DISCLOSURE } from "../src/components/SiteChrome";
 import { CODE_PAGE_DISCLAIMER } from "../src/lib/seo";
+import { buildLlmsTxt } from "../src/lib/llms-txt";
 
 const BUILD_DIR = path.join(process.cwd(), ".next");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
@@ -153,7 +154,6 @@ let contentOk = true;
 for (const route of sampleRoutes) {
   let html = readPageHtml(route, htmlFiles);
   if (!html) {
-    // Try prerender manifest HTML path
     for (const file of htmlFilePaths) {
       if (file.includes(route.split("/").pop() ?? "")) {
         html = htmlFiles.get(file) ?? null;
@@ -186,6 +186,20 @@ for (const route of sampleRoutes) {
     fail(`${route}: missing FAQPage JSON-LD`);
     contentOk = false;
   }
+
+  const parts = route.split("/");
+  const brandSlug = parts[2];
+  const codeSlug = parts[3];
+  const codes = codesSchema.parse(
+    readJson(path.join(process.cwd(), "data", "codes", `${brandSlug}.json`))
+  );
+  const code = codes.find((c) => c.slug === codeSlug);
+  const needsHowTo =
+    code && code.severity !== "emergency" && code.diySteps.length >= 2;
+  if (needsHowTo && !html.includes("HowTo")) {
+    fail(`${route}: missing HowTo JSON-LD on non-emergency code page`);
+    contentOk = false;
+  }
 }
 if (contentOk && sampleRoutes.length > 0) {
   pass(`required content on ${sampleRoutes.length} sample code pages`);
@@ -213,7 +227,7 @@ for (const route of sampleCostRoutes) {
     fail(`${route}: missing H1`);
     costContentOk = false;
   }
-  if (!html.includes("Related error codes") && !html.includes("related error codes")) {
+  if (!html.includes("Error codes that lead to this repair") && !html.includes("Related error codes")) {
     fail(`${route}: missing related error codes section`);
     costContentOk = false;
   }
@@ -354,6 +368,23 @@ for (const route of compliancePages) {
   }
 }
 if (complianceOk) pass("compliance footer disclosure");
+
+// llms.txt check
+const llmsContent = buildLlmsTxt();
+if (!llmsContent.includes("# Warmlo")) {
+  fail("llms.txt: missing header");
+} else if (!llmsContent.includes("/quote-check")) {
+  fail("llms.txt: missing QuoteCheck entry");
+} else {
+  let llmsBrandOk = true;
+  for (const brand of brands) {
+    if (!llmsContent.includes(`/fix/${brand.slug}`)) {
+      fail(`llms.txt: missing brand hub ${brand.slug}`);
+      llmsBrandOk = false;
+    }
+  }
+  if (llmsBrandOk) pass(`llms.txt includes ${brands.length} brand hubs + QuoteCheck`);
+}
 
 console.log(process.exitCode === 1 ? "\nSite check FAILED" : "\nSite check PASSED");
 process.exit(process.exitCode ?? 0);

@@ -98,7 +98,7 @@ export default function HomePage() {
           <section>
             <div className="mb-[clamp(14px,1.6vw,20px)] flex flex-wrap items-baseline justify-between gap-5">
               <h2 className="font-display text-[clamp(23px,2.5vw,30px)] font-bold tracking-[-0.025em] text-text-strong">
-                Popular error codes
+                Most looked-up codes this season
               </h2>
               <Link
                 href="/fix"

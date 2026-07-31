@@ -161,6 +161,38 @@ for (const file of codeFiles) {
 }
 if (codeContentOk) pass("code content rules");
 
+// 5b. snippetAnswer coverage (S1 gate)
+let snippetOk = true;
+let snippetCount = 0;
+for (const file of codeFiles) {
+  const codes = codesSchema.parse(readJson(path.join(codesDir, file)));
+  const brandSlug = file.replace(".json", "");
+  const brand = brands.find((b) => b.slug === brandSlug);
+  if (!brand) continue;
+  for (const code of codes) {
+    snippetCount++;
+    if (!code.snippetAnswer) {
+      fail("snippetAnswer", `${brand.slug}/${code.code}: missing snippetAnswer`);
+      snippetOk = false;
+      continue;
+    }
+    const words = code.snippetAnswer.trim().split(/\s+/).filter(Boolean).length;
+    if (words < 25 || words > 45) {
+      fail("snippetAnswer", `${brand.slug}/${code.code}: ${words} words (need 25–45)`);
+      snippetOk = false;
+    }
+    if (!code.snippetAnswer.toLowerCase().includes(brand.name.toLowerCase())) {
+      fail("snippetAnswer", `${brand.slug}/${code.code}: must contain brand name`);
+      snippetOk = false;
+    }
+    if (!code.snippetAnswer.toLowerCase().includes(code.code.toLowerCase())) {
+      fail("snippetAnswer", `${brand.slug}/${code.code}: must contain code`);
+      snippetOk = false;
+    }
+  }
+}
+if (snippetOk) pass(`snippetAnswer on ${snippetCount}/${snippetCount} codes`);
+
 // 6. Cost validation
 let costOk = true;
 for (const file of codeFiles) {

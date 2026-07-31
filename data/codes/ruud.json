@@ -19,7 +19,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 10 means furnace stopped trying to ignite after multiple failed attempts. Most often from failed ignitor. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "11",
@@ -41,7 +42,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 11 means Flame was not established during the ignition sequence. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "12",
@@ -59,7 +61,8 @@
     "repairCostLow": 500,
     "repairCostHigh": 3500,
     "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas or see soot, leave the area and call a technician."
+    "dangerNote": "If you smell gas or see soot, leave the area and call a technician.",
+    "snippetAnswer": "Ruud furnace code 12 means rollout switch opened due to abnormal heat at the burner. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
   },
   {
     "code": "13",
@@ -81,7 +84,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 13 means limit switch opened because the furnace overheated. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
   },
   {
     "code": "14",
@@ -103,7 +107,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 14 means igniter circuit failed a resistance or timing check. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "21",
@@ -125,7 +130,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 21 means pressure switch never closed during inducer operation. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
   },
   {
     "code": "22",
@@ -147,7 +153,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 550,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 22 means pressure switch stayed closed when the inducer was off. Most often from water in pressure line. You can check basics first; professional repairs typically run $175–$550."
   },
   {
     "code": "31",
@@ -165,7 +172,8 @@
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Ruud furnace code 31 means control detected a gas valve circuit error. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
   },
   {
     "code": "33",
@@ -187,7 +195,8 @@
     "repairCostLow": 100,
     "repairCostHigh": 300,
     "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 33 means flame sensor did not prove flame after ignition. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$300."
   },
   {
     "code": "41",
@@ -209,7 +218,8 @@
     "repairCostLow": 450,
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 41 means blower motor failed to start or tripped on overcurrent. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200."
   },
   {
     "code": "42",
@@ -231,7 +241,8 @@
     "repairCostLow": 400,
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 42 means inducer motor did not operate during venting. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
   },
   {
     "code": "43",
@@ -253,7 +264,8 @@
     "repairCostLow": 300,
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 43 means control board reported an internal error. Most often from surge damage. You can check basics first; professional repairs typically run $300–$800."
   },
   {
     "code": "44",
@@ -275,7 +287,8 @@
     "repairCostLow": 100,
     "repairCostHigh": 400,
     "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 44 means Flame current dropped below the minimum during operation. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400."
   },
   {
     "code": "45",
@@ -293,7 +306,8 @@
     "repairCostLow": 500,
     "repairCostHigh": 3500,
     "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas, leave the area and call a technician."
+    "dangerNote": "If you smell gas, leave the area and call a technician.",
+    "snippetAnswer": "Ruud furnace code 45 means rollout switch tripped during burner operation. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
   },
   {
     "code": "51",
@@ -315,7 +329,8 @@
     "repairCostLow": 100,
     "repairCostHigh": 400,
     "relatedRepairSlug": "thermostat-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 51 means board lost communication with a smart thermostat. Most often from incompatible stat. You can check basics first; professional repairs typically run $100–$400."
   },
   {
     "code": "61",
@@ -337,6 +352,7 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "condensate-pump-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Ruud furnace code 61 means condensate safety switch detected a drainage problem. Often caused by clogged trap. Usually safe to try basic checks yourself; professional repairs run $150–$450."
   }
 ]

@@ -19,7 +19,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code A01 means furnace failed to establish flame during the ignition sequence. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "A02",
@@ -41,7 +42,8 @@
     "repairCostLow": 100,
     "repairCostHigh": 400,
     "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code A02 means Flame was lost during heating operation. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400."
   },
   {
     "code": "A03",
@@ -63,7 +65,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code A03 means pressure switch did not close during venting. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
   },
   {
     "code": "A04",
@@ -85,7 +88,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code A04 means high-limit switch opened from overheating. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
   },
   {
     "code": "A05",
@@ -103,7 +107,8 @@
     "repairCostLow": 500,
     "repairCostHigh": 3500,
     "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas, leave the area and call a technician."
+    "dangerNote": "If you smell gas, leave the area and call a technician.",
+    "snippetAnswer": "Daikin furnace code A05 means rollout switch tripped during burner operation. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
   },
   {
     "code": "A06",
@@ -121,7 +126,8 @@
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Daikin furnace code A06 means control detected a gas valve circuit error. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
   },
   {
     "code": "A07",
@@ -143,7 +149,8 @@
     "repairCostLow": 450,
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code A07 means blower motor did not start or tripped. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200."
   },
   {
     "code": "A08",
@@ -165,7 +172,8 @@
     "repairCostLow": 400,
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code A08 means inducer motor failed during venting. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
   },
   {
     "code": "A09",
@@ -187,7 +195,8 @@
     "repairCostLow": 300,
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code A09 means control board reported an internal error. Most often from surge damage. You can check basics first; professional repairs typically run $300–$800."
   },
   {
     "code": "A10",
@@ -209,6 +218,7 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "condensate-pump-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code A10 means A condensate drainage fault triggered lockout on high-efficiency models. Often caused by clogged trap. Usually safe to try basic checks yourself; professional repairs run $150–$450."
   }
 ]

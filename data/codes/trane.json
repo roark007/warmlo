@@ -19,7 +19,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 2 Flashes means An external safety device locked the furnace out. Most often from tripped limit switch. You can check basics first; professional repairs typically run $150–$600."
   },
   {
     "code": "3 Flashes",
@@ -41,7 +42,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 3 Flashes means pressure switch circuit failed during the venting sequence. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
   },
   {
     "code": "4 Flashes",
@@ -63,7 +65,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 4 Flashes means primary limit switch opened during the heating cycle. Most often from dirty air filter. You can check basics first; professional repairs typically run $150–$600."
   },
   {
     "code": "5 Flashes",
@@ -81,7 +84,8 @@
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Trane furnace code 5 Flashes means control sensed flame without a call for heat. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
   },
   {
     "code": "6 Flashes",
@@ -103,7 +107,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 400,
     "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 6 Flashes means Supply voltage to the furnace was too high or too low. Most often from utility voltage issue. You can check basics first; professional repairs typically run $150–$400."
   },
   {
     "code": "7 Flashes",
@@ -121,7 +126,8 @@
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else."
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Trane furnace code 7 Flashes means gas valve circuit failed an electrical check. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
   },
   {
     "code": "8 Flashes",
@@ -143,7 +149,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 8 Flashes means furnace failed to establish flame within the trial period. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "9 Flashes",
@@ -165,7 +172,8 @@
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 9 Flashes means high-stage pressure switch did not respond correctly on two-stage units. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
   },
   {
     "code": "10 Flashes",
@@ -186,7 +194,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 350,
     "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 10 Flashes means control detected a grounding or polarity problem. Most often from missing ground. You can check basics first; professional repairs typically run $150–$350."
   },
   {
     "code": "11 Flashes",
@@ -208,7 +217,8 @@
     "repairCostLow": 450,
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 11 Flashes means blower motor did not respond to the control signal. Most often from failed blower. You can check basics first; professional repairs typically run $450–$1200."
   },
   {
     "code": "12 Flashes",
@@ -230,7 +240,8 @@
     "repairCostLow": 400,
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 12 Flashes means inducer motor failed during the pre-purge cycle. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
   },
   {
     "code": "13 Flashes",
@@ -248,7 +259,8 @@
     "repairCostLow": 500,
     "repairCostHigh": 3500,
     "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas or see soot, leave the area and call a technician."
+    "dangerNote": "If you smell gas or see soot, leave the area and call a technician.",
+    "snippetAnswer": "Trane furnace code 13 Flashes means rollout switch opened due to abnormal flame pattern. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
   },
   {
     "code": "14 Flashes",
@@ -270,7 +282,8 @@
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 14 Flashes means ignitor circuit failed a continuity or timing check. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "15 Flashes",
@@ -292,7 +305,8 @@
     "repairCostLow": 100,
     "repairCostHigh": 300,
     "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 15 Flashes means flame sensor signal was out of range after ignition. Most often from corroded sensor. You can check basics first; professional repairs typically run $100–$300."
   },
   {
     "code": "16 Flashes",
@@ -314,7 +328,8 @@
     "repairCostLow": 300,
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 16 Flashes means integrated control failed an internal self-test. Most often from moisture damage. You can check basics first; professional repairs typically run $300–$800."
   },
   {
     "code": "17 Flashes",
@@ -336,7 +351,8 @@
     "repairCostLow": 100,
     "repairCostHigh": 400,
     "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 17 Flashes means flame signal dropped too low during sustained operation. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400."
   },
   {
     "code": "18 Flashes",
@@ -357,6 +373,7 @@
     "repairCostLow": 150,
     "repairCostHigh": 350,
     "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null
+    "dangerNote": null,
+    "snippetAnswer": "Trane furnace code 18 Flashes means Line and neutral may be reversed at the furnace disconnect. Most often from reversed wiring. You can check basics first; professional repairs typically run $150–$350."
   }
 ]
