@@ -38,6 +38,7 @@ yarn-error.log*
 
 # lighthouse reports (local perf checks)
 lighthouse*.json
+lh-*.json
 
 # typescript
 *.tsbuildinfo
