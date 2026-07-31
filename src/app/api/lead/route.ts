@@ -1,6 +1,7 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 import { leadSchema } from "@/lib/lead";
+import { sendLeadAlert } from "@/lib/leadNotify";
 
 const rateLimitMap = new Map<string, number[]>();
 const RATE_LIMIT = 3;
@@ -113,6 +114,11 @@ export async function POST(request: Request) {
   try {
     await storeLead(parsed.data);
     recordSubmission(ip);
+    try {
+      await sendLeadAlert(parsed.data);
+    } catch (alertErr) {
+      console.error("Lead alert failed (lead was saved):", alertErr);
+    }
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("Lead storage failed:", err);

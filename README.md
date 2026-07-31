@@ -28,10 +28,25 @@ Copy `.env.example` to `.env.local`. For the lead form (QuoteCheck), use **Supab
 ### Lead storage (Supabase — recommended)
 
 1. Create a free project at [supabase.com](https://supabase.com).
-2. Run `scripts/supabase-leads.sql` in the SQL editor.
-3. Set in Vercel / `.env.local`:
-   - `SUPABASE_URL` — Project Settings → API → Project URL
-   - `SUPABASE_SERVICE_KEY` — **service_role** key (never expose to the client)
+2. Run the SQL from the copy box in README (or `scripts/supabase-leads.sql`) in **SQL Editor**.
+3. Get credentials (Supabase updated their dashboard in 2026):
+   - Open your project → **Connect** (top of the page) → copy **Project URL**
+   - Or: **Project Settings** (gear) → **API Keys**
+   - Copy a **Secret** key (`sb_secret_...`) from the **API Keys** tab  
+     — or, on the **Legacy API Keys** tab, copy **service_role** (long `eyJ...` string)
+4. Add to Vercel / `.env.local`:
+   - `SUPABASE_URL` — the Project URL (`https://xxxxx.supabase.co`)
+   - `SUPABASE_SERVICE_KEY` — the **Secret** or **service_role** key (server-only, never in the browser)
+5. **Redeploy** on Vercel after adding env vars.
+
+### Instant alerts (optional)
+
+When someone submits the lead form, Supabase stores the row. For **phone/email alerts**, add `LEAD_ALERT_WEBHOOK_URL` in Vercel:
+
+- **Discord (easiest):** Server Settings → Integrations → Webhooks → New Webhook → copy URL
+- **Zapier (email to inbox):** Zap with Webhook trigger → Email action → paste Zapier webhook URL
+
+Alerts are best-effort; the lead is still saved if the alert fails.
 
 ### Optional webhook fallback
 
