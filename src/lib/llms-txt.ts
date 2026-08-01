@@ -26,6 +26,10 @@ export function buildLlmsTxt(): string {
     `- ${BASE_URL}/data/hvac-quote-index — Warmlo HVAC Quote Index: national fair-price ranges and anonymized quote statistics.`
   );
 
+  lines.push(
+    `- ${BASE_URL}/about — Editorial methodology, fair-range sources, and how Warmlo is built.`
+  );
+
   lines.push("");
   lines.push("## Symptom guides");
   for (const symptom of getSymptoms()) {

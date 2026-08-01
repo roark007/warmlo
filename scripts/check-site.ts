@@ -161,9 +161,15 @@ if (!indexFound) {
   fail(`missing quote index page: ${INDEX_ROUTE}`);
   censusOk = false;
 }
+const aboutFound =
+  generatedRoutes.has("/about") || htmlFilePaths.some((f) => f.includes(`${path.sep}about`));
+if (!aboutFound) {
+  fail("missing about page: /about");
+  censusOk = false;
+}
 if (censusOk) {
   pass(
-    `route census — ${totalCodes} code pages, ${brands.length} brand pages, ${repairs.length} cost pages, ${symptoms.length} symptom pages, 1 quote index`
+    `route census — ${totalCodes} code pages, ${brands.length} brand pages, ${repairs.length} cost pages, ${symptoms.length} symptom pages, 1 quote index, 1 about`
   );
 }
 
@@ -301,10 +307,45 @@ if (!indexHtml) {
 }
 if (indexContentOk) pass("quote index page content");
 
+// About page content
+let aboutContentOk = true;
+let aboutHtml = readPageHtml("/about", htmlFiles);
+if (!aboutHtml) {
+  for (const file of htmlFilePaths) {
+    if (file.includes(`${path.sep}about`)) {
+      aboutHtml = htmlFiles.get(file) ?? null;
+      break;
+    }
+  }
+}
+if (!aboutHtml) {
+  fail("could not read HTML for /about");
+  aboutContentOk = false;
+} else {
+  if (!/<h1[^>]*>/.test(aboutHtml)) {
+    fail("/about: missing H1");
+    aboutContentOk = false;
+  }
+  if (!aboutHtml.includes("Methodology") && !aboutHtml.includes("How FixCode")) {
+    fail("/about: missing methodology content");
+    aboutContentOk = false;
+  }
+  if (!aboutHtml.includes("Quote Index") && !aboutHtml.includes("hvac-quote-index")) {
+    fail("/about: missing Quote Index section");
+    aboutContentOk = false;
+  }
+  if (!aboutHtml.includes("Organization") && !aboutHtml.includes('"@type":"Organization"')) {
+    fail("/about: missing Organization JSON-LD");
+    aboutContentOk = false;
+  }
+}
+if (aboutContentOk) pass("about page content");
+
 // Internal link check
 const validRoutes = new Set([...generatedRoutes]);
 validRoutes.add("/fix");
 validRoutes.add("/quote-check");
+validRoutes.add("/about");
 validRoutes.add("/privacy");
 validRoutes.add("/terms");
 validRoutes.add("/disclosure");
@@ -387,6 +428,7 @@ const contentRoutes = [
   ...repairs.map((r) => `/cost/${r.slug}`),
   ...symptoms.map((s) => `/symptom/${s.slug}`),
   INDEX_ROUTE,
+  "/about",
   "/privacy",
   "/terms",
   "/disclosure",
@@ -454,6 +496,11 @@ if (!llmsContent.includes("# Warmlo")) {
     fail("llms.txt: missing Quote Index entry");
   } else if (llmsBrandOk) {
     pass("llms.txt includes HVAC Quote Index");
+  }
+  if (!llmsContent.includes("/about")) {
+    fail("llms.txt: missing About entry");
+  } else if (llmsBrandOk) {
+    pass("llms.txt includes About page");
   }
 }
 

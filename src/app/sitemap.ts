@@ -4,7 +4,7 @@ import { getAllCodes, getBrands, getRepairs, getSymptoms } from "@/lib/data";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/fix", "/quote-check", "/privacy", "/terms", "/disclosure"];
+  const staticRoutes = ["", "/fix", "/quote-check", "/about", "/privacy", "/terms", "/disclosure"];
   const brandRoutes = getBrands().map((b) => `/fix/${b.slug}`);
   const codeRoutes = getAllCodes().map(
     ({ brand, code }) => `/fix/${brand.slug}/${code.slug}`

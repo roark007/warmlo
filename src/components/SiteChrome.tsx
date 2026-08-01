@@ -67,6 +67,9 @@ export function Footer() {
           <StaticLink href="/data/hvac-quote-index" className="hover:text-ember">
             Quote Index
           </StaticLink>
+          <StaticLink href="/about" className="hover:text-ember">
+            About
+          </StaticLink>
         </div>
         <p className="mt-9 text-small leading-[1.6] text-text-faint">{AFFILIATE_DISCLOSURE}</p>
       </div>

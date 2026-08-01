@@ -119,13 +119,52 @@ npm run verify
 ```bash
 npx tsx scripts/seed-quote-index.ts
 ```
+
+## SEO operations (Phase S4)
+
+### Quarterly query mining (Google Search Console)
+
+Run every ~3 months once Search Console has 8+ weeks of data:
+
+1. Open [Google Search Console](https://search.google.com/search-console) → **Performance** → **Search results**.
+2. Export queries with **Impressions ≥ 100** (last 3 months).
+3. Sort into buckets:
+   - **Missing code** → add object to `data/codes/{brand}.json` (see `HANDOFF_ADDING_CONTENT.md`).
+   - **Missing symptom** → add to `data/symptoms.json` (proven demand only).
+   - **Missing cost topic** → add to `data/repairs.json`.
+   - **Junk** (city names, “near me”, unrelated) → ignore.
+4. Add winners only — target **+20–40 validated pages per quarter**, never speculative bulk generation.
+5. Run `npm run verify`, commit, deploy.
+
+Never add city/ZIP/“near me” pages. One accurate JSON object beats fifty doorway pages.
+
+### Seasonal calendar
+
+| When | Owner actions |
+|------|----------------|
+| **September** (before first frost) | Re-verify cost data; update `dataUpdated` in `quote-benchmarks.json` + `quote-index.json`. Copy `septemberFurnaceFeaturedCodes` from `src/config/seasonalFeaturedCodes.ts` into `src/config/featuredCodes.ts`. Confirm GSC coverage has zero errors. |
+| **First cold snap** | Run `npx tsx scripts/aggregate-quotes.ts` if QuoteCheck volume exists. Optional: pitch Quote Index stats to local news / HVAC newsletters (one email, ~10 sends). |
+| **June** (before AC season) | Rotate home featured codes using `juneAcFeaturedCodes` in `seasonalFeaturedCodes.ts`. Consider featuring AC symptom pages on home when symptom module exists. Refresh benchmarks if prices shifted. |
+| **Quarterly** | Query mining loop (above). |
+
+Featured code rotation is manual: edit `src/config/featuredCodes.ts`, run verify, deploy.
+
+### Owner checklist (one-time / ongoing)
+
+- [x] Google Search Console verified, sitemap submitted (`https://warmlo.com/sitemap.xml`)
+- [x] GA4 live (`NEXT_PUBLIC_GA_ID` on Vercel)
+- [ ] Affiliate network approvals (Networx, Profitise, CJ) — edit `src/config/affiliates.ts` when approved
+- [ ] Spot-check ~10 code pages + ~10 symptom pages for accuracy
+- [ ] Delete test lead row in Supabase (`TEST - please ignore`)
+
 - `tests/` — vitest unit tests
 
 ## Phase status
 
-- **Phase 1:** Skeleton — routes, legal, sitemap, CI
-- **Phase 2:** FixCode at scale (17 brands, 258 codes)
-- **Phase 3:** QuoteCheck flow, `/api/lead` (Supabase), Brevo alerts
-- **Phase 4 (current):** Cost guides, featured codes, perf optimizations (code pages use system fonts; hub pages load Bitter/Inter)
+- **Build phases 1–4:** Complete (FixCode, QuoteCheck, cost guides, CI)
+- **SEO S1:** Snippet answers, HowTo JSON-LD, llms.txt
+- **SEO S2:** 30 symptom pages
+- **SEO S3:** HVAC Quote Index
+- **SEO S4:** About page, ops docs (this section)
 
-See `BUILD_BRIEF.md` for full specification.
+See `BUILD_BRIEF.md` and `SEO_BRIEF.md` for full specification.
