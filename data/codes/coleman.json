@@ -20,7 +20,8 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 3 Blinks means Three blinks indicate the pressure switch did not close during venting. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Coleman furnace code 3 Blinks means Three blinks indicate the pressure switch did not close during venting. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900.",
+    "flashPattern": "3 blinks"
   },
   {
     "code": "4 Blinks",
@@ -43,7 +44,8 @@
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 4 Blinks means Four blinks signal the limit switch opened from overheating. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Coleman furnace code 4 Blinks means Four blinks signal the limit switch opened from overheating. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600.",
+    "flashPattern": "4 blinks"
   },
   {
     "code": "5 Blinks",
@@ -66,7 +68,8 @@
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 5 Blinks means Five blinks mean flame was not detected after ignition. Most often from dirty sensor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Coleman furnace code 5 Blinks means Five blinks mean flame was not detected after ignition. Most often from dirty sensor. You can check basics first; professional repairs typically run $150–$450.",
+    "flashPattern": "5 blinks"
   },
   {
     "code": "6 Blinks",
@@ -85,7 +88,8 @@
     "repairCostHigh": 3500,
     "relatedRepairSlug": "heat-exchanger-replacement",
     "dangerNote": "If you smell gas, leave the area and call a technician.",
-    "snippetAnswer": "Coleman furnace code 6 Blinks means Six blinks indicate rollout switch opened. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
+    "snippetAnswer": "Coleman furnace code 6 Blinks means Six blinks indicate rollout switch opened. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500.",
+    "flashPattern": "6 blinks"
   },
   {
     "code": "7 Blinks",
@@ -104,7 +108,8 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Coleman furnace code 7 Blinks means Seven blinks indicate gas valve circuit fault. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Coleman furnace code 7 Blinks means Seven blinks indicate gas valve circuit fault. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "flashPattern": "7 blinks"
   },
   {
     "code": "8 Blinks",
@@ -127,7 +132,8 @@
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 8 Blinks means Eight blinks mean ignitor circuit failure. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Coleman furnace code 8 Blinks means Eight blinks mean ignitor circuit failure. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450.",
+    "flashPattern": "8 blinks"
   },
   {
     "code": "9 Blinks",
@@ -150,7 +156,8 @@
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 9 Blinks means Nine blinks signal blower motor error. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Coleman furnace code 9 Blinks means Nine blinks signal blower motor error. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200.",
+    "flashPattern": "9 blinks"
   },
   {
     "code": "10 Blinks",
@@ -173,7 +180,8 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 10 Blinks means Ten blinks indicate inducer motor problem. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
+    "snippetAnswer": "Coleman furnace code 10 Blinks means Ten blinks indicate inducer motor problem. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900.",
+    "flashPattern": "10 blinks"
   },
   {
     "code": "11 Blinks",
@@ -196,7 +204,8 @@
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 11 Blinks means Eleven blinks mean board internal error. Most often from surge. You can check basics first; professional repairs typically run $300–$800."
+    "snippetAnswer": "Coleman furnace code 11 Blinks means Eleven blinks mean board internal error. Most often from surge. You can check basics first; professional repairs typically run $300–$800.",
+    "flashPattern": "11 blinks"
   },
   {
     "code": "12 Blinks",
@@ -219,6 +228,7 @@
     "repairCostHigh": 400,
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 12 Blinks means Twelve blinks indicate weak flame signal. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Coleman furnace code 12 Blinks means Twelve blinks indicate weak flame signal. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400.",
+    "flashPattern": "12 blinks"
   }
 ]

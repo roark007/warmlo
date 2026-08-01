@@ -1,4 +1,4 @@
-import type { Brand, Code } from "@/lib/schemas";
+import type { Brand, Code, Symptom } from "@/lib/schemas";
 
 export function dataUpdatedToIsoDate(dataUpdated: string): string {
   const [year, month] = dataUpdated.split("-");
@@ -129,6 +129,79 @@ export function buildCodePageJsonLd(
   }
 
   return schemas;
+}
+
+export function buildSymptomPageTitle(symptom: Symptom): string {
+  return `${symptom.title} — Causes, Fixes & When to Call a Pro | Warmlo`;
+}
+
+export function buildSymptomPageDescription(symptom: Symptom): string {
+  const hook = symptom.snippetAnswer.length <= 120 ? symptom.snippetAnswer : `${symptom.snippetAnswer.slice(0, 117)}...`;
+  let desc = `${hook} Free symptom guide with brand-specific error codes.`;
+  if (desc.length > 155) desc = desc.slice(0, 152) + "...";
+  return desc;
+}
+
+export function buildSymptomPageJsonLd(symptom: Symptom, baseUrl: string, dataUpdated: string) {
+  const pageUrl = `${baseUrl}/symptom/${symptom.slug}`;
+  const dateModified = dataUpdatedToIsoDate(dataUpdated);
+
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    dateModified,
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: symptom.title,
+        acceptedAnswer: { "@type": "Answer", text: symptom.snippetAnswer },
+      },
+      {
+        "@type": "Question",
+        name: "What causes this?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: symptom.likelyCauses.map((c) => `${c.cause} (${c.likelihood})`).join(". "),
+        },
+      },
+    ],
+  };
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
+      { "@type": "ListItem", position: 2, name: "Symptoms", item: `${baseUrl}/symptom/${symptom.slug}` },
+      { "@type": "ListItem", position: 3, name: symptom.title, item: pageUrl },
+    ],
+  };
+
+  const schemas: Record<string, unknown>[] = [faqPage, breadcrumb];
+
+  if (symptom.severityCeiling !== "emergency" && symptom.checkFirst.length >= 2) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: `What to check when ${symptom.title.toLowerCase()}`,
+      description: symptom.snippetAnswer,
+      dateModified,
+      step: symptom.checkFirst.map((text, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        text,
+      })),
+    });
+  }
+
+  return schemas;
+}
+
+export function buildCodePageHeadline(brand: Brand, code: Code, shortMeaning: string): string {
+  if (code.flashPattern) {
+    return `${brand.name} ${code.flashPattern} (Code ${code.code}): ${shortMeaning}`;
+  }
+  return `${brand.name} Furnace Code ${code.code}: ${shortMeaning}`;
 }
 
 export const CODE_PAGE_DISCLAIMER =

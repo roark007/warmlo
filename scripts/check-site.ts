@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { brandsSchema, codesSchema, repairsSchema } from "../src/lib/schemas";
+import { brandsSchema, codesSchema, repairsSchema, symptomsSchema } from "../src/lib/schemas";
 import { AFFILIATE_DISCLOSURE } from "../src/components/SiteChrome";
 import { CODE_PAGE_DISCLAIMER } from "../src/lib/seo";
 import { buildLlmsTxt } from "../src/lib/llms-txt";
@@ -84,8 +84,10 @@ if (!fs.existsSync(BUILD_DIR)) {
 
 const brands = brandsSchema.parse(readJson(path.join(process.cwd(), "data", "brands.json")));
 const repairs = repairsSchema.parse(readJson(path.join(process.cwd(), "data", "repairs.json")));
+const symptoms = symptomsSchema.parse(readJson(path.join(process.cwd(), "data", "symptoms.json")));
 
 const expectedCodeRoutes = new Set<string>();
+const expectedSymptomRoutes = new Set(symptoms.map((s) => `/symptom/${s.slug}`));
 let totalCodes = 0;
 for (const brand of brands) {
   const codes = codesSchema.parse(
@@ -142,9 +144,18 @@ for (const repair of repairs) {
     censusOk = false;
   }
 }
+for (const route of expectedSymptomRoutes) {
+  const found =
+    generatedRoutes.has(route) ||
+    htmlFilePaths.some((f) => f.includes(route.replace(/\//g, path.sep).slice(1)));
+  if (!found) {
+    fail(`missing symptom page: ${route}`);
+    censusOk = false;
+  }
+}
 if (censusOk) {
   pass(
-    `route census — ${totalCodes} code pages, ${brands.length} brand pages, ${repairs.length} cost pages`
+    `route census — ${totalCodes} code pages, ${brands.length} brand pages, ${repairs.length} cost pages, ${symptoms.length} symptom pages`
   );
 }
 
@@ -254,6 +265,7 @@ validRoutes.add("/disclosure");
 for (const route of expectedCodeRoutes) validRoutes.add(route);
 for (const brand of brands) validRoutes.add(`/fix/${brand.slug}`);
 for (const repair of repairs) validRoutes.add(`/cost/${repair.slug}`);
+for (const symptom of symptoms) validRoutes.add(`/symptom/${symptom.slug}`);
 
 let linksOk = true;
 for (const [, html] of htmlFiles) {
@@ -326,6 +338,7 @@ const contentRoutes = [
   ...brands.map((b) => `/fix/${b.slug}`),
   ...expectedCodeRoutes,
   ...repairs.map((r) => `/cost/${r.slug}`),
+  ...symptoms.map((s) => `/symptom/${s.slug}`),
   "/privacy",
   "/terms",
   "/disclosure",
@@ -384,6 +397,11 @@ if (!llmsContent.includes("# Warmlo")) {
     }
   }
   if (llmsBrandOk) pass(`llms.txt includes ${brands.length} brand hubs + QuoteCheck`);
+  if (!llmsContent.includes("/symptom/")) {
+    fail("llms.txt: missing symptom guides");
+  } else if (llmsBrandOk) {
+    pass(`llms.txt includes ${symptoms.length} symptom guides`);
+  }
 }
 
 console.log(process.exitCode === 1 ? "\nSite check FAILED" : "\nSite check PASSED");

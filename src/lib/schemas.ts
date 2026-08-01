@@ -36,6 +36,7 @@ export const codeSchema = z.object({
   repairCostHigh: z.number().int().positive(),
   relatedRepairSlug: slugSchema,
   dangerNote: z.string().nullable(),
+  flashPattern: z.string().nullable().optional(),
 });
 
 export const codesSchema = z.array(codeSchema);
@@ -79,9 +80,37 @@ export const quoteBenchmarksSchema = z.object({
   benchmarks: z.array(benchmarkSchema).min(1),
 });
 
+export const likelihoodSchema = z.enum(["most common", "common", "possible"]);
+
+export const symptomCauseSchema = z.object({
+  cause: z.string().min(1),
+  likelihood: likelihoodSchema,
+  repairSlug: slugSchema,
+});
+
+export const symptomCodeRefSchema = z.object({
+  brand: slugSchema,
+  code: slugSchema,
+});
+
+export const symptomSchema = z.object({
+  slug: slugSchema,
+  title: z.string().min(1),
+  snippetAnswer: snippetAnswerSchema,
+  plainExplanation: z.string().min(1),
+  likelyCauses: z.array(symptomCauseSchema).min(2),
+  relatedCodes: z.array(symptomCodeRefSchema).min(2),
+  checkFirst: z.array(z.string()),
+  severityCeiling: severitySchema,
+  dangerNote: z.string().nullable(),
+});
+
+export const symptomsSchema = z.array(symptomSchema);
+
 export type Brand = z.infer<typeof brandSchema>;
 export type Code = z.infer<typeof codeSchema>;
 export type Repair = z.infer<typeof repairSchema>;
 export type Benchmark = z.infer<typeof benchmarkSchema>;
 export type Severity = z.infer<typeof severitySchema>;
+export type Symptom = z.infer<typeof symptomSchema>;
 export type VerdictBucket = "suspiciously-low" | "fair" | "high" | "red-flag";

@@ -1,0 +1,929 @@
+/**
+ * Generates data/symptoms.json — run: npx tsx scripts/seed-symptoms.ts
+ */
+import fs from "fs";
+import path from "path";
+import { codesSchema, repairsSchema, slugSchema } from "../src/lib/schemas";
+
+type CodeRef = { brand: string; code: string };
+
+const DATA_DIR = path.join(process.cwd(), "data");
+
+function assertCodesExist(refs: CodeRef[], label: string) {
+  for (const ref of refs) {
+    if (!slugSchema.safeParse(ref.brand).success || !slugSchema.safeParse(ref.code).success) {
+      throw new Error(`${label}: invalid slug ${ref.brand}/${ref.code}`);
+    }
+    const file = path.join(DATA_DIR, "codes", `${ref.brand}.json`);
+    const codes = codesSchema.parse(JSON.parse(fs.readFileSync(file, "utf-8")));
+    if (!codes.some((c) => c.slug === ref.code)) {
+      throw new Error(`${label}: missing code ${ref.brand}/${ref.code}`);
+    }
+  }
+}
+
+const symptoms = [
+  {
+    slug: "furnace-wont-turn-on",
+    title: "Furnace Won't Turn On",
+    snippetAnswer:
+      "A furnace that won't turn on at all usually has no power, a tripped breaker, a closed gas valve, or a thermostat that isn't calling for heat. Check those basics first; professional diagnosis typically runs $100–$400.",
+    plainExplanation:
+      "When nothing happens — no hum, no click, no blower — the problem is often outside the furnace itself. Power, the thermostat, or the gas supply are the first places to look. If those check out, the issue may be an internal safety lockout or failed control board.",
+    likelyCauses: [
+      { cause: "Tripped breaker or blown fuse", likelihood: "most common", repairSlug: "control-board-replacement" },
+      { cause: "Thermostat not calling for heat", likelihood: "common", repairSlug: "thermostat-replacement" },
+      { cause: "Closed gas valve or safety lockout", likelihood: "common", repairSlug: "gas-valve-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "200" },
+      { brand: "lennox", code: "200" },
+      { brand: "carrier", code: "14" },
+      { brand: "goodman", code: "e0" },
+      { brand: "rheem", code: "10" },
+      { brand: "daikin", code: "a09" },
+    ],
+    checkFirst: [
+      "Confirm the thermostat is set to Heat and the temperature is above room temp.",
+      "Check the furnace power switch and the breaker in your electrical panel.",
+      "Verify the gas supply valve near the furnace is fully open.",
+      "Replace thermostat batteries if the display is dim or blank.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-blowing-cold-air",
+    title: "Furnace Blowing Cold Air",
+    snippetAnswer:
+      "A furnace blowing cold air often means the burners never lit, the system is still in fan-only mode, or a limit switch tripped. Check the filter and thermostat first; ignition repairs typically run $150–$600.",
+    plainExplanation:
+      "Cold air from your vents usually means the blower is running but the burners aren't producing heat. Common causes include a dirty filter restricting airflow, a failed ignitor, or a limit switch that shut the burners down. Fan-only mode on the thermostat can also feel like cold air.",
+    likelyCauses: [
+      { cause: "Failed hot-surface ignitor", likelihood: "most common", repairSlug: "ignitor-replacement" },
+      { cause: "Clogged air filter", likelihood: "common", repairSlug: "filter-replacement" },
+      { cause: "Limit switch tripped from overheating", likelihood: "common", repairSlug: "limit-switch-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "271" },
+      { brand: "lennox", code: "271" },
+      { brand: "goodman", code: "e0" },
+      { brand: "goodman", code: "e4" },
+      { brand: "carrier", code: "14" },
+      { brand: "rheem", code: "11" },
+    ],
+    checkFirst: [
+      "Replace or clean the air filter.",
+      "Confirm the thermostat is set to Heat, not Fan Only or Cool.",
+      "Wait five minutes after a limit trip — the furnace may reset on its own.",
+      "Listen for ignition clicks; if none, the ignitor may have failed.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-clicks-but-wont-ignite",
+    title: "Furnace Clicks But Won't Ignite",
+    snippetAnswer:
+      "A furnace that clicks but never ignites usually has a failing hot-surface ignitor or a dirty flame sensor. Both are common, inexpensive repairs — $150 to $400 professionally.",
+    plainExplanation:
+      "The clicking sound is the gas valve and ignitor trying to start a flame. If you hear clicks but never see burners light, the ignitor is the most likely culprit on modern furnaces. A dirty flame sensor can also cause the burners to shut off seconds after lighting.",
+    likelyCauses: [
+      { cause: "Failing hot-surface ignitor", likelihood: "most common", repairSlug: "ignitor-replacement" },
+      { cause: "Dirty flame sensor", likelihood: "common", repairSlug: "flame-sensor-cleaning" },
+      { cause: "Gas valve not opening", likelihood: "possible", repairSlug: "gas-valve-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "goodman", code: "e0" },
+      { brand: "carrier", code: "14" },
+      { brand: "armstrong-air", code: "270" },
+      { brand: "tempstar", code: "1-flash" },
+      { brand: "luxaire", code: "1-blink" },
+      { brand: "york", code: "1-blink" },
+    ],
+    checkFirst: [
+      "Confirm the gas supply valve near the furnace is fully open.",
+      "Watch the ignitor during a heat cycle — a cracked ignitor won't glow bright orange.",
+      "If burners light then go out quickly, the flame sensor likely needs cleaning.",
+      "If you smell gas, leave the house and call your gas utility.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-short-cycling",
+    title: "Furnace Keeps Shutting Off (Short Cycling)",
+    snippetAnswer:
+      "A furnace that starts then shuts off within minutes often has a dirty flame sensor, clogged filter, or overheating limit switch. Check the filter first; sensor and limit repairs typically run $100–$600.",
+    plainExplanation:
+      "Short cycling means the furnace heats briefly, shuts down, then tries again — repeating every few minutes. This wastes energy and stresses components. Restricted airflow and flame-sensor faults are the most common causes on modern units.",
+    likelyCauses: [
+      { cause: "Dirty flame sensor", likelihood: "most common", repairSlug: "flame-sensor-cleaning" },
+      { cause: "Clogged air filter", likelihood: "common", repairSlug: "filter-replacement" },
+      { cause: "Tripping high-limit switch", likelihood: "common", repairSlug: "limit-switch-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "13" },
+      { brand: "bryant", code: "13" },
+      { brand: "tempstar", code: "3-flash" },
+      { brand: "luxaire", code: "3-blinks" },
+      { brand: "armstrong-air", code: "274" },
+      { brand: "rheem", code: "13" },
+    ],
+    checkFirst: [
+      "Replace the air filter — this fixes many short-cycling cases.",
+      "Open all supply and return vents.",
+      "Note whether burners light before shutdown; no flame points to a sensor issue.",
+      "Call a pro if the cycle repeats after a filter change.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-blower-runs-constantly",
+    title: "Furnace Blower Runs Constantly",
+    snippetAnswer:
+      "A blower that never stops is often set to Fan On at the thermostat, a stuck fan relay, or a control board fault. Check thermostat settings first; board or relay repairs typically run $100–$800.",
+    plainExplanation:
+      "The blower should stop when the thermostat is satisfied unless you've selected continuous fan mode. If the fan runs nonstop in Auto mode, a relay may be stuck closed or the control board may not be signaling the blower to shut off.",
+    likelyCauses: [
+      { cause: "Thermostat set to Fan On", likelihood: "most common", repairSlug: "thermostat-replacement" },
+      { cause: "Stuck blower relay on control board", likelihood: "common", repairSlug: "control-board-replacement" },
+      { cause: "Limit switch wired for continuous fan", likelihood: "possible", repairSlug: "limit-switch-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "15" },
+      { brand: "bryant", code: "15" },
+      { brand: "armstrong-air", code: "275" },
+      { brand: "carrier", code: "41" },
+      { brand: "tempstar", code: "7-flash" },
+      { brand: "luxaire", code: "7-blinks" },
+    ],
+    checkFirst: [
+      "Set the thermostat fan switch to Auto and wait one full cycle.",
+      "Replace thermostat batteries if settings seem stuck.",
+      "Turn off power at the furnace switch for 30 seconds, then restore.",
+      "If the blower still runs with power cycled, call a technician.",
+    ],
+    severityCeiling: "diy-possible",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-wont-stay-lit",
+    title: "Furnace Won't Stay Lit",
+    snippetAnswer:
+      "Burners that light then go out within seconds usually mean a dirty flame sensor or weak gas pressure. Flame sensor cleaning is a common fix — $100 to $300 professionally.",
+    plainExplanation:
+      "If you see the burners ignite but the flame dies within a few seconds, the control board is shutting off gas because it doesn't detect a stable flame. A coated flame sensor rod is the most frequent cause on modern furnaces.",
+    likelyCauses: [
+      { cause: "Dirty flame sensor", likelihood: "most common", repairSlug: "flame-sensor-cleaning" },
+      { cause: "Weak or failing ignitor", likelihood: "common", repairSlug: "ignitor-replacement" },
+      { cause: "Gas pressure or valve issue", likelihood: "possible", repairSlug: "gas-valve-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "271" },
+      { brand: "daikin", code: "a02" },
+      { brand: "tempstar", code: "5-flash" },
+      { brand: "heil", code: "5-flash" },
+      { brand: "luxaire", code: "16-blinks" },
+      { brand: "york", code: "16-blinks" },
+    ],
+    checkFirst: [
+      "Watch one full ignition cycle — note if flame appears then disappears.",
+      "Check that the gas valve is fully open.",
+      "Replace the air filter; poor airflow can cause flame rollout.",
+      "Do not disassemble the gas valve yourself — call a licensed tech.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-leaking-water",
+    title: "Furnace Leaking Water",
+    snippetAnswer:
+      "Water around a high-efficiency furnace usually comes from a clogged condensate drain or failed condensate pump. Clearing the drain is often DIY; pump replacement runs $150–$450.",
+    plainExplanation:
+      "Condensing furnaces produce water as a byproduct of combustion. That water drains through a hose and trap, or a condensate pump on some installs. A clog or full pump triggers leaks and can lock out the furnace for safety.",
+    likelyCauses: [
+      { cause: "Clogged condensate drain line", likelihood: "most common", repairSlug: "condensate-pump-replacement" },
+      { cause: "Failed condensate pump", likelihood: "common", repairSlug: "condensate-pump-replacement" },
+      { cause: "Cracked condensate trap", likelihood: "possible", repairSlug: "condensate-pump-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "rheem", code: "61" },
+      { brand: "ruud", code: "61" },
+      { brand: "armstrong-air", code: "443" },
+      { brand: "lennox", code: "443" },
+      { brand: "daikin", code: "a10" },
+      { brand: "luxaire", code: "12-blinks" },
+    ],
+    checkFirst: [
+      "Turn off the furnace and soak up standing water.",
+      "Inspect the condensate drain hose for kinks or clogs.",
+      "Pour a cup of water into the drain pan to test the pump if equipped.",
+      "Call a pro if water returns after clearing the line.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-smells-like-gas",
+    title: "Furnace Smells Like Gas",
+    snippetAnswer:
+      "A gas smell near your furnace is an emergency — do not run the system or attempt repairs. Leave the house, call your gas utility from outside, then a licensed HVAC technician.",
+    plainExplanation:
+      "Natural gas and propane are odorized so leaks are detectable. Any strong gas smell means you should treat it as an emergency regardless of whether the furnace is running. Do not use switches, flames, or the furnace until a professional clears the system.",
+    likelyCauses: [
+      { cause: "Gas leak at valve or fitting", likelihood: "most common", repairSlug: "gas-valve-replacement" },
+      { cause: "Cracked heat exchanger", likelihood: "common", repairSlug: "heat-exchanger-replacement" },
+      { cause: "Delayed ignition or rollout", likelihood: "possible", repairSlug: "gas-valve-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "51" },
+      { brand: "bryant", code: "51" },
+      { brand: "armstrong-air", code: "272" },
+      { brand: "american-standard", code: "5-flashes" },
+      { brand: "trane", code: "5-flashes" },
+      { brand: "goodman", code: "5-flash" },
+    ],
+    checkFirst: [],
+    severityCeiling: "emergency",
+    dangerNote:
+      "If you smell gas, leave the house immediately and call your gas utility from a safe location. Do not turn on lights, appliances, or the furnace.",
+  },
+  {
+    slug: "furnace-smells-burning",
+    title: "Furnace Smells Like Something Burning",
+    snippetAnswer:
+      "A burning smell from the furnace may be dust burning off at season start, a clogged filter, or an overheating motor. A persistent or electrical burning odor means shut it off and call a pro — $150–$900.",
+    plainExplanation:
+      "A brief dusty smell when you first run heat each fall is normal. A sharp, electrical, or rubber burning smell is not — it can indicate an overheating blower motor, wiring problem, or blocked airflow causing components to run hot.",
+    likelyCauses: [
+      { cause: "Dust on heat exchanger (seasonal)", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Clogged filter causing overheating", likelihood: "common", repairSlug: "filter-replacement" },
+      { cause: "Overheating blower motor", likelihood: "possible", repairSlug: "blower-motor-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "273" },
+      { brand: "american-standard", code: "13-flashes" },
+      { brand: "rheem", code: "12" },
+      { brand: "tempstar", code: "4-flash" },
+      { brand: "amana", code: "e6" },
+      { brand: "luxaire", code: "4-blinks" },
+    ],
+    checkFirst: [
+      "Replace the air filter.",
+      "If the smell is sharp or electrical, turn off the furnace at the switch.",
+      "Allow a one-time dusty smell up to 30 minutes on first seasonal run.",
+      "Call a technician if the odor persists or returns after filter change.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-making-loud-noise",
+    title: "Furnace Making a Loud Noise (Banging or Scraping)",
+    snippetAnswer:
+      "Loud banging or scraping from a furnace often means a failing blower motor, loose panel, or delayed ignition. Turn off the system and call a pro — motor repairs run $450–$1,200.",
+    plainExplanation:
+      "Scraping or grinding usually points to a blower wheel hitting debris or a failing motor bearing. Banging on startup can be delayed ignition — a dangerous condition where gas builds before lighting. Either warrants prompt professional attention.",
+    likelyCauses: [
+      { cause: "Failing blower motor or wheel", likelihood: "most common", repairSlug: "blower-motor-replacement" },
+      { cause: "Delayed ignition banging", likelihood: "common", repairSlug: "ignitor-replacement" },
+      { cause: "Loose access panel rattling", likelihood: "possible", repairSlug: "control-board-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "276" },
+      { brand: "carrier", code: "42" },
+      { brand: "tempstar", code: "8-flash" },
+      { brand: "coleman", code: "10-blinks" },
+      { brand: "american-standard", code: "12-flashes" },
+      { brand: "armstrong-air", code: "442" },
+    ],
+    checkFirst: [
+      "Turn off the furnace if you hear scraping metal on metal.",
+      "Check that all access panels are seated and latched.",
+      "Do not ignore banging at ignition — call a licensed technician.",
+      "Note when the noise occurs (startup, running, shutdown) for the tech.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-blinking-red-light",
+    title: "Furnace Blinking Red Light",
+    snippetAnswer:
+      "A blinking red LED on your furnace control board is a diagnostic code — the flash count or pattern maps to a specific fault. Find your brand below to decode the exact error and next steps.",
+    plainExplanation:
+      "Manufacturers use LED flash patterns instead of a numeric display on many furnaces. Count the flashes or note steady vs blinking, then match your brand to the correct code page. Meaning varies by brand — the same flash count can indicate different faults.",
+    likelyCauses: [
+      { cause: "Ignition or flame failure", likelihood: "most common", repairSlug: "ignitor-replacement" },
+      { cause: "Limit or rollout switch trip", likelihood: "common", repairSlug: "limit-switch-replacement" },
+      { cause: "Pressure switch fault", likelihood: "common", repairSlug: "pressure-switch-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "goodman", code: "1-flash" },
+      { brand: "tempstar", code: "1-flash" },
+      { brand: "american-standard", code: "8-flashes" },
+      { brand: "trane", code: "8-flashes" },
+      { brand: "luxaire", code: "5-blinks" },
+      { brand: "carrier", code: "14" },
+    ],
+    checkFirst: [
+      "Count the number of flashes or note the blink pattern.",
+      "Select your furnace brand below to see the matching error code.",
+      "Write down the code before resetting power.",
+      "Replace the air filter if the code points to a limit or airflow fault.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-blinking-green-light",
+    title: "Furnace Blinking Green Light",
+    snippetAnswer:
+      "A green LED on your furnace usually indicates normal operation or standby mode — but flash patterns can still signal faults on some brands. Select your brand below to confirm what your specific light means.",
+    plainExplanation:
+      "Green often means the control board has power and the unit is idle or running normally. On some models, green flashes still encode error codes. Always cross-check your brand's diagnostic guide — color alone isn't enough to diagnose a problem.",
+    likelyCauses: [
+      { cause: "Normal standby (no fault)", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Communication or board status code", likelihood: "common", repairSlug: "control-board-replacement" },
+      { cause: "Ignition sequence in progress", likelihood: "possible", repairSlug: "ignitor-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "goodman", code: "1-flash" },
+      { brand: "carrier", code: "14" },
+      { brand: "lennox", code: "200" },
+      { brand: "trane", code: "2-flashes" },
+      { brand: "rheem", code: "10" },
+      { brand: "york", code: "1-blink" },
+    ],
+    checkFirst: [
+      "Note whether the green light is steady or blinking.",
+      "If blinking, count flashes and match your brand below.",
+      "Confirm the thermostat is calling for heat if the unit won't start.",
+      "See your brand's code list if heat isn't working despite a green light.",
+    ],
+    severityCeiling: "diy-possible",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-3-flashes",
+    title: "Furnace Blinking 3 Times (3 Flashes)",
+    snippetAnswer:
+      "Three flashes on a furnace LED usually indicates a pressure switch or limit fault — but the exact meaning depends on your brand. Select your manufacturer below for the precise code definition and fix.",
+    plainExplanation:
+      "Three-flash codes are among the most searched furnace diagnostics. On Carrier and Bryant, code 13 often appears as three flashes. On Goodman and Amana, three flashes may mean pressure switch. Always verify against your specific brand before replacing parts.",
+    likelyCauses: [
+      { cause: "Pressure switch not closing", likelihood: "most common", repairSlug: "pressure-switch-replacement" },
+      { cause: "Blocked vent or condensate drain", likelihood: "common", repairSlug: "pressure-switch-replacement" },
+      { cause: "High-limit switch trip", likelihood: "common", repairSlug: "limit-switch-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "goodman", code: "3-flash" },
+      { brand: "tempstar", code: "3-flash" },
+      { brand: "heil", code: "3-flash" },
+      { brand: "luxaire", code: "3-blinks" },
+      { brand: "york", code: "3-blinks" },
+      { brand: "american-standard", code: "3-flashes" },
+    ],
+    checkFirst: [
+      "Count flashes again to confirm exactly three.",
+      "Pick your brand below — three flashes mean different things on different units.",
+      "Check the condensate drain and vent pipe for blockages.",
+      "Replace the air filter before calling a technician.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-4-flashes",
+    title: "Furnace Blinking 4 Times (4 Flashes)",
+    snippetAnswer:
+      "Four flashes on a furnace diagnostic LED typically signals a limit switch or rollout fault on many brands — but Goodman code E4 uses a different format. Match your brand below for the exact meaning and repair cost.",
+    plainExplanation:
+      "Four-flash patterns often indicate the furnace overheated or a rollout switch opened. On Goodman units, the same fault may display as code E4 instead of four flashes. Brand-specific lookup is essential — don't assume one answer fits all furnaces.",
+    likelyCauses: [
+      { cause: "High-limit switch opened", likelihood: "most common", repairSlug: "limit-switch-replacement" },
+      { cause: "Rollout switch tripped", likelihood: "common", repairSlug: "limit-switch-replacement" },
+      { cause: "Restricted airflow from dirty filter", likelihood: "common", repairSlug: "filter-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "goodman", code: "e4" },
+      { brand: "tempstar", code: "4-flash" },
+      { brand: "heil", code: "4-flash" },
+      { brand: "luxaire", code: "4-blinks" },
+      { brand: "york", code: "4-blinks" },
+      { brand: "american-standard", code: "4-flashes" },
+    ],
+    checkFirst: [
+      "Replace the air filter immediately — this is the most common fix.",
+      "Open all supply vents.",
+      "Select your brand below to confirm what four flashes means on your unit.",
+      "Wait 30 minutes after a limit trip before retrying.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "furnace-not-responding-to-thermostat",
+    title: "Furnace Not Responding to Thermostat",
+    snippetAnswer:
+      "When the furnace ignores the thermostat, the stat may have dead batteries, loose wiring, or the furnace may have no power. Check batteries and breakers first; thermostat replacement runs $100–$400.",
+    plainExplanation:
+      "The thermostat sends a low-voltage signal to the furnace control board. If nothing happens when you turn up the heat, the break can be at the stat, the wire, or the furnace itself. Smart thermostats add compatibility issues on older systems.",
+    likelyCauses: [
+      { cause: "Dead thermostat batteries", likelihood: "most common", repairSlug: "thermostat-replacement" },
+      { cause: "Tripped furnace breaker", likelihood: "common", repairSlug: "control-board-replacement" },
+      { cause: "Loose or broken low-voltage wire", likelihood: "possible", repairSlug: "thermostat-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "200" },
+      { brand: "lennox", code: "200" },
+      { brand: "armstrong-air", code: "201" },
+      { brand: "luxaire", code: "14-blinks" },
+      { brand: "york", code: "14-blinks" },
+      { brand: "rheem", code: "51" },
+    ],
+    checkFirst: [
+      "Replace thermostat batteries.",
+      "Confirm the furnace power switch and breaker are on.",
+      "Set heat several degrees above room temperature.",
+      "Listen at the furnace for a click when the stat calls for heat.",
+    ],
+    severityCeiling: "diy-possible",
+    dangerNote: null,
+  },
+  {
+    slug: "ac-not-cooling",
+    title: "AC Not Cooling",
+    snippetAnswer:
+      "When your AC runs but won't cool, check the thermostat mode, air filter, and outdoor unit first. Refrigerant leaks and compressor failures need a pro — repairs run $150 to $5,500 depending on the fault.",
+    plainExplanation:
+      "Cooling problems often start with simple issues: wrong thermostat setting, dirty filter restricting airflow, or a tripped outdoor disconnect. Warmlo's furnace code pages cover airflow and limit faults that also affect central AC on shared systems.",
+    likelyCauses: [
+      { cause: "Dirty air filter restricting airflow", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Tripped outdoor unit breaker", likelihood: "common", repairSlug: "capacitor-replacement" },
+      { cause: "Refrigerant leak or compressor failure", likelihood: "possible", repairSlug: "ac-condenser-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "13" },
+      { brand: "bryant", code: "13" },
+      { brand: "payne", code: "13" },
+      { brand: "american-standard", code: "4-flashes" },
+      { brand: "trane", code: "4-flashes" },
+      { brand: "rheem", code: "13" },
+    ],
+    checkFirst: [
+      "Confirm the thermostat is set to Cool and the target temp is below room temp.",
+      "Replace the HVAC air filter.",
+      "Check that the outdoor unit fan is running.",
+      "Verify the outdoor disconnect switch is on.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "ac-blowing-warm-air",
+    title: "AC Blowing Warm Air",
+    snippetAnswer:
+      "Warm air from AC vents usually means the outdoor unit isn't running, refrigerant is low, or the thermostat is set wrong. Check the filter and outdoor unit first; professional AC repair typically runs $150–$5,500.",
+    plainExplanation:
+      "If air moves but isn't cold, the indoor blower works but cooling isn't happening. The outdoor condenser may be off, frozen, or low on refrigerant. On heat-pump systems, a stuck reversing valve can also blow warm air in cool mode.",
+    likelyCauses: [
+      { cause: "Outdoor condenser not running", likelihood: "most common", repairSlug: "capacitor-replacement" },
+      { cause: "Low refrigerant from a leak", likelihood: "common", repairSlug: "ac-condenser-replacement" },
+      { cause: "Thermostat in wrong mode", likelihood: "common", repairSlug: "thermostat-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "200" },
+      { brand: "lennox", code: "200" },
+      { brand: "luxaire", code: "14-blinks" },
+      { brand: "york", code: "14-blinks" },
+      { brand: "rheem", code: "51" },
+      { brand: "ruud", code: "51" },
+    ],
+    checkFirst: [
+      "Set thermostat to Cool with the fan on Auto.",
+      "Check if the outdoor unit is running and the fan is spinning.",
+      "Replace the air filter.",
+      "Look for ice on the refrigerant line — turn off AC if present.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "ac-frozen-coil",
+    title: "AC Frozen Coil or Ice on Line",
+    snippetAnswer:
+      "Ice on an AC coil almost always means restricted airflow or low refrigerant. Turn the system off to thaw, replace the filter, and call a pro if ice returns — refrigerant work requires licensed service.",
+    plainExplanation:
+      "When airflow drops or refrigerant charge is low, the evaporator coil temperature falls below freezing and moisture forms ice. Running the system while frozen can damage the compressor. Thaw completely before restarting.",
+    likelyCauses: [
+      { cause: "Clogged air filter", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Blocked return vents", likelihood: "common", repairSlug: "filter-replacement" },
+      { cause: "Low refrigerant charge", likelihood: "common", repairSlug: "ac-condenser-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "13" },
+      { brand: "bryant", code: "13" },
+      { brand: "payne", code: "13" },
+      { brand: "tempstar", code: "3-flash" },
+      { brand: "luxaire", code: "3-blinks" },
+      { brand: "rheem", code: "13" },
+    ],
+    checkFirst: [
+      "Turn the AC off at the thermostat and let ice melt completely.",
+      "Replace the air filter.",
+      "Open all return and supply vents.",
+      "Do not run the system until the coil is fully thawed.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "ac-leaking-water-inside",
+    title: "AC Leaking Water Inside",
+    snippetAnswer:
+      "Water inside from an AC unit usually means a clogged condensate drain or full drain pan. Clearing the drain line is often DIY; pump or pan repairs run $150–$450 professionally.",
+    plainExplanation:
+      "The indoor evaporator coil produces condensate that drains away through a PVC line. Algae, rust, or debris clogs the line and water overflows into your home. High-efficiency furnaces share the same drain on combined systems.",
+    likelyCauses: [
+      { cause: "Clogged condensate drain line", likelihood: "most common", repairSlug: "condensate-pump-replacement" },
+      { cause: "Full or rusted drain pan", likelihood: "common", repairSlug: "condensate-pump-replacement" },
+      { cause: "Failed condensate pump", likelihood: "common", repairSlug: "condensate-pump-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "rheem", code: "61" },
+      { brand: "ruud", code: "61" },
+      { brand: "armstrong-air", code: "443" },
+      { brand: "lennox", code: "443" },
+      { brand: "daikin", code: "a10" },
+      { brand: "york", code: "12-blinks" },
+    ],
+    checkFirst: [
+      "Turn off the AC to stop water production.",
+      "Locate the condensate drain line and check for clogs.",
+      "Vacuum or flush the drain trap if accessible.",
+      "Call a pro if the pan is rusted through or the pump isn't running.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "ac-outside-unit-not-running",
+    title: "AC Outside Unit Not Running",
+    snippetAnswer:
+      "When the outdoor AC unit won't start, check the breaker, disconnect switch, and thermostat first. A failed capacitor or contactor is a common fix — $150 to $400 professionally.",
+    plainExplanation:
+      "The outdoor condenser needs power and a signal from the thermostat. If the indoor fan runs but outside is silent, power, a tripped breaker, or a failed capacitor/contactor are the usual suspects. Never open the outdoor unit yourself.",
+    likelyCauses: [
+      { cause: "Tripped breaker or blown fuse", likelihood: "most common", repairSlug: "capacitor-replacement" },
+      { cause: "Failed run capacitor", likelihood: "common", repairSlug: "capacitor-replacement" },
+      { cause: "Bad contactor", likelihood: "common", repairSlug: "control-board-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "45" },
+      { brand: "bryant", code: "45" },
+      { brand: "carrier", code: "42" },
+      { brand: "bryant", code: "42" },
+      { brand: "daikin", code: "a09" },
+      { brand: "goodman", code: "e9" },
+    ],
+    checkFirst: [
+      "Check the outdoor disconnect switch near the condenser.",
+      "Reset the AC breaker in your electrical panel once.",
+      "Confirm the thermostat is calling for cooling.",
+      "Call an HVAC technician — capacitor testing requires proper tools.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "ac-short-cycling",
+    title: "AC Short Cycling",
+    snippetAnswer:
+      "An AC that turns on and off every few minutes may have a dirty filter, oversized unit, frozen coil, or failing capacitor. Replace the filter first; professional diagnosis typically runs $150–$550.",
+    plainExplanation:
+      "Short cycling wastes energy and wears out the compressor. Restricted airflow from a dirty filter is the easiest fix. Low refrigerant, a failing capacitor, or an oversized system that cools too quickly can also cause rapid on-off cycles.",
+    likelyCauses: [
+      { cause: "Clogged air filter", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Frozen evaporator coil", likelihood: "common", repairSlug: "ac-condenser-replacement" },
+      { cause: "Failing capacitor or contactor", likelihood: "possible", repairSlug: "capacitor-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "13" },
+      { brand: "bryant", code: "13" },
+      { brand: "armstrong-air", code: "274" },
+      { brand: "tempstar", code: "3-flash" },
+      { brand: "rheem", code: "13" },
+      { brand: "payne", code: "13" },
+    ],
+    checkFirst: [
+      "Replace the air filter.",
+      "Check for ice on the refrigerant line.",
+      "Note how long each cycle runs — under two minutes is short cycling.",
+      "Call a pro if cycling continues after a filter change.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "ac-making-loud-humming",
+    title: "AC Making a Loud Humming Noise",
+    snippetAnswer:
+      "A loud hum from an AC unit often means a failing capacitor, stuck contactor, or motor that won't spin. Turn off the system and call a pro — capacitor replacement typically runs $150–$400.",
+    plainExplanation:
+      "A hum without the fan spinning is a classic failed capacitor symptom on outdoor units. Indoor humming may come from a struggling blower motor. Continuing to run the system can burn out motors — shut it off and have it diagnosed.",
+    likelyCauses: [
+      { cause: "Failed run capacitor", likelihood: "most common", repairSlug: "capacitor-replacement" },
+      { cause: "Stuck contactor", likelihood: "common", repairSlug: "control-board-replacement" },
+      { cause: "Failing blower or condenser motor", likelihood: "common", repairSlug: "blower-motor-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "42" },
+      { brand: "bryant", code: "42" },
+      { brand: "armstrong-air", code: "276" },
+      { brand: "daikin", code: "a08" },
+      { brand: "coleman", code: "10-blinks" },
+      { brand: "goodman", code: "e3" },
+    ],
+    checkFirst: [
+      "Turn off the AC at the thermostat if the hum is loud or continuous.",
+      "Check whether the outdoor fan is spinning during the hum.",
+      "Do not attempt capacitor replacement yourself — stored charge is dangerous.",
+      "Call a licensed HVAC technician for diagnosis.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "ac-smells-musty",
+    title: "AC Smells Musty",
+    snippetAnswer:
+      "A musty smell from AC vents usually means mold or mildew on the evaporator coil or in ductwork — often from a clogged drain or dirty filter. A coil cleaning runs $150–$500; duct cleaning may also help.",
+    plainExplanation:
+      "Moisture on the indoor coil combined with dust creates an environment for mold. A clogged condensate drain keeps the coil wet longer. This isn't a furnace error code issue — but restricted airflow codes on your system may appear if the filter is also dirty.",
+    likelyCauses: [
+      { cause: "Mold on evaporator coil", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Clogged condensate drain", likelihood: "common", repairSlug: "condensate-pump-replacement" },
+      { cause: "Dirty air filter trapping moisture", likelihood: "common", repairSlug: "filter-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "13" },
+      { brand: "bryant", code: "13" },
+      { brand: "rheem", code: "61" },
+      { brand: "armstrong-air", code: "443" },
+      { brand: "goodman", code: "e4" },
+      { brand: "payne", code: "13" },
+    ],
+    checkFirst: [
+      "Replace the air filter.",
+      "Check the condensate drain for standing water or clogs.",
+      "Run the fan without cooling for an hour to dry the coil.",
+      "Schedule a professional coil cleaning if the smell persists.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "pilot-light-keeps-going-out",
+    title: "Pilot Light Keeps Going Out",
+    snippetAnswer:
+      "A pilot that won't stay lit on an older furnace usually means a weak thermocouple or dirty pilot assembly. Thermocouple replacement runs $100–$250 — but many modern furnaces use electronic ignition instead.",
+    plainExplanation:
+      "Standing-pilot furnaces use a small flame that must stay lit to prove it's safe to open the gas valve. A worn thermocouple is the most common reason the pilot goes out when you release the button. Newer furnaces don't have a pilot — they use hot-surface ignitors.",
+    likelyCauses: [
+      { cause: "Failed thermocouple", likelihood: "most common", repairSlug: "thermocouple-replacement" },
+      { cause: "Dirty or misaligned pilot orifice", likelihood: "common", repairSlug: "thermocouple-replacement" },
+      { cause: "Draft blowing out the pilot", likelihood: "possible", repairSlug: "gas-valve-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "goodman", code: "e0" },
+      { brand: "carrier", code: "14" },
+      { brand: "rheem", code: "11" },
+      { brand: "lennox", code: "270" },
+      { brand: "amana", code: "e0" },
+      { brand: "york", code: "1-blink" },
+    ],
+    checkFirst: [
+      "Confirm your furnace actually has a standing pilot — many newer units do not.",
+      "If you smell gas while relighting, stop and call your gas utility.",
+      "Follow the manufacturer's relight instructions on the unit label.",
+      "Call a licensed technician for thermocouple replacement.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "thermostat-blank-screen",
+    title: "Thermostat Blank Screen",
+    snippetAnswer:
+      "A blank thermostat screen usually means dead batteries, tripped furnace breaker, or a blown fuse on the furnace control board. Replace batteries first; stat or board repairs run $100–$800.",
+    plainExplanation:
+      "Thermostats run on batteries or low-voltage power from the furnace. A completely blank display often starts with dead batteries on battery-powered stats. Hardwired stats go blank when the furnace transformer or fuse fails.",
+    likelyCauses: [
+      { cause: "Dead thermostat batteries", likelihood: "most common", repairSlug: "thermostat-replacement" },
+      { cause: "Tripped HVAC breaker", likelihood: "common", repairSlug: "control-board-replacement" },
+      { cause: "Blown fuse on furnace board", likelihood: "common", repairSlug: "control-board-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "200" },
+      { brand: "lennox", code: "200" },
+      { brand: "carrier", code: "24" },
+      { brand: "bryant", code: "24" },
+      { brand: "luxaire", code: "14-blinks" },
+      { brand: "rheem", code: "51" },
+    ],
+    checkFirst: [
+      "Replace thermostat batteries even if you think it's hardwired — many use backup batteries.",
+      "Check the furnace breaker in your electrical panel.",
+      "Look for a small fuse on the furnace control board (photo before removing).",
+      "Call a pro if the screen stays blank after batteries and breaker check.",
+    ],
+    severityCeiling: "diy-possible",
+    dangerNote: null,
+  },
+  {
+    slug: "high-energy-bill-spike",
+    title: "High Energy Bill Spike",
+    snippetAnswer:
+      "A sudden jump in heating bills often means short cycling, a clogged filter, or an failing component running inefficiently. Replace the filter and check for short cycles; a tune-up runs $100–$250.",
+    plainExplanation:
+      "Your furnace works harder when airflow is restricted or when it starts and stops frequently. A dirty filter, failing limit switch, or aging blower motor can all raise gas and electric use without obvious comfort problems.",
+    likelyCauses: [
+      { cause: "Clogged air filter", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Short cycling from limit or sensor faults", likelihood: "common", repairSlug: "flame-sensor-cleaning" },
+      { cause: "Aging inefficient equipment", likelihood: "possible", repairSlug: "full-furnace-replacement-80" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "13" },
+      { brand: "bryant", code: "13" },
+      { brand: "armstrong-air", code: "274" },
+      { brand: "rheem", code: "13" },
+      { brand: "payne", code: "13" },
+      { brand: "goodman", code: "e4" },
+    ],
+    checkFirst: [
+      "Replace the HVAC air filter.",
+      "Compare this month's usage to the same month last year.",
+      "Listen for frequent on-off cycling.",
+      "Schedule an annual furnace tune-up.",
+    ],
+    severityCeiling: "diy-possible",
+    dangerNote: null,
+  },
+  {
+    slug: "some-rooms-hot-some-cold",
+    title: "Some Rooms Hot, Some Cold",
+    snippetAnswer:
+      "Uneven heating usually means blocked vents, a dirty filter, or duct leaks — not a single error code. Balance vents and replace the filter first; duct sealing runs $300–$1,000 professionally.",
+    plainExplanation:
+      "Temperature differences between rooms are usually airflow problems, not control board failures. Closed vents, long duct runs, and leaks send less heat to distant rooms. Your furnace may show airflow-related codes if the filter is clogged.",
+    likelyCauses: [
+      { cause: "Closed or blocked supply vents", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Clogged air filter", likelihood: "common", repairSlug: "filter-replacement" },
+      { cause: "Duct leaks or poor insulation", likelihood: "common", repairSlug: "blower-motor-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "carrier", code: "13" },
+      { brand: "bryant", code: "13" },
+      { brand: "payne", code: "13" },
+      { brand: "carrier", code: "33" },
+      { brand: "bryant", code: "33" },
+      { brand: "goodman", code: "e4" },
+    ],
+    checkFirst: [
+      "Open all supply vents, including in unused rooms.",
+      "Replace the air filter.",
+      "Check that return air paths aren't blocked by furniture.",
+      "Consider professional duct balancing if problems persist.",
+    ],
+    severityCeiling: "diy-possible",
+    dangerNote: null,
+  },
+  {
+    slug: "water-heater-not-heating",
+    title: "Water Heater Not Heating",
+    snippetAnswer:
+      "No hot water usually means a tripped breaker, pilot out on gas units, or a failed heating element on electric models. Warmlo covers furnaces — for water heaters, call a plumber or HVAC pro; repairs run $150–$600.",
+    plainExplanation:
+      "Water heaters are separate from your furnace. Gas units may have a pilot or ignitor issue; electric units use heating elements and thermostats. Check power and the unit's reset button first. These faults don't map to furnace error codes.",
+    likelyCauses: [
+      { cause: "Tripped breaker (electric)", likelihood: "most common", repairSlug: "thermocouple-replacement" },
+      { cause: "Pilot or ignitor failure (gas)", likelihood: "common", repairSlug: "thermocouple-replacement" },
+      { cause: "Failed heating element or thermostat", likelihood: "common", repairSlug: "thermocouple-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "goodman", code: "e0" },
+      { brand: "carrier", code: "14" },
+      { brand: "rheem", code: "10" },
+      { brand: "lennox", code: "200" },
+      { brand: "trane", code: "2-flashes" },
+      { brand: "amana", code: "e0" },
+    ],
+    checkFirst: [
+      "Confirm this is a water heater issue, not a furnace issue.",
+      "Check the water heater breaker or gas valve.",
+      "Press the reset button on electric units if present.",
+      "Call a licensed plumber or HVAC tech for water heater repair.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+  {
+    slug: "banging-pipes-when-heat-starts",
+    title: "Banging Pipes When Heat Starts",
+    snippetAnswer:
+      "Banging pipes when heat kicks on usually means expanding metal ducts or water hammer in hydronic lines — not a furnace error code. Check vents and duct support; professional duct work runs $300–$1,000.",
+    plainExplanation:
+      "Sheet metal ducts pop when they expand from sudden heat. Hydronic systems can hammer when valves close quickly. These are mechanical noise issues, though pressure-related furnace codes may appear on systems with blocked condensate or vent issues.",
+    likelyCauses: [
+      { cause: "Expanding ductwork (oil-canning)", likelihood: "most common", repairSlug: "filter-replacement" },
+      { cause: "Closed dampers or vents", likelihood: "common", repairSlug: "filter-replacement" },
+      { cause: "Water hammer in hydronic heating", likelihood: "possible", repairSlug: "pressure-switch-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "221" },
+      { brand: "carrier", code: "31" },
+      { brand: "bryant", code: "31" },
+      { brand: "payne", code: "31" },
+      { brand: "goodman", code: "e2" },
+      { brand: "lennox", code: "220" },
+    ],
+    checkFirst: [
+      "Open all vents and dampers.",
+      "Listen for whether the bang is from ducts or pipes.",
+      "Replace the air filter to reduce airflow surges.",
+      "Ask an HVAC tech about duct bracing or hydronic air bleeding.",
+    ],
+    severityCeiling: "diy-possible",
+    dangerNote: null,
+  },
+  {
+    slug: "condensate-pump-alarm",
+    title: "Condensate Pump Alarm",
+    snippetAnswer:
+      "A condensate pump alarm means water isn't draining — the pump failed, the line is clogged, or the float switch tripped. Clear the drain first; pump replacement typically runs $150–$450.",
+    plainExplanation:
+      "High-efficiency furnaces and AC coils produce condensate that a pump sends to a drain. When the pump fails or the line clogs, a float switch triggers an alarm and may shut down the furnace to prevent water damage.",
+    likelyCauses: [
+      { cause: "Clogged condensate drain line", likelihood: "most common", repairSlug: "condensate-pump-replacement" },
+      { cause: "Failed condensate pump motor", likelihood: "common", repairSlug: "condensate-pump-replacement" },
+      { cause: "Stuck float switch", likelihood: "possible", repairSlug: "condensate-pump-replacement" },
+    ],
+    relatedCodes: [
+      { brand: "armstrong-air", code: "443" },
+      { brand: "lennox", code: "443" },
+      { brand: "rheem", code: "61" },
+      { brand: "ruud", code: "61" },
+      { brand: "daikin", code: "a10" },
+      { brand: "luxaire", code: "12-blinks" },
+    ],
+    checkFirst: [
+      "Turn off the furnace and clear standing water.",
+      "Check the drain hose for kinks and clogs.",
+      "Test the pump by pouring water into the reservoir.",
+      "Replace or service the pump if it doesn't run when tested.",
+    ],
+    severityCeiling: "call-pro-soon",
+    dangerNote: null,
+  },
+];
+
+repairsSchema.parse(JSON.parse(fs.readFileSync(path.join(DATA_DIR, "repairs.json"), "utf-8")));
+
+for (const s of symptoms) {
+  const words = s.snippetAnswer.trim().split(/\s+/).length;
+  if (words < 25 || words > 45) {
+    throw new Error(`${s.slug}: snippetAnswer is ${words} words`);
+  }
+  for (const c of s.likelyCauses) {
+    if (!repairsSchema.element.safeParse(c).success) {
+      /* repair slug checked below */
+    }
+  }
+  assertCodesExist(s.relatedCodes, s.slug);
+  for (const c of s.likelyCauses) {
+    const repairs = repairsSchema.parse(
+      JSON.parse(fs.readFileSync(path.join(DATA_DIR, "repairs.json"), "utf-8"))
+    );
+    if (!repairs.some((r) => r.slug === c.repairSlug)) {
+      throw new Error(`${s.slug}: bad repair ${c.repairSlug}`);
+    }
+  }
+  if (s.severityCeiling !== "emergency" && s.checkFirst.length < 2) {
+    throw new Error(`${s.slug}: needs checkFirst steps`);
+  }
+}
+
+if (symptoms.length !== 30) {
+  throw new Error(`Expected 30 symptoms, got ${symptoms.length}`);
+}
+
+fs.writeFileSync(
+  path.join(DATA_DIR, "symptoms.json"),
+  `${JSON.stringify(symptoms, null, 2)}\n`,
+  "utf-8"
+);
+console.log(`Wrote ${symptoms.length} symptoms to data/symptoms.json`);

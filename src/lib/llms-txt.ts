@@ -1,4 +1,4 @@
-import { getBrands } from "@/lib/data";
+import { getBrands, getSymptoms } from "@/lib/data";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
 
@@ -19,6 +19,14 @@ export function buildLlmsTxt(): string {
   for (const brand of brands) {
     lines.push(
       `- ${BASE_URL}/fix/${brand.slug} — ${brand.name} furnace error codes with meanings, DIY steps, and repair costs.`
+    );
+  }
+
+  lines.push("");
+  lines.push("## Symptom guides");
+  for (const symptom of getSymptoms()) {
+    lines.push(
+      `- ${BASE_URL}/symptom/${symptom.slug} — ${symptom.title}: likely causes, checks, and linked error codes by brand.`
     );
   }
 

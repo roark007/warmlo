@@ -6,6 +6,7 @@ import {
   repairsSchema,
   quoteBenchmarksSchema,
   slugSchema,
+  symptomsSchema,
 } from "../src/lib/schemas";
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -230,6 +231,51 @@ for (const b of benchmarksData.benchmarks) {
   }
 }
 if (benchmarkOk) pass("benchmark rules");
+
+// 7b. Symptoms validation (S2 gate)
+let symptomsOk = true;
+const symptomsPath = path.join(DATA_DIR, "symptoms.json");
+if (!fs.existsSync(symptomsPath)) {
+  fail("symptoms.json", "missing file");
+  symptomsOk = false;
+} else {
+  const symptoms = symptomsSchema.parse(readJson(symptomsPath));
+  if (symptoms.length !== 30) {
+    fail("symptoms count", `expected 30, got ${symptoms.length}`);
+    symptomsOk = false;
+  }
+  const brandSlugs = new Set(brands.map((b) => b.slug));
+  for (const symptom of symptoms) {
+    const words = symptom.snippetAnswer.trim().split(/\s+/).filter(Boolean).length;
+    if (words < 25 || words > 45) {
+      fail("symptom snippetAnswer", `${symptom.slug}: ${words} words`);
+      symptomsOk = false;
+    }
+    if (symptom.severityCeiling !== "emergency" && symptom.checkFirst.length < 2) {
+      fail("symptom checkFirst", `${symptom.slug}: needs ≥2 steps`);
+      symptomsOk = false;
+    }
+    for (const cause of symptom.likelyCauses) {
+      if (!repairSlugs.has(cause.repairSlug)) {
+        fail("symptom repairSlug", `${symptom.slug}: missing repair ${cause.repairSlug}`);
+        symptomsOk = false;
+      }
+    }
+    for (const ref of symptom.relatedCodes) {
+      if (!brandSlugs.has(ref.brand)) {
+        fail("symptom relatedCodes", `${symptom.slug}: unknown brand ${ref.brand}`);
+        symptomsOk = false;
+        continue;
+      }
+      const codes = codesSchema.parse(readJson(path.join(codesDir, `${ref.brand}.json`)));
+      if (!codes.some((c) => c.slug === ref.code)) {
+        fail("symptom relatedCodes", `${symptom.slug}: missing code ${ref.brand}/${ref.code}`);
+        symptomsOk = false;
+      }
+    }
+  }
+  if (symptomsOk) pass(`symptoms.json — ${symptoms.length}/30 validated`);
+}
 
 // 8. Phase content targets
 let totalCodes = 0;

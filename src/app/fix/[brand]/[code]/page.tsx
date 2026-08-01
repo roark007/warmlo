@@ -16,14 +16,17 @@ import {
   getCodesForBrand,
   getRelatedCodes,
   getRepairBySlug,
+  getSymptomsForCode,
 } from "@/lib/data";
 import {
   buildCodePageDescription,
+  buildCodePageHeadline,
   buildCodePageJsonLd,
   buildCodePageTitle,
   buildRepairCostProse,
   CODE_PAGE_DISCLAIMER,
 } from "@/lib/seo";
+import { StaticLink } from "@/components/StaticLink";
 import { CodePageAnalyticsScript } from "@/components/CodePageAnalyticsScript";
 
 export function generateStaticParams() {
@@ -83,6 +86,7 @@ export default async function CodePage({
   const repair = getRepairBySlug(code.relatedRepairSlug);
   const { dataUpdated } = getBenchmarks();
   const relatedCodes = getRelatedCodes(brandSlug, codeSlug, 6);
+  const relatedSymptoms = getSymptomsForCode(brandSlug, codeSlug);
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
   const jsonLd = buildCodePageJsonLd(brand, code, baseUrl, dataUpdated);
   const costProse = repair
@@ -124,7 +128,7 @@ export default async function CodePage({
               </div>
 
               <h1 className="font-display text-h1 font-bold leading-[1.02] tracking-[-0.03em] text-text-on-dark">
-                {brand.name} Furnace Code {code.code}: {shortMeaning}
+                {buildCodePageHeadline(brand, code, shortMeaning)}
               </h1>
 
               <p className="mt-[18px] max-w-[44ch] text-lead leading-[1.6] text-text-on-dark-3">
@@ -212,6 +216,26 @@ export default async function CodePage({
               {code.whenToCallPro}
             </p>
           </section>
+
+          {relatedSymptoms.length > 0 && (
+            <section className="mb-[clamp(32px,4vw,48px)]">
+              <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
+                Symptoms this code causes
+              </h2>
+              <ul className="mt-4 space-y-2 text-base text-text-body">
+                {relatedSymptoms.map((symptom) => (
+                  <li key={symptom.slug}>
+                    <StaticLink
+                      href={`/symptom/${symptom.slug}`}
+                      className="font-semibold text-ember-deeper hover:text-ember"
+                    >
+                      {symptom.title}
+                    </StaticLink>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {relatedCodes.length > 0 && (
             <section className="mb-[clamp(24px,3vw,36px)]">

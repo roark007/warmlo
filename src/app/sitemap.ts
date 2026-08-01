@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllCodes, getBrands, getRepairs } from "@/lib/data";
+import { getAllCodes, getBrands, getRepairs, getSymptoms } from "@/lib/data";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
 
@@ -10,8 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ({ brand, code }) => `/fix/${brand.slug}/${code.slug}`
   );
   const costRoutes = getRepairs().map((r) => `/cost/${r.slug}`);
+  const symptomRoutes = getSymptoms().map((s) => `/symptom/${s.slug}`);
 
-  const allRoutes = [...staticRoutes, ...brandRoutes, ...codeRoutes, ...costRoutes];
+  const allRoutes = [...staticRoutes, ...brandRoutes, ...codeRoutes, ...costRoutes, ...symptomRoutes];
 
   return allRoutes.map((route) => ({
     url: `${BASE_URL}${route}`,

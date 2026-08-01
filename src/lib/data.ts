@@ -5,10 +5,12 @@ import {
   codesSchema,
   repairsSchema,
   quoteBenchmarksSchema,
+  symptomsSchema,
   type Brand,
   type Code,
   type Repair,
   type Benchmark,
+  type Symptom,
 } from "./schemas";
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -73,6 +75,30 @@ export function getRelatedCodes(
 
 export function getCodesForRepair(repairSlug: string): Array<{ brand: Brand; code: Code }> {
   return getAllCodes().filter(({ code }) => code.relatedRepairSlug === repairSlug);
+}
+
+export function getSymptoms(): Symptom[] {
+  const data = readJson<unknown>(path.join(DATA_DIR, "symptoms.json"));
+  return symptomsSchema.parse(data);
+}
+
+export function getSymptom(slug: string): Symptom | undefined {
+  return getSymptoms().find((s) => s.slug === slug);
+}
+
+export function getSymptomsForCode(brandSlug: string, codeSlug: string): Symptom[] {
+  return getSymptoms().filter((s) =>
+    s.relatedCodes.some((ref) => ref.brand === brandSlug && ref.code === codeSlug)
+  );
+}
+
+export function resolveSymptomCodeRef(ref: {
+  brand: string;
+  code: string;
+}): { brand: Brand; code: Code } | null {
+  const brand = getBrand(ref.brand);
+  const code = getCode(ref.brand, ref.code);
+  return brand && code ? { brand, code } : null;
 }
 
 export { formatDataUpdated } from "./format";
