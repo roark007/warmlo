@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   },
   description:
     "Know what's wrong. Know what it should cost. Know who to call. Free furnace error code lookup and HVAC quote checking.",
+  verification: {
+    google: "6FX-dwdM_h6HqKAAKNEMQFGrBawBl7Pq_Qq6Qvngcb0",
+  },
 };
 
 export default function RootLayout({
