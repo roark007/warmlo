@@ -28,7 +28,7 @@ export function CodePageAnalyticsScript({ brand, code }: CodePageAnalyticsScript
   return (
     <script
       dangerouslySetInnerHTML={{
-        __html: `(function(){function run(){${loader}}("requestIdleCallback"in window)?requestIdleCallback(run):addEventListener("load",run);})();`,
+        __html: `(function(){function run(){${loader}}addEventListener("load",run);})();`,
       }}
     />
   );
