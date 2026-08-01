@@ -1,195 +1,176 @@
 [
   {
-    "code": "E4",
-    "slug": "e4",
-    "title": "Goodman Furnace Code E4: Open High-Limit Switch",
-    "meaning": "The furnace overheated and the high-limit safety switch shut it down to prevent damage or fire.",
+    "code": "E0",
+    "slug": "e0",
+    "title": "Goodman Furnace Code E0: Ignition Lockout",
+    "meaning": "The control locked out after too many failed ignition attempts or recycles and will not try again until reset.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Repeated ignition or flame-proving failures",
+      "Dirty flame sensor after several short cycles",
+      "Weak ignitor or intermittent gas supply"
+    ],
+    "diySteps": [
+      "Replace a dirty air filter.",
+      "Confirm the gas supply valve is fully open.",
+      "Turn off power for 60 seconds, then try one heat cycle.",
+      "If E0 returns, stop resetting and call a technician."
+    ],
+    "whenToCallPro": "Lockout means an underlying ignition, flame-sensor, or gas-valve fault still needs diagnosis.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Goodman furnace code E0 means control locked out after too many failed ignition attempts or recycles. Most often from repeated ignition failures. You can check basics first; professional repairs typically run $150–$450."
+  },
+  {
+    "code": "E1",
+    "slug": "e1",
+    "title": "Goodman Furnace Code E1: Pressure Switch Stuck Closed",
+    "meaning": "The low-stage pressure switch was closed when the control expected it to be open at the start of a heat cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Stuck pressure switch diaphragm",
+      "Water or debris in the pressure hose",
+      "Blocked or restricted venting"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect the vent pipe and intake for blockages.",
+      "Check the pressure switch hose for water or kinks.",
+      "Restore power and test once."
+    ],
+    "whenToCallPro": "If the switch stays closed with clear venting, the pressure switch or inducer needs professional testing.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Goodman furnace code E1 means low-stage pressure switch was closed when the control expected it open at startup. Most often from stuck pressure switch diaphragm. You can check basics first; professional repairs typically run $175–$550."
+  },
+  {
+    "code": "E2",
+    "slug": "e2",
+    "title": "Goodman Furnace Code E2: Pressure Switch Stuck Open",
+    "meaning": "The low-stage pressure switch did not close during the inducer cycle, so ignition was blocked.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent or combustion air intake",
+      "Failed inducer motor",
+      "Clogged condensate drain or trap"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect the vent pipe and intake for blockages.",
+      "Check the condensate drain for clogs.",
+      "Verify the pressure switch hose is connected."
+    ],
+    "whenToCallPro": "If the inducer runs but the switch never closes, have the switch, inducer, and venting tested.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Goodman furnace code E2 means low-stage pressure switch did not close during the inducer cycle. Most often from blocked vent or intake. You can check basics first; professional repairs typically run $175–$900."
+  },
+  {
+    "code": "E3",
+    "slug": "e3",
+    "title": "Goodman Furnace Code E3: Open High-Limit Switch",
+    "meaning": "The primary high-limit switch opened because the furnace overheated, usually from restricted airflow.",
     "severity": "call-pro-soon",
     "commonCauses": [
       "Clogged air filter restricting airflow",
       "Blocked or closed supply vents",
-      "Failing blower motor"
+      "Failing blower motor or weak airflow"
     ],
     "diySteps": [
       "Turn off the furnace at the switch.",
       "Check the air filter; replace if dirty.",
       "Open all supply vents.",
-      "Restore power and see if the code clears."
+      "Allow the furnace to cool, then restore power."
     ],
     "whenToCallPro": "If the code returns after a filter change, the blower motor or limit switch likely needs service.",
     "repairCostLow": 150,
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code E4 means furnace overheated and the high-limit safety switch shut it down to prevent damage or fire. Most often from clogged air filter restricting airflow. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Goodman furnace code E3 means primary high-limit switch opened because the furnace overheated. Most often from clogged air filter restricting airflow. You can check basics first; professional repairs typically run $150–$600."
   },
   {
-    "code": "E0",
-    "slug": "e0",
-    "title": "Goodman Furnace Code E0: Ignition Failure",
-    "meaning": "The furnace tried to light the burners but ignition did not occur after several attempts.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Worn hot-surface ignitor",
-      "Closed gas valve or supply issue",
-      "Faulty flame sensor"
-    ],
-    "diySteps": [
-      "Confirm the gas supply valve near the furnace is fully open.",
-      "Check that the thermostat is calling for heat.",
-      "Reset power and observe one ignition cycle.",
-      "If the ignitor glows but burners never light, stop and call a technician."
-    ],
-    "whenToCallPro": "If the ignitor glows orange but no flame appears, or if you smell gas, call a licensed HVAC technician.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code E0 means furnace tried to light the burners but ignition did not occur after several attempts. Most often from worn hot-surface ignitor. You can check basics first; professional repairs typically run $150–$450."
-  },
-  {
-    "code": "E1",
-    "slug": "e1",
-    "title": "Goodman Furnace Code E1: Gas Valve Relay Error",
-    "meaning": "The control board detected a problem with the gas valve circuit and locked out the furnace.",
+    "code": "E4",
+    "slug": "e4",
+    "title": "Goodman Furnace Code E4: Flame Sensed Without Heat Call",
+    "meaning": "The control detected a flame signal when the gas valve should be closed and no heat was requested.",
     "severity": "emergency",
     "commonCauses": [
-      "Failed gas valve solenoid",
-      "Loose wiring at the gas valve",
-      "Control board relay failure"
+      "Gas valve leaking or slow to close",
+      "Short in flame sensor wiring",
+      "Lingering burner flame near the sensor"
     ],
     "diySteps": [],
-    "whenToCallPro": "Gas valve and combustion issues require a licensed technician.",
+    "whenToCallPro": "Unexpected flame signals require immediate professional inspection.",
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Goodman furnace code E1 means control board detected a problem with the gas valve circuit and locked out the furnace. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
-  },
-  {
-    "code": "E2",
-    "slug": "e2",
-    "title": "Goodman Furnace Code E2: Pressure Switch Failure",
-    "meaning": "The pressure switch did not close when the inducer motor ran, blocking ignition.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Blocked condensate drain",
-      "Cracked vent pipe",
-      "Failed pressure switch"
-    ],
-    "diySteps": [
-      "Turn off power.",
-      "Inspect the vent pipe for blockages.",
-      "Check the condensate drain for clogs.",
-      "Restore power and test."
-    ],
-    "whenToCallPro": "If the vent and drain look clear but the code remains, have the pressure switch and inducer tested.",
-    "repairCostLow": 175,
-    "repairCostHigh": 550,
-    "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code E2 means pressure switch did not close when the inducer motor ran, blocking ignition. Most often from blocked condensate drain. You can check basics first; professional repairs typically run $175–$550."
-  },
-  {
-    "code": "E3",
-    "slug": "e3",
-    "title": "Goodman Furnace Code E3: Inducer Motor Fault",
-    "meaning": "The inducer motor did not start or reach the speed needed to vent combustion gases.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Seized inducer motor",
-      "Blocked exhaust vent",
-      "Failed motor capacitor"
-    ],
-    "diySteps": [
-      "Turn off power.",
-      "Listen for humming without the fan spinning.",
-      "Check the exhaust vent outlet for blockages.",
-      "Do not force a seized motor."
-    ],
-    "whenToCallPro": "If the motor will not start after clearing the vent, schedule inducer motor service.",
-    "repairCostLow": 400,
-    "repairCostHigh": 900,
-    "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code E3 means inducer motor did not start or reach the speed needed to vent combustion gases. Most often from seized inducer motor. You can check basics first; professional repairs typically run $400–$900."
+    "snippetAnswer": "Goodman furnace code E4 means control detected flame when the gas valve should be closed. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
   },
   {
     "code": "E5",
     "slug": "e5",
-    "title": "Goodman Furnace Code E5: Flame Sensor Issue",
-    "meaning": "The flame sensor did not detect a stable flame after ignition.",
-    "severity": "diy-possible",
+    "title": "Goodman Furnace Code E5: Open Fuse",
+    "meaning": "The control detected an open 3-amp fuse on the integrated furnace control board.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty flame sensor rod",
-      "Weak gas supply",
-      "Loose sensor wire"
+      "Blown control-board fuse from a short",
+      "Shorted low-voltage wiring",
+      "Failed inducer or blower motor drawing excess current"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Locate the thin metal rod near the burners.",
-      "Gently clean the rod with fine steel wool.",
-      "Reinstall and run a heat cycle."
+      "Turn off power at the breaker and furnace switch.",
+      "Do not replace the fuse until the short cause is found.",
+      "Inspect visible wiring for damage or moisture."
     ],
-    "whenToCallPro": "If cleaning does not help after two attempts, the sensor or gas valve may need diagnosis.",
-    "repairCostLow": 100,
-    "repairCostHigh": 300,
-    "relatedRepairSlug": "flame-sensor-cleaning",
+    "whenToCallPro": "A blown IFC fuse usually indicates a wiring or component fault that needs professional diagnosis.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code E5 means flame sensor did not detect a stable flame after ignition. Often caused by dirty flame sensor rod. Usually safe to try basic checks yourself; professional repairs run $100–$300."
+    "snippetAnswer": "Goodman furnace code E5 means control detected an open 3-amp fuse on the furnace board. Most often from a short in low-voltage wiring. You can check basics first; professional repairs typically run $150–$450."
   },
   {
     "code": "E6",
     "slug": "e6",
-    "title": "Goodman Furnace Code E6: Rollout Switch Open",
-    "meaning": "The rollout switch tripped because flames or excessive heat reached the front of the burner area.",
-    "severity": "emergency",
-    "commonCauses": [
-      "Cracked heat exchanger",
-      "Restricted flue or vent",
-      "Burner flame rollout"
-    ],
-    "diySteps": [],
-    "whenToCallPro": "Rollout conditions involve combustion safety. Do not reset repeatedly without inspection.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas or see soot around the furnace, leave the area and call a technician immediately.",
-    "snippetAnswer": "Goodman furnace code E6 means rollout switch tripped because flames or excessive heat reached the front of the burner area. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
-  },
-  {
-    "code": "E7",
-    "slug": "e7",
-    "title": "Goodman Furnace Code E7: Low Flame Signal",
-    "meaning": "The control board detected a weak or unstable flame after ignition.",
+    "title": "Goodman Furnace Code E6: Low Flame Signal",
+    "meaning": "The flame sensor signal was too weak for the control to prove stable combustion.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty flame sensor",
+      "Dirty flame sensor rod",
       "Low gas pressure",
-      "Partially clogged burner"
+      "Partially clogged burner orifices"
     ],
     "diySteps": [
-      "Turn off power and inspect the flame sensor for soot.",
+      "Turn off power.",
+      "Gently clean the flame sensor rod with fine steel wool.",
       "Confirm the gas valve is fully open.",
-      "Restore power and watch one ignition cycle."
+      "Run one test cycle after cleaning."
     ],
-    "whenToCallPro": "Persistent low flame signals often require gas pressure testing and burner service.",
+    "whenToCallPro": "Persistent low flame signals require gas pressure testing and burner inspection.",
     "repairCostLow": 100,
     "repairCostHigh": 400,
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code E7 means control board detected a weak or unstable flame after ignition. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Goodman furnace code E6 means flame sensor signal was too weak for the control to prove combustion. Most often from dirty flame sensor rod. You can check basics first; professional repairs typically run $100–$400."
   },
   {
-    "code": "E8",
-    "slug": "e8",
-    "title": "Goodman Furnace Code E8: Igniter Circuit Fault",
-    "meaning": "The control board could not energize the hot-surface ignitor properly.",
+    "code": "E7",
+    "slug": "e7",
+    "title": "Goodman Furnace Code E7: Igniter Fault",
+    "meaning": "The control detected an igniter circuit fault or improper grounding during ignition.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed ignitor",
+      "Cracked or failed hot-surface ignitor",
       "Loose ignitor connector",
-      "Control board output fault"
+      "Missing or poor equipment ground"
     ],
     "diySteps": [
       "Turn off power.",
@@ -197,35 +178,58 @@
       "Check that the ignitor plug is seated firmly.",
       "Do not touch a hot ignitor."
     ],
-    "whenToCallPro": "If the ignitor looks intact but the code persists, board or wiring diagnosis is needed.",
+    "whenToCallPro": "If the ignitor looks intact but the code persists, grounding or board output needs diagnosis.",
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code E8 means control board could not energize the hot-surface ignitor properly. Most often from failed ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Goodman furnace code E7 means control detected an igniter circuit fault or grounding problem. Most often from cracked hot-surface ignitor. You can check basics first; professional repairs typically run $150–$450."
+  },
+  {
+    "code": "E8",
+    "slug": "e8",
+    "title": "Goodman Furnace Code E8: High-Stage Pressure Switch Stuck Closed",
+    "meaning": "The high-stage pressure switch was closed when the control expected it to be open at startup.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Stuck high-stage pressure switch",
+      "Blocked vent on two-stage units",
+      "Faulty inducer at high fire"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect venting and the pressure switch hose.",
+      "Clear condensate from the trap if present."
+    ],
+    "whenToCallPro": "Two-stage pressure switch faults require professional testing on high-fire operation.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Goodman furnace code E8 means high-stage pressure switch was closed when the control expected it open. Most often from stuck pressure switch diaphragm. You can check basics first; professional repairs typically run $175–$550."
   },
   {
     "code": "E9",
     "slug": "e9",
-    "title": "Goodman Furnace Code E9: Grounding or Polarity Fault",
-    "meaning": "The control detected improper electrical grounding or reversed line/neutral wiring.",
+    "title": "Goodman Furnace Code E9: High-Stage Pressure Switch Stuck Open",
+    "meaning": "The high-stage pressure switch did not close when required during high-fire operation.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Reversed polarity at disconnect",
-      "Missing equipment ground",
-      "Loose neutral connection"
+      "Blocked vent at high fire",
+      "Failed high-stage pressure switch",
+      "Inducer not reaching high-speed draft"
     ],
     "diySteps": [
-      "Turn off power at the breaker.",
-      "Do not operate the furnace until wiring is verified.",
-      "Check that the disconnect and furnace are properly grounded."
+      "Turn off power.",
+      "Inspect the vent pipe for blockages.",
+      "Check the pressure switch hose for disconnects."
     ],
-    "whenToCallPro": "Electrical grounding issues should be corrected by a qualified technician.",
-    "repairCostLow": 150,
-    "repairCostHigh": 350,
-    "relatedRepairSlug": "control-board-replacement",
+    "whenToCallPro": "High-stage venting and switch faults need professional diagnosis on two-stage furnaces.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code E9 means control detected improper electrical grounding or reversed line/neutral wiring. Most often from reversed polarity at disconnect. You can check basics first; professional repairs typically run $150–$350."
+    "snippetAnswer": "Goodman furnace code E9 means high-stage pressure switch did not close during high-fire operation. Most often from blocked vent at high fire. You can check basics first; professional repairs typically run $175–$900."
   },
   {
     "code": "1 Flash",
@@ -248,7 +252,8 @@
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code 1 Flash means One LED flash indicates the furnace failed to establish flame during the ignition trial. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Goodman furnace code 1 Flash means the furnace failed to establish flame during the ignition trial. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450.",
+    "flashPattern": "1 flash"
   },
   {
     "code": "2 Flash",
@@ -271,7 +276,8 @@
     "repairCostHigh": 550,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code 2 Flash means Two flashes mean the pressure switch remained closed when it should have opened. Most often from stuck pressure switch diaphragm. You can check basics first; professional repairs typically run $175–$550."
+    "snippetAnswer": "Goodman furnace code 2 Flash means the pressure switch remained closed when it should have opened. Most often from stuck pressure switch diaphragm. You can check basics first; professional repairs typically run $175–$550.",
+    "flashPattern": "2 flashes"
   },
   {
     "code": "3 Flash",
@@ -294,7 +300,8 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code 3 Flash means Three flashes indicate the pressure switch never closed during the inducer cycle. Most often from blocked vent or intake. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Goodman furnace code 3 Flash means the pressure switch never closed during the inducer cycle. Most often from blocked vent or intake. You can check basics first; professional repairs typically run $175–$900.",
+    "flashPattern": "3 flashes"
   },
   {
     "code": "4 Flash",
@@ -317,7 +324,8 @@
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code 4 Flash means Four flashes signal the high-limit switch opened due to overheating. Most often from dirty air filter. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Goodman furnace code 4 Flash signals the high-limit switch opened due to overheating. Most often from dirty air filter. You can check basics first; professional repairs typically run $150–$600.",
+    "flashPattern": "4 flashes"
   },
   {
     "code": "5 Flash",
@@ -336,30 +344,28 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Goodman furnace code 5 Flash means Five flashes mean the board detected flame when the thermostat was not calling for heat. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Goodman furnace code 5 Flash means the board detected flame when no heat was requested. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "flashPattern": "5 flashes"
   },
   {
     "code": "6 Flash",
     "slug": "6-flash",
-    "title": "Goodman Furnace Code 6 Flash: Modulating Gas Valve Fault",
-    "meaning": "Six flashes indicate a fault in the modulating gas valve circuit on variable-capacity models.",
-    "severity": "call-pro-soon",
+    "title": "Goodman Furnace Code 6 Flash: Rollout Switch Open",
+    "meaning": "Six flashes indicate the flame rollout or auxiliary limit switch opened because heat or flame left the normal combustion area.",
+    "severity": "emergency",
     "commonCauses": [
-      "Failed modulating gas valve",
-      "Wiring fault",
-      "Control board communication error"
+      "Cracked heat exchanger",
+      "Blocked flue or vent",
+      "Burner flame rollout"
     ],
-    "diySteps": [
-      "Turn off power.",
-      "Do not attempt to adjust gas settings yourself.",
-      "Note the flash pattern for your technician."
-    ],
-    "whenToCallPro": "Modulating valve repairs require specialized tools and licensed service.",
-    "repairCostLow": 350,
-    "repairCostHigh": 900,
-    "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code 6 Flash means Six flashes indicate a fault in the modulating gas valve circuit on variable-capacity models. Most often from failed modulating gas valve. You can check basics first; professional repairs typically run $350–$900."
+    "diySteps": [],
+    "whenToCallPro": "Rollout conditions involve combustion safety. Do not reset repeatedly without inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas or see soot around the furnace, leave the area and call a technician immediately.",
+    "snippetAnswer": "Goodman furnace code 6 Flash means the rollout or auxiliary limit switch opened. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500.",
+    "flashPattern": "6 flashes"
   },
   {
     "code": "7 Flash",
@@ -382,7 +388,8 @@
     "repairCostHigh": 400,
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code 7 Flash means Seven flashes indicate the flame signal dropped too low during operation. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Goodman furnace code 7 Flash means the flame signal dropped too low during operation. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$400.",
+    "flashPattern": "7 flashes"
   },
   {
     "code": "8 Flash",
@@ -405,6 +412,7 @@
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Goodman furnace code 8 Flash means Eight flashes mean the ignitor circuit failed an internal board check. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Goodman furnace code 8 Flash means the ignitor circuit failed an internal board check. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450.",
+    "flashPattern": "8 flashes"
   }
 ]

@@ -10,7 +10,12 @@ export function buildCodePageTitle(brand: Brand, code: Code): string {
   const shortMeaning = code.title.includes(":")
     ? code.title.split(":").slice(1).join(":").trim()
     : code.meaning;
-  return `${brand.name} Code ${code.code}: ${shortMeaning} — Fix It or Call a Pro? | Warmlo`;
+  if (code.flashPattern) {
+    const count = Number.parseInt(code.flashPattern, 10);
+    const times = count === 1 ? "1 Time" : `${count} Times`;
+    return `${brand.name} Furnace Blinking ${times}: ${shortMeaning} — Fix It or Call a Pro?`;
+  }
+  return `${brand.name} Code ${code.code}: ${shortMeaning} — Fix It or Call a Pro?`;
 }
 
 export function buildCodePageDescription(brand: Brand, code: Code): string {
@@ -18,20 +23,24 @@ export function buildCodePageDescription(brand: Brand, code: Code): string {
     ? code.title.split(":").slice(1).join(":").trim().toLowerCase()
     : code.meaning.replace(/\.$/, "").trim().toLowerCase();
 
-  const costHook = `Typical repair: $${code.repairCostLow}–$${code.repairCostHigh}. Free code lookup.`;
+  const costHook = `Typical repair: $${code.repairCostLow}–$${code.repairCostHigh}. Free lookup.`;
 
   let desc: string;
-  if (code.severity === "emergency") {
+  if (code.flashPattern) {
+    const count = Number.parseInt(code.flashPattern, 10);
+    const times = count === 1 ? "once" : `${count} times`;
+    desc = `${brand.name} furnace blinking ${times}? That usually means ${plainMeaning}. ${costHook}`;
+  } else if (code.severity === "emergency") {
     desc = `${code.code} on your ${brand.name} furnace is an emergency. ${costHook}`;
   } else if (code.diySteps.length > 0) {
     const cause = code.commonCauses[0]?.toLowerCase().replace(/^a /, "").replace(/^an /, "") ?? "basic checks";
-    desc = `${code.code} means your ${brand.name} furnace ${plainMeaning}. Often ${cause} — check before you pay. ${costHook}`;
+    desc = `${code.code} on ${brand.name} means ${plainMeaning}. Often ${cause} — check before you pay. ${costHook}`;
   } else {
-    desc = `${code.code} means your ${brand.name} furnace ${plainMeaning}. ${costHook}`;
+    desc = `${code.code} on ${brand.name} means ${plainMeaning}. ${costHook}`;
   }
 
   if (desc.length > 155) {
-    desc = `${code.code} on your ${brand.name} furnace? ${costHook}`;
+    desc = `${brand.name} ${code.code}? ${costHook}`;
   }
   if (desc.length > 155) {
     desc = desc.slice(0, 152) + "...";
@@ -39,9 +48,28 @@ export function buildCodePageDescription(brand: Brand, code: Code): string {
   return desc;
 }
 
+const BRAND_HUB_SEO: Partial<Record<string, string>> = {
+  comfortmaker:
+    "Free Comfortmaker furnace code lookup — count the LED flashes (2–10), get the meaning, DIY checks, and repair costs. Same ICP family as Heil and Tempstar.",
+  keeprite:
+    "Keeprite furnace fault codes for Canadian and northern U.S. homes — LED flash chart, fix steps, and fair repair prices on the ICP/Carrier platform.",
+  "day-and-night":
+    "Day & Night furnace error codes decoded — flash-by-flash meanings, severity, and repair costs. ICP line; codes match Comfortmaker and Heil.",
+  intertherm:
+    "Intertherm manufactured-home furnace codes — red LED blink meanings for mobile and modular homes, plus repair costs. Confirm your door chart if unsure.",
+  miller:
+    "Miller mobile-home furnace error codes — count the blinks, get the fix, see what it should cost. Nordyne-built; pairs with Intertherm diagnostics.",
+};
+
+export function buildBrandHubDescription(brand: Brand, codeCount: number): string {
+  const custom = BRAND_HUB_SEO[brand.slug];
+  if (custom) return custom;
+  return `All ${codeCount} ${brand.name} furnace error codes — meanings, severity, DIY steps, and typical repair costs. Free, no signup.`;
+}
+
 export function buildBrandHubTitle(brand: Brand): string {
   const year = new Date().getFullYear();
-  return `${brand.name} Furnace Error Codes: Complete List with Fixes & Costs (${year}) | Warmlo`;
+  return `${brand.name} Furnace Error Codes: Complete List with Fixes & Costs (${year})`;
 }
 
 export function buildRepairCostProse(repairName: string, costLow: number, costHigh: number): string {
@@ -133,7 +161,7 @@ export function buildCodePageJsonLd(
 }
 
 export function buildSymptomPageTitle(symptom: Symptom): string {
-  return `${symptom.title} — Causes, Fixes & When to Call a Pro | Warmlo`;
+  return `${symptom.title} — Causes, Fixes & When to Call a Pro`;
 }
 
 export function buildSymptomPageDescription(symptom: Symptom): string {
@@ -200,14 +228,15 @@ export function buildSymptomPageJsonLd(symptom: Symptom, baseUrl: string, dataUp
 
 export function buildCodePageHeadline(brand: Brand, code: Code, shortMeaning: string): string {
   if (code.flashPattern) {
-    return `${brand.name} ${code.flashPattern} (Code ${code.code}): ${shortMeaning}`;
+    const pattern = code.flashPattern.replace(/\b\w/g, (c) => c.toUpperCase());
+    return `${brand.name} Furnace ${pattern}: ${shortMeaning}`;
   }
   return `${brand.name} Furnace Code ${code.code}: ${shortMeaning}`;
 }
 
 export function buildQuoteIndexTitle(index: QuoteIndex): string {
   const year = index.dataUpdated.split("-")[0];
-  return `What HVAC Work Should Cost in ${year}: Warmlo Quote Index | Warmlo`;
+  return `What HVAC Work Should Cost in ${year}: Warmlo Quote Index`;
 }
 
 export function buildQuoteIndexDescription(index: QuoteIndex): string {

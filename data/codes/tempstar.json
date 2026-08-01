@@ -1,224 +1,210 @@
 [
   {
-    "code": "1 Flash",
-    "slug": "1-flash",
-    "title": "Tempstar Furnace Code 1 Flash: Ignition Failure",
-    "meaning": "One flash indicates failed ignition during the trial period.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Worn ignitor",
-      "Gas valve issue",
-      "Dirty sensor"
-    ],
-    "diySteps": [
-      "Verify gas on.",
-      "Reset once.",
-      "Watch ignition cycle."
-    ],
-    "whenToCallPro": "Ignition service usually needed.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Tempstar furnace code 1 Flash means One flash indicates failed ignition during the trial period. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
-  },
-  {
     "code": "2 Flash",
     "slug": "2-flash",
-    "title": "Tempstar Furnace Code 2 Flash: Pressure Switch Open",
-    "meaning": "Two flashes mean the pressure switch did not close.",
+    "title": "Tempstar Furnace Code 2 Flash: Pressure Switch Stuck Closed",
+    "meaning": "Two flashes mean the pressure switch was still closed when the control expected it open between cycles.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked vent",
-      "Failed inducer",
-      "Loose hose"
+      "Stuck pressure switch diaphragm",
+      "Water or kinks in the pressure tubing",
+      "Inducer coasting between cycles"
     ],
     "diySteps": [
-      "Inspect vent.",
-      "Check tubing.",
-      "Clear condensate."
+      "Kill power at the furnace switch.",
+      "Look for standing water in the pressure hoses and trap.",
+      "Power back up and observe a full cycle."
     ],
-    "whenToCallPro": "Switch or inducer replacement may be needed.",
+    "whenToCallPro": "A switch that reads closed with the inducer off has failed and should be replaced.",
     "repairCostLow": 175,
-    "repairCostHigh": 900,
+    "repairCostHigh": 550,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Tempstar furnace code 2 Flash means Two flashes mean the pressure switch did not close. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Tempstar furnace 2 flashes means the pressure switch stayed closed when it should have opened. Water in the tubing or a stuck switch is typical — check hoses first; repairs run $175–$550.",
+    "flashPattern": "2 flashes"
   },
   {
     "code": "3 Flash",
     "slug": "3-flash",
-    "title": "Tempstar Furnace Code 3 Flash: Limit Switch Open",
-    "meaning": "Three flashes signal high-limit switch opened.",
+    "title": "Tempstar Furnace Code 3 Flash: Pressure Switch Did Not Close",
+    "meaning": "Three flashes mean the low pressure switch never closed after the inducer started, or it reopened mid-cycle.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty filter",
-      "Weak blower",
-      "Closed vents"
+      "Blocked exhaust vent or air intake",
+      "Sagging vent pipe holding water",
+      "Failing inducer motor"
     ],
     "diySteps": [
-      "Replace filter.",
-      "Open vents.",
-      "Cool before reset."
+      "Walk outside and clear the vent termination.",
+      "Empty the condensate trap on condensing models.",
+      "Confirm the pressure hose is attached at both ends."
     ],
-    "whenToCallPro": "Limit or blower service if repeated.",
-    "repairCostLow": 150,
-    "repairCostHigh": 600,
-    "relatedRepairSlug": "limit-switch-replacement",
+    "whenToCallPro": "When the inducer runs and the code persists, the switch or inducer needs bench testing.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Tempstar furnace code 3 Flash means Three flashes signal high-limit switch opened. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Tempstar furnace 3 flashes means the pressure switch would not close after the inducer started. Blocked vents and clogged condensate traps cause most cases; professional repairs run $175–$900.",
+    "flashPattern": "3 flashes"
   },
   {
     "code": "4 Flash",
     "slug": "4-flash",
-    "title": "Tempstar Furnace Code 4 Flash: Rollout Trip",
-    "meaning": "Four flashes indicate rollout switch opened.",
-    "severity": "emergency",
+    "title": "Tempstar Furnace Code 4 Flash: Limit or Rollout Circuit Open",
+    "meaning": "Four flashes mean the high-limit switch or flame rollout switch opened from overheating or flame escaping the burner box.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Heat exchanger issue",
-      "Blocked flue",
-      "Flame rollout"
+      "Clogged air filter",
+      "Blocked return or closed supply vents",
+      "Rollout switch tripped by restricted venting"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Rollout requires combustion inspection.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas, leave the area and call a technician.",
-    "snippetAnswer": "Tempstar furnace code 4 Flash means Four flashes indicate rollout switch opened. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
+    "diySteps": [
+      "Swap in a fresh filter and open all vents.",
+      "Give the furnace 30 minutes to cool and retry.",
+      "Leave rollout switches alone — they require manual reset by a pro if tripped."
+    ],
+    "whenToCallPro": "If four flashes come back after airflow is restored, the limit circuit or blower needs service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Tempstar furnace 4 flashes signals an open limit or rollout switch — the furnace ran too hot. A fresh air filter fixes many cases; limit and blower repairs run $150–$600.",
+    "flashPattern": "4 flashes"
   },
   {
     "code": "5 Flash",
     "slug": "5-flash",
-    "title": "Tempstar Furnace Code 5 Flash: Flame Sense Error",
-    "meaning": "Five flashes mean flame was not proven.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Dirty sensor",
-      "Weak flame",
-      "Loose wire"
-    ],
-    "diySteps": [
-      "Clean sensor.",
-      "Verify ignition.",
-      "Reset once."
-    ],
-    "whenToCallPro": "Sensor replacement if cleaning fails.",
-    "repairCostLow": 100,
-    "repairCostHigh": 300,
-    "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null,
-    "snippetAnswer": "Tempstar furnace code 5 Flash means Five flashes mean flame was not proven. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$300."
-  },
-  {
-    "code": "6 Flash",
-    "slug": "6-flash",
-    "title": "Tempstar Furnace Code 6 Flash: Gas Valve Fault",
-    "meaning": "Six flashes indicate gas valve circuit error.",
+    "title": "Tempstar Furnace Code 5 Flash: Flame Sensed With Gas Valve Off",
+    "meaning": "Five flashes mean flame is being sensed while the gas valve is supposed to be closed.",
     "severity": "emergency",
     "commonCauses": [
-      "Failed valve",
-      "Relay fault",
-      "Loose wiring"
+      "Leaking or slow-closing gas valve",
+      "Welded gas valve relay contact",
+      "Flame sensor circuit short"
     ],
     "diySteps": [],
-    "whenToCallPro": "Licensed gas valve service required.",
+    "whenToCallPro": "Any flame signal with the valve off demands immediate professional attention — stop using the furnace.",
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Tempstar furnace code 6 Flash means Six flashes indicate gas valve circuit error. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Tempstar furnace 5 flashes means flame was sensed with the gas valve commanded off — possibly a leaking valve. This is an emergency: stop the furnace and call a licensed tech; repairs run $350–$900.",
+    "flashPattern": "5 flashes"
+  },
+  {
+    "code": "6 Flash",
+    "slug": "6-flash",
+    "title": "Tempstar Furnace Code 6 Flash: Ignition Proving Failure",
+    "meaning": "Six flashes mean the control could not prove flame after ignition, or lost the flame signal during the run cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Oxidized flame sensor rod",
+      "Weak hot-surface ignitor",
+      "Low gas pressure or rough light-off"
+    ],
+    "diySteps": [
+      "Power down and clean the flame sensor with fine abrasive.",
+      "Watch the ignitor glow through one cycle.",
+      "Cycle power once and retest."
+    ],
+    "whenToCallPro": "Persistent proving failures after cleaning point to the ignitor or gas supply — book service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Tempstar furnace 6 flashes means the flame never proved after ignition or dropped out while running. Clean the flame sensor rod first — it fixes most cases; repairs run $150–$450.",
+    "flashPattern": "6 flashes"
   },
   {
     "code": "7 Flash",
     "slug": "7-flash",
-    "title": "Tempstar Furnace Code 7 Flash: Blower Fault",
-    "meaning": "Seven flashes signal blower motor error.",
+    "title": "Tempstar Furnace Code 7 Flash: Limit Circuit Lockout",
+    "meaning": "Seven flashes mean the limit or rollout stayed open past the allowed time and the control locked heating out; it auto-resets after roughly three hours.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed motor",
-      "Bad capacitor",
-      "Debris in wheel"
+      "Chronic overheating from airflow problems",
+      "Failed limit switch",
+      "Undersized or dirty blower"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Check blower wheel.",
-      "Verify door closed."
+      "Fix airflow basics: new filter, open registers.",
+      "Allow the auto-reset or one power cycle after cooldown.",
+      "Monitor the following heat cycle."
     ],
-    "whenToCallPro": "Blower motor replacement usually required.",
-    "repairCostLow": 450,
-    "repairCostHigh": 1200,
-    "relatedRepairSlug": "blower-motor-replacement",
+    "whenToCallPro": "Lockouts mean the overheating never resolved — get the blower and limit circuit inspected.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Tempstar furnace code 7 Flash means Seven flashes signal blower motor error. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Tempstar furnace 7 flashes is a limit lockout after prolonged overheating — heat is disabled until reset. Restore airflow, wait out the auto-reset, and call a pro if it repeats; repairs run $150–$600.",
+    "flashPattern": "7 flashes"
   },
   {
     "code": "8 Flash",
     "slug": "8-flash",
-    "title": "Tempstar Furnace Code 8 Flash: Inducer Fault",
-    "meaning": "Eight flashes indicate inducer motor problem.",
-    "severity": "call-pro-soon",
+    "title": "Tempstar Furnace Code 8 Flash: Gas Heating Lockout",
+    "meaning": "Eight flashes mean the control shut down gas heating completely and requires a reset before it will try again.",
+    "severity": "emergency",
     "commonCauses": [
-      "Seized inducer",
-      "Blocked vent",
-      "Failed capacitor"
+      "Faulty or miswired gas valve",
+      "Control board relay failure",
+      "Accumulated ignition safety faults"
     ],
-    "diySteps": [
-      "Clear vent.",
-      "Listen for hum.",
-      "Do not force motor."
-    ],
-    "whenToCallPro": "Inducer replacement if needed.",
-    "repairCostLow": 400,
+    "diySteps": [],
+    "whenToCallPro": "Never keep resetting a gas heating lockout — the gas valve and board need licensed diagnosis.",
+    "repairCostLow": 350,
     "repairCostHigh": 900,
-    "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Tempstar furnace code 8 Flash means Eight flashes indicate inducer motor problem. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Tempstar furnace 8 flashes is a hard gas heating lockout — the board disabled gas heat for safety. Repeated resets are dangerous; have a licensed technician diagnose it; repairs run $350–$900.",
+    "flashPattern": "8 flashes"
   },
   {
     "code": "9 Flash",
     "slug": "9-flash",
-    "title": "Tempstar Furnace Code 9 Flash: Board Fault",
-    "meaning": "Nine flashes mean control board internal error.",
+    "title": "Tempstar Furnace Code 9 Flash: Two-Stage Pressure Switch Fault",
+    "meaning": "Nine flashes mean the medium or high pressure switch (or its relay) failed to close or reopened while the furnace ran at intermediate or maximum heat.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Surge damage",
-      "Moisture",
-      "Failed relay"
+      "High-fire vent restriction",
+      "Out-of-calibration high pressure switch",
+      "Bad pressure switch relay"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Inspect for moisture.",
-      "Check condensate."
+      "Check outdoor vent and intake pipes for obstructions.",
+      "Clear the condensate trap.",
+      "Note if the fault only shows at full heat output."
     ],
-    "whenToCallPro": "Board replacement typically required.",
-    "repairCostLow": 300,
-    "repairCostHigh": 800,
-    "relatedRepairSlug": "control-board-replacement",
+    "whenToCallPro": "Two-stage switch faults require testing under high fire — schedule a technician if vents are clear.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Tempstar furnace code 9 Flash means Nine flashes mean control board internal error. Most often from surge damage. You can check basics first; professional repairs typically run $300–$800."
+    "snippetAnswer": "Tempstar furnace 9 flashes points to a medium or high pressure switch fault on two-stage models — venting failed at high heat. Check the vent outside, then book service; repairs run $175–$550.",
+    "flashPattern": "9 flashes"
   },
   {
     "code": "10 Flash",
     "slug": "10-flash",
-    "title": "Tempstar Furnace Code 10 Flash: Low Flame",
-    "meaning": "Ten flashes indicate weak flame signal.",
+    "title": "Tempstar Furnace Code 10 Flash: Reversed Line Polarity",
+    "meaning": "Ten flashes mean the 115V supply polarity is reversed or grounding is faulty; on twinned units it can also mean wrong transformer phasing.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty sensor",
-      "Draft",
-      "Low gas"
+      "Hot and neutral reversed at the service switch",
+      "Open or poor equipment ground",
+      "Transformer phasing mismatch on twinned units"
     ],
     "diySteps": [
-      "Clean sensor.",
-      "Open returns.",
-      "Test cycle."
+      "Shut off the breaker feeding the furnace.",
+      "Do not operate the unit until polarity is verified.",
+      "Have grounding checked at the same visit."
     ],
-    "whenToCallPro": "Gas and venting checks if persistent.",
-    "repairCostLow": 100,
-    "repairCostHigh": 400,
-    "relatedRepairSlug": "flame-sensor-cleaning",
+    "whenToCallPro": "Polarity and ground corrections are electrician work — quick to fix, unsafe to ignore.",
+    "repairCostLow": 150,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Tempstar furnace code 10 Flash means Ten flashes indicate weak flame signal. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Tempstar furnace 10 flashes means reversed 115V polarity or a bad ground feeding the furnace. Turn the breaker off and have an electrician or HVAC tech correct the wiring; fixes run $150–$350.",
+    "flashPattern": "10 flashes"
   }
 ]

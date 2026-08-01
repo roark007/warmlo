@@ -1,6 +1,6 @@
 /** Six high-search furnace codes for the home page quick links. */
 export const featuredCodes = [
-  { brandSlug: "goodman", codeSlug: "e4" },
+  { brandSlug: "goodman", codeSlug: "4-flash" },
   { brandSlug: "carrier", codeSlug: "33" },
   { brandSlug: "carrier", codeSlug: "14" },
   { brandSlug: "lennox", codeSlug: "270" },

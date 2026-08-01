@@ -3,7 +3,7 @@
  * See README.md § Seasonal calendar for when to swap.
  */
 export const septemberFurnaceFeaturedCodes = [
-  { brandSlug: "goodman", codeSlug: "e4" },
+  { brandSlug: "goodman", codeSlug: "4-flash" },
   { brandSlug: "goodman", codeSlug: "e0" },
   { brandSlug: "carrier", codeSlug: "33" },
   { brandSlug: "carrier", codeSlug: "14" },
@@ -13,7 +13,7 @@ export const septemberFurnaceFeaturedCodes = [
 
 export const juneAcFeaturedCodes = [
   { brandSlug: "carrier", codeSlug: "13" },
-  { brandSlug: "goodman", codeSlug: "e4" },
+  { brandSlug: "goodman", codeSlug: "4-flash" },
   { brandSlug: "rheem", codeSlug: "13" },
   { brandSlug: "american-standard", codeSlug: "4-flashes" },
   { brandSlug: "trane", codeSlug: "4-flashes" },

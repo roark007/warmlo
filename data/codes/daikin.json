@@ -1,224 +1,418 @@
 [
   {
-    "code": "A01",
-    "slug": "a01",
-    "title": "Daikin Furnace Code A01: Ignition Failure",
-    "meaning": "The furnace failed to establish flame during the ignition sequence.",
+    "code": "E0",
+    "slug": "e0",
+    "title": "Daikin Furnace Code E0: Ignition Lockout",
+    "meaning": "The control locked out after too many failed ignition attempts or recycles and will not try again until reset.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Worn ignitor",
-      "Gas valve fault",
-      "Dirty flame sensor"
+      "Repeated ignition or flame-proving failures",
+      "Dirty flame sensor after several short cycles",
+      "Weak ignitor or intermittent gas supply"
     ],
     "diySteps": [
-      "Verify gas supply.",
-      "Reset once.",
-      "Watch ignition cycle."
+      "Replace a dirty air filter.",
+      "Confirm the gas supply valve is fully open.",
+      "Turn off power for 60 seconds, then try one heat cycle.",
+      "If E0 returns, stop resetting and call a technician."
     ],
-    "whenToCallPro": "Ignitor or sensor service usually needed.",
+    "whenToCallPro": "Lockout means an underlying ignition, flame-sensor, or gas-valve fault still needs diagnosis.",
     "repairCostLow": 150,
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Daikin furnace code A01 means furnace failed to establish flame during the ignition sequence. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Daikin furnace code E0 means control locked out after too many failed ignition attempts or recycles. Most often from repeated ignition failures. You can check basics first; professional repairs typically run $150–$450."
   },
   {
-    "code": "A02",
-    "slug": "a02",
-    "title": "Daikin Furnace Code A02: Flame Loss",
-    "meaning": "Flame was lost during heating operation.",
+    "code": "E1",
+    "slug": "e1",
+    "title": "Daikin Furnace Code E1: Pressure Switch Stuck Closed",
+    "meaning": "The low-stage pressure switch was closed when the control expected it to be open at the start of a heat cycle.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty sensor",
-      "Draft issue",
-      "Low gas pressure"
+      "Stuck pressure switch diaphragm",
+      "Water or debris in the pressure hose",
+      "Blocked or restricted venting"
     ],
     "diySteps": [
-      "Clean flame sensor.",
-      "Check returns.",
-      "Reset once."
+      "Turn off power.",
+      "Inspect the vent pipe and intake for blockages.",
+      "Check the pressure switch hose for water or kinks.",
+      "Restore power and test once."
     ],
-    "whenToCallPro": "Professional inspection if flame loss repeats.",
-    "repairCostLow": 100,
-    "repairCostHigh": 400,
-    "relatedRepairSlug": "flame-sensor-cleaning",
+    "whenToCallPro": "If the switch stays closed with clear venting, the pressure switch or inducer needs professional testing.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Daikin furnace code A02 means Flame was lost during heating operation. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Daikin furnace code E1 means low-stage pressure switch was closed when the control expected it open at startup. Most often from stuck pressure switch diaphragm. You can check basics first; professional repairs typically run $175–$550."
   },
   {
-    "code": "A03",
-    "slug": "a03",
-    "title": "Daikin Furnace Code A03: Pressure Switch Open",
-    "meaning": "The pressure switch did not close during venting.",
+    "code": "E2",
+    "slug": "e2",
+    "title": "Daikin Furnace Code E2: Pressure Switch Stuck Open",
+    "meaning": "The low-stage pressure switch did not close during the inducer cycle, so ignition was blocked.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked vent",
-      "Failed inducer",
-      "Loose hose"
+      "Blocked vent or combustion air intake",
+      "Failed inducer motor",
+      "Clogged condensate drain or trap"
     ],
     "diySteps": [
-      "Inspect vent.",
-      "Check tubing.",
-      "Clear condensate."
+      "Turn off power.",
+      "Inspect the vent pipe and intake for blockages.",
+      "Check the condensate drain for clogs.",
+      "Verify the pressure switch hose is connected."
     ],
-    "whenToCallPro": "Switch or inducer replacement may be needed.",
+    "whenToCallPro": "If the inducer runs but the switch never closes, have the switch, inducer, and venting tested.",
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Daikin furnace code A03 means pressure switch did not close during venting. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Daikin furnace code E2 means low-stage pressure switch did not close during the inducer cycle. Most often from blocked vent or intake. You can check basics first; professional repairs typically run $175–$900."
   },
   {
-    "code": "A04",
-    "slug": "a04",
-    "title": "Daikin Furnace Code A04: Limit Switch Open",
-    "meaning": "The high-limit switch opened from overheating.",
+    "code": "E3",
+    "slug": "e3",
+    "title": "Daikin Furnace Code E3: Open High-Limit Switch",
+    "meaning": "The primary high-limit switch opened because the furnace overheated, usually from restricted airflow.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty filter",
-      "Weak blower",
-      "Closed vents"
+      "Clogged air filter restricting airflow",
+      "Blocked or closed supply vents",
+      "Failing blower motor or weak airflow"
     ],
     "diySteps": [
-      "Replace filter.",
-      "Open vents.",
-      "Cool before reset."
+      "Turn off the furnace at the switch.",
+      "Check the air filter; replace if dirty.",
+      "Open all supply vents.",
+      "Allow the furnace to cool, then restore power."
     ],
-    "whenToCallPro": "Limit or blower service if repeated.",
+    "whenToCallPro": "If the code returns after a filter change, the blower motor or limit switch likely needs service.",
     "repairCostLow": 150,
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Daikin furnace code A04 means high-limit switch opened from overheating. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Daikin furnace code E3 means primary high-limit switch opened because the furnace overheated. Most often from clogged air filter restricting airflow. You can check basics first; professional repairs typically run $150–$600."
   },
   {
-    "code": "A05",
-    "slug": "a05",
-    "title": "Daikin Furnace Code A05: Rollout Switch Open",
-    "meaning": "The rollout switch tripped during burner operation.",
+    "code": "E4",
+    "slug": "e4",
+    "title": "Daikin Furnace Code E4: Flame Sensed Without Heat Call",
+    "meaning": "The control detected a flame signal when the gas valve should be closed and no heat was requested.",
     "severity": "emergency",
     "commonCauses": [
-      "Heat exchanger issue",
-      "Blocked flue",
-      "Flame rollout"
+      "Gas valve leaking or slow to close",
+      "Short in flame sensor wiring",
+      "Lingering burner flame near the sensor"
     ],
     "diySteps": [],
-    "whenToCallPro": "Rollout requires combustion inspection.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas, leave the area and call a technician.",
-    "snippetAnswer": "Daikin furnace code A05 means rollout switch tripped during burner operation. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
-  },
-  {
-    "code": "A06",
-    "slug": "a06",
-    "title": "Daikin Furnace Code A06: Gas Valve Fault",
-    "meaning": "The control detected a gas valve circuit error.",
-    "severity": "emergency",
-    "commonCauses": [
-      "Failed valve",
-      "Relay fault",
-      "Loose wiring"
-    ],
-    "diySteps": [],
-    "whenToCallPro": "Licensed gas valve service required.",
+    "whenToCallPro": "Unexpected flame signals require immediate professional inspection.",
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Daikin furnace code A06 means control detected a gas valve circuit error. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Daikin furnace code E4 means control detected flame when the gas valve should be closed. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
   },
   {
-    "code": "A07",
-    "slug": "a07",
-    "title": "Daikin Furnace Code A07: Blower Motor Fault",
-    "meaning": "The blower motor did not start or tripped.",
+    "code": "E5",
+    "slug": "e5",
+    "title": "Daikin Furnace Code E5: Open Fuse",
+    "meaning": "The control detected an open 3-amp fuse on the integrated furnace control board.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed motor",
-      "Bad capacitor",
-      "Obstruction"
+      "Blown control-board fuse from a short",
+      "Shorted low-voltage wiring",
+      "Failed inducer or blower motor drawing excess current"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Check wheel.",
-      "Verify door."
+      "Turn off power at the breaker and furnace switch.",
+      "Do not replace the fuse until the short cause is found.",
+      "Inspect visible wiring for damage or moisture."
     ],
-    "whenToCallPro": "Blower replacement usually required.",
-    "repairCostLow": 450,
-    "repairCostHigh": 1200,
-    "relatedRepairSlug": "blower-motor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Daikin furnace code A07 means blower motor did not start or tripped. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200."
-  },
-  {
-    "code": "A08",
-    "slug": "a08",
-    "title": "Daikin Furnace Code A08: Inducer Motor Fault",
-    "meaning": "The inducer motor failed during venting.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Seized inducer",
-      "Blocked vent",
-      "Failed capacitor"
-    ],
-    "diySteps": [
-      "Clear vent.",
-      "Listen for hum.",
-      "Do not force."
-    ],
-    "whenToCallPro": "Inducer replacement if needed.",
-    "repairCostLow": 400,
-    "repairCostHigh": 900,
-    "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Daikin furnace code A08 means inducer motor failed during venting. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
-  },
-  {
-    "code": "A09",
-    "slug": "a09",
-    "title": "Daikin Furnace Code A09: Control Board Fault",
-    "meaning": "The control board reported an internal error.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Surge damage",
-      "Moisture",
-      "Failed relay"
-    ],
-    "diySteps": [
-      "Turn off power.",
-      "Inspect for moisture.",
-      "Check condensate."
-    ],
-    "whenToCallPro": "Board replacement typically required.",
-    "repairCostLow": 300,
-    "repairCostHigh": 800,
-    "relatedRepairSlug": "control-board-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Daikin furnace code A09 means control board reported an internal error. Most often from surge damage. You can check basics first; professional repairs typically run $300–$800."
-  },
-  {
-    "code": "A10",
-    "slug": "a10",
-    "title": "Daikin Furnace Code A10: Condensate Fault",
-    "meaning": "A condensate drainage fault triggered lockout on high-efficiency models.",
-    "severity": "diy-possible",
-    "commonCauses": [
-      "Clogged trap",
-      "Full pump",
-      "Frozen drain"
-    ],
-    "diySteps": [
-      "Clear trap.",
-      "Check drain line.",
-      "Reset pump."
-    ],
-    "whenToCallPro": "Replace pump or switch if drainage is clear.",
+    "whenToCallPro": "A blown IFC fuse usually indicates a wiring or component fault that needs professional diagnosis.",
     "repairCostLow": 150,
     "repairCostHigh": 450,
-    "relatedRepairSlug": "condensate-pump-replacement",
+    "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Daikin furnace code A10 means A condensate drainage fault triggered lockout on high-efficiency models. Often caused by clogged trap. Usually safe to try basic checks yourself; professional repairs run $150–$450."
+    "snippetAnswer": "Daikin furnace code E5 means control detected an open 3-amp fuse on the furnace board. Most often from a short in low-voltage wiring. You can check basics first; professional repairs typically run $150–$450."
+  },
+  {
+    "code": "E6",
+    "slug": "e6",
+    "title": "Daikin Furnace Code E6: Low Flame Signal",
+    "meaning": "The flame sensor signal was too weak for the control to prove stable combustion.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty flame sensor rod",
+      "Low gas pressure",
+      "Partially clogged burner orifices"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Gently clean the flame sensor rod with fine steel wool.",
+      "Confirm the gas valve is fully open.",
+      "Run one test cycle after cleaning."
+    ],
+    "whenToCallPro": "Persistent low flame signals require gas pressure testing and burner inspection.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code E6 means flame sensor signal was too weak for the control to prove combustion. Most often from dirty flame sensor rod. You can check basics first; professional repairs typically run $100–$400."
+  },
+  {
+    "code": "E7",
+    "slug": "e7",
+    "title": "Daikin Furnace Code E7: Igniter Fault",
+    "meaning": "The control detected an igniter circuit fault or improper grounding during ignition.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Cracked or failed hot-surface ignitor",
+      "Loose ignitor connector",
+      "Missing or poor equipment ground"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect the ignitor for visible cracks.",
+      "Check that the ignitor plug is seated firmly.",
+      "Do not touch a hot ignitor."
+    ],
+    "whenToCallPro": "If the ignitor looks intact but the code persists, grounding or board output needs diagnosis.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code E7 means control detected an igniter circuit fault or grounding problem. Most often from cracked hot-surface ignitor. You can check basics first; professional repairs typically run $150–$450."
+  },
+  {
+    "code": "E8",
+    "slug": "e8",
+    "title": "Daikin Furnace Code E8: High-Stage Pressure Switch Stuck Closed",
+    "meaning": "The high-stage pressure switch was closed when the control expected it to be open at startup.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Stuck high-stage pressure switch",
+      "Blocked vent on two-stage units",
+      "Faulty inducer at high fire"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect venting and the pressure switch hose.",
+      "Clear condensate from the trap if present."
+    ],
+    "whenToCallPro": "Two-stage pressure switch faults require professional testing on high-fire operation.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code E8 means high-stage pressure switch was closed when the control expected it open. Most often from stuck pressure switch diaphragm. You can check basics first; professional repairs typically run $175–$550."
+  },
+  {
+    "code": "E9",
+    "slug": "e9",
+    "title": "Daikin Furnace Code E9: High-Stage Pressure Switch Stuck Open",
+    "meaning": "The high-stage pressure switch did not close when required during high-fire operation.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent at high fire",
+      "Failed high-stage pressure switch",
+      "Inducer not reaching high-speed draft"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect the vent pipe for blockages.",
+      "Check the pressure switch hose for disconnects."
+    ],
+    "whenToCallPro": "High-stage venting and switch faults need professional diagnosis on two-stage furnaces.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code E9 means high-stage pressure switch did not close during high-fire operation. Most often from blocked vent at high fire. You can check basics first; professional repairs typically run $175–$900."
+  },
+  {
+    "code": "1 Flash",
+    "slug": "1-flash",
+    "title": "Daikin Furnace Code 1 Flash: Ignition Failure Lockout",
+    "meaning": "One LED flash indicates the furnace failed to establish flame during the ignition trial.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Worn ignitor",
+      "Dirty flame sensor",
+      "Gas supply issue"
+    ],
+    "diySteps": [
+      "Verify the gas valve is open.",
+      "Reset power and watch for ignitor glow.",
+      "If glow occurs but no flame, stop and call for service."
+    ],
+    "whenToCallPro": "Repeated one-flash lockouts usually mean ignitor or gas valve service is needed.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code 1 Flash means the furnace failed to establish flame during the ignition trial. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450.",
+    "flashPattern": "1 flash"
+  },
+  {
+    "code": "2 Flash",
+    "slug": "2-flash",
+    "title": "Daikin Furnace Code 2 Flash: Pressure Switch Stuck Closed",
+    "meaning": "Two flashes mean the pressure switch remained closed when it should have opened.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Stuck pressure switch diaphragm",
+      "Blocked vent",
+      "Faulty inducer"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Inspect venting for obstructions.",
+      "Check the pressure switch hose for water or debris."
+    ],
+    "whenToCallPro": "A stuck-closed switch can prevent safe startup and needs professional testing.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code 2 Flash means the pressure switch remained closed when it should have opened. Most often from stuck pressure switch diaphragm. You can check basics first; professional repairs typically run $175–$550.",
+    "flashPattern": "2 flashes"
+  },
+  {
+    "code": "3 Flash",
+    "slug": "3-flash",
+    "title": "Daikin Furnace Code 3 Flash: Pressure Switch Stuck Open",
+    "meaning": "Three flashes indicate the pressure switch never closed during the inducer cycle.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked vent or intake",
+      "Failed inducer motor",
+      "Disconnected pressure hose"
+    ],
+    "diySteps": [
+      "Inspect the vent pipe and intake.",
+      "Check the small hose to the pressure switch.",
+      "Clear any condensate blockage in the trap."
+    ],
+    "whenToCallPro": "If the inducer runs but the switch never closes, replace the switch or inducer.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code 3 Flash means the pressure switch never closed during the inducer cycle. Most often from blocked vent or intake. You can check basics first; professional repairs typically run $175–$900.",
+    "flashPattern": "3 flashes"
+  },
+  {
+    "code": "4 Flash",
+    "slug": "4-flash",
+    "title": "Daikin Furnace Code 4 Flash: Open Limit Switch",
+    "meaning": "Four flashes signal the high-limit switch opened due to overheating.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty air filter",
+      "Closed vents",
+      "Weak blower motor"
+    ],
+    "diySteps": [
+      "Replace a dirty filter.",
+      "Open all supply vents.",
+      "Reset power after airflow is restored."
+    ],
+    "whenToCallPro": "If overheating continues, the limit switch or blower may need replacement.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code 4 Flash signals the high-limit switch opened due to overheating. Most often from dirty air filter. You can check basics first; professional repairs typically run $150–$600.",
+    "flashPattern": "4 flashes"
+  },
+  {
+    "code": "5 Flash",
+    "slug": "5-flash",
+    "title": "Daikin Furnace Code 5 Flash: Flame Sensed Without Heat Call",
+    "meaning": "Five flashes mean the board detected flame when the thermostat was not calling for heat.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Leaking gas valve",
+      "Stuck gas valve relay",
+      "Control board fault"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Unexpected flame requires immediate professional inspection.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Daikin furnace code 5 Flash means the board detected flame when no heat was requested. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "flashPattern": "5 flashes"
+  },
+  {
+    "code": "6 Flash",
+    "slug": "6-flash",
+    "title": "Daikin Furnace Code 6 Flash: Rollout Switch Open",
+    "meaning": "Six flashes indicate the flame rollout or auxiliary limit switch opened because heat or flame left the normal combustion area.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Cracked heat exchanger",
+      "Blocked flue or vent",
+      "Burner flame rollout"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Rollout conditions involve combustion safety. Do not reset repeatedly without inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "If you smell gas or see soot around the furnace, leave the area and call a technician immediately.",
+    "snippetAnswer": "Daikin furnace code 6 Flash means the rollout or auxiliary limit switch opened. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500.",
+    "flashPattern": "6 flashes"
+  },
+  {
+    "code": "7 Flash",
+    "slug": "7-flash",
+    "title": "Daikin Furnace Code 7 Flash: Low Flame Signal",
+    "meaning": "Seven flashes indicate the flame signal dropped too low during operation.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty flame sensor",
+      "Low gas pressure",
+      "Draft affecting flame"
+    ],
+    "diySteps": [
+      "Clean the flame sensor carefully.",
+      "Ensure return grilles are not blocked.",
+      "Run one test cycle after cleaning."
+    ],
+    "whenToCallPro": "If the flame still drops out, gas pressure and venting should be checked professionally.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code 7 Flash means the flame signal dropped too low during operation. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$400.",
+    "flashPattern": "7 flashes"
+  },
+  {
+    "code": "8 Flash",
+    "slug": "8-flash",
+    "title": "Daikin Furnace Code 8 Flash: Igniter Circuit Problem",
+    "meaning": "Eight flashes mean the ignitor circuit failed an internal board check.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Cracked ignitor",
+      "Open ignitor wire",
+      "Board relay failure"
+    ],
+    "diySteps": [
+      "Turn off power before inspecting the ignitor.",
+      "Look for cracks or white spots on the ignitor.",
+      "Reseat the ignitor connector."
+    ],
+    "whenToCallPro": "Replace a visibly failed ignitor or call for board diagnosis if the ignitor looks fine.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Daikin furnace code 8 Flash means the ignitor circuit failed an internal board check. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450.",
+    "flashPattern": "8 flashes"
   }
 ]

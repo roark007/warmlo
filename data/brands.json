@@ -115,7 +115,42 @@
     "slug": "daikin",
     "name": "Daikin",
     "logoNote": "text-only, do not use trademarked logos",
-    "codeFormat": "Numeric fault codes on the display or LED blink patterns",
-    "notes": "Daikin gas furnaces are growing in North America and use board-stored fault codes."
+    "codeFormat": "LED flash counts or E-codes on 7-segment display (same platform as Goodman/Amana)",
+    "notes": "Daikin gas furnaces sold in North America share Goodman/Amana integrated furnace control diagnostics."
+  },
+  {
+    "slug": "comfortmaker",
+    "name": "Comfortmaker",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Red LED flash count on the integrated control board (2–10 flashes, pause, repeat)",
+    "notes": "Comfortmaker is an ICP (International Comfort Products) brand — the same flash-code family as Heil, Tempstar, and Carrier-built residential furnaces."
+  },
+  {
+    "slug": "keeprite",
+    "name": "Keeprite",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Red LED flash count on the control board (2–10 flashes between pauses)",
+    "notes": "Keeprite furnaces are common in Canada and the northern U.S.; diagnostics match the ICP/Carrier flash-code platform used by Comfortmaker and Tempstar."
+  },
+  {
+    "slug": "day-and-night",
+    "name": "Day & Night",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "LED diagnostic flashes on the furnace control (count the blinks between pauses)",
+    "notes": "Day & Night is an ICP budget line sold alongside Carrier and Bryant; flash codes follow the same integrated furnace control chart as Heil and Comfortmaker."
+  },
+  {
+    "slug": "intertherm",
+    "name": "Intertherm",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Red LED blink count on the control board (varies slightly by series — count blinks, then check your door chart)",
+    "notes": "Intertherm builds furnaces for manufactured and modular homes; many models use Nordyne-style blink diagnostics similar to Coleman and Miller."
+  },
+  {
+    "slug": "miller",
+    "name": "Miller",
+    "logoNote": "text-only, do not use trademarked logos",
+    "codeFormat": "Status LED blink sequences on the integrated control (1–8 blinks depending on board series)",
+    "notes": "Miller is a Nordyne brand for manufactured housing; blink codes often match Intertherm and Coleman patterns — always confirm against the label inside your blower door."
   }
 ]

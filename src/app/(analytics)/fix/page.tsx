@@ -4,8 +4,9 @@ import { CodeSearchBox, type CodeSearchEntry } from "@/components/CodeSearchBox"
 import { getAllCodes, getBrands, getCodesForBrand } from "@/lib/data";
 
 export const metadata = {
-  title: "Furnace Error Codes",
-  description: "Look up furnace and HVAC error codes by brand.",
+  title: "Furnace Error Codes by Brand",
+  description:
+    "Free lookup for 300+ furnace error codes across 22 brands — LED flashes, blink codes, and numeric faults with meanings, severity, DIY steps, and repair costs.",
 };
 
 export default function FixIndexPage() {

@@ -44,7 +44,7 @@
       },
       {
         "brand": "daikin",
-        "code": "a09"
+        "code": "e0"
       }
     ],
     "checkFirst": [
@@ -93,7 +93,7 @@
       },
       {
         "brand": "goodman",
-        "code": "e4"
+        "code": "e3"
       },
       {
         "brand": "carrier",
@@ -150,7 +150,7 @@
       },
       {
         "brand": "tempstar",
-        "code": "1-flash"
+        "code": "6-flash"
       },
       {
         "brand": "luxaire",
@@ -159,6 +159,14 @@
       {
         "brand": "york",
         "code": "1-blink"
+      },
+      {
+        "brand": "intertherm",
+        "code": "4-blinks"
+      },
+      {
+        "brand": "miller",
+        "code": "4-blinks"
       }
     ],
     "checkFirst": [
@@ -203,7 +211,7 @@
       },
       {
         "brand": "tempstar",
-        "code": "3-flash"
+        "code": "4-flash"
       },
       {
         "brand": "luxaire",
@@ -313,15 +321,15 @@
       },
       {
         "brand": "daikin",
-        "code": "a02"
+        "code": "e6"
       },
       {
         "brand": "tempstar",
-        "code": "5-flash"
+        "code": "6-flash"
       },
       {
         "brand": "heil",
-        "code": "5-flash"
+        "code": "6-flash"
       },
       {
         "brand": "luxaire",
@@ -330,6 +338,10 @@
       {
         "brand": "york",
         "code": "16-blinks"
+      },
+      {
+        "brand": "comfortmaker",
+        "code": "6-flash"
       }
     ],
     "checkFirst": [
@@ -382,7 +394,7 @@
       },
       {
         "brand": "daikin",
-        "code": "a10"
+        "code": "3-flash"
       },
       {
         "brand": "luxaire",
@@ -491,7 +503,7 @@
       },
       {
         "brand": "amana",
-        "code": "e6"
+        "code": "4-flash"
       },
       {
         "brand": "luxaire",
@@ -537,10 +549,6 @@
       {
         "brand": "carrier",
         "code": "42"
-      },
-      {
-        "brand": "tempstar",
-        "code": "8-flash"
       },
       {
         "brand": "coleman",
@@ -592,8 +600,8 @@
         "code": "1-flash"
       },
       {
-        "brand": "tempstar",
-        "code": "1-flash"
+        "brand": "intertherm",
+        "code": "4-blinks"
       },
       {
         "brand": "american-standard",
@@ -610,6 +618,10 @@
       {
         "brand": "carrier",
         "code": "14"
+      },
+      {
+        "brand": "miller",
+        "code": "4-blinks"
       }
     ],
     "checkFirst": [
@@ -724,6 +736,14 @@
       {
         "brand": "american-standard",
         "code": "3-flashes"
+      },
+      {
+        "brand": "comfortmaker",
+        "code": "3-flash"
+      },
+      {
+        "brand": "keeprite",
+        "code": "3-flash"
       }
     ],
     "checkFirst": [
@@ -738,8 +758,8 @@
   {
     "slug": "furnace-4-flashes",
     "title": "Furnace Blinking 4 Times (4 Flashes)",
-    "snippetAnswer": "Four flashes on a furnace diagnostic LED typically signals a limit switch or rollout fault on many brands — but Goodman code E4 uses a different format. Match your brand below for the exact meaning and repair cost.",
-    "plainExplanation": "Four-flash patterns often indicate the furnace overheated or a rollout switch opened. On Goodman units, the same fault may display as code E4 instead of four flashes. Brand-specific lookup is essential — don't assume one answer fits all furnaces.",
+    "snippetAnswer": "Four flashes on a furnace LED usually means the high-limit switch opened from overheating — most often a dirty filter. On Goodman and Daikin, the same fault may show as code E3 on a 7-segment display.",
+    "plainExplanation": "Four-flash patterns indicate the furnace overheated and the limit switch tripped. Restricted airflow from a clogged filter is the most common cause. On newer Goodman, Amana, and Daikin boards, the identical fault may read E3 on the display instead of four LED flashes.",
     "likelyCauses": [
       {
         "cause": "High-limit switch opened",
@@ -760,7 +780,15 @@
     "relatedCodes": [
       {
         "brand": "goodman",
-        "code": "e4"
+        "code": "4-flash"
+      },
+      {
+        "brand": "amana",
+        "code": "4-flash"
+      },
+      {
+        "brand": "daikin",
+        "code": "4-flash"
       },
       {
         "brand": "tempstar",
@@ -781,6 +809,18 @@
       {
         "brand": "american-standard",
         "code": "4-flashes"
+      },
+      {
+        "brand": "comfortmaker",
+        "code": "4-flash"
+      },
+      {
+        "brand": "keeprite",
+        "code": "4-flash"
+      },
+      {
+        "brand": "day-and-night",
+        "code": "4-flash"
       }
     ],
     "checkFirst": [
@@ -1000,7 +1040,7 @@
       },
       {
         "brand": "tempstar",
-        "code": "3-flash"
+        "code": "4-flash"
       },
       {
         "brand": "luxaire",
@@ -1061,7 +1101,7 @@
       },
       {
         "brand": "daikin",
-        "code": "a10"
+        "code": "3-flash"
       },
       {
         "brand": "york",
@@ -1115,14 +1155,6 @@
       {
         "brand": "bryant",
         "code": "42"
-      },
-      {
-        "brand": "daikin",
-        "code": "a09"
-      },
-      {
-        "brand": "goodman",
-        "code": "e9"
       }
     ],
     "checkFirst": [
@@ -1171,7 +1203,7 @@
       },
       {
         "brand": "tempstar",
-        "code": "3-flash"
+        "code": "4-flash"
       },
       {
         "brand": "rheem",
@@ -1228,7 +1260,7 @@
       },
       {
         "brand": "daikin",
-        "code": "a08"
+        "code": "e7"
       },
       {
         "brand": "coleman",
@@ -1286,10 +1318,6 @@
       {
         "brand": "armstrong-air",
         "code": "443"
-      },
-      {
-        "brand": "goodman",
-        "code": "e4"
       },
       {
         "brand": "payne",
@@ -1464,7 +1492,7 @@
       },
       {
         "brand": "goodman",
-        "code": "e4"
+        "code": "e3"
       }
     ],
     "checkFirst": [
@@ -1521,7 +1549,7 @@
       },
       {
         "brand": "goodman",
-        "code": "e4"
+        "code": "e3"
       }
     ],
     "checkFirst": [
@@ -1688,7 +1716,7 @@
       },
       {
         "brand": "daikin",
-        "code": "a10"
+        "code": "3-flash"
       },
       {
         "brand": "luxaire",

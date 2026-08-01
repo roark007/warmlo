@@ -1,4 +1,4 @@
-import { getBrands, getSymptoms } from "@/lib/data";
+import { getAllCodes, getBrands, getSymptoms } from "@/lib/data";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
 
@@ -40,8 +40,9 @@ export function buildLlmsTxt(): string {
 
   lines.push("");
   lines.push("## Data");
+  const codeCount = getAllCodes().length;
   lines.push(
-    `- ${BASE_URL}/fix — Browse all furnace error codes by brand (258+ codes).`
+    `- ${BASE_URL}/fix — Browse all furnace error codes by brand (${codeCount}+ codes across ${brands.length} brands).`
   );
 
   return `${lines.join("\n")}\n`;

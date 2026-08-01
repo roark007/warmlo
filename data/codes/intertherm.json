@@ -1,0 +1,190 @@
+[
+  {
+    "code": "1 Blink",
+    "slug": "1-blink",
+    "title": "Intertherm Furnace Code 1 Blink: Limit Switch Open",
+    "meaning": "One blink on Nordyne-built control boards means the limit switch is open — the furnace overheated. Blink charts vary slightly by series, so confirm against the chart inside your blower door.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Clogged air filter",
+      "Weak blower airflow",
+      "Closed supply registers"
+    ],
+    "diySteps": [
+      "Replace the air filter.",
+      "Open every supply vent.",
+      "Let the furnace cool 30 minutes, then reset power once."
+    ],
+    "whenToCallPro": "Repeated limit trips need blower and limit switch service.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Intertherm furnace 1 blink means the limit switch opened from overheating — common in manufactured homes when airflow is restricted. Change the filter first; professional repairs run $150–$600.",
+    "flashPattern": "1 blink"
+  },
+  {
+    "code": "2 Blinks",
+    "slug": "2-blinks",
+    "title": "Intertherm Furnace Code 2 Blinks: Pressure Switch Stuck Open",
+    "meaning": "Two blinks mean the pressure switch stayed open with the inducer running — the board could not prove venting. Verify against the blink chart inside your unit's door.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Blocked roof jack or vent cap",
+      "Failed inducer or air-proving switch",
+      "Disconnected pressure hose"
+    ],
+    "diySteps": [
+      "Clear the roof vent or vent cap outside.",
+      "Check that both pressure hoses are attached.",
+      "Confirm the inducer actually spins on a heat call."
+    ],
+    "whenToCallPro": "If the inducer runs and the code stays, the air-proving switch has likely failed — a common part on these units.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Intertherm furnace 2 blinks means the pressure switch stayed open with the inducer on — venting was never proven. Clear the roof vent first; switch or inducer repairs run $175–$900.",
+    "flashPattern": "2 blinks"
+  },
+  {
+    "code": "3 Blinks",
+    "slug": "3-blinks",
+    "title": "Intertherm Furnace Code 3 Blinks: Pressure Switch Stuck Closed",
+    "meaning": "Three blinks mean the pressure switch reads closed while the inducer is off — the control sees vent pressure that should not exist. Confirm on your door chart, as codes vary by series.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Stuck pressure switch diaphragm",
+      "Water trapped in the pressure hose",
+      "Miswired switch circuit"
+    ],
+    "diySteps": [
+      "Turn off power.",
+      "Drain any water from the pressure tubing.",
+      "Restore power and watch one cycle."
+    ],
+    "whenToCallPro": "A switch stuck closed with the inducer off needs replacement.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Intertherm furnace 3 blinks means the pressure switch is stuck closed before the inducer starts. Water in the hose or a failed switch is typical; professional repairs run $175–$550.",
+    "flashPattern": "3 blinks"
+  },
+  {
+    "code": "4 Blinks",
+    "slug": "4-blinks",
+    "title": "Intertherm Furnace Code 4 Blinks: Ignition Failure Lockout",
+    "meaning": "Four blinks on most Nordyne-built boards mean the furnace locked out after failed ignition attempts. Some newer boards use four blinks for an open limit instead — check your door chart.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Cracked or weak hot-surface ignitor",
+      "Dirty flame sensor",
+      "Poor ground connection to the burner"
+    ],
+    "diySteps": [
+      "Confirm the gas valve is on.",
+      "Clean the flame sensor rod gently.",
+      "Reset power once and watch for ignitor glow."
+    ],
+    "whenToCallPro": "Repeated ignition lockouts usually need an ignitor, sensor, or grounding repair.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Intertherm furnace 4 blinks means an ignition failure lockout — the burners tried and failed to light. Check gas supply and the flame sensor first; ignition repairs run $150–$450.",
+    "flashPattern": "4 blinks"
+  },
+  {
+    "code": "5 Blinks",
+    "slug": "5-blinks",
+    "title": "Intertherm Furnace Code 5 Blinks: Reversed Polarity or No Ground",
+    "meaning": "Five blinks on older M-Series and G-Series boards mean the 115V hot and neutral are reversed or the ground is missing. Some newer boards use five blinks for flame sensed with the gas valve off — verify on your door chart.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Hot and neutral swapped at the disconnect",
+      "Missing equipment ground",
+      "Aging aluminum wiring in older manufactured homes"
+    ],
+    "diySteps": [
+      "Turn off the breaker feeding the furnace.",
+      "Do not run the unit until wiring polarity is verified.",
+      "Have grounding checked at the same time."
+    ],
+    "whenToCallPro": "Line-voltage polarity fixes belong to an electrician or HVAC technician.",
+    "repairCostLow": 150,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Intertherm furnace 5 blinks usually means reversed 115V polarity or a missing ground on older Nordyne boards. Shut off power and have the wiring verified; corrections run $150–$350.",
+    "flashPattern": "5 blinks"
+  },
+  {
+    "code": "6 Blinks",
+    "slug": "6-blinks",
+    "title": "Intertherm Furnace Code 6 Blinks: Line Polarity or Ground Fault",
+    "meaning": "Six blinks on newer Nordyne integrated controls mean reversed 115V polarity, an open ground, or low supply voltage — an electrical supply problem, not a board failure.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Reversed hot and neutral wires",
+      "Open or corroded ground connection",
+      "Low line voltage at the furnace"
+    ],
+    "diySteps": [
+      "Switch off the furnace breaker.",
+      "Look for obvious loose wiring at the service switch — do not touch live wires.",
+      "Wait for a professional wiring check before running the furnace."
+    ],
+    "whenToCallPro": "Polarity and ground faults are quick professional fixes but unsafe to ignore.",
+    "repairCostLow": 150,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "control-board-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Intertherm furnace 6 blinks means a line polarity or grounding fault on newer control boards — the electrical supply is wired wrong. Have polarity and ground corrected; fixes run $150–$350.",
+    "flashPattern": "6 blinks"
+  },
+  {
+    "code": "7 Blinks",
+    "slug": "7-blinks",
+    "title": "Intertherm Furnace Code 7 Blinks: Gas Valve Circuit Error",
+    "meaning": "Seven blinks mean the control detected a gas valve circuit error — the valve is energized when it should not be, or its wiring failed a check.",
+    "severity": "emergency",
+    "commonCauses": [
+      "Failed gas valve coil",
+      "Miswired valve harness",
+      "Stuck relay on the control board"
+    ],
+    "diySteps": [],
+    "whenToCallPro": "Gas valve circuit faults require licensed diagnosis — do not keep cycling the furnace.",
+    "repairCostLow": 350,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Intertherm furnace 7 blinks is a gas valve circuit error — a safety-critical fault on gas furnaces. Stop the unit and call a licensed technician; valve repairs run $350–$900.",
+    "flashPattern": "7 blinks"
+  },
+  {
+    "code": "8 Blinks",
+    "slug": "8-blinks",
+    "title": "Intertherm Furnace Code 8 Blinks: Weak Flame Signal",
+    "meaning": "Eight blinks on newer Nordyne integrated controls mean the flame sensor signal is too weak — the flame is burning but barely registering.",
+    "severity": "diy-possible",
+    "commonCauses": [
+      "Oxidized flame sensor rod",
+      "Slightly lifted or lazy flame",
+      "Poor burner ground"
+    ],
+    "diySteps": [
+      "Turn off power and gas.",
+      "Clean the flame sensor rod with fine abrasive pad.",
+      "Reassemble and run one heat cycle."
+    ],
+    "whenToCallPro": "If cleaning does not restore a steady signal, gas pressure and grounding need a professional check.",
+    "repairCostLow": 100,
+    "repairCostHigh": 300,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null,
+    "snippetAnswer": "Intertherm furnace 8 blinks means a weak flame sensor signal — flame exists but barely registers. Cleaning the sensor rod fixes most cases yourself; professional service runs $100–$300.",
+    "flashPattern": "8 blinks"
+  }
+]

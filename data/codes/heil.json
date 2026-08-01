@@ -1,224 +1,210 @@
 [
   {
-    "code": "1 Flash",
-    "slug": "1-flash",
-    "title": "Heil Furnace Code 1 Flash: Ignition Failure",
-    "meaning": "One flash indicates failed ignition during the trial period.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Worn ignitor",
-      "Gas valve issue",
-      "Dirty sensor"
-    ],
-    "diySteps": [
-      "Verify gas on.",
-      "Reset once.",
-      "Watch ignition cycle."
-    ],
-    "whenToCallPro": "Ignition service usually needed.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Heil furnace code 1 Flash means One flash indicates failed ignition during the trial period. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
-  },
-  {
     "code": "2 Flash",
     "slug": "2-flash",
-    "title": "Heil Furnace Code 2 Flash: Pressure Switch Open",
-    "meaning": "Two flashes mean the pressure switch did not close.",
+    "title": "Heil Furnace Code 2 Flash: Pressure Switch Did Not Open",
+    "meaning": "Two flashes mean the pressure switch stayed closed between heating cycles when the control expected it to open.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked vent",
-      "Failed inducer",
-      "Loose hose"
+      "Pressure switch stuck closed",
+      "Obstructed or waterlogged pressure tubing",
+      "Inducer continuing to spin between cycles"
     ],
     "diySteps": [
-      "Inspect vent.",
-      "Check tubing.",
-      "Clear condensate."
+      "Turn off power at the furnace switch.",
+      "Inspect the small rubber pressure hoses for kinks or trapped water.",
+      "Restore power and watch one full heating cycle."
     ],
-    "whenToCallPro": "Switch or inducer replacement may be needed.",
+    "whenToCallPro": "If the tubing is clear and two flashes return, the pressure switch itself needs testing.",
     "repairCostLow": 175,
-    "repairCostHigh": 900,
+    "repairCostHigh": 550,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Heil furnace code 2 Flash means Two flashes mean the pressure switch did not close. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Heil furnace 2 flashes means the pressure switch did not open between cycles — usually a stuck switch or blocked pressure tubing. Power down, check the hoses, then call a pro; repairs run $175–$550.",
+    "flashPattern": "2 flashes"
   },
   {
     "code": "3 Flash",
     "slug": "3-flash",
-    "title": "Heil Furnace Code 3 Flash: Limit Switch Open",
-    "meaning": "Three flashes signal high-limit switch opened.",
+    "title": "Heil Furnace Code 3 Flash: Pressure Switch Did Not Close",
+    "meaning": "Three flashes mean the low pressure switch failed to close after the inducer started, or reopened during the heat cycle.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty filter",
-      "Weak blower",
-      "Closed vents"
+      "Blocked vent or combustion air intake",
+      "Water in the vent piping or condensate trap",
+      "Weak or failed inducer motor"
     ],
     "diySteps": [
-      "Replace filter.",
-      "Open vents.",
-      "Cool before reset."
+      "Check the outdoor vent termination for ice, snow, or debris.",
+      "Clear the condensate trap and drain line.",
+      "Reseat the pressure switch tubing on its nipples."
     ],
-    "whenToCallPro": "Limit or blower service if repeated.",
-    "repairCostLow": 150,
-    "repairCostHigh": 600,
-    "relatedRepairSlug": "limit-switch-replacement",
+    "whenToCallPro": "If the inducer runs but the switch never closes, the switch or inducer needs professional testing.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Heil furnace code 3 Flash means Three flashes signal high-limit switch opened. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Heil furnace 3 flashes means the pressure switch never closed after the inducer started — vent proof failed. Check the outside vent and condensate trap first; professional repairs run $175–$900.",
+    "flashPattern": "3 flashes"
   },
   {
     "code": "4 Flash",
     "slug": "4-flash",
-    "title": "Heil Furnace Code 4 Flash: Rollout Trip",
-    "meaning": "Four flashes indicate rollout switch opened.",
-    "severity": "emergency",
+    "title": "Heil Furnace Code 4 Flash: Limit or Rollout Circuit Open",
+    "meaning": "Four flashes mean the high-limit or flame rollout switch opened — the furnace overheated or combustion escaped the burner area.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Heat exchanger issue",
-      "Blocked flue",
-      "Flame rollout"
+      "Dirty air filter restricting airflow",
+      "Closed or blocked supply registers",
+      "Tripped flame rollout switch"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Rollout requires combustion inspection.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas, leave the area and call a technician.",
-    "snippetAnswer": "Heil furnace code 4 Flash means Four flashes indicate rollout switch opened. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
+    "diySteps": [
+      "Replace the air filter and open every supply vent.",
+      "Let the furnace cool for 30 minutes before it retries.",
+      "Never bypass a limit or rollout switch."
+    ],
+    "whenToCallPro": "A rollout trip or repeated limit trips after fixing airflow require combustion inspection.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Heil furnace 4 flashes means the limit or rollout circuit opened — overheating from restricted airflow is the usual cause. Replace the filter first; limit or blower repairs run $150–$600.",
+    "flashPattern": "4 flashes"
   },
   {
     "code": "5 Flash",
     "slug": "5-flash",
-    "title": "Heil Furnace Code 5 Flash: Flame Sense Error",
-    "meaning": "Five flashes mean flame was not proven.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Dirty sensor",
-      "Weak flame",
-      "Loose wire"
-    ],
-    "diySteps": [
-      "Clean sensor.",
-      "Verify ignition.",
-      "Reset once."
-    ],
-    "whenToCallPro": "Sensor replacement if cleaning fails.",
-    "repairCostLow": 100,
-    "repairCostHigh": 300,
-    "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null,
-    "snippetAnswer": "Heil furnace code 5 Flash means Five flashes mean flame was not proven. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$300."
-  },
-  {
-    "code": "6 Flash",
-    "slug": "6-flash",
-    "title": "Heil Furnace Code 6 Flash: Gas Valve Fault",
-    "meaning": "Six flashes indicate gas valve circuit error.",
+    "title": "Heil Furnace Code 5 Flash: Flame Sensed With Gas Valve Off",
+    "meaning": "Five flashes mean the board sees flame when the gas valve should be closed — an abnormal flame-proving signal.",
     "severity": "emergency",
     "commonCauses": [
-      "Failed valve",
-      "Relay fault",
-      "Loose wiring"
+      "Gas valve leaking or closing slowly",
+      "Stuck gas valve relay on the board",
+      "Shorted flame sensor wiring"
     ],
     "diySteps": [],
-    "whenToCallPro": "Licensed gas valve service required.",
+    "whenToCallPro": "Flame with the valve off is a serious fault — shut the furnace down and call a licensed technician.",
     "repairCostLow": 350,
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Heil furnace code 6 Flash means Six flashes indicate gas valve circuit error. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Heil furnace 5 flashes means flame was detected while the gas valve should be off — a possible leaking valve. Treat as an emergency; shut the unit down and call a pro; repairs run $350–$900.",
+    "flashPattern": "5 flashes"
+  },
+  {
+    "code": "6 Flash",
+    "slug": "6-flash",
+    "title": "Heil Furnace Code 6 Flash: Ignition Proving Failure",
+    "meaning": "Six flashes mean the burners failed to prove flame after ignition, or the flame signal dropped out while the furnace was running.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "Dirty or degraded flame sensor",
+      "Failing hot-surface ignitor",
+      "Rough ignition or low gas pressure"
+    ],
+    "diySteps": [
+      "Turn off power and gently clean the flame sensor rod.",
+      "Watch one cycle for ignitor glow and smooth light-off.",
+      "Reset power once after cleaning."
+    ],
+    "whenToCallPro": "If flame keeps dropping out after a sensor cleaning, ignitor and gas pressure need diagnosis.",
+    "repairCostLow": 150,
+    "repairCostHigh": 450,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Heil furnace 6 flashes means ignition failed to prove or flame was lost mid-cycle. A dirty flame sensor is the most common cause — clean it first; professional repairs run $150–$450.",
+    "flashPattern": "6 flashes"
   },
   {
     "code": "7 Flash",
     "slug": "7-flash",
-    "title": "Heil Furnace Code 7 Flash: Blower Fault",
-    "meaning": "Seven flashes signal blower motor error.",
+    "title": "Heil Furnace Code 7 Flash: Limit Circuit Lockout",
+    "meaning": "Seven flashes mean the limit or rollout switch stayed open long enough that the control locked out heating; it auto-resets after about three hours.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed motor",
-      "Bad capacitor",
-      "Debris in wheel"
+      "Repeated overheating from poor airflow",
+      "Failed high-limit switch",
+      "Blower moving too little air"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Check blower wheel.",
-      "Verify door closed."
+      "Replace the filter and open all registers.",
+      "Wait for the three-hour auto-reset or cycle power once after cooling.",
+      "Watch the next heat cycle closely."
     ],
-    "whenToCallPro": "Blower motor replacement usually required.",
-    "repairCostLow": 450,
-    "repairCostHigh": 1200,
-    "relatedRepairSlug": "blower-motor-replacement",
+    "whenToCallPro": "A limit lockout means overheating went unresolved — have the blower and limit switch inspected.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Heil furnace code 7 Flash means Seven flashes signal blower motor error. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Heil furnace 7 flashes is a limit circuit lockout — the limit stayed open too long and heating shut down. Restore airflow with a new filter, then call a pro if it returns; repairs run $150–$600.",
+    "flashPattern": "7 flashes"
   },
   {
     "code": "8 Flash",
     "slug": "8-flash",
-    "title": "Heil Furnace Code 8 Flash: Inducer Fault",
-    "meaning": "Eight flashes indicate inducer motor problem.",
-    "severity": "call-pro-soon",
+    "title": "Heil Furnace Code 8 Flash: Gas Heating Lockout",
+    "meaning": "Eight flashes mean the control locked out gas heating entirely and will not retry until it is reset.",
+    "severity": "emergency",
     "commonCauses": [
-      "Seized inducer",
-      "Blocked vent",
-      "Failed capacitor"
+      "Gas valve fault or miswire",
+      "Failed relay on the control board",
+      "Repeated unresolved ignition faults"
     ],
-    "diySteps": [
-      "Clear vent.",
-      "Listen for hum.",
-      "Do not force motor."
-    ],
-    "whenToCallPro": "Inducer replacement if needed.",
-    "repairCostLow": 400,
+    "diySteps": [],
+    "whenToCallPro": "Gas heating lockouts require licensed diagnosis of the gas valve and control board — do not keep resetting.",
+    "repairCostLow": 350,
     "repairCostHigh": 900,
-    "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Heil furnace code 8 Flash means Eight flashes indicate inducer motor problem. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
+    "snippetAnswer": "Heil furnace 8 flashes is a gas heating lockout — the board stopped all gas heat for safety and will not retry. Do not bypass anything; call a licensed technician; repairs run $350–$900.",
+    "flashPattern": "8 flashes"
   },
   {
     "code": "9 Flash",
     "slug": "9-flash",
-    "title": "Heil Furnace Code 9 Flash: Board Fault",
-    "meaning": "Nine flashes mean control board internal error.",
+    "title": "Heil Furnace Code 9 Flash: Two-Stage Pressure Switch Fault",
+    "meaning": "Nine flashes mean the medium or high pressure switch (or its relay) did not close — or reopened — during a high-heat cycle on a two-stage or modulating furnace.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Surge damage",
-      "Moisture",
-      "Failed relay"
+      "Vent restriction at high fire",
+      "Failed medium or high pressure switch",
+      "Defective pressure switch relay"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Inspect for moisture.",
-      "Check condensate."
+      "Inspect the vent and intake outside for blockages.",
+      "Clear the condensate trap.",
+      "Note whether the code only appears at high heat."
     ],
-    "whenToCallPro": "Board replacement typically required.",
-    "repairCostLow": 300,
-    "repairCostHigh": 800,
-    "relatedRepairSlug": "control-board-replacement",
+    "whenToCallPro": "High-fire pressure faults need switch testing under load — book service if venting checks out.",
+    "repairCostLow": 175,
+    "repairCostHigh": 550,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Heil furnace code 9 Flash means Nine flashes mean control board internal error. Most often from surge damage. You can check basics first; professional repairs typically run $300–$800."
+    "snippetAnswer": "Heil furnace 9 flashes means a medium or high pressure switch fault on a two-stage model — the switch failed during high-heat operation. Check venting first; professional repairs run $175–$550.",
+    "flashPattern": "9 flashes"
   },
   {
     "code": "10 Flash",
     "slug": "10-flash",
-    "title": "Heil Furnace Code 10 Flash: Low Flame",
-    "meaning": "Ten flashes indicate weak flame signal.",
+    "title": "Heil Furnace Code 10 Flash: Reversed Line Polarity",
+    "meaning": "Ten flashes mean the 115V hot and neutral wires are reversed at the furnace, or the transformer phasing is wrong on twinned units.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty sensor",
-      "Draft",
-      "Low gas"
+      "Hot and neutral swapped at the disconnect",
+      "Missing or poor equipment ground",
+      "Incorrect transformer phasing on twinned furnaces"
     ],
     "diySteps": [
-      "Clean sensor.",
-      "Open returns.",
-      "Test cycle."
+      "Turn power off at the breaker.",
+      "Do not run the furnace until the wiring is verified.",
+      "Have polarity and grounding checked before restoring service."
     ],
-    "whenToCallPro": "Gas and venting checks if persistent.",
-    "repairCostLow": 100,
-    "repairCostHigh": 400,
-    "relatedRepairSlug": "flame-sensor-cleaning",
+    "whenToCallPro": "Line-voltage polarity and grounding corrections belong to an electrician or HVAC technician.",
+    "repairCostLow": 150,
+    "repairCostHigh": 350,
+    "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Heil furnace code 10 Flash means Ten flashes indicate weak flame signal. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Heil furnace 10 flashes means reversed 115V polarity or a grounding problem at the furnace. Shut the power off and have the wiring corrected professionally — typical electrical fixes run $150–$350.",
+    "flashPattern": "10 flashes"
   }
 ]

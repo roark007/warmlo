@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CodeFilterTable } from "@/components/CodeFilterTable";
 import { brandTopCodes } from "@/config/brandTopCodes";
-import { buildBrandHubTitle } from "@/lib/seo";
+import { buildBrandHubTitle, buildBrandHubDescription } from "@/lib/seo";
 import { getBrand, getBrands, getCode, getCodesForBrand } from "@/lib/data";
 
 export function generateStaticParams() {
@@ -14,10 +14,15 @@ export function generateMetadata({ params }: { params: Promise<{ brand: string }
   return params.then(({ brand: brandSlug }) => {
     const brand = getBrand(brandSlug);
     if (!brand) return { title: "Brand Not Found" };
+    const codes = getCodesForBrand(brandSlug);
     return {
       title: buildBrandHubTitle(brand),
-      description: `Complete list of ${brand.name} furnace error codes with meanings, fixes, and repair costs.`,
+      description: buildBrandHubDescription(brand, codes.length),
       alternates: { canonical: `/fix/${brandSlug}` },
+      openGraph: {
+        title: buildBrandHubTitle(brand),
+        description: buildBrandHubDescription(brand, codes.length),
+      },
     };
   });
 }
