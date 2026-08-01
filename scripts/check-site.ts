@@ -5,6 +5,7 @@ import { AFFILIATE_DISCLOSURE } from "../src/components/SiteChrome";
 import { CODE_PAGE_DISCLAIMER } from "../src/lib/seo";
 import { buildLlmsTxt } from "../src/lib/llms-txt";
 
+const INDEX_ROUTE = "/data/hvac-quote-index";
 const BUILD_DIR = path.join(process.cwd(), ".next");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 
@@ -153,9 +154,16 @@ for (const route of expectedSymptomRoutes) {
     censusOk = false;
   }
 }
+const indexFound =
+  generatedRoutes.has(INDEX_ROUTE) ||
+  htmlFilePaths.some((f) => f.includes("hvac-quote-index"));
+if (!indexFound) {
+  fail(`missing quote index page: ${INDEX_ROUTE}`);
+  censusOk = false;
+}
 if (censusOk) {
   pass(
-    `route census — ${totalCodes} code pages, ${brands.length} brand pages, ${repairs.length} cost pages, ${symptoms.length} symptom pages`
+    `route census — ${totalCodes} code pages, ${brands.length} brand pages, ${repairs.length} cost pages, ${symptoms.length} symptom pages, 1 quote index`
   );
 }
 
@@ -255,6 +263,44 @@ if (costContentOk && sampleCostRoutes.length > 0) {
   pass(`required content on ${sampleCostRoutes.length} sample cost pages`);
 }
 
+// Quote Index page content
+let indexContentOk = true;
+let indexHtml = readPageHtml(INDEX_ROUTE, htmlFiles);
+if (!indexHtml) {
+  for (const file of htmlFilePaths) {
+    if (file.includes("hvac-quote-index")) {
+      indexHtml = htmlFiles.get(file) ?? null;
+      break;
+    }
+  }
+}
+if (!indexHtml) {
+  fail(`could not read HTML for ${INDEX_ROUTE}`);
+  indexContentOk = false;
+} else {
+  if (!/<h1[^>]*>/.test(indexHtml)) {
+    fail(`${INDEX_ROUTE}: missing H1`);
+    indexContentOk = false;
+  }
+  if (!indexHtml.includes("Dataset") && !indexHtml.includes('"@type":"Dataset"')) {
+    fail(`${INDEX_ROUTE}: missing Dataset JSON-LD`);
+    indexContentOk = false;
+  }
+  if (!indexHtml.includes("Cite this data") && !indexHtml.includes("Copy citation")) {
+    fail(`${INDEX_ROUTE}: missing cite block`);
+    indexContentOk = false;
+  }
+  if (!indexHtml.includes("Methodology")) {
+    fail(`${INDEX_ROUTE}: missing methodology section`);
+    indexContentOk = false;
+  }
+  if (!indexHtml.includes("/data/hvac-quote-index") && !indexHtml.includes("Fair range")) {
+    fail(`${INDEX_ROUTE}: missing data table content`);
+    indexContentOk = false;
+  }
+}
+if (indexContentOk) pass("quote index page content");
+
 // Internal link check
 const validRoutes = new Set([...generatedRoutes]);
 validRoutes.add("/fix");
@@ -266,6 +312,7 @@ for (const route of expectedCodeRoutes) validRoutes.add(route);
 for (const brand of brands) validRoutes.add(`/fix/${brand.slug}`);
 for (const repair of repairs) validRoutes.add(`/cost/${repair.slug}`);
 for (const symptom of symptoms) validRoutes.add(`/symptom/${symptom.slug}`);
+validRoutes.add(INDEX_ROUTE);
 
 let linksOk = true;
 for (const [, html] of htmlFiles) {
@@ -339,6 +386,7 @@ const contentRoutes = [
   ...expectedCodeRoutes,
   ...repairs.map((r) => `/cost/${r.slug}`),
   ...symptoms.map((s) => `/symptom/${s.slug}`),
+  INDEX_ROUTE,
   "/privacy",
   "/terms",
   "/disclosure",
@@ -401,6 +449,11 @@ if (!llmsContent.includes("# Warmlo")) {
     fail("llms.txt: missing symptom guides");
   } else if (llmsBrandOk) {
     pass(`llms.txt includes ${symptoms.length} symptom guides`);
+  }
+  if (!llmsContent.includes("/data/hvac-quote-index")) {
+    fail("llms.txt: missing Quote Index entry");
+  } else if (llmsBrandOk) {
+    pass("llms.txt includes HVAC Quote Index");
   }
 }
 

@@ -11,8 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   const costRoutes = getRepairs().map((r) => `/cost/${r.slug}`);
   const symptomRoutes = getSymptoms().map((s) => `/symptom/${s.slug}`);
+  const dataRoutes = ["/data/hvac-quote-index"];
 
-  const allRoutes = [...staticRoutes, ...brandRoutes, ...codeRoutes, ...costRoutes, ...symptomRoutes];
+  const allRoutes = [...staticRoutes, ...brandRoutes, ...codeRoutes, ...costRoutes, ...symptomRoutes, ...dataRoutes];
 
   return allRoutes.map((route) => ({
     url: `${BASE_URL}${route}`,

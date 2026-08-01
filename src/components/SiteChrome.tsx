@@ -64,6 +64,9 @@ export function Footer() {
           <StaticLink href="/quote-check" className="hover:text-ember">
             Check a quote
           </StaticLink>
+          <StaticLink href="/data/hvac-quote-index" className="hover:text-ember">
+            Quote Index
+          </StaticLink>
         </div>
         <p className="mt-9 text-small leading-[1.6] text-text-faint">{AFFILIATE_DISCLOSURE}</p>
       </div>

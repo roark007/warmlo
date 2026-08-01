@@ -1,0 +1,159 @@
+{
+  "dataUpdated": "2026-07",
+  "generatedAt": "2026-08-01",
+  "methodologyVersion": "1.0",
+  "minimumSampleSize": 20,
+  "submissionStatsAvailable": false,
+  "methodology": {
+    "overview": "The Warmlo Quote Index publishes national fair-price ranges for common HVAC jobs and, as QuoteCheck submission volume grows, anonymized statistics from real homeowner quotes. No personally identifiable information is included in published aggregates.",
+    "fairRangeMethod": "Fair ranges are researched national benchmarks for standard installations in typical residential conditions. Each range spans fairLow (competitive quote in an average market) to fairHigh (upper end of fair before red-flag territory). typicalMid is the midpoint. Ranges exclude unusual scope (major duct rework, asbestos abatement, commercial equipment). QuoteCheck applies optional adjustment factors (access difficulty, premium brand, high-cost metro) at check time — the Index table shows unadjusted national ranges for comparability.",
+    "aggregationMethod": "Submission statistics are computed from anonymized QuoteCheck leads that include a quoted price and job type. For each job type, we require at least 20 quotes before publishing median price or percent-above-fair-range figures. Median uses the 50th percentile of submitted amounts. Percent above fair range counts quotes strictly above the national fairHigh for that job type. Raw leads never leave the database; only aggregates are written to quote-index.json.",
+    "citationGuidance": "Cite as: Warmlo HVAC Quote Index, warmlo.com/data/hvac-quote-index, accessed [date]. Include the dataUpdated month shown on the page. Link back to the Index when quoting ranges or submission statistics."
+  },
+  "jobs": [
+    {
+      "jobType": "furnace-replacement-gas-80",
+      "label": "New gas furnace, standard efficiency (80% AFUE)",
+      "fairLow": 3000,
+      "fairHigh": 5500,
+      "typicalMid": 4250,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation, permit, and haul-away."
+    },
+    {
+      "jobType": "furnace-replacement-gas-96",
+      "label": "New gas furnace, high-efficiency (96% AFUE)",
+      "fairLow": 4500,
+      "fairHigh": 8000,
+      "typicalMid": 6000,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation, permit, and haul-away."
+    },
+    {
+      "jobType": "furnace-replacement-electric",
+      "label": "New electric furnace",
+      "fairLow": 2000,
+      "fairHigh": 4500,
+      "typicalMid": 3250,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation and permit."
+    },
+    {
+      "jobType": "heat-pump-replacement",
+      "label": "Heat pump replacement",
+      "fairLow": 4000,
+      "fairHigh": 9000,
+      "typicalMid": 6500,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation and permit."
+    },
+    {
+      "jobType": "ac-condenser-2-3-ton",
+      "label": "AC condenser replacement, 2–3 ton",
+      "fairLow": 2500,
+      "fairHigh": 5000,
+      "typicalMid": 3750,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation and refrigerant charge."
+    },
+    {
+      "jobType": "ac-condenser-4-5-ton",
+      "label": "AC condenser replacement, 4–5 ton",
+      "fairLow": 3500,
+      "fairHigh": 6500,
+      "typicalMid": 5000,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation and refrigerant charge."
+    },
+    {
+      "jobType": "full-system-furnace-ac",
+      "label": "Full HVAC system (furnace + AC)",
+      "fairLow": 7500,
+      "fairHigh": 15000,
+      "typicalMid": 11000,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation, permit, and haul-away."
+    },
+    {
+      "jobType": "full-system-heat-pump",
+      "label": "Full system (heat pump)",
+      "fairLow": 8000,
+      "fairHigh": 16000,
+      "typicalMid": 12000,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation and permit."
+    },
+    {
+      "jobType": "boiler-replacement",
+      "label": "Boiler replacement",
+      "fairLow": 4000,
+      "fairHigh": 10000,
+      "typicalMid": 7000,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation and permit."
+    },
+    {
+      "jobType": "mini-split-single",
+      "label": "Mini-split, single zone",
+      "fairLow": 3000,
+      "fairHigh": 6000,
+      "typicalMid": 4500,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation and electrical hookup."
+    },
+    {
+      "jobType": "mini-split-multi",
+      "label": "Mini-split, multi zone",
+      "fairLow": 6000,
+      "fairHigh": 15000,
+      "typicalMid": 10000,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation and electrical hookup."
+    },
+    {
+      "jobType": "water-heater-tank",
+      "label": "Water heater replacement (tank)",
+      "fairLow": 1000,
+      "fairHigh": 2500,
+      "typicalMid": 1750,
+      "quoteCount": 0,
+      "medianQuotedPrice": null,
+      "pctAboveFairRange": null,
+      "dataStatus": "benchmark-only",
+      "notes": "Includes standard installation, permit, and haul-away."
+    }
+  ]
+}

@@ -107,10 +107,44 @@ export const symptomSchema = z.object({
 
 export const symptomsSchema = z.array(symptomSchema);
 
+export const quoteIndexDataStatusSchema = z.enum(["benchmark-only", "live", "insufficient"]);
+
+export const quoteIndexJobSchema = z.object({
+  jobType: slugSchema,
+  label: z.string().min(1),
+  fairLow: z.number().int().positive(),
+  fairHigh: z.number().int().positive(),
+  typicalMid: z.number().int().positive(),
+  quoteCount: z.number().int().min(0),
+  medianQuotedPrice: z.number().int().positive().nullable(),
+  pctAboveFairRange: z.number().int().min(0).max(100).nullable(),
+  dataStatus: quoteIndexDataStatusSchema,
+  notes: z.string(),
+});
+
+export const quoteIndexMethodologySchema = z.object({
+  overview: z.string().min(1),
+  fairRangeMethod: z.string().min(1),
+  aggregationMethod: z.string().min(1),
+  citationGuidance: z.string().min(1),
+});
+
+export const quoteIndexSchema = z.object({
+  dataUpdated: z.string().regex(/^\d{4}-\d{2}$/),
+  generatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  methodologyVersion: z.string().min(1),
+  minimumSampleSize: z.number().int().positive(),
+  submissionStatsAvailable: z.boolean(),
+  methodology: quoteIndexMethodologySchema,
+  jobs: z.array(quoteIndexJobSchema).min(1),
+});
+
 export type Brand = z.infer<typeof brandSchema>;
 export type Code = z.infer<typeof codeSchema>;
 export type Repair = z.infer<typeof repairSchema>;
 export type Benchmark = z.infer<typeof benchmarkSchema>;
 export type Severity = z.infer<typeof severitySchema>;
 export type Symptom = z.infer<typeof symptomSchema>;
+export type QuoteIndex = z.infer<typeof quoteIndexSchema>;
+export type QuoteIndexJob = z.infer<typeof quoteIndexJobSchema>;
 export type VerdictBucket = "suspiciously-low" | "fair" | "high" | "red-flag";

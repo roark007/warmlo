@@ -6,11 +6,13 @@ import {
   repairsSchema,
   quoteBenchmarksSchema,
   symptomsSchema,
+  quoteIndexSchema,
   type Brand,
   type Code,
   type Repair,
   type Benchmark,
   type Symptom,
+  type QuoteIndex,
 } from "./schemas";
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -99,6 +101,11 @@ export function resolveSymptomCodeRef(ref: {
   const brand = getBrand(ref.brand);
   const code = getCode(ref.brand, ref.code);
   return brand && code ? { brand, code } : null;
+}
+
+export function getQuoteIndex(): QuoteIndex {
+  const data = readJson<unknown>(path.join(DATA_DIR, "quote-index.json"));
+  return quoteIndexSchema.parse(data);
 }
 
 export { formatDataUpdated } from "./format";

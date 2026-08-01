@@ -1,4 +1,5 @@
-import type { Brand, Code, Symptom } from "@/lib/schemas";
+import type { Brand, Code, QuoteIndex, Symptom } from "@/lib/schemas";
+import { getQuoteIndexPageUrl } from "@/lib/quote-index";
 
 export function dataUpdatedToIsoDate(dataUpdated: string): string {
   const [year, month] = dataUpdated.split("-");
@@ -202,6 +203,53 @@ export function buildCodePageHeadline(brand: Brand, code: Code, shortMeaning: st
     return `${brand.name} ${code.flashPattern} (Code ${code.code}): ${shortMeaning}`;
   }
   return `${brand.name} Furnace Code ${code.code}: ${shortMeaning}`;
+}
+
+export function buildQuoteIndexTitle(index: QuoteIndex): string {
+  const year = index.dataUpdated.split("-")[0];
+  return `What HVAC Work Should Cost in ${year}: Warmlo Quote Index | Warmlo`;
+}
+
+export function buildQuoteIndexDescription(index: QuoteIndex): string {
+  const year = index.dataUpdated.split("-")[0];
+  const count = index.jobs.length;
+  return `National fair-price ranges for ${count} common HVAC jobs in ${year}. Methodology, citation-ready data, and anonymized quote statistics from Warmlo QuoteCheck.`;
+}
+
+export function buildQuoteIndexDatasetJsonLd(index: QuoteIndex, baseUrl: string) {
+  const pageUrl = `${baseUrl}/data/hvac-quote-index`;
+  const dateModified = dataUpdatedToIsoDate(index.dataUpdated);
+
+  const distribution = index.jobs.map((job) => ({
+    "@type": "DataDownload",
+    name: job.label,
+    contentUrl: pageUrl,
+    encodingFormat: "text/html",
+    description:
+      job.dataStatus === "live" && job.medianQuotedPrice
+        ? `Fair range ${job.fairLow}-${job.fairHigh} USD; median quoted ${job.medianQuotedPrice} USD (n=${job.quoteCount})`
+        : `Fair range ${job.fairLow}-${job.fairHigh} USD; typical mid ${job.typicalMid} USD`,
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Warmlo HVAC Quote Index",
+    description: index.methodology.overview,
+    url: pageUrl,
+    sameAs: getQuoteIndexPageUrl(),
+    creator: {
+      "@type": "Organization",
+      name: "Warmlo",
+      url: baseUrl,
+    },
+    dateModified,
+    temporalCoverage: `${index.dataUpdated.split("-")[0]}`,
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    isAccessibleForFree: true,
+    variableMeasured: index.jobs.map((j) => j.label),
+    distribution,
+  };
 }
 
 export const CODE_PAGE_DISCLAIMER =

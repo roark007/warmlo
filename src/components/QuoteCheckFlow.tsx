@@ -6,6 +6,7 @@ import { ArrowLeftIcon, ChevronDownIcon } from "./icons";
 import { FreshnessStamp } from "./FreshnessStamp";
 import { LeadForm } from "./LeadForm";
 import { QuoteCheckStepper } from "./QuoteCheckStepper";
+import { StaticLink } from "./StaticLink";
 import { VerdictBar } from "./VerdictBar";
 import { buildAffiliateUrl, getActiveAffiliate } from "@/config/affiliates";
 import { repairSlugToJobType } from "@/config/jobMap";
@@ -307,6 +308,16 @@ export function QuoteCheckFlow({ benchmarks, dataUpdated }: QuoteCheckFlowProps)
                 : "No adjustments applied"}
             </p>
             <FreshnessStamp dataUpdated={dataUpdated} variant="light" className="mt-2" />
+
+            <p className="mt-4 text-sm text-text-body">
+              National fair-range benchmarks:{" "}
+              <StaticLink
+                href="/data/hvac-quote-index"
+                className="font-semibold text-ember-deeper hover:text-ember"
+              >
+                Warmlo HVAC Quote Index
+              </StaticLink>
+            </p>
 
             <div className="cta-dark-panel mt-7">
               <div

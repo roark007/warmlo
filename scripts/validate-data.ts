@@ -7,6 +7,7 @@ import {
   quoteBenchmarksSchema,
   slugSchema,
   symptomsSchema,
+  quoteIndexSchema,
 } from "../src/lib/schemas";
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -275,6 +276,18 @@ if (!fs.existsSync(symptomsPath)) {
     }
   }
   if (symptomsOk) pass(`symptoms.json — ${symptoms.length}/30 validated`);
+}
+
+// 7c. Quote Index validation (S3 gate)
+try {
+  const quoteIndex = quoteIndexSchema.parse(readJson(path.join(DATA_DIR, "quote-index.json")));
+  if (quoteIndex.jobs.length < 12) {
+    fail("quote-index.json", `expected ≥12 jobs, got ${quoteIndex.jobs.length}`);
+  } else {
+    pass(`quote-index.json — ${quoteIndex.jobs.length} jobs, methodology v${quoteIndex.methodologyVersion}`);
+  }
+} catch (e) {
+  fail("quote-index.json schema", String(e));
 }
 
 // 8. Phase content targets

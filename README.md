@@ -90,12 +90,35 @@ If Supabase is not configured, set `LEAD_WEBHOOK_URL` to a Slack, Discord, or Za
 
 ## Project structure
 
-- `data/` — JSON content (brands, codes, repairs, quote benchmarks)
+- `data/` — JSON content (brands, codes, repairs, quote benchmarks, quote index, symptoms)
 - `src/app/` — Next.js App Router pages
 - `src/components/` — UI components (FRONTEND_BRIEF.md tokens)
 - `src/lib/` — schemas, data loaders, verdict engine
 - `src/config/` — affiliates, featured repairs/codes, job mapping
-- `scripts/` — validate-data, check-site
+- `scripts/` — validate-data, check-site, aggregate-quotes
+
+### Quote Index (SEO Phase S3)
+
+The **Warmlo HVAC Quote Index** lives at `/data/hvac-quote-index`. Fair ranges come from `data/quote-benchmarks.json`; submission statistics are written to `data/quote-index.json`.
+
+**Refresh submission stats** (owner, after QuoteCheck volume grows):
+
+```bash
+# Requires SUPABASE_URL + SUPABASE_SERVICE_KEY in env (same as lead form)
+npx tsx scripts/aggregate-quotes.ts
+npm run verify
+# commit data/quote-index.json and deploy
+```
+
+- Requires **≥20 quotes per job type** before median / %‑above‑fair stats publish.
+- No PII is written to `quote-index.json` — only aggregates.
+- Re-run after seasonal pushes or quarterly; see `SEO_BRIEF.md` §S4 cold-snap playbook.
+
+**Initial / benchmark-only baseline:**
+
+```bash
+npx tsx scripts/seed-quote-index.ts
+```
 - `tests/` — vitest unit tests
 
 ## Phase status
