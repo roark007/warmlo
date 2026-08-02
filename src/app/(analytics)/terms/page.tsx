@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Terms of Service",
   description: "Warmlo terms of service.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

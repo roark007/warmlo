@@ -3,6 +3,7 @@ import { AFFILIATE_DISCLOSURE } from "@/components/SiteChrome";
 export const metadata = {
   title: "Affiliate Disclosure",
   description: "Warmlo affiliate and partner disclosure.",
+  alternates: { canonical: "/disclosure" },
 };
 
 export default function DisclosurePage() {

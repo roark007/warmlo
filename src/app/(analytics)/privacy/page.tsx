@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Privacy Policy",
   description: "Warmlo privacy policy.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

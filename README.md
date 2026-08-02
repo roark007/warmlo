@@ -79,6 +79,17 @@ If Supabase is not configured, set `LEAD_WEBHOOK_URL` to a Slack, Discord, or Za
 - `NEXT_PUBLIC_GA_ID` — GA4 measurement ID (`G-…`), free fallback when Plausible is not configured
 - `NEXT_PUBLIC_SITE_URL` — canonical URLs and sitemap
 
+### Bing and IndexNow
+
+Import the verified Google Search Console property into Bing Webmaster Tools, then deploy the
+site so the public IndexNow key file is available. Submit every canonical URL once after that
+first deployment with `npm run indexnow`. For later content updates, submit only changed routes,
+for example `npm run indexnow -- /fix/goodman/4-flashes /symptom/furnace-wont-turn-on`.
+
+When indexable content changes, update `CONTENT_LAST_MODIFIED` in
+`src/lib/site-routes.ts`. The sitemap deliberately uses that stable content date instead of the
+deployment time so routine rebuilds do not send false freshness signals.
+
 ## Pre-launch checklist
 
 1. All JSON validates (`npm run verify` passes).
