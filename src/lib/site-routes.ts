@@ -1,11 +1,18 @@
 import type { MetadataRoute } from "next";
-import { getAllCodes, getBrands, getQuoteIndex, getRepairs, getSymptoms } from "@/lib/data";
+import {
+  getAllVerifiedCodes,
+  getBrands,
+  getQuoteIndex,
+  getRepairs,
+  getSymptoms,
+  getVerifiedCodesForBrand,
+} from "@/lib/data";
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
 
 // Change this only when indexable site content changes. Keeping it stable prevents
 // routine deployments from sending false freshness signals to search engines.
-export const CONTENT_LAST_MODIFIED = "2026-07-31";
+export const CONTENT_LAST_MODIFIED = "2026-08-02";
 
 // IndexNow keys are intentionally public: the matching file at the site root is
 // how participating search engines verify that Warmlo controls this host.
@@ -31,8 +38,10 @@ export function getIndexableRoutes(): IndexableRoute[] {
     "/terms",
     "/disclosure",
   ];
-  const brandRoutes = getBrands().map((brand) => `/fix/${brand.slug}`);
-  const codeRoutes = getAllCodes().map(
+  const brandRoutes = getBrands()
+    .filter((brand) => getVerifiedCodesForBrand(brand.slug).length > 0)
+    .map((brand) => `/fix/${brand.slug}`);
+  const codeRoutes = getAllVerifiedCodes().map(
     ({ brand, code }) => `/fix/${brand.slug}/${code.slug}`
   );
   const costRoutes = getRepairs().map((repair) => `/cost/${repair.slug}`);

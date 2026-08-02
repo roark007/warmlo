@@ -3,6 +3,7 @@ import { z } from "zod";
 export const slugSchema = z.string().regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens");
 
 export const severitySchema = z.enum(["diy-possible", "call-pro-soon", "emergency"]);
+export const verificationStatusSchema = z.enum(["verified", "model-specific-unverified"]);
 
 export const brandSchema = z.object({
   slug: slugSchema,
@@ -37,9 +38,24 @@ export const codeSchema = z.object({
   relatedRepairSlug: slugSchema,
   dangerNote: z.string().nullable(),
   flashPattern: z.string().nullable().optional(),
+  verificationStatus: verificationStatusSchema,
+  sourceIds: z.array(slugSchema).min(1),
+  modelScope: z.string().min(1),
 });
 
 export const codesSchema = z.array(codeSchema);
+
+export const brandSourceSchema = z.object({
+  id: slugSchema,
+  publisher: z.string().min(1),
+  title: z.string().min(1),
+  documentId: z.string().min(1),
+  url: z.string().url(),
+  brandSlugs: z.array(slugSchema).min(1),
+  appliesTo: z.string().min(1),
+});
+
+export const brandSourcesSchema = z.array(brandSourceSchema);
 
 export const diyDifficultySchema = z.enum(["easy", "moderate", "hard", "professional-only"]);
 
@@ -141,6 +157,7 @@ export const quoteIndexSchema = z.object({
 
 export type Brand = z.infer<typeof brandSchema>;
 export type Code = z.infer<typeof codeSchema>;
+export type BrandSource = z.infer<typeof brandSourceSchema>;
 export type Repair = z.infer<typeof repairSchema>;
 export type Benchmark = z.infer<typeof benchmarkSchema>;
 export type Severity = z.infer<typeof severitySchema>;

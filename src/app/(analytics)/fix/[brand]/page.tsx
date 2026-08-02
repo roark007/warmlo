@@ -4,7 +4,13 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { CodeFilterTable } from "@/components/CodeFilterTable";
 import { brandTopCodes } from "@/config/brandTopCodes";
 import { buildBrandHubTitle, buildBrandHubDescription } from "@/lib/seo";
-import { getBrand, getBrands, getCode, getCodesForBrand } from "@/lib/data";
+import {
+  getBrand,
+  getBrands,
+  getCode,
+  getVerifiedCodesForBrand,
+  isVerifiedCode,
+} from "@/lib/data";
 
 export function generateStaticParams() {
   return getBrands().map((brand) => ({ brand: brand.slug }));
@@ -14,7 +20,7 @@ export function generateMetadata({ params }: { params: Promise<{ brand: string }
   return params.then(({ brand: brandSlug }) => {
     const brand = getBrand(brandSlug);
     if (!brand) return { title: "Brand Not Found" };
-    const codes = getCodesForBrand(brandSlug);
+    const codes = getVerifiedCodesForBrand(brandSlug);
     return {
       title: buildBrandHubTitle(brand),
       description: buildBrandHubDescription(brand, codes.length),
@@ -23,6 +29,7 @@ export function generateMetadata({ params }: { params: Promise<{ brand: string }
         title: buildBrandHubTitle(brand),
         description: buildBrandHubDescription(brand, codes.length),
       },
+      ...(codes.length === 0 ? { robots: { index: false, follow: true } } : {}),
     };
   });
 }
@@ -34,7 +41,7 @@ function BrandIntroLinks({ brandSlug, brandName }: { brandSlug: string; brandNam
   const entries = topSlugs
     .map((slug) => {
       const code = getCode(brandSlug, slug);
-      return code ? { slug, code } : null;
+      return code && isVerifiedCode(code) ? { slug, code } : null;
     })
     .filter((entry): entry is NonNullable<typeof entry> => entry !== null);
 
@@ -68,7 +75,7 @@ export default async function BrandPage({
   const brand = getBrand(brandSlug);
   if (!brand) notFound();
 
-  const codes = getCodesForBrand(brandSlug);
+  const codes = getVerifiedCodesForBrand(brandSlug);
 
   return (
     <div className="min-h-screen text-text-on-dark">
@@ -96,9 +103,19 @@ export default async function BrandPage({
 
       <main id="main-content" className="paper-sheet">
         <article className="mx-auto max-w-[960px] px-[var(--pad-page-x)] py-[clamp(36px,5vw,64px)]">
-          <div className="reveal">
-            <CodeFilterTable brandSlug={brandSlug} codes={codes} />
-          </div>
+          {codes.length > 0 ? (
+            <div className="reveal">
+              <CodeFilterTable brandSlug={brandSlug} codes={codes} />
+            </div>
+          ) : (
+            <section className="rounded-[20px] border border-[var(--line-on-paper)] bg-paper-2 p-[clamp(22px,4vw,34px)]">
+              <h2 className="font-display text-h2 font-bold text-text-strong">Check the chart for your exact model</h2>
+              <p className="mt-3 max-w-[68ch] leading-[1.65] text-text-body">
+                We have not confirmed a universal {brand.name} code table. Find the model number on the rating plate,
+                then use the diagnostic chart inside the furnace panel or the matching manufacturer manual.
+              </p>
+            </section>
+          )}
         </article>
       </main>
     </div>

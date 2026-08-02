@@ -21,7 +21,12 @@
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 2 Flashes means An external safety device locked the furnace out. Most often from tripped limit switch. You can check basics first; professional repairs typically run $150–$600.",
-    "flashPattern": "2 flashes"
+    "flashPattern": "2 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "3 Flashes",
@@ -45,7 +50,12 @@
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 3 Flashes means pressure switch circuit failed during the venting sequence. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900.",
-    "flashPattern": "3 flashes"
+    "flashPattern": "3 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "4 Flashes",
@@ -69,7 +79,12 @@
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 4 Flashes means primary limit switch opened during the heating cycle. Most often from dirty air filter. You can check basics first; professional repairs typically run $150–$600.",
-    "flashPattern": "4 flashes"
+    "flashPattern": "4 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "5 Flashes",
@@ -89,7 +104,12 @@
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
     "snippetAnswer": "American Standard furnace code 5 Flashes means control sensed flame without a call for heat. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
-    "flashPattern": "5 flashes"
+    "flashPattern": "5 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "6 Flashes",
@@ -113,7 +133,12 @@
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 6 Flashes means Supply voltage to the furnace was too high or too low. Most often from utility voltage issue. You can check basics first; professional repairs typically run $150–$400.",
-    "flashPattern": "6 flashes"
+    "flashPattern": "6 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "7 Flashes",
@@ -133,7 +158,12 @@
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
     "snippetAnswer": "American Standard furnace code 7 Flashes means gas valve circuit failed an electrical check. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
-    "flashPattern": "7 flashes"
+    "flashPattern": "7 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "8 Flashes",
@@ -157,7 +187,12 @@
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 8 Flashes means furnace failed to establish flame within the trial period. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450.",
-    "flashPattern": "8 flashes"
+    "flashPattern": "8 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "9 Flashes",
@@ -181,7 +216,12 @@
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 9 Flashes means high-stage pressure switch did not respond correctly on two-stage units. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900.",
-    "flashPattern": "9 flashes"
+    "flashPattern": "9 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "10 Flashes",
@@ -204,7 +244,12 @@
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 10 Flashes means control detected a grounding or polarity problem. Most often from missing ground. You can check basics first; professional repairs typically run $150–$350.",
-    "flashPattern": "10 flashes"
+    "flashPattern": "10 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "11 Flashes",
@@ -228,7 +273,12 @@
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 11 Flashes means blower motor did not respond to the control signal. Most often from failed blower. You can check basics first; professional repairs typically run $450–$1200.",
-    "flashPattern": "11 flashes"
+    "flashPattern": "11 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "12 Flashes",
@@ -252,7 +302,12 @@
     "relatedRepairSlug": "inducer-motor-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 12 Flashes means inducer motor failed during the pre-purge cycle. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900.",
-    "flashPattern": "12 flashes"
+    "flashPattern": "12 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "13 Flashes",
@@ -272,7 +327,12 @@
     "relatedRepairSlug": "heat-exchanger-replacement",
     "dangerNote": "If you smell gas or see soot, leave the area and call a technician.",
     "snippetAnswer": "American Standard furnace code 13 Flashes means rollout switch opened due to abnormal flame pattern. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500.",
-    "flashPattern": "13 flashes"
+    "flashPattern": "13 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "14 Flashes",
@@ -296,7 +356,12 @@
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 14 Flashes means ignitor circuit failed a continuity or timing check. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450.",
-    "flashPattern": "14 flashes"
+    "flashPattern": "14 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "15 Flashes",
@@ -320,7 +385,12 @@
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 15 Flashes means flame sensor signal was out of range after ignition. Most often from corroded sensor. You can check basics first; professional repairs typically run $100–$300.",
-    "flashPattern": "15 flashes"
+    "flashPattern": "15 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "16 Flashes",
@@ -344,7 +414,12 @@
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 16 Flashes means integrated control failed an internal self-test. Most often from moisture damage. You can check basics first; professional repairs typically run $300–$800.",
-    "flashPattern": "16 flashes"
+    "flashPattern": "16 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "17 Flashes",
@@ -368,7 +443,12 @@
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 17 Flashes means flame signal dropped too low during sustained operation. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400.",
-    "flashPattern": "17 flashes"
+    "flashPattern": "17 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "18 Flashes",
@@ -391,6 +471,11 @@
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
     "snippetAnswer": "American Standard furnace code 18 Flashes means Line and neutral may be reversed at the furnace disconnect. Most often from reversed wiring. You can check basics first; professional repairs typically run $150–$350.",
-    "flashPattern": "18 flashes"
+    "flashPattern": "18 flashes",
+    "sourceIds": [
+      "trane-furnace-light-guidance"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   }
 ]

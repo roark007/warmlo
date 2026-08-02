@@ -1,18 +1,18 @@
 import type { CSSProperties } from "react";
 import { BrandCard } from "@/components/Breadcrumb";
 import { CodeSearchBox, type CodeSearchEntry } from "@/components/CodeSearchBox";
-import { getAllCodes, getBrands, getCodesForBrand } from "@/lib/data";
+import { getAllVerifiedCodes, getBrands, getVerifiedCodesForBrand } from "@/lib/data";
 
 export const metadata = {
   title: "Furnace Error Codes by Brand",
   description:
-    "Free lookup for 300+ furnace error codes across 22 brands — LED flashes, blink codes, and numeric faults with meanings, severity, DIY steps, and repair costs.",
+    "Manufacturer-sourced furnace error-code lookup with model scope, safe first checks, repair costs, and direct links to official technical literature.",
   alternates: { canonical: "/fix" },
 };
 
 export default function FixIndexPage() {
   const brands = getBrands();
-  const allCodes = getAllCodes();
+  const allCodes = getAllVerifiedCodes();
   const searchEntries: CodeSearchEntry[] = allCodes.map(({ brand, code }) => ({
     brandSlug: brand.slug,
     brandName: brand.name,
@@ -22,8 +22,9 @@ export default function FixIndexPage() {
   const brandsWithCounts = brands
     .map((brand) => ({
       brand,
-      codeCount: getCodesForBrand(brand.slug).length,
+      codeCount: getVerifiedCodesForBrand(brand.slug).length,
     }))
+    .filter(({ codeCount }) => codeCount > 0)
     .sort((a, b) => a.brand.name.localeCompare(b.brand.name));
 
   return (

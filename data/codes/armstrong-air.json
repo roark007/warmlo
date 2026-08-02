@@ -20,7 +20,12 @@
     "repairCostHigh": 350,
     "relatedRepairSlug": "thermostat-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 200 means control board is not receiving a heat call from the thermostat. Often caused by thermostat set to off or cool. Usually safe to try basic checks yourself; professional repairs run $100–$350."
+    "snippetAnswer": "Armstrong Air furnace code 200 means control board is not receiving a heat call from the thermostat. Often caused by thermostat set to off or cool. Usually safe to try basic checks yourself; professional repairs run $100–$350.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "201",
@@ -43,7 +48,12 @@
     "repairCostHigh": 400,
     "relatedRepairSlug": "thermostat-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 201 means board received an out-of-range signal from a communicating thermostat. Most often from incompatible thermostat. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Armstrong Air furnace code 201 means board received an out-of-range signal from a communicating thermostat. Most often from incompatible thermostat. You can check basics first; professional repairs typically run $100–$400.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "220",
@@ -66,7 +76,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 220 means pressure switch did not close when the inducer started. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Armstrong Air furnace code 220 means pressure switch did not close when the inducer started. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "221",
@@ -89,7 +104,12 @@
     "repairCostHigh": 550,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 221 means pressure switch remained closed when the inducer was off. Most often from stuck switch diaphragm. You can check basics first; professional repairs typically run $175–$550."
+    "snippetAnswer": "Armstrong Air furnace code 221 means pressure switch remained closed when the inducer was off. Most often from stuck switch diaphragm. You can check basics first; professional repairs typically run $175–$550.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "270",
@@ -112,7 +132,12 @@
     "repairCostHigh": 450,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 270 means furnace could not light the burners during the ignition trial. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Armstrong Air furnace code 270 means furnace could not light the burners during the ignition trial. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "271",
@@ -135,7 +160,12 @@
     "repairCostHigh": 3500,
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 271 means board detected flame loss while the thermostat was still calling for heat. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$3500."
+    "snippetAnswer": "Armstrong Air furnace code 271 means board detected flame loss while the thermostat was still calling for heat. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$3500.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "272",
@@ -154,7 +184,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Armstrong Air furnace code 272 means Flame was detected when the thermostat was not calling for heat. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Armstrong Air furnace code 272 means Flame was detected when the thermostat was not calling for heat. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "273",
@@ -173,7 +208,12 @@
     "repairCostHigh": 3500,
     "relatedRepairSlug": "heat-exchanger-replacement",
     "dangerNote": "If you smell gas or see soot, leave the area and call a technician.",
-    "snippetAnswer": "Armstrong Air furnace code 273 means rollout switch opened due to flames or heat at the burner front. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
+    "snippetAnswer": "Armstrong Air furnace code 273 means rollout switch opened due to flames or heat at the burner front. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "274",
@@ -196,7 +236,12 @@
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 274 means high-limit switch opened because the furnace overheated. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Armstrong Air furnace code 274 means high-limit switch opened because the furnace overheated. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "275",
@@ -219,7 +264,12 @@
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 275 means blower motor did not start or did not reach required speed. Most often from failed blower motor. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Armstrong Air furnace code 275 means blower motor did not start or did not reach required speed. Most often from failed blower motor. You can check basics first; professional repairs typically run $450–$1200.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "276",
@@ -242,7 +292,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 276 means inducer motor failed to start during the venting cycle. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
+    "snippetAnswer": "Armstrong Air furnace code 276 means inducer motor failed to start during the venting cycle. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "277",
@@ -261,7 +316,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Armstrong Air furnace code 277 means control detected an error in the gas valve circuit. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Armstrong Air furnace code 277 means control detected an error in the gas valve circuit. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "278",
@@ -284,7 +344,12 @@
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 278 means integrated control reported an internal fault. Most often from power surge damage. You can check basics first; professional repairs typically run $300–$800."
+    "snippetAnswer": "Armstrong Air furnace code 278 means integrated control reported an internal fault. Most often from power surge damage. You can check basics first; professional repairs typically run $300–$800.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "279",
@@ -307,7 +372,12 @@
     "repairCostHigh": 400,
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 279 means flame current dropped below the minimum threshold. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Armstrong Air furnace code 279 means flame current dropped below the minimum threshold. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$400.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "280",
@@ -330,7 +400,12 @@
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 280 means An auxiliary limit or safety switch in series opened. Most often from tripped rollout switch. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Armstrong Air furnace code 280 means An auxiliary limit or safety switch in series opened. Most often from tripped rollout switch. You can check basics first; professional repairs typically run $150–$600.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "441",
@@ -353,7 +428,12 @@
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 441 means board lost communication with an ECM blower motor module. Most often from failed ecm module. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Armstrong Air furnace code 441 means board lost communication with an ECM blower motor module. Most often from failed ecm module. You can check basics first; professional repairs typically run $450–$1200.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "442",
@@ -376,7 +456,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 442 means inducer did not reach the commanded speed. Most often from blocked vent. You can check basics first; professional repairs typically run $400–$900."
+    "snippetAnswer": "Armstrong Air furnace code 442 means inducer did not reach the commanded speed. Most often from blocked vent. You can check basics first; professional repairs typically run $400–$900.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "443",
@@ -399,6 +484,11 @@
     "repairCostHigh": 450,
     "relatedRepairSlug": "condensate-pump-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Armstrong Air furnace code 443 means condensate drainage system triggered a safety lockout. Often caused by clogged condensate trap. Usually safe to try basic checks yourself; professional repairs run $150–$450."
+    "snippetAnswer": "Armstrong Air furnace code 443 means condensate drainage system triggered a safety lockout. Often caused by clogged condensate trap. Usually safe to try basic checks yourself; professional repairs run $150–$450.",
+    "sourceIds": [
+      "armstrong-product-literature"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   }
 ]

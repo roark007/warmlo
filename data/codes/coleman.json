@@ -2,233 +2,275 @@
   {
     "code": "3 Blinks",
     "slug": "3-blinks",
-    "title": "Coleman Furnace Code 3 Blinks: Pressure Switch Fault",
-    "meaning": "Three blinks indicate the pressure switch did not close during venting.",
+    "title": "Coleman Furnace Code 3 Blinks: Pressure-switch circuit did not close",
+    "meaning": "The pressure switch failed to close after the inducer started.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked vent",
-      "Failed inducer",
-      "Loose hose"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
     "diySteps": [
-      "Inspect vent.",
-      "Check pressure tubing.",
-      "Clear condensate."
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
     ],
-    "whenToCallPro": "Switch or inducer service if needed.",
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 3 Blinks means Three blinks indicate the pressure switch did not close during venting. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900.",
-    "flashPattern": "3 blinks"
+    "snippetAnswer": "Coleman furnace code 3 Blinks means the pressure switch failed to close after the inducer started on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "3 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "4 Blinks",
     "slug": "4-blinks",
-    "title": "Coleman Furnace Code 4 Blinks: Open Limit",
-    "meaning": "Four blinks signal the limit switch opened from overheating.",
+    "title": "Coleman Furnace Code 4 Blinks: Limit circuit opened",
+    "meaning": "The primary or auxiliary limit circuit is open.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty filter",
-      "Weak blower",
-      "Closed vents"
+      "A dirty or overly restrictive air filter",
+      "Closed or blocked supply and return vents",
+      "A blower, limit switch, or airflow problem"
     ],
     "diySteps": [
-      "Replace filter.",
-      "Open vents.",
-      "Cool before reset."
+      "Turn the furnace off and replace a dirty filter with the size and type specified for the system.",
+      "Open all supply registers and make sure return grilles are not blocked before trying one reset."
     ],
-    "whenToCallPro": "Limit or blower service if repeated.",
+    "whenToCallPro": "Call a technician if the limit code returns; repeated overheating can damage the furnace.",
     "repairCostLow": 150,
-    "repairCostHigh": 600,
+    "repairCostHigh": 750,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 4 Blinks means Four blinks signal the limit switch opened from overheating. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600.",
-    "flashPattern": "4 blinks"
+    "snippetAnswer": "Coleman furnace code 4 Blinks means the primary or auxiliary limit circuit is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "4 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "5 Blinks",
     "slug": "5-blinks",
-    "title": "Coleman Furnace Code 5 Blinks: Flame Failure",
-    "meaning": "Five blinks mean flame was not detected after ignition.",
-    "severity": "call-pro-soon",
+    "title": "Coleman Furnace Code 5 Blinks: Flame-rollout safety lockout",
+    "meaning": "The flame-rollout switch is open.",
+    "severity": "emergency",
     "commonCauses": [
-      "Dirty sensor",
-      "Failed ignitor",
-      "Gas issue"
+      "A blocked flue or combustion-air path",
+      "A burner or gas-pressure problem",
+      "A damaged or restricted heat exchanger"
     ],
-    "diySteps": [
-      "Clean sensor.",
-      "Verify gas on.",
-      "Reset once."
+    "diySteps": [],
+    "whenToCallPro": "Leave the furnace off and call a licensed technician for a combustion-safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "Keep the furnace off. Do not reset a rollout switch. If you smell gas or a carbon-monoxide alarm sounds, leave the building and contact emergency services or the gas utility.",
+    "snippetAnswer": "Coleman furnace code 5 Blinks means the flame-rollout switch is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "5 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
     ],
-    "whenToCallPro": "Ignitor or sensor service needed.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 5 Blinks means Five blinks mean flame was not detected after ignition. Most often from dirty sensor. You can check basics first; professional repairs typically run $150–$450.",
-    "flashPattern": "5 blinks"
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "6 Blinks",
     "slug": "6-blinks",
-    "title": "Coleman Furnace Code 6 Blinks: Rollout Trip",
-    "meaning": "Six blinks indicate rollout switch opened.",
-    "severity": "emergency",
+    "title": "Coleman Furnace Code 6 Blinks: Pressure-switch cycle lockout",
+    "meaning": "The pressure switch opened four times during one heat call, causing lockout.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Heat exchanger crack",
-      "Blocked flue",
-      "Flame rollout"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Rollout requires combustion inspection.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas, leave the area and call a technician.",
-    "snippetAnswer": "Coleman furnace code 6 Blinks means Six blinks indicate rollout switch opened. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500.",
-    "flashPattern": "6 blinks"
+    "diySteps": [
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
+    ],
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Coleman furnace code 6 Blinks means the pressure switch opened four times during one heat call, causing lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "6 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "7 Blinks",
     "slug": "7-blinks",
-    "title": "Coleman Furnace Code 7 Blinks: Gas Valve Error",
-    "meaning": "Seven blinks indicate gas valve circuit fault.",
-    "severity": "emergency",
+    "title": "Coleman Furnace Code 7 Blinks: Ignition or flame-proving failure",
+    "meaning": "The burners failed to establish flame and the furnace entered ignition lockout.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed valve",
-      "Relay fault",
-      "Loose wire"
+      "No gas reaching the burners",
+      "A failed hot-surface igniter",
+      "A dirty or weak flame sensor"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Licensed gas valve repair required.",
-    "repairCostLow": 350,
-    "repairCostHigh": 900,
-    "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Coleman furnace code 7 Blinks means Seven blinks indicate gas valve circuit fault. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
-    "flashPattern": "7 blinks"
+    "diySteps": [
+      "Confirm the thermostat is calling for heat and the gas shutoff has not been moved.",
+      "Turn furnace power off for five minutes, restore it once, and note whether the same code returns."
+    ],
+    "whenToCallPro": "Call a licensed technician if ignition fails again after one reset or if you smell gas.",
+    "repairCostLow": 150,
+    "repairCostHigh": 750,
+    "relatedRepairSlug": "ignitor-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Coleman furnace code 7 Blinks means the burners failed to establish flame and the furnace entered ignition lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "7 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "8 Blinks",
     "slug": "8-blinks",
-    "title": "Coleman Furnace Code 8 Blinks: Ignitor Fault",
-    "meaning": "Eight blinks mean ignitor circuit failure.",
+    "title": "Coleman Furnace Code 8 Blinks: Flame-loss recycle lockout",
+    "meaning": "Flame was lost five times during one heat call, causing recycle lockout.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Cracked ignitor",
-      "Open wire",
-      "Board fault"
+      "A dirty or weak flame sensor",
+      "Unstable gas pressure or burner flame",
+      "Poor grounding or flame-sensor wiring"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Inspect ignitor.",
-      "Reseat plug."
+      "Confirm the gas shutoff has not been moved and the furnace panel is fully seated.",
+      "Try one reset and watch whether the burners light and then shut off again."
     ],
-    "whenToCallPro": "Replace ignitor if cracked.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
+    "whenToCallPro": "Call a technician if flame drops out again or ignition becomes delayed or noisy.",
+    "repairCostLow": 100,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 8 Blinks means Eight blinks mean ignitor circuit failure. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450.",
-    "flashPattern": "8 blinks"
+    "snippetAnswer": "Coleman furnace code 8 Blinks means flame was lost five times during one heat call, causing recycle lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "8 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "9 Blinks",
     "slug": "9-blinks",
-    "title": "Coleman Furnace Code 9 Blinks: Blower Fault",
-    "meaning": "Nine blinks signal blower motor error.",
+    "title": "Coleman Furnace Code 9 Blinks: Power polarity or grounding fault",
+    "meaning": "The furnace detected reversed line polarity or an improper ground.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed motor",
-      "Bad capacitor",
-      "Obstruction"
+      "Reversed line and neutral wiring",
+      "A missing or poor equipment ground",
+      "Incorrect transformer phasing on twinned furnaces"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Check wheel.",
-      "Verify door."
+      "Turn the furnace off at its service switch.",
+      "Do not alter line-voltage wiring or grounding connections yourself."
     ],
-    "whenToCallPro": "Blower replacement usually needed.",
-    "repairCostLow": 450,
-    "repairCostHigh": 1200,
-    "relatedRepairSlug": "blower-motor-replacement",
+    "whenToCallPro": "Call a licensed technician or electrician to verify polarity, grounding, and supply voltage.",
+    "repairCostLow": 150,
+    "repairCostHigh": 500,
+    "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 9 Blinks means Nine blinks signal blower motor error. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200.",
-    "flashPattern": "9 blinks"
+    "snippetAnswer": "Coleman furnace code 9 Blinks means the furnace detected reversed line polarity or an improper ground on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "9 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "10 Blinks",
     "slug": "10-blinks",
-    "title": "Coleman Furnace Code 10 Blinks: Inducer Fault",
-    "meaning": "Ten blinks indicate inducer motor problem.",
-    "severity": "call-pro-soon",
+    "title": "Coleman Furnace Code 10 Blinks: Gas flow without a heat call",
+    "meaning": "The control detected gas flow without a call for heat.",
+    "severity": "emergency",
     "commonCauses": [
-      "Seized inducer",
-      "Blocked vent",
-      "Failed capacitor"
+      "A gas valve leaking or stuck open",
+      "A shorted flame-sensing circuit",
+      "A failed integrated control board"
     ],
-    "diySteps": [
-      "Clear vent.",
-      "Listen for hum.",
-      "Do not force."
+    "diySteps": [],
+    "whenToCallPro": "Turn the furnace off and call a licensed technician immediately to test the gas valve and flame-proving circuit.",
+    "repairCostLow": 300,
+    "repairCostHigh": 1000,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "Turn the furnace off and do not reset it. If you smell gas, leave the building without operating switches and contact the gas utility or emergency services from outside.",
+    "snippetAnswer": "Coleman furnace code 10 Blinks means the control detected gas flow without a call for heat on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "10 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
     ],
-    "whenToCallPro": "Inducer replacement if needed.",
-    "repairCostLow": 400,
-    "repairCostHigh": 900,
-    "relatedRepairSlug": "inducer-motor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 10 Blinks means Ten blinks indicate inducer motor problem. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900.",
-    "flashPattern": "10 blinks"
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "11 Blinks",
     "slug": "11-blinks",
-    "title": "Coleman Furnace Code 11 Blinks: Control Fault",
-    "meaning": "Eleven blinks mean board internal error.",
+    "title": "Coleman Furnace Code 11 Blinks: Extended limit-open lockout",
+    "meaning": "A limit switch stayed open longer than five minutes, causing hard lockout.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Surge",
-      "Moisture",
-      "Relay failure"
+      "A dirty or overly restrictive air filter",
+      "Closed or blocked supply and return vents",
+      "A blower, limit switch, or airflow problem"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Check for moisture.",
-      "Inspect condensate."
+      "Turn the furnace off and replace a dirty filter with the size and type specified for the system.",
+      "Open all supply registers and make sure return grilles are not blocked before trying one reset."
     ],
-    "whenToCallPro": "Board replacement typically required.",
-    "repairCostLow": 300,
-    "repairCostHigh": 800,
-    "relatedRepairSlug": "control-board-replacement",
+    "whenToCallPro": "Call a technician if the limit code returns; repeated overheating can damage the furnace.",
+    "repairCostLow": 150,
+    "repairCostHigh": 750,
+    "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 11 Blinks means Eleven blinks mean board internal error. Most often from surge. You can check basics first; professional repairs typically run $300–$800.",
-    "flashPattern": "11 blinks"
+    "snippetAnswer": "Coleman furnace code 11 Blinks means a limit switch stayed open longer than five minutes, causing hard lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "11 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "12 Blinks",
     "slug": "12-blinks",
-    "title": "Coleman Furnace Code 12 Blinks: Low Flame",
-    "meaning": "Twelve blinks indicate weak flame signal.",
+    "title": "Coleman Furnace Code 12 Blinks: Igniter circuit fault",
+    "meaning": "The igniter circuit is open.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty sensor",
-      "Draft",
-      "Low gas"
+      "A cracked or open hot-surface igniter",
+      "Loose or damaged igniter wiring",
+      "A failed igniter relay on the control board"
     ],
     "diySteps": [
-      "Clean sensor.",
-      "Open returns.",
-      "Test once."
+      "Turn power off and look through the burner-viewing area for an obviously cracked igniter without touching it.",
+      "Restore power once and observe whether the igniter glows; do not continue resetting the furnace."
     ],
-    "whenToCallPro": "Gas and venting checks if persistent.",
-    "repairCostLow": 100,
-    "repairCostHigh": 400,
-    "relatedRepairSlug": "flame-sensor-cleaning",
+    "whenToCallPro": "Call a technician if the igniter does not glow or the fault returns.",
+    "repairCostLow": 150,
+    "repairCostHigh": 500,
+    "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Coleman furnace code 12 Blinks means Twelve blinks indicate weak flame signal. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400.",
-    "flashPattern": "12 blinks"
+    "snippetAnswer": "Coleman furnace code 12 Blinks means the igniter circuit is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "12 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   }
 ]

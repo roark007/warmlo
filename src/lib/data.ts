@@ -7,12 +7,14 @@ import {
   quoteBenchmarksSchema,
   symptomsSchema,
   quoteIndexSchema,
+  brandSourcesSchema,
   type Brand,
   type Code,
   type Repair,
   type Benchmark,
   type Symptom,
   type QuoteIndex,
+  type BrandSource,
 } from "./schemas";
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -38,6 +40,28 @@ export function getAllCodes(): Array<{ brand: Brand; code: Code }> {
   return brands.flatMap((brand) =>
     getCodesForBrand(brand.slug).map((code) => ({ brand, code }))
   );
+}
+
+export function isVerifiedCode(code: Code): boolean {
+  return code.verificationStatus === "verified";
+}
+
+export function getVerifiedCodesForBrand(brandSlug: string): Code[] {
+  return getCodesForBrand(brandSlug).filter(isVerifiedCode);
+}
+
+export function getAllVerifiedCodes(): Array<{ brand: Brand; code: Code }> {
+  return getAllCodes().filter(({ code }) => isVerifiedCode(code));
+}
+
+export function getBrandSources(): BrandSource[] {
+  const data = readJson<unknown>(path.join(DATA_DIR, "brand-sources.json"));
+  return brandSourcesSchema.parse(data);
+}
+
+export function getSourcesForCode(code: Code): BrandSource[] {
+  const sourceIds = new Set(code.sourceIds);
+  return getBrandSources().filter((source) => sourceIds.has(source.id));
 }
 
 export function getRepairs(): Repair[] {
@@ -71,12 +95,12 @@ export function getRelatedCodes(
   currentCodeSlug: string,
   limit = 6
 ): Code[] {
-  const codes = getCodesForBrand(brandSlug).filter((c) => c.slug !== currentCodeSlug);
+  const codes = getVerifiedCodesForBrand(brandSlug).filter((c) => c.slug !== currentCodeSlug);
   return codes.slice(0, limit);
 }
 
 export function getCodesForRepair(repairSlug: string): Array<{ brand: Brand; code: Code }> {
-  return getAllCodes().filter(({ code }) => code.relatedRepairSlug === repairSlug);
+  return getAllVerifiedCodes().filter(({ code }) => code.relatedRepairSlug === repairSlug);
 }
 
 export function getSymptoms(): Symptom[] {
@@ -100,7 +124,7 @@ export function resolveSymptomCodeRef(ref: {
 }): { brand: Brand; code: Code } | null {
   const brand = getBrand(ref.brand);
   const code = getCode(ref.brand, ref.code);
-  return brand && code ? { brand, code } : null;
+  return brand && code && isVerifiedCode(code) ? { brand, code } : null;
 }
 
 export function getQuoteIndex(): QuoteIndex {
