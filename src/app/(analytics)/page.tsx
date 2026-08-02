@@ -7,6 +7,7 @@ import { FreshnessStamp } from "@/components/FreshnessStamp";
 import { featuredCodes } from "@/config/featuredCodes";
 import { featuredRepairs } from "@/config/featuredRepairs";
 import { getAllCodes, getBenchmarks, getBrand, getCode, getRepairBySlug } from "@/lib/data";
+import { buildSiteIdentityJsonLd, getSiteBaseUrl } from "@/lib/site-identity";
 
 export const metadata = {
   alternates: { canonical: "/" },
@@ -175,6 +176,11 @@ export default function HomePage() {
           </section>
         </div>
       </main>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSiteIdentityJsonLd(getSiteBaseUrl())) }}
+      />
     </div>
   );
 }
