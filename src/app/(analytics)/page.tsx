@@ -6,7 +6,7 @@ import { CodeCard } from "@/components/CodeCard";
 import { FreshnessStamp } from "@/components/FreshnessStamp";
 import { featuredCodes } from "@/config/featuredCodes";
 import { featuredRepairs } from "@/config/featuredRepairs";
-import { getAllCodes, getBenchmarks, getBrand, getCode, getRepairBySlug } from "@/lib/data";
+import { getAllVerifiedCodes, getBenchmarks, getBrand, getCode, getRepairBySlug } from "@/lib/data";
 import { buildSiteIdentityJsonLd, getSiteBaseUrl } from "@/lib/site-identity";
 
 export const metadata = {
@@ -19,7 +19,7 @@ function revealDelay(step: number): CSSProperties {
 
 export default function HomePage() {
   const { dataUpdated } = getBenchmarks();
-  const allCodes = getAllCodes();
+  const allCodes = getAllVerifiedCodes();
   const searchEntries: CodeSearchEntry[] = allCodes.map(({ brand, code }) => ({
     brandSlug: brand.slug,
     brandName: brand.name,

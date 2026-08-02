@@ -1,0 +1,92 @@
+[
+  {
+    "id": "goodman-rs6621301",
+    "publisher": "Goodman Manufacturing",
+    "title": "Service and Troubleshooting",
+    "documentId": "RS6621301",
+    "url": "https://mobile.goodmanmfg.com/mobileapp/stellent/pdf/infoPdf/Lit/RS6621301.pdf",
+    "brandSlugs": ["goodman", "amana", "daikin"],
+    "appliesTo": "Goodman/Amana AR9S and GR9S, and Daikin DR-series single-stage furnace controls; use only for the E-code entries explicitly listed in the manual."
+  },
+  {
+    "id": "daikin-dm80hs",
+    "publisher": "Daikin Comfort Technologies",
+    "title": "DM80HS Single-Stage Multi-Speed Gas Furnace — Product Specifications",
+    "documentId": "SS-DM80HS",
+    "url": "https://backend.daikincomfort.com/docs/default-source/product-documents/residential/specifications/ss-dm80hs.pdf?sfvrsn=5bec2f26_11",
+    "brandSlugs": ["goodman", "amana", "daikin"],
+    "appliesTo": "The 1–8 flash integrated-control family documented for DM80HS-series furnaces; sister-brand models must use the same control chart."
+  },
+  {
+    "id": "carrier-58-3t",
+    "publisher": "Carrier Corporation",
+    "title": "Deluxe 2-Stage Gas-Fired Induced-Combustion Furnaces — Troubleshooting Guide",
+    "documentId": "58-3T",
+    "url": "https://www.shareddocs.com/hvac/docs/1009/Public/02/58-3T.pdf",
+    "brandSlugs": ["carrier", "bryant", "payne"],
+    "appliesTo": "Carrier-family two-stage furnace controls covered by document 58-3T; codes vary on other boards and model generations."
+  },
+  {
+    "id": "lennox-508001-02d",
+    "publisher": "Lennox Industries",
+    "title": "Installation Instructions — Integrated Control Diagnostic Codes",
+    "documentId": "508001-02D",
+    "url": "https://www.lennox.com/dA/8bd48f871b/508001-02d.pdf",
+    "brandSlugs": ["lennox"],
+    "appliesTo": "Lennox furnaces explicitly covered by installation instructions 508001-02D; not a universal Lennox code list."
+  },
+  {
+    "id": "rheem-rgfg-92-24161-104-06",
+    "publisher": "Rheem Manufacturing Company",
+    "title": "RGFG Series Gas Furnace Installation Instructions and Diagnostic Codes",
+    "documentId": "92-24161-104-06",
+    "url": "https://pts.myrheem.com/docstore/webdocs/Public/ServicePublic/Trouble2a/pdfs/Gas_Furnace/RGFG/92-24161-104-06_RGFG.pdf",
+    "brandSlugs": ["rheem", "ruud"],
+    "appliesTo": "Rheem/Ruud RGFG-family furnace controls; confirm the unit model and its door chart before applying a code meaning."
+  },
+  {
+    "id": "jci-272441-uim-e-0513",
+    "publisher": "Johnson Controls Unitary Products",
+    "title": "Gas Furnace Installation Manual",
+    "documentId": "272441-UIM-E-0513",
+    "url": "https://www.upgnet.com/dsmarketingprod/gatekeeper/Documents/Archive_CDs/York_2014/PDF_FILES/272441-uim-e-0513.pdf",
+    "brandSlugs": ["york", "luxaire", "coleman"],
+    "appliesTo": "Johnson Controls integrated furnace controls with the 1–12 red-flash table in this manual; other model families may differ."
+  },
+  {
+    "id": "icp-44001202103",
+    "publisher": "International Comfort Products",
+    "title": "Furnace Control Board Diagnostic Codes",
+    "documentId": "44001202103",
+    "url": "https://www.shareddocs.com/hvac/docs/1011/Public/02/44001202103_ICP_8247.pdf",
+    "brandSlugs": ["comfortmaker", "day-and-night", "heil", "keeprite", "tempstar"],
+    "appliesTo": "ICP furnace control boards covered by document 44001202103; confirm the control-board label and door chart."
+  },
+  {
+    "id": "nortek-1041594d",
+    "publisher": "Nortek Global HVAC",
+    "title": "Single Stage Condensing Gas Furnaces — Installation Instructions",
+    "documentId": "1041594D",
+    "url": "https://literature.nordyne.com/Unbranded/Gas_Furnace/48d37de9-dbf0-11e9-8674-0016e1e579b9",
+    "brandSlugs": ["intertherm", "miller"],
+    "appliesTo": "Nortek single-stage condensing gas furnaces using the documented Emerson integrated control; manufactured-home models and older boards may differ."
+  },
+  {
+    "id": "trane-furnace-light-guidance",
+    "publisher": "Trane Residential",
+    "title": "Why Is My Furnace Light Blinking?",
+    "documentId": "Trane homeowner troubleshooting guidance",
+    "url": "https://www.trane.com/residential/en/resources/troubleshooting/gas-furnaces/furnace-light-blinking/",
+    "brandSlugs": ["trane", "american-standard"],
+    "appliesTo": "General model-identification guidance only. Trane-family flash meanings vary by model and control board, so this source does not validate a universal flash-count table."
+  },
+  {
+    "id": "armstrong-product-literature",
+    "publisher": "Armstrong Air",
+    "title": "Product Literature",
+    "documentId": "Model-specific literature finder",
+    "url": "https://www.armstrongair.com/owners/literature/",
+    "brandSlugs": ["armstrong-air"],
+    "appliesTo": "Model-identification and manual lookup only. A model-specific Armstrong Air manual is required before assigning a diagnostic meaning."
+  }
+]

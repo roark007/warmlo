@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import {
   brandsSchema,
+  brandSourcesSchema,
   codesSchema,
   repairsSchema,
   quoteBenchmarksSchema,
@@ -44,6 +45,17 @@ try {
 }
 
 const brands = brandsSchema.parse(readJson(path.join(DATA_DIR, "brands.json")));
+
+const sourcesPath = path.join(DATA_DIR, "brand-sources.json");
+let sourceRegistryOk = true;
+let brandSources = brandSourcesSchema.parse([]);
+try {
+  brandSources = brandSourcesSchema.parse(readJson(sourcesPath));
+  pass("brand-sources.json schema");
+} catch (e) {
+  fail("brand-sources.json schema", String(e));
+  sourceRegistryOk = false;
+}
 
 for (const brand of brands) {
   const codeFile = path.join(DATA_DIR, "codes", `${brand.slug}.json`);
@@ -93,6 +105,47 @@ for (const slug of codeFileSlugs) {
   }
 }
 if (process.exitCode !== 1) pass("brand/code file parity");
+
+// 2b. Manufacturer-source coverage and scope
+const sourceIds = new Set<string>();
+for (const source of brandSources) {
+  if (sourceIds.has(source.id)) {
+    fail("source registry", `duplicate source id "${source.id}"`);
+    sourceRegistryOk = false;
+  }
+  sourceIds.add(source.id);
+  for (const brandSlug of source.brandSlugs) {
+    if (!brands.some((brand) => brand.slug === brandSlug)) {
+      fail("source registry", `${source.id}: unknown brand "${brandSlug}"`);
+      sourceRegistryOk = false;
+    }
+  }
+}
+
+let verifiedCodeCount = 0;
+let protectedCodeCount = 0;
+for (const file of codeFiles) {
+  const brandSlug = file.replace(".json", "");
+  const codes = codesSchema.parse(readJson(path.join(codesDir, file)));
+  for (const code of codes) {
+    if (code.verificationStatus === "verified") verifiedCodeCount++;
+    else protectedCodeCount++;
+
+    for (const sourceId of code.sourceIds) {
+      const source = brandSources.find((item) => item.id === sourceId);
+      if (!source) {
+        fail("source coverage", `${brandSlug}/${code.slug}: missing source "${sourceId}"`);
+        sourceRegistryOk = false;
+      } else if (!source.brandSlugs.includes(brandSlug)) {
+        fail("source scope", `${brandSlug}/${code.slug}: source "${sourceId}" does not cover this brand`);
+        sourceRegistryOk = false;
+      }
+    }
+  }
+}
+if (sourceRegistryOk) {
+  pass(`manufacturer sources — ${verifiedCodeCount} verified, ${protectedCodeCount} safely model-specific`);
+}
 
 // 3. Slug uniqueness and format (brand + repair slugs global; code slugs per brand file)
 const repairs = repairsSchema.parse(readJson(path.join(DATA_DIR, "repairs.json")));

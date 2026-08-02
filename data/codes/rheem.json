@@ -2,113 +2,134 @@
   {
     "code": "10",
     "slug": "10",
-    "title": "Rheem Furnace Code 10: Ignition Lockout",
-    "meaning": "The furnace stopped trying to ignite after multiple failed attempts.",
+    "title": "Rheem Furnace Code 10: One-hour ignition lockout",
+    "meaning": "The furnace entered a one-hour lockout after repeated ignition failures.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed ignitor",
-      "Dirty flame sensor",
-      "Gas valve fault"
+      "No gas reaching the burners",
+      "A failed hot-surface igniter",
+      "A dirty or weak flame sensor"
     ],
     "diySteps": [
-      "Verify gas supply.",
-      "Reset power once.",
-      "Watch for ignitor glow."
+      "Confirm the thermostat is calling for heat and the gas shutoff has not been moved.",
+      "Turn furnace power off for five minutes, restore it once, and note whether the same code returns."
     ],
-    "whenToCallPro": "Ignition lockouts usually need ignitor or sensor service.",
+    "whenToCallPro": "Call a licensed technician if ignition fails again after one reset or if you smell gas.",
     "repairCostLow": 150,
-    "repairCostHigh": 450,
+    "repairCostHigh": 750,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 10 means furnace stopped trying to ignite after multiple failed attempts. Most often from failed ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Rheem furnace code 10 means the furnace entered a one-hour lockout after repeated ignition failures on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "11",
     "slug": "11",
-    "title": "Rheem Furnace Code 11: Ignition Failure",
-    "meaning": "Flame was not established during the ignition sequence.",
+    "title": "Rheem Furnace Code 11: Failed ignition",
+    "meaning": "The control failed to establish or prove flame during ignition.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Worn ignitor",
-      "Low gas pressure",
-      "Dirty burners"
+      "No gas reaching the burners",
+      "A failed hot-surface igniter",
+      "A dirty or weak flame sensor"
     ],
     "diySteps": [
-      "Confirm gas valve is open.",
-      "Observe one ignition cycle.",
-      "Stop if you smell gas."
+      "Confirm the thermostat is calling for heat and the gas shutoff has not been moved.",
+      "Turn furnace power off for five minutes, restore it once, and note whether the same code returns."
     ],
-    "whenToCallPro": "Persistent ignition failure requires professional diagnosis.",
+    "whenToCallPro": "Call a licensed technician if ignition fails again after one reset or if you smell gas.",
     "repairCostLow": 150,
-    "repairCostHigh": 450,
+    "repairCostHigh": 750,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 11 means Flame was not established during the ignition sequence. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Rheem furnace code 11 means the control failed to establish or prove flame during ignition on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "12",
     "slug": "12",
-    "title": "Rheem Furnace Code 12: Flame Rollout",
-    "meaning": "The rollout switch opened due to abnormal heat at the burner.",
-    "severity": "emergency",
+    "title": "Rheem Furnace Code 12: Low flame-sensor signal",
+    "meaning": "The flame-sensor signal is below the acceptable range.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked flue",
-      "Cracked heat exchanger",
-      "Overfiring burners"
+      "A dirty flame sensor",
+      "Poor furnace grounding or reversed polarity",
+      "Low gas pressure or an unstable burner flame"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Rollout trips indicate a serious combustion issue.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas or see soot, leave the area and call a technician.",
-    "snippetAnswer": "Rheem furnace code 12 means rollout switch opened due to abnormal heat at the burner. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
+    "diySteps": [
+      "Turn furnace power off and confirm its access panel is fully seated.",
+      "Try one reset and note whether the burners light briefly before shutting off."
+    ],
+    "whenToCallPro": "Call a technician if flame drops out again; flame current and combustion should be measured.",
+    "repairCostLow": 100,
+    "repairCostHigh": 400,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null,
+    "snippetAnswer": "Rheem furnace code 12 means the flame-sensor signal is below the acceptable range on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "13",
     "slug": "13",
-    "title": "Rheem Furnace Code 13: Limit Switch Open",
-    "meaning": "The limit switch opened because the furnace overheated.",
+    "title": "Rheem Furnace Code 13: Flame was lost during operation",
+    "meaning": "The flame signal was lost while the burners were operating.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty filter",
-      "Weak blower",
-      "Closed vents"
+      "A dirty or weak flame sensor",
+      "Unstable gas pressure or burner flame",
+      "Poor grounding or flame-sensor wiring"
     ],
     "diySteps": [
-      "Replace the filter.",
-      "Open vents.",
-      "Cool down before resetting."
+      "Confirm the gas shutoff has not been moved and the furnace panel is fully seated.",
+      "Try one reset and watch whether the burners light and then shut off again."
     ],
-    "whenToCallPro": "Repeated limit trips need blower or limit switch service.",
-    "repairCostLow": 150,
+    "whenToCallPro": "Call a technician if flame drops out again or ignition becomes delayed or noisy.",
+    "repairCostLow": 100,
     "repairCostHigh": 600,
-    "relatedRepairSlug": "limit-switch-replacement",
+    "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 13 means limit switch opened because the furnace overheated. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Rheem furnace code 13 means the flame signal was lost while the burners were operating on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "14",
     "slug": "14",
-    "title": "Rheem Furnace Code 14: Igniter Fault",
-    "meaning": "The igniter circuit failed a resistance or timing check.",
-    "severity": "call-pro-soon",
+    "title": "Rheem Furnace Code 14: Flame detected when the gas valve should be off",
+    "meaning": "The control detected flame when flame should not have been present.",
+    "severity": "emergency",
     "commonCauses": [
-      "Cracked ignitor",
-      "Open ignitor wire",
-      "Board fault"
+      "A gas valve leaking or stuck open",
+      "A shorted flame-sensing circuit",
+      "A failed integrated control board"
     ],
-    "diySteps": [
-      "Turn off power.",
-      "Inspect ignitor for cracks.",
-      "Reseat the connector."
+    "diySteps": [],
+    "whenToCallPro": "Turn the furnace off and call a licensed technician immediately to test the gas valve and flame-proving circuit.",
+    "repairCostLow": 300,
+    "repairCostHigh": 1000,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "Turn the furnace off and do not reset it. If you smell gas, leave the building without operating switches and contact the gas utility or emergency services from outside.",
+    "snippetAnswer": "Rheem furnace code 14 means the control detected flame when flame should not have been present on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
     ],
-    "whenToCallPro": "Replace a visibly failed ignitor.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 14 means igniter circuit failed a resistance or timing check. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "21",
@@ -131,30 +152,39 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 21 means pressure switch never closed during inducer operation. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Rheem furnace code 21 means pressure switch never closed during inducer operation. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "22",
     "slug": "22",
-    "title": "Rheem Furnace Code 22: Pressure Switch Stuck Closed",
-    "meaning": "The pressure switch stayed closed when the inducer was off.",
+    "title": "Rheem Furnace Code 22: Limit circuit opened",
+    "meaning": "The main limit circuit is open.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Water in pressure line",
-      "Stuck diaphragm",
-      "Blocked vent"
+      "A dirty or overly restrictive air filter",
+      "Closed or blocked supply and return vents",
+      "A blower, limit switch, or airflow problem"
     ],
     "diySteps": [
-      "Clear pressure tubing.",
-      "Inspect vent.",
-      "Reset power."
+      "Turn the furnace off and replace a dirty filter with the size and type specified for the system.",
+      "Open all supply registers and make sure return grilles are not blocked before trying one reset."
     ],
-    "whenToCallPro": "Replace a stuck pressure switch.",
-    "repairCostLow": 175,
-    "repairCostHigh": 550,
-    "relatedRepairSlug": "pressure-switch-replacement",
+    "whenToCallPro": "Call a technician if the limit code returns; repeated overheating can damage the furnace.",
+    "repairCostLow": 150,
+    "repairCostHigh": 750,
+    "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 22 means pressure switch stayed closed when the inducer was off. Most often from water in pressure line. You can check basics first; professional repairs typically run $175–$550."
+    "snippetAnswer": "Rheem furnace code 22 means the main limit circuit is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "31",
@@ -173,30 +203,36 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Rheem furnace code 31 means control detected a gas valve circuit error. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Rheem furnace code 31 means control detected a gas valve circuit error. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "33",
     "slug": "33",
-    "title": "Rheem Furnace Code 33: Flame Sensor Fault",
-    "meaning": "The flame sensor did not prove flame after ignition.",
-    "severity": "call-pro-soon",
+    "title": "Rheem Furnace Code 33: Manual-reset safety circuit open",
+    "meaning": "The manual-reset limit control circuit is open.",
+    "severity": "emergency",
     "commonCauses": [
-      "Dirty sensor",
-      "Weak flame",
-      "Loose wire"
+      "A blocked flue or combustion-air path",
+      "A burner or gas-pressure problem",
+      "A damaged or restricted heat exchanger"
     ],
-    "diySteps": [
-      "Clean the flame sensor.",
-      "Verify burners light fully.",
-      "Reset and test."
+    "diySteps": [],
+    "whenToCallPro": "Leave the furnace off and call a licensed technician for a combustion-safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "Keep the furnace off. Do not reset a rollout switch. If you smell gas or a carbon-monoxide alarm sounds, leave the building and contact emergency services or the gas utility.",
+    "snippetAnswer": "Rheem furnace code 33 means the manual-reset limit control circuit is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
     ],
-    "whenToCallPro": "Replace the sensor if cleaning fails.",
-    "repairCostLow": 100,
-    "repairCostHigh": 300,
-    "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 33 means flame sensor did not prove flame after ignition. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$300."
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "41",
@@ -219,7 +255,12 @@
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 41 means blower motor failed to start or tripped on overcurrent. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Rheem furnace code 41 means blower motor failed to start or tripped on overcurrent. Most often from failed motor. You can check basics first; professional repairs typically run $450–$1200.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "42",
@@ -242,7 +283,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 42 means inducer motor did not operate during venting. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
+    "snippetAnswer": "Rheem furnace code 42 means inducer motor did not operate during venting. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "43",
@@ -265,49 +311,66 @@
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 43 means control board reported an internal error. Most often from surge damage. You can check basics first; professional repairs typically run $300–$800."
+    "snippetAnswer": "Rheem furnace code 43 means control board reported an internal error. Most often from surge damage. You can check basics first; professional repairs typically run $300–$800.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "44",
     "slug": "44",
-    "title": "Rheem Furnace Code 44: Low Flame Signal",
-    "meaning": "Flame current dropped below the minimum during operation.",
+    "title": "Rheem Furnace Code 44: Pressure switch was closed at the wrong time",
+    "meaning": "A pressure switch was closed when the control expected it to be open.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty sensor",
-      "Draft issue",
-      "Low gas pressure"
+      "A pressure switch stuck closed",
+      "A pinched or incorrectly connected pressure hose",
+      "Shorted pressure-switch wiring or a control fault"
     ],
     "diySteps": [
-      "Clean flame sensor.",
-      "Ensure good airflow.",
-      "Test one cycle."
+      "Turn furnace power off for five minutes and do not bypass or jumper the pressure switch.",
+      "Check only the outdoor vent openings for obvious snow, ice, leaves, or nests before restoring power once."
     ],
-    "whenToCallPro": "Low flame signals need gas and venting checks.",
-    "repairCostLow": 100,
-    "repairCostHigh": 400,
-    "relatedRepairSlug": "flame-sensor-cleaning",
+    "whenToCallPro": "Call a technician if the code returns; the switch, hose, wiring, and inducer draft need testing.",
+    "repairCostLow": 175,
+    "repairCostHigh": 650,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 44 means Flame current dropped below the minimum during operation. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Rheem furnace code 44 means a pressure switch was closed when the control expected it to be open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "45",
     "slug": "45",
-    "title": "Rheem Furnace Code 45: Rollout Switch Open",
-    "meaning": "The rollout switch tripped during burner operation.",
-    "severity": "emergency",
+    "title": "Rheem Furnace Code 45: Pressure-switch circuit did not close",
+    "meaning": "The low-pressure switch is open when the control expects it to be closed.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Heat exchanger issue",
-      "Blocked flue",
-      "Flame impingement"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Rollout conditions require combustion inspection.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas, leave the area and call a technician.",
-    "snippetAnswer": "Rheem furnace code 45 means rollout switch tripped during burner operation. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
+    "diySteps": [
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
+    ],
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Rheem furnace code 45 means the low-pressure switch is open when the control expects it to be closed on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   },
   {
     "code": "51",
@@ -330,29 +393,38 @@
     "repairCostHigh": 400,
     "relatedRepairSlug": "thermostat-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 51 means board lost communication with a smart thermostat. Most often from incompatible stat. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Rheem furnace code 51 means board lost communication with a smart thermostat. Most often from incompatible stat. You can check basics first; professional repairs typically run $100–$400.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "61",
     "slug": "61",
-    "title": "Rheem Furnace Code 61: Condensate Overflow",
-    "meaning": "The condensate safety switch detected a drainage problem.",
-    "severity": "diy-possible",
+    "title": "Rheem Furnace Code 61: Blower failed to run",
+    "meaning": "The indoor blower did not run when commanded.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Clogged trap",
-      "Full pump",
-      "Frozen drain"
+      "Loss of power or communication to the blower motor",
+      "A failed ECM motor module",
+      "Damaged motor wiring or an incorrect control configuration"
     ],
     "diySteps": [
-      "Clear condensate trap.",
-      "Check drain hose.",
-      "Reset pump if equipped."
+      "Turn furnace power off and replace a visibly dirty filter.",
+      "Restore power once and listen for the indoor blower; do not reach into the blower compartment."
     ],
-    "whenToCallPro": "If drainage is clear, replace the switch or pump.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "condensate-pump-replacement",
+    "whenToCallPro": "Call a technician if the blower does not run or the communication fault returns.",
+    "repairCostLow": 350,
+    "repairCostHigh": 1400,
+    "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Rheem furnace code 61 means condensate safety switch detected a drainage problem. Often caused by clogged trap. Usually safe to try basic checks yourself; professional repairs run $150–$450."
+    "snippetAnswer": "Rheem furnace code 61 means the indoor blower did not run when commanded on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "rheem-rgfg-92-24161-104-06"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Rheem/Ruud RGFG-family controls using the documented two-digit diagnostic table."
   }
 ]

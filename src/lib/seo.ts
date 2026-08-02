@@ -80,17 +80,24 @@ export function buildRepairCostProse(repairName: string, costLow: number, costHi
 export function buildCodePageJsonLd(
   brand: Brand,
   code: Code,
-  baseUrl: string,
-  dataUpdated: string
+  baseUrl: string
 ) {
   const pageUrl = `${baseUrl}/fix/${brand.slug}/${code.slug}`;
-  const dateModified = dataUpdatedToIsoDate(dataUpdated);
+  const dateModified = "2026-08-02";
+  const author = {
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    name: "Warmlo Editorial",
+    url: `${baseUrl}/about`,
+  };
   const answerText = code.snippetAnswer ?? code.meaning;
 
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    datePublished: "2026-07-01",
     dateModified,
+    author,
     mainEntity: [
       {
         "@type": "Question",
@@ -148,7 +155,9 @@ export function buildCodePageJsonLd(
       "@type": "HowTo",
       name: `How to troubleshoot ${brand.name} furnace code ${code.code}`,
       description: answerText,
+      datePublished: "2026-07-01",
       dateModified,
+      author,
       step: code.diySteps.map((text, index) => ({
         "@type": "HowToStep",
         position: index + 1,

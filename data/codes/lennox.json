@@ -2,48 +2,53 @@
   {
     "code": "200",
     "slug": "200",
-    "title": "Lennox Furnace Code 200: No Signal from Thermostat",
-    "meaning": "The control board is not receiving a heat call from the thermostat.",
-    "severity": "diy-possible",
+    "title": "Lennox Furnace Code 200: Rollout circuit hard lockout",
+    "meaning": "The rollout circuit is open, or had opened, and the furnace is in hard lockout.",
+    "severity": "emergency",
     "commonCauses": [
-      "Thermostat set to off or cool",
-      "Loose thermostat wire",
-      "Dead thermostat batteries"
+      "A blocked flue or combustion-air path",
+      "A burner or gas-pressure problem",
+      "A damaged or restricted heat exchanger"
     ],
-    "diySteps": [
-      "Confirm the thermostat is set to heat.",
-      "Replace batteries if applicable.",
-      "Check that the furnace door is secure."
+    "diySteps": [],
+    "whenToCallPro": "Leave the furnace off and call a licensed technician for a combustion-safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "Keep the furnace off. Do not reset a rollout switch. If you smell gas or a carbon-monoxide alarm sounds, leave the building and contact emergency services or the gas utility.",
+    "snippetAnswer": "Lennox furnace code 200 means the rollout circuit is open, or had opened, and the furnace is in hard lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
     ],
-    "whenToCallPro": "If the thermostat is calling for heat but the code remains, wiring may need service.",
-    "repairCostLow": 100,
-    "repairCostHigh": 350,
-    "relatedRepairSlug": "thermostat-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 200 means control board is not receiving a heat call from the thermostat. Often caused by thermostat set to off or cool. Usually safe to try basic checks yourself; professional repairs run $100–$350."
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "201",
     "slug": "201",
-    "title": "Lennox Furnace Code 201: Invalid Thermostat Signal",
-    "meaning": "The board received an out-of-range signal from a communicating thermostat.",
+    "title": "Lennox Furnace Code 201: Indoor blower communication failure",
+    "meaning": "The furnace cannot communicate with the indoor blower motor.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Incompatible thermostat",
-      "Loose comm wire",
-      "Board comm port fault"
+      "Loss of power or communication to the blower motor",
+      "A failed ECM motor module",
+      "Damaged motor wiring or an incorrect control configuration"
     ],
     "diySteps": [
-      "Verify thermostat model compatibility.",
-      "Reseat thermostat wiring.",
-      "Power-cycle the furnace once."
+      "Turn furnace power off and replace a visibly dirty filter.",
+      "Restore power once and listen for the indoor blower; do not reach into the blower compartment."
     ],
-    "whenToCallPro": "Communicating thermostat faults often need a matched replacement stat or board.",
-    "repairCostLow": 100,
-    "repairCostHigh": 400,
-    "relatedRepairSlug": "thermostat-replacement",
+    "whenToCallPro": "Call a technician if the blower does not run or the communication fault returns.",
+    "repairCostLow": 350,
+    "repairCostHigh": 1400,
+    "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 201 means board received an out-of-range signal from a communicating thermostat. Most often from incompatible thermostat. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Lennox furnace code 201 means the furnace cannot communicate with the indoor blower motor on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "220",
@@ -66,7 +71,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 220 means pressure switch did not close when the inducer started. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Lennox furnace code 220 means pressure switch did not close when the inducer started. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "221",
@@ -89,160 +99,198 @@
     "repairCostHigh": 550,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 221 means pressure switch remained closed when the inducer was off. Most often from stuck switch diaphragm. You can check basics first; professional repairs typically run $175–$550."
+    "snippetAnswer": "Lennox furnace code 221 means pressure switch remained closed when the inducer was off. Most often from stuck switch diaphragm. You can check basics first; professional repairs typically run $175–$550.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "270",
     "slug": "270",
-    "title": "Lennox Furnace Code 270: Ignition Failure",
-    "meaning": "The furnace could not light the burners during the ignition trial.",
+    "title": "Lennox Furnace Code 270: No-flame retry lockout",
+    "meaning": "The furnace exceeded its maximum ignition retries without sensing flame and entered soft lockout.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Worn ignitor",
-      "Gas valve not opening",
-      "Dirty flame sensor"
+      "No gas reaching the burners",
+      "A failed hot-surface igniter",
+      "A dirty or weak flame sensor"
     ],
     "diySteps": [
-      "Verify gas supply.",
-      "Watch for ignitor glow on one cycle.",
-      "Reset power once."
+      "Confirm the thermostat is calling for heat and the gas shutoff has not been moved.",
+      "Turn furnace power off for five minutes, restore it once, and note whether the same code returns."
     ],
-    "whenToCallPro": "Repeated ignition failures need ignitor or gas valve service.",
+    "whenToCallPro": "Call a licensed technician if ignition fails again after one reset or if you smell gas.",
     "repairCostLow": 150,
-    "repairCostHigh": 450,
+    "repairCostHigh": 750,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 270 means furnace could not light the burners during the ignition trial. Most often from worn ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Lennox furnace code 270 means the furnace exceeded its maximum ignition retries without sensing flame and entered soft lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "271",
     "slug": "271",
-    "title": "Lennox Furnace Code 271: Flame Lost During Operation",
-    "meaning": "The board detected flame loss while the thermostat was still calling for heat.",
+    "title": "Lennox Furnace Code 271: Pressure-switch retry lockout",
+    "meaning": "The furnace exceeded its ignition retries after the pressure switch opened.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty flame sensor",
-      "Cracked heat exchanger draft",
-      "Flame rollout"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Inspect the flame sensor.",
-      "Look for soot around the burner area."
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
     ],
-    "whenToCallPro": "Flame loss during run requires professional combustion inspection.",
-    "repairCostLow": 100,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "flame-sensor-cleaning",
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 271 means board detected flame loss while the thermostat was still calling for heat. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$3500."
+    "snippetAnswer": "Lennox furnace code 271 means the furnace exceeded its ignition retries after the pressure switch opened on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "272",
     "slug": "272",
-    "title": "Lennox Furnace Code 272: Flame Sensed Without Call",
-    "meaning": "Flame was detected when the thermostat was not calling for heat.",
-    "severity": "emergency",
+    "title": "Lennox Furnace Code 272: Pressure-switch recycle lockout",
+    "meaning": "The furnace exceeded its recycle limit after a pressure switch opened.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Leaking gas valve",
-      "Stuck valve relay",
-      "Board fault"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Unexpected flame is a safety hazard requiring immediate service.",
-    "repairCostLow": 350,
+    "diySteps": [
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
+    ],
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
+    "repairCostLow": 175,
     "repairCostHigh": 900,
-    "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Lennox furnace code 272 means Flame was detected when the thermostat was not calling for heat. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Lennox furnace code 272 means the furnace exceeded its recycle limit after a pressure switch opened on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "273",
     "slug": "273",
-    "title": "Lennox Furnace Code 273: Rollout Switch Open",
-    "meaning": "The rollout switch opened due to flames or heat at the burner front.",
-    "severity": "emergency",
+    "title": "Lennox Furnace Code 273: Flame-failure recycle lockout",
+    "meaning": "The furnace exceeded its recycle limit after losing the flame signal.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked flue",
-      "Cracked heat exchanger",
-      "Improper burner alignment"
+      "A dirty or weak flame sensor",
+      "Unstable gas pressure or burner flame",
+      "Poor grounding or flame-sensor wiring"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Rollout trips indicate a combustion safety issue.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas or see soot, leave the area and call a technician.",
-    "snippetAnswer": "Lennox furnace code 273 means rollout switch opened due to flames or heat at the burner front. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500."
+    "diySteps": [
+      "Confirm the gas shutoff has not been moved and the furnace panel is fully seated.",
+      "Try one reset and watch whether the burners light and then shut off again."
+    ],
+    "whenToCallPro": "Call a technician if flame drops out again or ignition becomes delayed or noisy.",
+    "repairCostLow": 100,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "flame-sensor-cleaning",
+    "dangerNote": null,
+    "snippetAnswer": "Lennox furnace code 273 means the furnace exceeded its recycle limit after losing the flame signal on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "274",
     "slug": "274",
-    "title": "Lennox Furnace Code 274: Limit Switch Open",
-    "meaning": "The high-limit switch opened because the furnace overheated.",
+    "title": "Lennox Furnace Code 274: Limit-circuit recycle lockout",
+    "meaning": "The furnace exceeded its recycle limit after the limit circuit opened or stayed open too long.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty filter",
-      "Weak blower",
-      "Closed vents"
+      "A dirty or overly restrictive air filter",
+      "Closed or blocked supply and return vents",
+      "A blower, limit switch, or airflow problem"
     ],
     "diySteps": [
-      "Replace the air filter.",
-      "Open all supply vents.",
-      "Allow the unit to cool before resetting."
+      "Turn the furnace off and replace a dirty filter with the size and type specified for the system.",
+      "Open all supply registers and make sure return grilles are not blocked before trying one reset."
     ],
-    "whenToCallPro": "Repeated limit trips need blower or limit switch service.",
+    "whenToCallPro": "Call a technician if the limit code returns; repeated overheating can damage the furnace.",
     "repairCostLow": 150,
-    "repairCostHigh": 600,
+    "repairCostHigh": 750,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 274 means high-limit switch opened because the furnace overheated. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Lennox furnace code 274 means the furnace exceeded its recycle limit after the limit circuit opened or stayed open too long on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "275",
     "slug": "275",
-    "title": "Lennox Furnace Code 275: Blower Motor Failure",
-    "meaning": "The blower motor did not start or did not reach required speed.",
-    "severity": "call-pro-soon",
+    "title": "Lennox Furnace Code 275: Out-of-sequence flame lockout",
+    "meaning": "Flame had been sensed out of sequence; the flame signal is now gone and the furnace is in soft lockout.",
+    "severity": "emergency",
     "commonCauses": [
-      "Failed blower motor",
-      "Bad capacitor",
-      "Loose wiring"
+      "A gas valve leaking or stuck open",
+      "A shorted flame-sensing circuit",
+      "A failed integrated control board"
     ],
-    "diySteps": [
-      "Turn off power.",
-      "Check the blower wheel for obstruction.",
-      "Verify the access panel is closed."
+    "diySteps": [],
+    "whenToCallPro": "Turn the furnace off and call a licensed technician immediately to test the gas valve and flame-proving circuit.",
+    "repairCostLow": 300,
+    "repairCostHigh": 1000,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "Turn the furnace off and do not reset it. If you smell gas, leave the building without operating switches and contact the gas utility or emergency services from outside.",
+    "snippetAnswer": "Lennox furnace code 275 means flame had been sensed out of sequence; the flame signal is now gone and the furnace is in soft lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
     ],
-    "whenToCallPro": "Blower motor or capacitor replacement is usually required.",
-    "repairCostLow": 450,
-    "repairCostHigh": 1200,
-    "relatedRepairSlug": "blower-motor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 275 means blower motor did not start or did not reach required speed. Most often from failed blower motor. You can check basics first; professional repairs typically run $450–$1200."
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "276",
     "slug": "276",
-    "title": "Lennox Furnace Code 276: Inducer Motor Failure",
-    "meaning": "The inducer motor failed to start during the venting cycle.",
+    "title": "Lennox Furnace Code 276: Pressure-switch calibration lockout",
+    "meaning": "The furnace exceeded the allowed pressure-switch calibration retries.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Seized inducer",
-      "Blocked vent",
-      "Failed inducer capacitor"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
     "diySteps": [
-      "Clear the vent terminal.",
-      "Listen for hum without spin.",
-      "Do not force the motor."
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
     ],
-    "whenToCallPro": "Inducer replacement is needed if the motor will not run.",
-    "repairCostLow": 400,
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
+    "repairCostLow": 175,
     "repairCostHigh": 900,
-    "relatedRepairSlug": "inducer-motor-replacement",
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 276 means inducer motor failed to start during the venting cycle. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
+    "snippetAnswer": "Lennox furnace code 276 means the furnace exceeded the allowed pressure-switch calibration retries on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Lennox integrated controls covered by installation instructions 508001-02D."
   },
   {
     "code": "277",
@@ -261,7 +309,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Lennox furnace code 277 means control detected an error in the gas valve circuit. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Lennox furnace code 277 means control detected an error in the gas valve circuit. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "278",
@@ -284,7 +337,12 @@
     "repairCostHigh": 800,
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 278 means integrated control reported an internal fault. Most often from power surge damage. You can check basics first; professional repairs typically run $300–$800."
+    "snippetAnswer": "Lennox furnace code 278 means integrated control reported an internal fault. Most often from power surge damage. You can check basics first; professional repairs typically run $300–$800.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "279",
@@ -307,7 +365,12 @@
     "repairCostHigh": 400,
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 279 means flame current dropped below the minimum threshold. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$400."
+    "snippetAnswer": "Lennox furnace code 279 means flame current dropped below the minimum threshold. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$400.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "280",
@@ -330,7 +393,12 @@
     "repairCostHigh": 600,
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 280 means An auxiliary limit or safety switch in series opened. Most often from tripped rollout switch. You can check basics first; professional repairs typically run $150–$600."
+    "snippetAnswer": "Lennox furnace code 280 means An auxiliary limit or safety switch in series opened. Most often from tripped rollout switch. You can check basics first; professional repairs typically run $150–$600.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "441",
@@ -353,7 +421,12 @@
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 441 means board lost communication with an ECM blower motor module. Most often from failed ecm module. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Lennox furnace code 441 means board lost communication with an ECM blower motor module. Most often from failed ecm module. You can check basics first; professional repairs typically run $450–$1200.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "442",
@@ -376,7 +449,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 442 means inducer did not reach the commanded speed. Most often from blocked vent. You can check basics first; professional repairs typically run $400–$900."
+    "snippetAnswer": "Lennox furnace code 442 means inducer did not reach the commanded speed. Most often from blocked vent. You can check basics first; professional repairs typically run $400–$900.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "443",
@@ -399,6 +477,11 @@
     "repairCostHigh": 450,
     "relatedRepairSlug": "condensate-pump-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Lennox furnace code 443 means condensate drainage system triggered a safety lockout. Often caused by clogged condensate trap. Usually safe to try basic checks yourself; professional repairs run $150–$450."
+    "snippetAnswer": "Lennox furnace code 443 means condensate drainage system triggered a safety lockout. Often caused by clogged condensate trap. Usually safe to try basic checks yourself; professional repairs run $150–$450.",
+    "sourceIds": [
+      "lennox-508001-02d"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   }
 ]

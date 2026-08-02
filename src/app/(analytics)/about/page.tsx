@@ -1,7 +1,6 @@
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { FreshnessStamp } from "@/components/FreshnessStamp";
 import { StaticLink } from "@/components/StaticLink";
-import { getBenchmarks } from "@/lib/data";
 import { CODE_PAGE_DISCLAIMER } from "@/lib/seo";
 import { buildSiteIdentityJsonLd, getSiteBaseUrl } from "@/lib/site-identity";
 
@@ -13,7 +12,6 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-  const { dataUpdated } = getBenchmarks();
   const siteIdentity = buildSiteIdentityJsonLd(getSiteBaseUrl());
   const organizationJsonLd = {
     "@context": siteIdentity["@context"],
@@ -39,7 +37,7 @@ export default function AboutPage() {
             how we build and maintain what you read on this site.
           </p>
           <div className="mt-6">
-            <FreshnessStamp dataUpdated={dataUpdated} label="reviewed" />
+            <FreshnessStamp dataUpdated="2026-08" label="reviewed" />
           </div>
         </div>
       </section>
@@ -84,13 +82,20 @@ export default function AboutPage() {
               </li>
               <li>
                 <strong className="text-text-strong">Accuracy over volume.</strong> We publish a
-                dedicated page only when a code can be verified against manufacturer diagnostics or
-                widely documented service literature. Unverifiable codes are omitted, not guessed.
+                searchable diagnostic meaning only when it can be tied to manufacturer literature
+                and a stated model or control family. Unconfirmed routes are kept out of search and
+                show model-finding instructions instead of a guessed repair.
               </li>
               <li>
-                <strong className="text-text-strong">No auto-generated prose.</strong> Meaning text
-                and snippet answers are written to plain-language standards and composed from
-                validated fields — not bulk-generated without human review.
+                <strong className="text-text-strong">Visible source trail.</strong> Verified code
+                pages link directly to the manufacturer document, show its document number, and
+                explain which models or control family the chart covers.
+              </li>
+              <li>
+                <strong className="text-text-strong">Consistent editorial templates.</strong> The
+                manufacturer meaning is translated into plain language, then paired with a
+                conservative safety category, first checks, and repair range. Automated validation
+                blocks missing sources, unsupported brand mappings, and unsafe indexing states.
               </li>
               <li>
                 <strong className="text-text-strong">Symptom layer.</strong>{" "}

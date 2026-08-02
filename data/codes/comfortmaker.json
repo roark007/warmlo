@@ -2,209 +2,241 @@
   {
     "code": "2 Flash",
     "slug": "2-flash",
-    "title": "Comfortmaker Furnace Code 2 Flash: Pressure Switch Stuck Closed",
-    "meaning": "Two flashes mean the pressure switch stayed closed when the control expected it to open at startup.",
+    "title": "Comfortmaker Furnace Code 2 Flash: Pressure switch was closed at the wrong time",
+    "meaning": "The pressure switch was closed when the control expected it to be open.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Water in the pressure hose",
-      "Stuck switch diaphragm",
-      "Blocked or undersized vent"
+      "A pressure switch stuck closed",
+      "A pinched or incorrectly connected pressure hose",
+      "Shorted pressure-switch wiring or a control fault"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Inspect the vent pipe and pressure tubing for blockages or standing water.",
-      "Clear the condensate trap if the hose runs through it."
+      "Turn furnace power off for five minutes and do not bypass or jumper the pressure switch.",
+      "Check only the outdoor vent openings for obvious snow, ice, leaves, or nests before restoring power once."
     ],
-    "whenToCallPro": "If tubing is clear and the code returns, the pressure switch or inducer needs testing.",
+    "whenToCallPro": "Call a technician if the code returns; the switch, hose, wiring, and inducer draft need testing.",
     "repairCostLow": 175,
-    "repairCostHigh": 550,
+    "repairCostHigh": 650,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Comfortmaker furnace 2 flashes means the pressure switch is stuck closed at startup — venting or tubing is the usual cause. Check hoses and exhaust first; pro repairs run $175–$550.",
-    "flashPattern": "2 flashes"
+    "snippetAnswer": "Comfortmaker furnace code 2 Flash means the pressure switch was closed when the control expected it to be open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "2 flashes",
+    "sourceIds": [
+      "icp-44001202103"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   },
   {
     "code": "3 Flash",
     "slug": "3-flash",
-    "title": "Comfortmaker Furnace Code 3 Flash: Pressure Switch Stuck Open",
-    "meaning": "Three flashes indicate the pressure switch never closed during the inducer cycle, blocking ignition.",
+    "title": "Comfortmaker Furnace Code 3 Flash: Pressure-switch circuit did not close",
+    "meaning": "The low-pressure switch was open when the control expected it to be closed.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked exhaust or intake",
-      "Failed inducer motor",
-      "Disconnected pressure hose"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
     "diySteps": [
-      "Inspect the vent termination outside for ice, debris, or bird nests.",
-      "Verify the small hose to the pressure switch is connected.",
-      "Clear clogged condensate from the trap on high-efficiency models."
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
     ],
-    "whenToCallPro": "If the inducer runs but the switch never closes, schedule inducer or switch service.",
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Comfortmaker furnace 3 flashes means the pressure switch never closed — inducer ran but vent proof failed. Blocked vents and condensate clogs are common; repairs run $175–$900.",
-    "flashPattern": "3 flashes"
+    "snippetAnswer": "Comfortmaker furnace code 3 Flash means the low-pressure switch was open when the control expected it to be closed on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "3 flashes",
+    "sourceIds": [
+      "icp-44001202103"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   },
   {
     "code": "4 Flash",
     "slug": "4-flash",
-    "title": "Comfortmaker Furnace Code 4 Flash: Limit or Rollout Circuit Open",
-    "meaning": "Four flashes signal the high-limit or flame rollout switch opened — overheating or combustion outside the burner box.",
-    "severity": "call-pro-soon",
+    "title": "Comfortmaker Furnace Code 4 Flash: Limit or rollout circuit open",
+    "meaning": "The limit or flame-rollout circuit is open.",
+    "severity": "emergency",
     "commonCauses": [
-      "Dirty air filter",
-      "Weak blower airflow",
-      "Tripped rollout from restricted venting"
+      "A blocked flue or combustion-air path",
+      "A burner or gas-pressure problem",
+      "A damaged or restricted heat exchanger"
     ],
-    "diySteps": [
-      "Replace a dirty filter and open all supply vents.",
-      "Allow the furnace to cool for 30 minutes before resetting.",
-      "Do not bypass limit or rollout switches."
+    "diySteps": [],
+    "whenToCallPro": "Leave the furnace off and call a licensed technician for a combustion-safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "Keep the furnace off. Do not reset a rollout switch. If you smell gas or a carbon-monoxide alarm sounds, leave the building and contact emergency services or the gas utility.",
+    "snippetAnswer": "Comfortmaker furnace code 4 Flash means the limit or flame-rollout circuit is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "4 flashes",
+    "sourceIds": [
+      "icp-44001202103"
     ],
-    "whenToCallPro": "If four flashes return after restoring airflow, limit, rollout, or blower service is needed.",
-    "repairCostLow": 150,
-    "repairCostHigh": 600,
-    "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Comfortmaker furnace 4 flashes usually means limit or rollout opened — overheating from poor airflow is typical. Replace the filter first; pro limit or blower work runs $150–$600.",
-    "flashPattern": "4 flashes"
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   },
   {
     "code": "5 Flash",
     "slug": "5-flash",
-    "title": "Comfortmaker Furnace Code 5 Flash: Abnormal Flame Signal",
-    "meaning": "Five flashes mean the board detected flame when the gas valve should be off — an abnormal proving signal.",
+    "title": "Comfortmaker Furnace Code 5 Flash: Flame detected when the gas valve should be off",
+    "meaning": "The control detected flame while the gas valve should have been off.",
     "severity": "emergency",
     "commonCauses": [
-      "Gas valve leaking or slow to close",
-      "Short in flame sensor wiring",
-      "Stuck gas valve relay"
+      "A gas valve leaking or stuck open",
+      "A shorted flame-sensing circuit",
+      "A failed integrated control board"
     ],
     "diySteps": [],
-    "whenToCallPro": "Unexpected flame signals require immediate professional inspection.",
-    "repairCostLow": 350,
-    "repairCostHigh": 900,
+    "whenToCallPro": "Turn the furnace off and call a licensed technician immediately to test the gas valve and flame-proving circuit.",
+    "repairCostLow": 300,
+    "repairCostHigh": 1000,
     "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Comfortmaker furnace 5 flashes means flame was sensed with no heat call — possible gas valve leak. Emergency: do not keep resetting; call a licensed tech; repairs run $350–$900.",
-    "flashPattern": "5 flashes"
+    "dangerNote": "Turn the furnace off and do not reset it. If you smell gas, leave the building without operating switches and contact the gas utility or emergency services from outside.",
+    "snippetAnswer": "Comfortmaker furnace code 5 Flash means the control detected flame while the gas valve should have been off on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "5 flashes",
+    "sourceIds": [
+      "icp-44001202103"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   },
   {
     "code": "6 Flash",
     "slug": "6-flash",
-    "title": "Comfortmaker Furnace Code 6 Flash: Ignition Failure or Flame Lost",
-    "meaning": "Six flashes indicate the burners failed to light or flame was lost while the furnace was running.",
+    "title": "Comfortmaker Furnace Code 6 Flash: Ignition or flame-sense failure",
+    "meaning": "The burners failed to ignite, or the flame signal was lost during operation.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed ignitor",
-      "Dirty flame sensor",
-      "Rough ignition or low gas pressure"
+      "A dirty or weak flame sensor",
+      "Unstable gas pressure or burner flame",
+      "Poor grounding or flame-sensor wiring"
     ],
     "diySteps": [
-      "Clean the flame sensor rod with fine steel wool.",
-      "Watch one ignition cycle for ignitor glow.",
-      "Reset power once after cleaning."
+      "Confirm the gas shutoff has not been moved and the furnace panel is fully seated.",
+      "Try one reset and watch whether the burners light and then shut off again."
     ],
-    "whenToCallPro": "If flame still drops out, gas pressure and ignitor replacement need diagnosis.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
+    "whenToCallPro": "Call a technician if flame drops out again or ignition becomes delayed or noisy.",
+    "repairCostLow": 100,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Comfortmaker furnace 6 flashes means ignition failed or flame dropped out mid-cycle. Ignitor and flame sensor are the usual fixes; try a sensor clean first; repairs run $150–$450.",
-    "flashPattern": "6 flashes"
+    "snippetAnswer": "Comfortmaker furnace code 6 Flash means the burners failed to ignite, or the flame signal was lost during operation on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "6 flashes",
+    "sourceIds": [
+      "icp-44001202103"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   },
   {
     "code": "7 Flash",
     "slug": "7-flash",
-    "title": "Comfortmaker Furnace Code 7 Flash: Limit Circuit Lockout",
-    "meaning": "Seven flashes mean the limit or rollout circuit stayed open long enough to trigger a heating lockout.",
-    "severity": "call-pro-soon",
+    "title": "Comfortmaker Furnace Code 7 Flash: Limit or rollout soft lockout",
+    "meaning": "The limit or rollout circuit stayed open long enough to place the furnace in soft lockout.",
+    "severity": "emergency",
     "commonCauses": [
-      "Repeated overheating",
-      "Failed limit switch",
-      "Blower not moving enough air"
+      "A blocked flue or combustion-air path",
+      "A burner or gas-pressure problem",
+      "A damaged or restricted heat exchanger"
     ],
-    "diySteps": [
-      "Replace the air filter and open all vents.",
-      "Allow a three-hour auto-reset or power-cycle once after cooling.",
-      "Monitor the next cycle closely."
+    "diySteps": [],
+    "whenToCallPro": "Leave the furnace off and call a licensed technician for a combustion-safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "Keep the furnace off. Do not reset a rollout switch. If you smell gas or a carbon-monoxide alarm sounds, leave the building and contact emergency services or the gas utility.",
+    "snippetAnswer": "Comfortmaker furnace code 7 Flash means the limit or rollout circuit stayed open long enough to place the furnace in soft lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "7 flashes",
+    "sourceIds": [
+      "icp-44001202103"
     ],
-    "whenToCallPro": "Lockout after limit trips needs blower and limit switch inspection — do not keep forcing heat.",
-    "repairCostLow": 150,
-    "repairCostHigh": 600,
-    "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Comfortmaker furnace 7 flashes is a limit-circuit lockout after overheating trips. Fix airflow — new filter and open vents — then call a pro if it returns; repairs run $150–$600.",
-    "flashPattern": "7 flashes"
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   },
   {
     "code": "8 Flash",
     "slug": "8-flash",
-    "title": "Comfortmaker Furnace Code 8 Flash: Gas Heating Lockout",
-    "meaning": "Eight flashes indicate a gas heating lockout — the control will not retry until reset after a valve or ignition fault.",
+    "title": "Comfortmaker Furnace Code 8 Flash: Permanent gas-heat lockout",
+    "meaning": "The control entered permanent gas-heat lockout after detecting a gas-valve relay or wiring fault.",
     "severity": "emergency",
     "commonCauses": [
-      "Miswired or failed gas valve",
-      "Control board relay fault",
-      "Repeated ignition failures"
+      "A gas valve leaking or stuck open",
+      "A shorted flame-sensing circuit",
+      "A failed integrated control board"
     ],
     "diySteps": [],
-    "whenToCallPro": "Gas heating lockouts require licensed diagnosis of the valve and control board.",
-    "repairCostLow": 350,
-    "repairCostHigh": 900,
+    "whenToCallPro": "Turn the furnace off and call a licensed technician immediately to test the gas valve and flame-proving circuit.",
+    "repairCostLow": 300,
+    "repairCostHigh": 1000,
     "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Comfortmaker furnace 8 flashes is a gas heating lockout — the board stopped all gas heat for safety. Do not bypass; call a licensed technician; typical repairs run $350–$900.",
-    "flashPattern": "8 flashes"
+    "dangerNote": "Turn the furnace off and do not reset it. If you smell gas, leave the building without operating switches and contact the gas utility or emergency services from outside.",
+    "snippetAnswer": "Comfortmaker furnace code 8 Flash means the control entered permanent gas-heat lockout after detecting a gas-valve relay or wiring fault on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "8 flashes",
+    "sourceIds": [
+      "icp-44001202103"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   },
   {
     "code": "9 Flash",
     "slug": "9-flash",
-    "title": "Comfortmaker Furnace Code 9 Flash: Two-Stage Pressure Switch Fault",
-    "meaning": "Nine flashes mean the medium or high pressure switch (or its relay) did not close — or reopened — during an intermediate- or maximum-heat cycle on a two-stage or modulating furnace.",
+    "title": "Comfortmaker Furnace Code 9 Flash: Pressure-switch circuit did not close",
+    "meaning": "The high-pressure switch was open when the control expected it to be closed.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked vent restricting high-fire draft",
-      "Failed medium or high pressure switch",
-      "Defective pressure switch relay on the control"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
     "diySteps": [
-      "Check the vent and intake terminations outside for blockages.",
-      "Drain the condensate trap on high-efficiency models.",
-      "Note whether the code appears only when the furnace ramps to high heat."
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
     ],
-    "whenToCallPro": "Two-stage pressure faults need switch testing at high fire — schedule service if venting is clear.",
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
     "repairCostLow": 175,
-    "repairCostHigh": 550,
+    "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Comfortmaker furnace 9 flashes means the medium or high pressure switch did not close during a high-heat cycle — a two-stage model fault. Check the vent outside first; pro repairs run $175–$550.",
-    "flashPattern": "9 flashes"
+    "snippetAnswer": "Comfortmaker furnace code 9 Flash means the high-pressure switch was open when the control expected it to be closed on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "9 flashes",
+    "sourceIds": [
+      "icp-44001202103"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   },
   {
     "code": "10 Flash",
     "slug": "10-flash",
-    "title": "Comfortmaker Furnace Code 10 Flash: Reversed Line Polarity",
-    "meaning": "Ten flashes indicate reversed 115V polarity or grounding problem at the furnace disconnect.",
+    "title": "Comfortmaker Furnace Code 10 Flash: Power polarity or grounding fault",
+    "meaning": "The furnace detected reversed line polarity, or incorrect transformer phasing on twinned units.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Hot and neutral swapped at disconnect",
-      "Missing equipment ground",
-      "Extension cord miswire"
+      "Reversed line and neutral wiring",
+      "A missing or poor equipment ground",
+      "Incorrect transformer phasing on twinned furnaces"
     ],
     "diySteps": [
-      "Turn off power at the breaker.",
-      "Do not operate the furnace until wiring polarity is verified.",
-      "Confirm a proper ground bond to the cabinet."
+      "Turn the furnace off at its service switch.",
+      "Do not alter line-voltage wiring or grounding connections yourself."
     ],
-    "whenToCallPro": "Line voltage and grounding corrections require a qualified electrician or HVAC tech.",
+    "whenToCallPro": "Call a licensed technician or electrician to verify polarity, grounding, and supply voltage.",
     "repairCostLow": 150,
-    "repairCostHigh": 350,
+    "repairCostHigh": 500,
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Comfortmaker furnace 10 flashes means reversed line polarity or bad ground at the furnace. Shut off power — this is an electrical safety issue; pro wiring correction runs $150–$350.",
-    "flashPattern": "10 flashes"
+    "snippetAnswer": "Comfortmaker furnace code 10 Flash means the furnace detected reversed line polarity, or incorrect transformer phasing on twinned units on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "10 flashes",
+    "sourceIds": [
+      "icp-44001202103"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "ICP control boards covered by document 44001202103 and using its 2–10 flash table."
   }
 ]

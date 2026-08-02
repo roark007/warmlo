@@ -2,48 +2,53 @@
   {
     "code": "13",
     "slug": "13",
-    "title": "Bryant Furnace Code 13: Limit Switch Lockout",
-    "meaning": "The furnace locked out after the high-limit switch opened too many times.",
-    "severity": "call-pro-soon",
+    "title": "Bryant Furnace Code 13: Limit or rollout circuit lockout",
+    "meaning": "The limit or flame-rollout circuit opened repeatedly and the furnace locked out.",
+    "severity": "emergency",
     "commonCauses": [
-      "Restricted airflow from dirty filter",
-      "Blower not running at speed",
-      "Blocked return duct"
+      "A blocked flue or combustion-air path",
+      "A burner or gas-pressure problem",
+      "A damaged or restricted heat exchanger"
     ],
-    "diySteps": [
-      "Replace the air filter.",
-      "Open supply vents.",
-      "Reset power once airflow is restored."
+    "diySteps": [],
+    "whenToCallPro": "Leave the furnace off and call a licensed technician for a combustion-safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "Keep the furnace off. Do not reset a rollout switch. If you smell gas or a carbon-monoxide alarm sounds, leave the building and contact emergency services or the gas utility.",
+    "snippetAnswer": "Bryant furnace code 13 means the limit or flame-rollout circuit opened repeatedly and the furnace locked out on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
     ],
-    "whenToCallPro": "Repeated limit lockouts require blower and limit switch inspection.",
-    "repairCostLow": 150,
-    "repairCostHigh": 600,
-    "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 13 means furnace locked out after the high-limit switch opened too many times. Most often from restricted airflow from dirty filter. You can check basics first; professional repairs typically run $150–$600."
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "14",
     "slug": "14",
-    "title": "Bryant Furnace Code 14: Ignition Lockout",
-    "meaning": "The control board stopped ignition attempts after repeated failures.",
+    "title": "Bryant Furnace Code 14: Ignition lockout",
+    "meaning": "The furnace failed to ignite or prove flame in four attempts and entered ignition lockout.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed hot-surface ignitor",
-      "Dirty flame sensor",
-      "Gas valve not opening"
+      "No gas reaching the burners",
+      "A failed hot-surface igniter",
+      "A dirty or weak flame sensor"
     ],
     "diySteps": [
-      "Verify gas supply is on.",
-      "Reset power and observe one ignition sequence.",
-      "Stop if you smell gas."
+      "Confirm the thermostat is calling for heat and the gas shutoff has not been moved.",
+      "Turn furnace power off for five minutes, restore it once, and note whether the same code returns."
     ],
-    "whenToCallPro": "Ignition lockouts after one reset usually need ignitor or flame sensor service.",
+    "whenToCallPro": "Call a licensed technician if ignition fails again after one reset or if you smell gas.",
     "repairCostLow": 150,
-    "repairCostHigh": 450,
+    "repairCostHigh": 750,
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 14 means control board stopped ignition attempts after repeated failures. Most often from failed hot-surface ignitor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Bryant furnace code 14 means the furnace failed to ignite or prove flame in four attempts and entered ignition lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "15",
@@ -66,145 +71,171 @@
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 15 means blower motor exceeded safe current draw or failed to start properly. Most often from seized blower wheel. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Bryant furnace code 15 means blower motor exceeded safe current draw or failed to start properly. Most often from seized blower wheel. You can check basics first; professional repairs typically run $450–$1200.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "23",
     "slug": "23",
-    "title": "Bryant Furnace Code 23: Pressure Switch Failed to Close",
-    "meaning": "The pressure switch did not close during the inducer on cycle.",
+    "title": "Bryant Furnace Code 23: Pressure switch was closed at the wrong time",
+    "meaning": "The low-heat pressure switch did not open when the heat call began.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked vent",
-      "Failed inducer",
-      "Cracked pressure hose"
+      "A pressure switch stuck closed",
+      "A pinched or incorrectly connected pressure hose",
+      "Shorted pressure-switch wiring or a control fault"
     ],
     "diySteps": [
-      "Inspect vent and intake pipes.",
-      "Check the pressure switch tubing.",
-      "Clear condensate from the trap."
+      "Turn furnace power off for five minutes and do not bypass or jumper the pressure switch.",
+      "Check only the outdoor vent openings for obvious snow, ice, leaves, or nests before restoring power once."
     ],
-    "whenToCallPro": "If the inducer runs normally but the switch never closes, replace the switch or inducer.",
+    "whenToCallPro": "Call a technician if the code returns; the switch, hose, wiring, and inducer draft need testing.",
     "repairCostLow": 175,
-    "repairCostHigh": 900,
+    "repairCostHigh": 650,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 23 means pressure switch did not close during the inducer on cycle. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Bryant furnace code 23 means the low-heat pressure switch did not open when the heat call began on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "24",
     "slug": "24",
-    "title": "Bryant Furnace Code 24: Secondary Voltage Fuse Open",
-    "meaning": "A low-voltage fuse on the control board opened, shutting down the furnace.",
+    "title": "Bryant Furnace Code 24: Low-voltage fuse is open",
+    "meaning": "The secondary-voltage fuse is open because of a low-voltage short.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Shorted thermostat wire",
-      "Failed control board component",
-      "Damaged field wiring"
+      "Shorted thermostat wiring",
+      "A shorted low-voltage accessory",
+      "A damaged control-board circuit"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Inspect low-voltage wiring for pinches or bare spots.",
-      "Do not bypass the fuse."
+      "Turn furnace power off and check for an obviously pinched thermostat wire without touching board terminals.",
+      "Do not install a larger fuse or repeatedly replace a fuse that opens again."
     ],
-    "whenToCallPro": "If a new fuse blows immediately, the board or wiring needs professional diagnosis.",
-    "repairCostLow": 300,
-    "repairCostHigh": 800,
+    "whenToCallPro": "Call a technician to locate the low-voltage short before replacing the fuse again.",
+    "repairCostLow": 150,
+    "repairCostHigh": 600,
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 24 means A low-voltage fuse on the control board opened, shutting down the furnace. Most often from shorted thermostat wire. You can check basics first; professional repairs typically run $300–$800."
+    "snippetAnswer": "Bryant furnace code 24 means the secondary-voltage fuse is open because of a low-voltage short on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "31",
     "slug": "31",
-    "title": "Bryant Furnace Code 31: Pressure Switch Failed to Open",
-    "meaning": "The pressure switch stayed closed when the inducer turned off.",
+    "title": "Bryant Furnace Code 31: Pressure-switch circuit did not close",
+    "meaning": "The high-heat pressure switch or relay did not close, or reopened during operation.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Stuck pressure switch",
-      "Water in pressure hose",
-      "Blocked vent"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
     "diySteps": [
-      "Check the pressure hose for water.",
-      "Inspect the vent for blockages.",
-      "Reset power after clearing obstructions."
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
     ],
-    "whenToCallPro": "A switch that will not open should be replaced before further operation.",
-    "repairCostLow": 175,
-    "repairCostHigh": 550,
-    "relatedRepairSlug": "pressure-switch-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 31 means pressure switch stayed closed when the inducer turned off. Most often from stuck pressure switch. You can check basics first; professional repairs typically run $175–$550."
-  },
-  {
-    "code": "32",
-    "slug": "32",
-    "title": "Bryant Furnace Code 32: Low Pressure Switch Open",
-    "meaning": "The low-pressure switch remained open during the heating cycle.",
-    "severity": "call-pro-soon",
-    "commonCauses": [
-      "Inducer not reaching speed",
-      "Vent restriction",
-      "Failed low-pressure switch"
-    ],
-    "diySteps": [
-      "Verify the exhaust vent is clear.",
-      "Listen for weak inducer operation.",
-      "Check for ice or debris at the vent terminal."
-    ],
-    "whenToCallPro": "Low-pressure faults often trace to inducer or venting problems.",
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 32 means low-pressure switch remained open during the heating cycle. Most often from inducer not reaching speed. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Bryant furnace code 31 means the high-heat pressure switch or relay did not close, or reopened during operation on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
+  },
+  {
+    "code": "32",
+    "slug": "32",
+    "title": "Bryant Furnace Code 32: Pressure-switch circuit did not close",
+    "meaning": "The low-heat pressure, draft-safeguard, low-gas-pressure, or auxiliary-limit circuit did not close or reopened.",
+    "severity": "call-pro-soon",
+    "commonCauses": [
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
+    ],
+    "diySteps": [
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
+    ],
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Bryant furnace code 32 means the low-heat pressure, draft-safeguard, low-gas-pressure, or auxiliary-limit circuit did not close or reopened on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "33",
     "slug": "33",
-    "title": "Bryant Furnace Code 33: Limit Circuit Open",
-    "meaning": "The limit switch circuit opened while the furnace was running.",
-    "severity": "call-pro-soon",
+    "title": "Bryant Furnace Code 33: Flame-rollout safety lockout",
+    "meaning": "The limit or flame-rollout circuit is open.",
+    "severity": "emergency",
     "commonCauses": [
-      "Overheating from poor airflow",
-      "Failing blower",
-      "Stuck limit switch"
+      "A blocked flue or combustion-air path",
+      "A burner or gas-pressure problem",
+      "A damaged or restricted heat exchanger"
     ],
-    "diySteps": [
-      "Replace a dirty filter.",
-      "Ensure registers are open.",
-      "Allow the furnace to cool before resetting."
+    "diySteps": [],
+    "whenToCallPro": "Leave the furnace off and call a licensed technician for a combustion-safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "Keep the furnace off. Do not reset a rollout switch. If you smell gas or a carbon-monoxide alarm sounds, leave the building and contact emergency services or the gas utility.",
+    "snippetAnswer": "Bryant furnace code 33 means the limit or flame-rollout circuit is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
     ],
-    "whenToCallPro": "If the limit opens repeatedly, the blower or limit switch may need replacement.",
-    "repairCostLow": 150,
-    "repairCostHigh": 600,
-    "relatedRepairSlug": "limit-switch-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 33 means limit switch circuit opened while the furnace was running. Most often from overheating from poor airflow. You can check basics first; professional repairs typically run $150–$600."
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "34",
     "slug": "34",
-    "title": "Bryant Furnace Code 34: Ignition Proving Failure",
-    "meaning": "The board did not detect flame within the allowed proving period.",
+    "title": "Bryant Furnace Code 34: Ignition-proving fault",
+    "meaning": "The control did not sense flame during ignition, or lost the flame signal while running.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty flame sensor",
-      "Weak ignitor",
-      "Gas valve delay"
+      "A dirty or weak flame sensor",
+      "Unstable gas pressure or burner flame",
+      "Poor grounding or flame-sensor wiring"
     ],
     "diySteps": [
-      "Clean the flame sensor rod.",
-      "Watch whether the ignitor glows fully.",
-      "Reset and try one cycle."
+      "Confirm the gas shutoff has not been moved and the furnace panel is fully seated.",
+      "Try one reset and watch whether the burners light and then shut off again."
     ],
-    "whenToCallPro": "Persistent proving failures require ignitor, sensor, or gas valve service.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
+    "whenToCallPro": "Call a technician if flame drops out again or ignition becomes delayed or noisy.",
+    "repairCostLow": 100,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 34 means board did not detect flame within the allowed proving period. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $150–$450."
+    "snippetAnswer": "Bryant furnace code 34 means the control did not sense flame during ignition, or lost the flame signal while running on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "41",
@@ -227,7 +258,12 @@
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 41 means control detected an error in the blower motor or its speed tap circuit. Most often from failed blower motor. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Bryant furnace code 41 means control detected an error in the blower motor or its speed tap circuit. Most often from failed blower motor. You can check basics first; professional repairs typically run $450–$1200.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "42",
@@ -250,30 +286,39 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "inducer-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 42 means inducer motor did not respond correctly during the pre-purge cycle. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900."
+    "snippetAnswer": "Bryant furnace code 42 means inducer motor did not respond correctly during the pre-purge cycle. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "43",
     "slug": "43",
-    "title": "Bryant Furnace Code 43: Pressure Switch Stuck Open",
-    "meaning": "The pressure switch remained open when it should have closed.",
+    "title": "Bryant Furnace Code 43: Pressure-switch circuit did not close",
+    "meaning": "A low-heat pressure or safety switch was open while the high-heat pressure switch was closed.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Disconnected pressure hose",
-      "Failed switch",
-      "Inducer not running"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
     "diySteps": [
-      "Reattach any loose pressure hoses.",
-      "Verify the inducer runs on a heat call.",
-      "Clear condensate blockages."
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
     ],
-    "whenToCallPro": "Replace a verified failed pressure switch or faulty inducer.",
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
     "repairCostLow": 175,
     "repairCostHigh": 900,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 43 means pressure switch remained open when it should have closed. Most often from disconnected pressure hose. You can check basics first; professional repairs typically run $175–$900."
+    "snippetAnswer": "Bryant furnace code 43 means a low-heat pressure or safety switch was open while the high-heat pressure switch was closed on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "44",
@@ -296,30 +341,39 @@
     "repairCostHigh": 1200,
     "relatedRepairSlug": "blower-motor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 44 means blower drew more current than the control board allows. Most often from restricted blower wheel. You can check basics first; professional repairs typically run $450–$1200."
+    "snippetAnswer": "Bryant furnace code 44 means blower drew more current than the control board allows. Most often from restricted blower wheel. You can check basics first; professional repairs typically run $450–$1200.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "45",
     "slug": "45",
-    "title": "Bryant Furnace Code 45: Control Board Fault",
-    "meaning": "The integrated control self-test detected an internal board error.",
+    "title": "Bryant Furnace Code 45: Control-board fault",
+    "meaning": "The integrated furnace control detected an internal failure and requires professional diagnosis.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Moisture on board",
-      "Failed relay on board",
-      "Power surge damage"
+      "A failed control-board relay or sensing circuit",
+      "Damaged low-voltage wiring",
+      "Electrical surge, moisture, or poor grounding"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Inspect the board area for water or burn marks.",
-      "Ensure the condensate drain is not leaking on the board."
+      "Turn furnace power off for five minutes and restore it once.",
+      "If the code returns, leave the furnace off rather than repeatedly resetting the control."
     ],
-    "whenToCallPro": "Board faults typically require control board replacement.",
-    "repairCostLow": 300,
-    "repairCostHigh": 800,
+    "whenToCallPro": "Call a technician to test wiring and connected components before replacing the control board.",
+    "repairCostLow": 400,
+    "repairCostHigh": 1000,
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 45 means integrated control self-test detected an internal board error. Most often from moisture on board. You can check basics first; professional repairs typically run $300–$800."
+    "snippetAnswer": "Bryant furnace code 45 means the integrated furnace control detected an internal failure and requires professional diagnosis on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Carrier-family two-stage controls covered by troubleshooting guide 58-3T."
   },
   {
     "code": "51",
@@ -338,7 +392,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Bryant furnace code 51 means control detected gas flow when the valve should have been closed. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Bryant furnace code 51 means control detected gas flow when the valve should have been closed. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "52",
@@ -357,7 +416,12 @@
     "repairCostHigh": 900,
     "relatedRepairSlug": "gas-valve-replacement",
     "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Bryant furnace code 52 means gas valve relay on the control board did not operate correctly. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900."
+    "snippetAnswer": "Bryant furnace code 52 means gas valve relay on the control board did not operate correctly. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "53",
@@ -380,6 +444,11 @@
     "repairCostHigh": 300,
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Bryant furnace code 53 means flame sensor did not prove flame after the gas valve opened. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$300."
+    "snippetAnswer": "Bryant furnace code 53 means flame sensor did not prove flame after the gas valve opened. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$300.",
+    "sourceIds": [
+      "carrier-58-3t"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   }
 ]

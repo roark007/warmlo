@@ -136,6 +136,9 @@ const repairs = repairsSchema.parse(readJson(path.join(process.cwd(), "data", "r
 const symptoms = symptomsSchema.parse(readJson(path.join(process.cwd(), "data", "symptoms.json")));
 
 const expectedCodeRoutes = new Set<string>();
+const indexableCodeRoutes = new Set<string>();
+const protectedCodeRoutes = new Set<string>();
+const indexableBrandSlugs = new Set<string>();
 const expectedSymptomRoutes = new Set(symptoms.map((s) => `/symptom/${s.slug}`));
 let totalCodes = 0;
 for (const brand of brands) {
@@ -144,7 +147,14 @@ for (const brand of brands) {
   );
   totalCodes += codes.length;
   for (const code of codes) {
-    expectedCodeRoutes.add(`/fix/${brand.slug}/${code.slug}`);
+    const route = `/fix/${brand.slug}/${code.slug}`;
+    expectedCodeRoutes.add(route);
+    if (code.verificationStatus === "verified") {
+      indexableCodeRoutes.add(route);
+      indexableBrandSlugs.add(brand.slug);
+    } else {
+      protectedCodeRoutes.add(route);
+    }
   }
 }
 
@@ -264,7 +274,7 @@ if (!fs.existsSync(path.join(PUBLIC_DIR, "brand", "warmlo-mark.svg"))) {
 if (identityOk) pass("home WebSite/Organization identity and public Warmlo mark");
 
 // Required content on sample code pages
-const sampleRoutes = [...expectedCodeRoutes].slice(0, 5);
+const sampleRoutes = [...indexableCodeRoutes].slice(0, 5);
 let contentOk = true;
 for (const route of sampleRoutes) {
   let html = readPageHtml(route, htmlFiles);
@@ -299,6 +309,10 @@ for (const route of sampleRoutes) {
   }
   if (!html.includes("FAQPage")) {
     fail(`${route}: missing FAQPage JSON-LD`);
+    contentOk = false;
+  }
+  if (!html.includes("Sources and model scope") || !html.includes("Warmlo Editorial")) {
+    fail(`${route}: missing manufacturer sources or editorial review`);
     contentOk = false;
   }
 
@@ -342,6 +356,20 @@ for (const route of sampleRoutes) {
 if (contentOk && sampleRoutes.length > 0) {
   pass(`required content on ${sampleRoutes.length} sample code pages`);
 }
+
+let protectedOk = true;
+for (const route of [...protectedCodeRoutes].slice(0, 5)) {
+  const html = readPageHtml(route, htmlFiles);
+  if (!html || !html.includes('name="robots" content="noindex')) {
+    fail(`${route}: model-specific page is missing noindex`);
+    protectedOk = false;
+  }
+  if (!html?.includes("check your model chart") || !html.includes("We will not guess")) {
+    fail(`${route}: model-specific page is missing safe model guidance`);
+    protectedOk = false;
+  }
+}
+if (protectedOk) pass("model-specific code pages use noindex and safe guidance");
 
 // Required passage structure on sample symptom pages
 let symptomContentOk = true;
@@ -570,8 +598,8 @@ const contentRoutes = [
   "/",
   "/fix",
   "/quote-check",
-  ...brands.map((b) => `/fix/${b.slug}`),
-  ...expectedCodeRoutes,
+  ...brands.filter((b) => indexableBrandSlugs.has(b.slug)).map((b) => `/fix/${b.slug}`),
+  ...indexableCodeRoutes,
   ...repairs.map((r) => `/cost/${r.slug}`),
   ...symptoms.map((s) => `/symptom/${s.slug}`),
   INDEX_ROUTE,
@@ -594,6 +622,15 @@ for (const route of contentRoutes) {
   }
 }
 if (sitemapOk) pass("sitemap includes content routes");
+
+if (sitemapContent.includes("<urlset")) {
+  const leakedProtectedRoute = [...protectedCodeRoutes].find((route) => sitemapContent.includes(route));
+  if (leakedProtectedRoute) {
+    fail(`sitemap includes protected model-specific route: ${leakedProtectedRoute}`);
+  } else {
+    pass(`sitemap contains ${indexableCodeRoutes.size} verified code routes and excludes model-specific routes`);
+  }
+}
 
 if (sitemapContent.includes("<urlset")) {
   const quoteIndex = readJson<{ generatedAt: string }>(
@@ -677,13 +714,20 @@ if (!llmsContent.includes("# Warmlo")) {
   fail("llms.txt: missing QuoteCheck entry");
 } else {
   let llmsBrandOk = true;
-  for (const brand of brands) {
+  const indexableBrands = brands.filter((brand) => indexableBrandSlugs.has(brand.slug));
+  for (const brand of indexableBrands) {
     if (!llmsContent.includes(`/fix/${brand.slug}`)) {
       fail(`llms.txt: missing brand hub ${brand.slug}`);
       llmsBrandOk = false;
     }
   }
-  if (llmsBrandOk) pass(`llms.txt includes ${brands.length} brand hubs + QuoteCheck`);
+  for (const brand of brands.filter((item) => !indexableBrandSlugs.has(item.slug))) {
+    if (llmsContent.includes(`/fix/${brand.slug}`)) {
+      fail(`llms.txt: includes unsupported brand hub ${brand.slug}`);
+      llmsBrandOk = false;
+    }
+  }
+  if (llmsBrandOk) pass(`llms.txt includes ${indexableBrands.length} sourced brand hubs + QuoteCheck`);
   if (!llmsContent.includes("/symptom/")) {
     fail("llms.txt: missing symptom guides");
   } else if (llmsBrandOk) {

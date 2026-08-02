@@ -1,9 +1,9 @@
-import { getAllCodes, getBrands, getSymptoms } from "@/lib/data";
+import { getAllVerifiedCodes, getBrands, getSymptoms, getVerifiedCodesForBrand } from "@/lib/data";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
 
 export function buildLlmsTxt(): string {
-  const brands = getBrands();
+  const brands = getBrands().filter((brand) => getVerifiedCodesForBrand(brand.slug).length > 0);
   const lines = [
     "# Warmlo",
     "# Free HVAC error-code lookup and fair-price quote checker for homeowners.",
@@ -18,7 +18,7 @@ export function buildLlmsTxt(): string {
 
   for (const brand of brands) {
     lines.push(
-      `- ${BASE_URL}/fix/${brand.slug} — ${brand.name} furnace error codes with meanings, DIY steps, and repair costs.`
+      `- ${BASE_URL}/fix/${brand.slug} — Manufacturer-sourced ${brand.name} furnace codes with model scope, safe checks, and repair costs.`
     );
   }
 
@@ -40,7 +40,7 @@ export function buildLlmsTxt(): string {
 
   lines.push("");
   lines.push("## Data");
-  const codeCount = getAllCodes().length;
+  const codeCount = getAllVerifiedCodes().length;
   lines.push(
     `- ${BASE_URL}/fix — Browse all furnace error codes by brand (${codeCount}+ codes across ${brands.length} brands).`
   );

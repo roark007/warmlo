@@ -2,281 +2,329 @@
   {
     "code": "1 Blink",
     "slug": "1-blink",
-    "title": "Luxaire Furnace Code 1 Blink: Ignition Failure",
-    "meaning": "One blink indicates the furnace failed to light during the ignition trial.",
-    "severity": "call-pro-soon",
+    "title": "Luxaire Furnace Code 1 Blink: Flame detected when the gas valve should be off",
+    "meaning": "The control sensed flame without a call for heat.",
+    "severity": "emergency",
     "commonCauses": [
-      "Failed ignitor",
-      "Gas valve issue",
-      "Dirty flame sensor"
+      "A gas valve leaking or stuck open",
+      "A shorted flame-sensing circuit",
+      "A failed integrated control board"
     ],
-    "diySteps": [
-      "Verify gas is on.",
-      "Reset once.",
-      "Watch for ignitor glow."
+    "diySteps": [],
+    "whenToCallPro": "Turn the furnace off and call a licensed technician immediately to test the gas valve and flame-proving circuit.",
+    "repairCostLow": 300,
+    "repairCostHigh": 1000,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "Turn the furnace off and do not reset it. If you smell gas, leave the building without operating switches and contact the gas utility or emergency services from outside.",
+    "snippetAnswer": "Luxaire furnace code 1 Blink means the control sensed flame without a call for heat on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "1 blink",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
     ],
-    "whenToCallPro": "Ignition failures need ignitor or gas valve service.",
-    "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "ignitor-replacement",
-    "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 1 Blink means One blink indicates the furnace failed to light during the ignition trial. Most often from failed ignitor. You can check basics first; professional repairs typically run $150–$450.",
-    "flashPattern": "1 blink"
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "2 Blinks",
     "slug": "2-blinks",
-    "title": "Luxaire Furnace Code 2 Blinks: Pressure Switch Open",
-    "meaning": "Two blinks mean the pressure switch did not close.",
+    "title": "Luxaire Furnace Code 2 Blinks: Pressure switch was closed at the wrong time",
+    "meaning": "The pressure switch was stuck closed when it should have been open.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Blocked vent",
-      "Failed inducer",
-      "Loose pressure hose"
+      "A pressure switch stuck closed",
+      "A pinched or incorrectly connected pressure hose",
+      "Shorted pressure-switch wiring or a control fault"
     ],
     "diySteps": [
-      "Inspect vent.",
-      "Check pressure tubing.",
-      "Clear condensate."
+      "Turn furnace power off for five minutes and do not bypass or jumper the pressure switch.",
+      "Check only the outdoor vent openings for obvious snow, ice, leaves, or nests before restoring power once."
     ],
-    "whenToCallPro": "Replace switch or inducer if needed.",
+    "whenToCallPro": "Call a technician if the code returns; the switch, hose, wiring, and inducer draft need testing.",
     "repairCostLow": 175,
-    "repairCostHigh": 900,
+    "repairCostHigh": 650,
     "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 2 Blinks means Two blinks mean the pressure switch did not close. Most often from blocked vent. You can check basics first; professional repairs typically run $175–$900.",
-    "flashPattern": "2 blinks"
+    "snippetAnswer": "Luxaire furnace code 2 Blinks means the pressure switch was stuck closed when it should have been open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "2 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "3 Blinks",
     "slug": "3-blinks",
-    "title": "Luxaire Furnace Code 3 Blinks: Limit Switch Open",
-    "meaning": "Three blinks signal the high-limit switch opened.",
+    "title": "Luxaire Furnace Code 3 Blinks: Pressure-switch circuit did not close",
+    "meaning": "The pressure switch failed to close after the inducer started.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Dirty filter",
-      "Weak blower",
-      "Closed vents"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
     "diySteps": [
-      "Replace filter.",
-      "Open vents.",
-      "Cool before reset."
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
     ],
-    "whenToCallPro": "Repeated trips need limit or blower service.",
-    "repairCostLow": 150,
-    "repairCostHigh": 600,
-    "relatedRepairSlug": "limit-switch-replacement",
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
+    "repairCostLow": 175,
+    "repairCostHigh": 900,
+    "relatedRepairSlug": "pressure-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 3 Blinks means Three blinks signal the high-limit switch opened. Most often from dirty filter. You can check basics first; professional repairs typically run $150–$600.",
-    "flashPattern": "3 blinks"
+    "snippetAnswer": "Luxaire furnace code 3 Blinks means the pressure switch failed to close after the inducer started on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "3 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "4 Blinks",
     "slug": "4-blinks",
-    "title": "Luxaire Furnace Code 4 Blinks: Rollout Switch Open",
-    "meaning": "Four blinks indicate the rollout switch tripped.",
-    "severity": "emergency",
+    "title": "Luxaire Furnace Code 4 Blinks: Limit circuit opened",
+    "meaning": "The primary or auxiliary limit circuit is open.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Cracked heat exchanger",
-      "Blocked flue",
-      "Flame rollout"
+      "A dirty or overly restrictive air filter",
+      "Closed or blocked supply and return vents",
+      "A blower, limit switch, or airflow problem"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Rollout requires combustion safety inspection.",
-    "repairCostLow": 500,
-    "repairCostHigh": 3500,
-    "relatedRepairSlug": "heat-exchanger-replacement",
-    "dangerNote": "If you smell gas, leave the area and call a technician.",
-    "snippetAnswer": "Luxaire furnace code 4 Blinks means Four blinks indicate the rollout switch tripped. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $500–$3500.",
-    "flashPattern": "4 blinks"
+    "diySteps": [
+      "Turn the furnace off and replace a dirty filter with the size and type specified for the system.",
+      "Open all supply registers and make sure return grilles are not blocked before trying one reset."
+    ],
+    "whenToCallPro": "Call a technician if the limit code returns; repeated overheating can damage the furnace.",
+    "repairCostLow": 150,
+    "repairCostHigh": 750,
+    "relatedRepairSlug": "limit-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Luxaire furnace code 4 Blinks means the primary or auxiliary limit circuit is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "4 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "5 Blinks",
     "slug": "5-blinks",
-    "title": "Luxaire Furnace Code 5 Blinks: Flame Sense Failure",
-    "meaning": "Five blinks mean flame was not proven after ignition.",
-    "severity": "call-pro-soon",
+    "title": "Luxaire Furnace Code 5 Blinks: Flame-rollout safety lockout",
+    "meaning": "The flame-rollout switch is open.",
+    "severity": "emergency",
     "commonCauses": [
-      "Dirty flame sensor",
-      "Weak ignitor",
-      "Gas pressure low"
+      "A blocked flue or combustion-air path",
+      "A burner or gas-pressure problem",
+      "A damaged or restricted heat exchanger"
     ],
-    "diySteps": [
-      "Clean flame sensor.",
-      "Verify burners light.",
-      "Reset once."
+    "diySteps": [],
+    "whenToCallPro": "Leave the furnace off and call a licensed technician for a combustion-safety inspection.",
+    "repairCostLow": 500,
+    "repairCostHigh": 3500,
+    "relatedRepairSlug": "heat-exchanger-replacement",
+    "dangerNote": "Keep the furnace off. Do not reset a rollout switch. If you smell gas or a carbon-monoxide alarm sounds, leave the building and contact emergency services or the gas utility.",
+    "snippetAnswer": "Luxaire furnace code 5 Blinks means the flame-rollout switch is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "5 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
     ],
-    "whenToCallPro": "Replace sensor or ignitor if fault persists.",
-    "repairCostLow": 100,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 5 Blinks means Five blinks mean flame was not proven after ignition. Most often from dirty flame sensor. You can check basics first; professional repairs typically run $100–$450.",
-    "flashPattern": "5 blinks"
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "6 Blinks",
     "slug": "6-blinks",
-    "title": "Luxaire Furnace Code 6 Blinks: Gas Valve Fault",
-    "meaning": "Six blinks indicate a gas valve circuit problem.",
-    "severity": "emergency",
+    "title": "Luxaire Furnace Code 6 Blinks: Pressure-switch cycle lockout",
+    "meaning": "The pressure switch opened four times during one heat call, causing lockout.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed gas valve",
-      "Board relay fault",
-      "Loose wiring"
+      "A blocked intake or exhaust vent",
+      "A restricted condensate drain or pressure hose",
+      "A weak inducer motor or pressure switch"
     ],
-    "diySteps": [],
-    "whenToCallPro": "Gas valve faults need licensed repair.",
-    "repairCostLow": 350,
+    "diySteps": [
+      "With the furnace off, check outdoor intake and exhaust openings for snow, ice, leaves, or nests.",
+      "Replace a visibly dirty air filter, restore power once, and note whether the code returns."
+    ],
+    "whenToCallPro": "Call a technician if the vent is clear and the pressure-switch code returns; combustion-air testing requires instruments.",
+    "repairCostLow": 175,
     "repairCostHigh": 900,
-    "relatedRepairSlug": "gas-valve-replacement",
-    "dangerNote": "If you smell gas, leave the house and call your gas utility before anything else.",
-    "snippetAnswer": "Luxaire furnace code 6 Blinks means Six blinks indicate a gas valve circuit problem. This is an emergency — do not attempt DIY repairs. Call a licensed technician immediately; typical repairs run $350–$900.",
-    "flashPattern": "6 blinks"
+    "relatedRepairSlug": "pressure-switch-replacement",
+    "dangerNote": null,
+    "snippetAnswer": "Luxaire furnace code 6 Blinks means the pressure switch opened four times during one heat call, causing lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "6 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "7 Blinks",
     "slug": "7-blinks",
-    "title": "Luxaire Furnace Code 7 Blinks: Blower Motor Fault",
-    "meaning": "Seven blinks signal a blower motor error.",
+    "title": "Luxaire Furnace Code 7 Blinks: Ignition or flame-proving failure",
+    "meaning": "The burners failed to establish flame and the furnace entered ignition lockout.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Failed blower",
-      "Bad capacitor",
-      "Restricted wheel"
+      "No gas reaching the burners",
+      "A failed hot-surface igniter",
+      "A dirty or weak flame sensor"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Check blower wheel.",
-      "Verify door switch."
+      "Confirm the thermostat is calling for heat and the gas shutoff has not been moved.",
+      "Turn furnace power off for five minutes, restore it once, and note whether the same code returns."
     ],
-    "whenToCallPro": "Blower motor replacement is usually required.",
-    "repairCostLow": 450,
-    "repairCostHigh": 1200,
-    "relatedRepairSlug": "blower-motor-replacement",
+    "whenToCallPro": "Call a licensed technician if ignition fails again after one reset or if you smell gas.",
+    "repairCostLow": 150,
+    "repairCostHigh": 750,
+    "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 7 Blinks means Seven blinks signal a blower motor error. Most often from failed blower. You can check basics first; professional repairs typically run $450–$1200.",
-    "flashPattern": "7 blinks"
+    "snippetAnswer": "Luxaire furnace code 7 Blinks means the burners failed to establish flame and the furnace entered ignition lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "7 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "8 Blinks",
     "slug": "8-blinks",
-    "title": "Luxaire Furnace Code 8 Blinks: Inducer Motor Fault",
-    "meaning": "Eight blinks indicate the inducer did not start.",
+    "title": "Luxaire Furnace Code 8 Blinks: Flame-loss recycle lockout",
+    "meaning": "Flame was lost five times during one heat call, causing recycle lockout.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Seized inducer",
-      "Blocked vent",
-      "Failed capacitor"
+      "A dirty or weak flame sensor",
+      "Unstable gas pressure or burner flame",
+      "Poor grounding or flame-sensor wiring"
     ],
     "diySteps": [
-      "Clear vent.",
-      "Listen for inducer hum.",
-      "Do not force motor."
+      "Confirm the gas shutoff has not been moved and the furnace panel is fully seated.",
+      "Try one reset and watch whether the burners light and then shut off again."
     ],
-    "whenToCallPro": "Inducer replacement if motor will not run.",
-    "repairCostLow": 400,
-    "repairCostHigh": 900,
-    "relatedRepairSlug": "inducer-motor-replacement",
+    "whenToCallPro": "Call a technician if flame drops out again or ignition becomes delayed or noisy.",
+    "repairCostLow": 100,
+    "repairCostHigh": 600,
+    "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 8 Blinks means Eight blinks indicate the inducer did not start. Most often from seized inducer. You can check basics first; professional repairs typically run $400–$900.",
-    "flashPattern": "8 blinks"
+    "snippetAnswer": "Luxaire furnace code 8 Blinks means flame was lost five times during one heat call, causing recycle lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "8 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "9 Blinks",
     "slug": "9-blinks",
-    "title": "Luxaire Furnace Code 9 Blinks: Control Board Fault",
-    "meaning": "Nine blinks mean the control board detected an internal fault.",
+    "title": "Luxaire Furnace Code 9 Blinks: Power polarity or grounding fault",
+    "meaning": "The furnace detected reversed line polarity or an improper ground.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Surge damage",
-      "Moisture",
-      "Failed relay"
+      "Reversed line and neutral wiring",
+      "A missing or poor equipment ground",
+      "Incorrect transformer phasing on twinned furnaces"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Inspect for moisture.",
-      "Check condensate routing."
+      "Turn the furnace off at its service switch.",
+      "Do not alter line-voltage wiring or grounding connections yourself."
     ],
-    "whenToCallPro": "Board replacement is typically needed.",
-    "repairCostLow": 300,
-    "repairCostHigh": 800,
+    "whenToCallPro": "Call a licensed technician or electrician to verify polarity, grounding, and supply voltage.",
+    "repairCostLow": 150,
+    "repairCostHigh": 500,
     "relatedRepairSlug": "control-board-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 9 Blinks means Nine blinks mean the control board detected an internal fault. Most often from surge damage. You can check basics first; professional repairs typically run $300–$800.",
-    "flashPattern": "9 blinks"
+    "snippetAnswer": "Luxaire furnace code 9 Blinks means the furnace detected reversed line polarity or an improper ground on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "9 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "10 Blinks",
     "slug": "10-blinks",
-    "title": "Luxaire Furnace Code 10 Blinks: Low Flame Signal",
-    "meaning": "Ten blinks indicate weak flame current during operation.",
-    "severity": "call-pro-soon",
+    "title": "Luxaire Furnace Code 10 Blinks: Gas flow without a heat call",
+    "meaning": "The control detected gas flow without a call for heat.",
+    "severity": "emergency",
     "commonCauses": [
-      "Dirty sensor",
-      "Draft issue",
-      "Low gas pressure"
+      "A gas valve leaking or stuck open",
+      "A shorted flame-sensing circuit",
+      "A failed integrated control board"
     ],
-    "diySteps": [
-      "Clean sensor.",
-      "Ensure returns open.",
-      "Test one cycle."
+    "diySteps": [],
+    "whenToCallPro": "Turn the furnace off and call a licensed technician immediately to test the gas valve and flame-proving circuit.",
+    "repairCostLow": 300,
+    "repairCostHigh": 1000,
+    "relatedRepairSlug": "gas-valve-replacement",
+    "dangerNote": "Turn the furnace off and do not reset it. If you smell gas, leave the building without operating switches and contact the gas utility or emergency services from outside.",
+    "snippetAnswer": "Luxaire furnace code 10 Blinks means the control detected gas flow without a call for heat on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "10 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
     ],
-    "whenToCallPro": "Gas pressure and venting should be checked.",
-    "repairCostLow": 100,
-    "repairCostHigh": 400,
-    "relatedRepairSlug": "flame-sensor-cleaning",
-    "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 10 Blinks means Ten blinks indicate weak flame current during operation. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$400.",
-    "flashPattern": "10 blinks"
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "11 Blinks",
     "slug": "11-blinks",
-    "title": "Luxaire Furnace Code 11 Blinks: Reverse Polarity",
-    "meaning": "Eleven blinks suggest reversed line/neutral wiring.",
+    "title": "Luxaire Furnace Code 11 Blinks: Extended limit-open lockout",
+    "meaning": "A limit switch stayed open longer than five minutes, causing hard lockout.",
     "severity": "call-pro-soon",
     "commonCauses": [
-      "Reversed disconnect wiring",
-      "Missing ground",
-      "Improper install"
+      "A dirty or overly restrictive air filter",
+      "Closed or blocked supply and return vents",
+      "A blower, limit switch, or airflow problem"
     ],
     "diySteps": [
-      "Turn off power.",
-      "Do not operate until wiring is verified."
+      "Turn the furnace off and replace a dirty filter with the size and type specified for the system.",
+      "Open all supply registers and make sure return grilles are not blocked before trying one reset."
     ],
-    "whenToCallPro": "Have wiring corrected by a qualified technician.",
+    "whenToCallPro": "Call a technician if the limit code returns; repeated overheating can damage the furnace.",
     "repairCostLow": 150,
-    "repairCostHigh": 350,
-    "relatedRepairSlug": "control-board-replacement",
+    "repairCostHigh": 750,
+    "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 11 Blinks means Eleven blinks suggest reversed line/neutral wiring. Most often from reversed disconnect wiring. You can check basics first; professional repairs typically run $150–$350.",
-    "flashPattern": "11 blinks"
+    "snippetAnswer": "Luxaire furnace code 11 Blinks means a limit switch stayed open longer than five minutes, causing hard lockout on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "11 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "12 Blinks",
     "slug": "12-blinks",
-    "title": "Luxaire Furnace Code 12 Blinks: Condensate Blockage",
-    "meaning": "Twelve blinks indicate a condensate drainage fault on high-efficiency models.",
-    "severity": "diy-possible",
+    "title": "Luxaire Furnace Code 12 Blinks: Igniter circuit fault",
+    "meaning": "The igniter circuit is open.",
+    "severity": "call-pro-soon",
     "commonCauses": [
-      "Clogged trap",
-      "Frozen drain",
-      "Full pump"
+      "A cracked or open hot-surface igniter",
+      "Loose or damaged igniter wiring",
+      "A failed igniter relay on the control board"
     ],
     "diySteps": [
-      "Clear condensate trap.",
-      "Check drain line.",
-      "Reset pump if present."
+      "Turn power off and look through the burner-viewing area for an obviously cracked igniter without touching it.",
+      "Restore power once and observe whether the igniter glows; do not continue resetting the furnace."
     ],
-    "whenToCallPro": "Replace pump or switch if drainage is clear.",
+    "whenToCallPro": "Call a technician if the igniter does not glow or the fault returns.",
     "repairCostLow": 150,
-    "repairCostHigh": 450,
-    "relatedRepairSlug": "condensate-pump-replacement",
+    "repairCostHigh": 500,
+    "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
-    "snippetAnswer": "Luxaire furnace code 12 Blinks means Twelve blinks indicate a condensate drainage fault on high-efficiency models. Often caused by clogged trap. Usually safe to try basic checks yourself; professional repairs run $150–$450.",
-    "flashPattern": "12 blinks"
+    "snippetAnswer": "Luxaire furnace code 12 Blinks means the igniter circuit is open on the supported control family. Confirm the model number and diagnostic chart inside the furnace door before replacing parts.",
+    "flashPattern": "12 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "verified",
+    "modelScope": "Johnson Controls integrated furnace controls using the documented 1–12 red-flash table."
   },
   {
     "code": "13 Blinks",
@@ -300,7 +348,12 @@
     "relatedRepairSlug": "limit-switch-replacement",
     "dangerNote": null,
     "snippetAnswer": "Luxaire furnace code 13 Blinks means Thirteen blinks mean an external safety opened the circuit. Most often from tripped limit. You can check basics first; professional repairs typically run $150–$600.",
-    "flashPattern": "13 blinks"
+    "flashPattern": "13 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "14 Blinks",
@@ -324,7 +377,12 @@
     "relatedRepairSlug": "thermostat-replacement",
     "dangerNote": null,
     "snippetAnswer": "Luxaire furnace code 14 Blinks means Fourteen blinks indicate a thermostat signal problem. Often caused by stat off or in cool. Usually safe to try basic checks yourself; professional repairs run $100–$350.",
-    "flashPattern": "14 blinks"
+    "flashPattern": "14 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "15 Blinks",
@@ -348,7 +406,12 @@
     "relatedRepairSlug": "ignitor-replacement",
     "dangerNote": null,
     "snippetAnswer": "Luxaire furnace code 15 Blinks means Fifteen blinks mean the ignitor circuit failed a check. Most often from cracked ignitor. You can check basics first; professional repairs typically run $150–$450.",
-    "flashPattern": "15 blinks"
+    "flashPattern": "15 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   },
   {
     "code": "16 Blinks",
@@ -372,6 +435,11 @@
     "relatedRepairSlug": "flame-sensor-cleaning",
     "dangerNote": null,
     "snippetAnswer": "Luxaire furnace code 16 Blinks means Sixteen blinks indicate flame was lost while heating. Most often from dirty sensor. You can check basics first; professional repairs typically run $100–$3500.",
-    "flashPattern": "16 blinks"
+    "flashPattern": "16 blinks",
+    "sourceIds": [
+      "jci-272441-uim-e-0513"
+    ],
+    "verificationStatus": "model-specific-unverified",
+    "modelScope": "No universal meaning is confirmed for this code. The exact model number and control-board chart are required."
   }
 ]
