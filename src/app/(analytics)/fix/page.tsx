@@ -7,6 +7,7 @@ export const metadata = {
   title: "Furnace Error Codes by Brand",
   description:
     "Free lookup for 300+ furnace error codes across 22 brands — LED flashes, blink codes, and numeric faults with meanings, severity, DIY steps, and repair costs.",
+  alternates: { canonical: "/fix" },
 };
 
 export default function FixIndexPage() {

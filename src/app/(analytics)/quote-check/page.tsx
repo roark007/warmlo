@@ -5,6 +5,7 @@ import { getBenchmarks } from "@/lib/data";
 export const metadata = {
   title: "HVAC Quote Check",
   description: "Check if your HVAC contractor quote is fair. Free, no signup required.",
+  alternates: { canonical: "/quote-check" },
 };
 
 export default function QuoteCheckPage() {

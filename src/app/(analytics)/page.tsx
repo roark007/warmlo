@@ -8,6 +8,10 @@ import { featuredCodes } from "@/config/featuredCodes";
 import { featuredRepairs } from "@/config/featuredRepairs";
 import { getAllCodes, getBenchmarks, getBrand, getCode, getRepairBySlug } from "@/lib/data";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 function revealDelay(step: number): CSSProperties {
   return { "--reveal-delay": `${step}ms` } as CSSProperties;
 }

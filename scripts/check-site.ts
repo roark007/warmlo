@@ -4,6 +4,7 @@ import { brandsSchema, codesSchema, repairsSchema, symptomsSchema } from "../src
 import { AFFILIATE_DISCLOSURE } from "../src/components/SiteChrome";
 import { CODE_PAGE_DISCLAIMER } from "../src/lib/seo";
 import { buildLlmsTxt } from "../src/lib/llms-txt";
+import { CONTENT_LAST_MODIFIED, INDEXNOW_KEY } from "../src/lib/site-routes";
 
 const INDEX_ROUTE = "/data/hvac-quote-index";
 const BUILD_DIR = path.join(process.cwd(), ".next");
@@ -447,6 +448,56 @@ for (const route of contentRoutes) {
   }
 }
 if (sitemapOk) pass("sitemap includes content routes");
+
+if (sitemapContent.includes("<urlset")) {
+  const quoteIndex = readJson<{ generatedAt: string }>(
+    path.join(process.cwd(), "data", "quote-index.json")
+  );
+  const allowedLastModifiedDates = new Set([
+    CONTENT_LAST_MODIFIED,
+    quoteIndex.generatedAt,
+  ]);
+  const lastModifiedDates = [
+    ...sitemapContent.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})(?:T[^<]*)?<\/lastmod>/g),
+  ].map((match) => match[1]);
+
+  if (lastModifiedDates.length === 0) {
+    fail("sitemap has no lastmod dates");
+  } else if (lastModifiedDates.some((date) => !allowedLastModifiedDates.has(date))) {
+    fail("sitemap contains a deployment-time or unknown lastmod date");
+  } else {
+    pass("sitemap uses stable content modification dates");
+  }
+}
+
+const canonicalRoutes = [
+  "/",
+  "/fix",
+  "/quote-check",
+  "/about",
+  "/privacy",
+  "/terms",
+  "/disclosure",
+];
+let canonicalsOk = true;
+for (const route of canonicalRoutes) {
+  const html = readPageHtml(route, htmlFiles);
+  const canonicalUrl = `https://warmlo.com${route === "/" ? "" : route}`;
+  if (!html || !html.includes(`rel="canonical" href="${canonicalUrl}"`)) {
+    fail(`${route}: missing canonical URL ${canonicalUrl}`);
+    canonicalsOk = false;
+  }
+}
+if (canonicalsOk) pass("canonical URLs on static indexable pages");
+
+const indexNowKeyPath = path.join(PUBLIC_DIR, `${INDEXNOW_KEY}.txt`);
+if (!fs.existsSync(indexNowKeyPath)) {
+  fail("IndexNow key file is missing");
+} else if (fs.readFileSync(indexNowKeyPath, "utf-8").trim() !== INDEXNOW_KEY) {
+  fail("IndexNow key file does not match the configured key");
+} else {
+  pass("IndexNow verification key");
+}
 
 // Compliance footer check
 const compliancePages = ["/", "/fix/goodman/e4", "/quote-check"];
