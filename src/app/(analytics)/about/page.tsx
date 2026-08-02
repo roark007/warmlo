@@ -3,6 +3,7 @@ import { FreshnessStamp } from "@/components/FreshnessStamp";
 import { StaticLink } from "@/components/StaticLink";
 import { getBenchmarks } from "@/lib/data";
 import { CODE_PAGE_DISCLAIMER } from "@/lib/seo";
+import { buildSiteIdentityJsonLd, getSiteBaseUrl } from "@/lib/site-identity";
 
 export const metadata = {
   title: "About Warmlo — Methodology & Editorial Standards",
@@ -13,16 +14,10 @@ export const metadata = {
 
 export default function AboutPage() {
   const { dataUpdated } = getBenchmarks();
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://warmlo.com";
-
+  const siteIdentity = buildSiteIdentityJsonLd(getSiteBaseUrl());
   const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Warmlo",
-    url: baseUrl,
-    description:
-      "Free consumer resource for HVAC error codes, repair cost guides, and fair-price quote checking.",
-    sameAs: baseUrl,
+    "@context": siteIdentity["@context"],
+    ...(siteIdentity["@graph"].find((entity) => entity["@type"] === "Organization") ?? {}),
   };
 
   return (

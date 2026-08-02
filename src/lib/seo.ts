@@ -102,7 +102,7 @@ export function buildCodePageJsonLd(
       },
       {
         "@type": "Question",
-        name: `Can I fix ${brand.name} code ${code.code} myself?`,
+        name: `Can I troubleshoot ${brand.name} code ${code.code}?`,
         acceptedAnswer: {
           "@type": "Answer",
           text:
@@ -115,7 +115,7 @@ export function buildCodePageJsonLd(
       },
       {
         "@type": "Question",
-        name: "How much does it cost to fix?",
+        name: `How much does ${brand.name} code ${code.code} cost to fix?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: `Typical repair costs range from $${code.repairCostLow} to $${code.repairCostHigh}.`,
@@ -182,12 +182,12 @@ export function buildSymptomPageJsonLd(symptom: Symptom, baseUrl: string, dataUp
     mainEntity: [
       {
         "@type": "Question",
-        name: symptom.title,
+        name: `What does ${symptom.title.toLowerCase()} mean?`,
         acceptedAnswer: { "@type": "Answer", text: symptom.snippetAnswer },
       },
       {
         "@type": "Question",
-        name: "What causes this?",
+        name: `What usually causes ${symptom.title.toLowerCase()}?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: symptom.likelyCauses.map((c) => `${c.cause} (${c.likelihood})`).join(". "),

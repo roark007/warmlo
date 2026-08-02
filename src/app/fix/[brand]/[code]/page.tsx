@@ -28,6 +28,7 @@ import {
 } from "@/lib/seo";
 import { StaticLink } from "@/components/StaticLink";
 import { CodePageAnalyticsScript } from "@/components/CodePageAnalyticsScript";
+import { OnThisPageNav } from "@/components/OnThisPageNav";
 
 export function generateStaticParams() {
   return getBrands().flatMap((brand) =>
@@ -97,6 +98,16 @@ export default async function CodePage({
     ? code.title.split(":").slice(1).join(":").trim()
     : code.meaning;
 
+  const pageSections = [
+    { href: "#meaning", label: "Meaning" },
+    { href: "#causes", label: "Common causes" },
+    { href: "#first-steps", label: "First steps" },
+    { href: "#repair-cost", label: "Repair cost" },
+    { href: "#call-a-pro", label: "When to call a pro" },
+    ...(relatedSymptoms.length > 0 ? [{ href: "#symptoms", label: "Symptoms" }] : []),
+    ...(relatedCodes.length > 0 ? [{ href: "#related-codes", label: "Related codes" }] : []),
+  ];
+
   return (
     <div className="min-h-screen text-text-on-dark">
       <section className="relative overflow-hidden px-[var(--pad-page-x)] pb-[clamp(40px,6vw,72px)] pt-[clamp(28px,4vw,48px)]">
@@ -161,18 +172,34 @@ export default async function CodePage({
             </div>
           )}
 
-          <section className="mb-[clamp(32px,4vw,48px)]">
+          <OnThisPageNav items={pageSections} />
+
+          <section id="meaning" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
             <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
-              What it means
+              What does {brand.name} code {code.code} mean?
             </h2>
             <p className="mt-3.5 max-w-[68ch] text-base leading-[1.65] text-text-body">
               {code.snippetAnswer ?? code.meaning}
             </p>
           </section>
 
-          <section className="mb-[clamp(32px,4vw,48px)]">
+          <section id="causes" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
             <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
-              Try this first
+              What causes {brand.name} code {code.code}?
+            </h2>
+            <ul className="mt-4 grid gap-2.5 text-base leading-[1.65] text-text-body">
+              {code.commonCauses.map((cause) => (
+                <li key={cause} className="flex items-start gap-3">
+                  <span className="mt-[0.65em] h-2 w-2 shrink-0 rounded-full bg-ember" aria-hidden="true" />
+                  <span>{cause}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section id="first-steps" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
+            <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
+              Can I troubleshoot {brand.name} code {code.code}?
             </h2>
             <div className="mt-4">
               {code.severity === "emergency" && code.dangerNote ? (
@@ -183,9 +210,9 @@ export default async function CodePage({
             </div>
           </section>
 
-          <section className="mb-[clamp(32px,4vw,48px)]">
+          <section id="repair-cost" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
             <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
-              What a repair costs
+              How much does {brand.name} code {code.code} cost to fix?
             </h2>
             <div className="mt-4">
               {costProse && (
@@ -208,9 +235,9 @@ export default async function CodePage({
             <CtaBlock repairSlug={code.relatedRepairSlug} />
           </div>
 
-          <section className="mb-[clamp(32px,4vw,48px)]">
+          <section id="call-a-pro" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
             <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
-              When to call a pro
+              When should I call a technician?
             </h2>
             <p className="mt-4 max-w-[68ch] text-base leading-[1.65] text-text-body">
               {code.whenToCallPro}
@@ -218,7 +245,7 @@ export default async function CodePage({
           </section>
 
           {relatedSymptoms.length > 0 && (
-            <section className="mb-[clamp(32px,4vw,48px)]">
+            <section id="symptoms" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
               <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
                 Symptoms this code causes
               </h2>
@@ -238,7 +265,7 @@ export default async function CodePage({
           )}
 
           {relatedCodes.length > 0 && (
-            <section className="mb-[clamp(24px,3vw,36px)]">
+            <section id="related-codes" className="mb-[clamp(24px,3vw,36px)] scroll-mt-24">
               <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
                 Related codes
               </h2>

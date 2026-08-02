@@ -4,7 +4,8 @@ import { brandsSchema, codesSchema, repairsSchema, symptomsSchema } from "../src
 import { AFFILIATE_DISCLOSURE } from "../src/components/SiteChrome";
 import { CODE_PAGE_DISCLAIMER } from "../src/lib/seo";
 import { buildLlmsTxt } from "../src/lib/llms-txt";
-import { CONTENT_LAST_MODIFIED, INDEXNOW_KEY } from "../src/lib/site-routes";
+import { buildSiteIdentityJsonLd } from "../src/lib/site-identity";
+import { CONTENT_LAST_MODIFIED, INDEXNOW_KEY, SITE_URL } from "../src/lib/site-routes";
 
 const INDEX_ROUTE = "/data/hvac-quote-index";
 const BUILD_DIR = path.join(process.cwd(), ".next");
@@ -21,6 +22,52 @@ function pass(msg: string) {
 
 function readJson<T>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
+}
+
+type JsonLdRecord = Record<string, unknown>;
+
+function isJsonLdRecord(value: unknown): value is JsonLdRecord {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function extractJsonLd(html: string): JsonLdRecord[] {
+  const nodes: JsonLdRecord[] = [];
+  const scriptPattern = /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g;
+  let match;
+
+  while ((match = scriptPattern.exec(html)) !== null) {
+    try {
+      const parsed: unknown = JSON.parse(match[1]);
+      if (!isJsonLdRecord(parsed)) continue;
+      const graph = parsed["@graph"];
+      if (Array.isArray(graph)) {
+        for (const entity of graph) {
+          if (isJsonLdRecord(entity)) nodes.push(entity);
+        }
+      } else {
+        nodes.push(parsed);
+      }
+    } catch {
+      // JSON-LD syntax is checked by the focused schema assertions below; ignore
+      // unrelated malformed scripts here so the remaining site checks can report.
+    }
+  }
+
+  return nodes;
+}
+
+function countAttribute(html: string, attribute: string, value: string): number {
+  return (html.match(new RegExp(`${attribute}="${value}"`, "g")) ?? []).length;
+}
+
+function duplicateHtmlIds(html: string): string[] {
+  const counts = new Map<string, number>();
+  const pattern = /\bid="([^"]+)"/g;
+  let match;
+  while ((match = pattern.exec(html)) !== null) {
+    counts.set(match[1], (counts.get(match[1]) ?? 0) + 1);
+  }
+  return [...counts.entries()].filter(([, count]) => count > 1).map(([id]) => id);
 }
 
 function findHtmlFiles(dir: string): string[] {
@@ -174,6 +221,48 @@ if (censusOk) {
   );
 }
 
+// Warmlo identity graph and public logo
+let identityOk = true;
+const homeHtml = readPageHtml("/", htmlFiles);
+const expectedIdentity = buildSiteIdentityJsonLd(SITE_URL);
+const expectedWebsiteId = `${SITE_URL}/#website`;
+const expectedOrganizationId = `${SITE_URL}/#organization`;
+if (!homeHtml) {
+  fail("could not read HTML for home identity check");
+  identityOk = false;
+} else {
+  const identityEntities = extractJsonLd(homeHtml);
+  const websiteEntities = identityEntities.filter((entity) => entity["@type"] === "WebSite");
+  const organizationEntities = identityEntities.filter((entity) => entity["@type"] === "Organization");
+  if (websiteEntities.length !== 1) {
+    fail(`home: expected exactly one WebSite entity, found ${websiteEntities.length}`);
+    identityOk = false;
+  }
+  if (organizationEntities.length !== 1) {
+    fail(`home: expected exactly one Organization entity, found ${organizationEntities.length}`);
+    identityOk = false;
+  }
+  const website = websiteEntities[0];
+  const organization = organizationEntities[0];
+  if (website?.["@id"] !== expectedWebsiteId || website?.name !== "Warmlo") {
+    fail("home: WebSite identity does not match the canonical Warmlo contract");
+    identityOk = false;
+  }
+  if (organization?.["@id"] !== expectedOrganizationId || organization?.name !== "Warmlo") {
+    fail("home: Organization identity does not match the canonical Warmlo contract");
+    identityOk = false;
+  }
+  if (!homeHtml.includes(JSON.stringify(expectedIdentity))) {
+    fail("home: WebSite/Organization graph does not match the shared identity helper");
+    identityOk = false;
+  }
+}
+if (!fs.existsSync(path.join(PUBLIC_DIR, "brand", "warmlo-mark.svg"))) {
+  fail("missing public/brand/warmlo-mark.svg");
+  identityOk = false;
+}
+if (identityOk) pass("home WebSite/Organization identity and public Warmlo mark");
+
 // Required content on sample code pages
 const sampleRoutes = [...expectedCodeRoutes].slice(0, 5);
 let contentOk = true;
@@ -226,10 +315,56 @@ for (const route of sampleRoutes) {
     fail(`${route}: missing HowTo JSON-LD on non-emergency code page`);
     contentOk = false;
   }
+
+  const requiredSectionIds = ["meaning", "causes", "first-steps", "repair-cost", "call-a-pro"];
+  for (const id of requiredSectionIds) {
+    if (countAttribute(html, "id", id) !== 1) {
+      fail(`${route}: expected exactly one #${id} section`);
+      contentOk = false;
+    }
+    if (!html.includes(`href="#${id}"`)) {
+      fail(`${route}: missing on-page link to #${id}`);
+      contentOk = false;
+    }
+  }
+  for (const cause of code?.commonCauses.slice(0, 2) ?? []) {
+    if (!html.includes(cause)) {
+      fail(`${route}: missing rendered common cause: ${cause}`);
+      contentOk = false;
+    }
+  }
+  const duplicateIds = duplicateHtmlIds(html);
+  if (duplicateIds.length > 0) {
+    fail(`${route}: duplicate HTML IDs: ${duplicateIds.join(", ")}`);
+    contentOk = false;
+  }
 }
 if (contentOk && sampleRoutes.length > 0) {
   pass(`required content on ${sampleRoutes.length} sample code pages`);
 }
+
+// Required passage structure on sample symptom pages
+let symptomContentOk = true;
+for (const route of [...expectedSymptomRoutes].slice(0, 3)) {
+  const html = readPageHtml(route, htmlFiles);
+  if (!html) {
+    fail(`could not read HTML for ${route}`);
+    symptomContentOk = false;
+    continue;
+  }
+  for (const id of ["meaning", "likely-causes", "exact-code", "first-steps"]) {
+    if (countAttribute(html, "id", id) !== 1 || !html.includes(`href="#${id}"`)) {
+      fail(`${route}: missing stable section/nav target #${id}`);
+      symptomContentOk = false;
+    }
+  }
+  const duplicateIds = duplicateHtmlIds(html);
+  if (duplicateIds.length > 0) {
+    fail(`${route}: duplicate HTML IDs: ${duplicateIds.join(", ")}`);
+    symptomContentOk = false;
+  }
+}
+if (symptomContentOk) pass("passage structure on 3 sample symptom pages");
 
 // Required content on sample cost pages
 const sampleCostRoutes = repairs.slice(0, 3).map((r) => `/cost/${r.slug}`);
@@ -337,6 +472,17 @@ if (!aboutHtml) {
   }
   if (!aboutHtml.includes("Organization") && !aboutHtml.includes('"@type":"Organization"')) {
     fail("/about: missing Organization JSON-LD");
+    aboutContentOk = false;
+  }
+  const aboutOrganization = extractJsonLd(aboutHtml).find(
+    (entity) => entity["@type"] === "Organization"
+  );
+  if (aboutOrganization?.["@id"] !== expectedOrganizationId) {
+    fail("/about: Organization JSON-LD does not reference the canonical Warmlo entity");
+    aboutContentOk = false;
+  }
+  if (aboutOrganization && "sameAs" in aboutOrganization) {
+    fail("/about: Organization JSON-LD must not use a self-referential sameAs");
     aboutContentOk = false;
   }
 }

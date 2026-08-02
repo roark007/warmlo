@@ -8,6 +8,7 @@ import { NumberedStepList } from "@/components/NumberedStepList";
 import { SeverityBadge } from "@/components/SeverityBadge";
 import { SymptomCodeFinder } from "@/components/SymptomCodeFinder";
 import { StaticLink } from "@/components/StaticLink";
+import { OnThisPageNav } from "@/components/OnThisPageNav";
 import { getBenchmarks, getRepairBySlug, getSymptom, getSymptoms } from "@/lib/data";
 import {
   buildRepairCostProse,
@@ -62,6 +63,14 @@ export default async function SymptomPage({
   const costProse = repair
     ? buildRepairCostProse(repair.name, repair.costLow, repair.costHigh)
     : null;
+  const symptomLabel = symptom.title.toLowerCase();
+  const pageSections = [
+    { href: "#meaning", label: "Meaning" },
+    { href: "#likely-causes", label: "Likely causes" },
+    { href: "#exact-code", label: "Find your exact code" },
+    { href: "#first-steps", label: "First steps" },
+    ...(repair ? [{ href: "#repair-cost", label: "Repair cost" }] : []),
+  ];
 
   return (
     <div className="min-h-screen text-text-on-dark">
@@ -108,18 +117,20 @@ export default async function SymptomPage({
             </div>
           )}
 
-          <section className="mb-[clamp(32px,4vw,48px)]">
+          <OnThisPageNav items={pageSections} />
+
+          <section id="meaning" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
             <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
-              What it means
+              What does {symptomLabel} mean?
             </h2>
             <p className="mt-3.5 max-w-[68ch] text-base leading-[1.65] text-text-body">
               {symptom.plainExplanation}
             </p>
           </section>
 
-          <section className="mb-[clamp(32px,4vw,48px)]">
+          <section id="likely-causes" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
             <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
-              Likely causes
+              What usually causes {symptomLabel}?
             </h2>
             <div className="mt-4 grid gap-3">
               {symptom.likelyCauses.map((item) => {
@@ -151,9 +162,9 @@ export default async function SymptomPage({
 
           <SymptomCodeFinder symptom={symptom} />
 
-          <section className="mb-[clamp(32px,4vw,48px)]">
+          <section id="first-steps" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
             <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
-              Try this first
+              What should I check first when {symptomLabel}?
             </h2>
             <div className="mt-4">
               {symptom.severityCeiling === "emergency" && symptom.dangerNote ? (
@@ -165,7 +176,7 @@ export default async function SymptomPage({
           </section>
 
           {repair && (
-            <section className="mb-[clamp(32px,4vw,48px)]">
+            <section id="repair-cost" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
               <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
                 What a repair costs
               </h2>

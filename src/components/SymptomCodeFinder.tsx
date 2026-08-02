@@ -17,7 +17,7 @@ export function SymptomCodeFinder({ symptom }: SymptomCodeFinderProps) {
   if (entries.length === 0) return null;
 
   return (
-    <section className="mb-[clamp(32px,4vw,48px)]">
+    <section id="exact-code" className="mb-[clamp(32px,4vw,48px)] scroll-mt-24">
       <h2 className="font-display text-h2 font-bold tracking-[-0.02em] text-text-strong">
         Find your exact error code
       </h2>
